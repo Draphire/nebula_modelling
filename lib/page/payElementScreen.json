@@ -1,0 +1,955 @@
+{
+  "screenRoute": "paysetinformation",
+  "children": [
+    {
+      "controlType": "container",
+      "collapsible": false,
+      "isCollapsed": false,
+      "id": "paysetInformation",
+      "title": "Payset Information",
+      "hideCaption": true,
+      "hideHeader": true,
+      "className": "white no-bg",
+      "children": [
+        {
+          "controlType": "container",
+          "collapsible": false,
+          "isCollapsed": false,
+          "id": "paysetInformationTopRow",
+          "title": "Payset container Title Toolbar",
+          "hideHeader": true,
+          "hideCaption": true,
+          "className": "white no-bg",
+          "layout": {
+            "colLayout": {
+              "lg": 12,
+              "md": 12,
+              "sm": 12,
+              "xs": 12
+            },
+            "justifyContent": "start"
+          },
+          "children": [
+            {
+              "controlType": "container",
+              "collapsible": false,
+              "isCollapsed": false,
+              "id": "paysetInformationTopRow",
+              "title": "Payset container Title Toolbar",
+              "hideHeader": true,
+              "hideCaption": true,
+              "className": "white no-bg",
+              "layout": {
+                "colLayout": {
+                  "xl": 6,
+                  "lg": 6,
+                  "md": 12,
+                  "sm": 12,
+                  "xs": 12
+                },
+
+                "justifyContent": "start",
+                "alignItems": "center"
+              },
+              "children": [
+                {
+                  "controlType": "icon",
+                  "id": "backArrowleftFilled",
+                  "iconKey": "ArrowleftFilled",
+                  "className": "pointer",
+                  "layout": {
+                    "colLayout": {
+                      "xl": 1,
+                      "lg": 1,
+                      "md": 1,
+                      "sm": 1,
+                      "xs": 1,
+                      "col": 1
+                    }
+                  }
+                },
+                {
+                  "controlType": "label",
+                  "id": "payrollPurpose",
+                  "className": "subtitle1 font-bold",
+                  "caption": "Payset Information",
+                  "layout": {
+                    "colLayout": {
+                      "xl": 5,
+                      "lg": 6,
+                      "md": 7,
+                      "sm": 9,
+                      "xs": 11,
+                      "col": 11
+                    }
+                  }
+                }
+              ]
+            },
+
+            {
+              "controlType": "container",
+              "collapsible": false,
+              "isCollapsed": false,
+              "id": "paysetInformation",
+              "title": "Payset Information",
+              "hideCaption": true,
+              "hideHeader": true,
+              "className": "white no-bg",
+              "layout": {
+                "colLayout": {
+                  "xl": 6,
+                  "lg": 6,
+                  "md": 12,
+                  "sm": 12,
+                  "xs": 12
+                },
+                "alignItems": "center",
+                "justifyContent": "lg-end"
+              },
+              "children": [
+                {
+                  "controlType": "textfield",
+                  "caption": "Search Payset",
+                  "id": "searchPayset",
+                  "variant": "standard",
+                  "size": "small",
+                  "hideCaption": true,
+                  "placeholder": "Search Payset",
+                  "layout": {
+                    "colLayout": {
+                      "xl": 4,
+                      "lg": 3,
+                      "md": 3,
+                      "sm": 4,
+                      "xs": 4,
+                      "col": 12
+                    },
+
+                    "alignItems": "center",
+                    "justifyContent": "end"
+                  }
+                },
+                {
+                  "controlType": "checkboxfield",
+                  "caption": "Mark Complete",
+                  "checkType": "switch",
+                  "id": "paysetmarkcomplete",
+                  "layout": {
+                    "colLayout": {
+                      "xl": 4,
+                      "lg": 4,
+                      "md": 4,
+                      "sm": 4,
+                      "xs": 6,
+                      "col": 8
+                    },
+
+                    "alignItems": "center",
+                    "justifyContent": "end"
+                  }
+                },
+                {
+                  "controlType": "button",
+                  "variant": "outlined",
+                  "color": "primary",
+                  "caption": "Add",
+                  "id": "btnadd",
+                  "startIcon": {
+                    "controlType": "icon",
+                    "iconKey": "AddStroke"
+                  },
+                  "layout": {
+                    "colLayout": {
+                      "xl": 4,
+                      "lg": 4,
+                      "md": 4,
+                      "sm": 4,
+                      "xs": 4,
+                      "col": 4
+                    },
+                    "alignItems": "center",
+                    "justifyContent": "end"
+                  },
+                  "eventInfo": {
+                    "eventId": "OnAddPaysetClick",
+                    "queryKey": "OnAddPaysetClick",
+                    "data_bind": ["no-bind"],
+                    "handler": "LOCAL",
+                    "action": "openPopup",
+                    "onClick": {
+                      "action": "openPopup",
+                      "popupSectionId": "paysetInformationModal",
+                      "bind": {}
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "controlType": "container",
+          "collapsible": false,
+          "isCollapsed": false,
+          "id": "paysetCardcontainer",
+          "title": "Payset Card container",
+          "hideCaption": true,
+          "className": "content-main white no-bg mt-three-s",
+          "layout": {
+            "colLayout": {
+              "lg": 12,
+              "md": 12,
+              "sm": 12,
+              "xs": 12
+            },
+            "childColLayout": {
+              "xl": 12,
+              "lg": 12,
+              "md": 12,
+              "sm": 12,
+              "xs": 12
+            }
+          },
+          "children": [
+            {
+              "controlType": "cardcontainer",
+              "numberOfCardsInRow": 4,
+              "id": "paysetCardContainer",
+              "template": [
+                {
+                  "containerType": "cardcontainer",
+                  "templateId": "paySetCardBody",
+                  "header": {
+                    "title": "paysetDesc",
+                    "optionsIconKey": "KebabmenuStroke",
+                    "className": "",
+                    "menu": {
+                      "children": [
+                        {
+                          "code": "edit",
+                          "desc": "Edit Payset",
+                          "icon": "EditFilled",
+                          "eventInfo": {
+                            "eventId": "paysetInfoScreen",
+                            "queryKey": "paysetInfoScreen",
+                            "data_bind": ["paysetEditCode"],
+                            "path": "cgsgql/Hrpsaas",
+                            "handler": "GQL",
+                            "method": "QUERY",
+                            "action": "click",
+                            "query": {
+                              "path": "./getAllGQL.ts",
+                              "callBack": "getAllGQLEvent"
+                            }
+                          }
+                        },
+                        {
+                          "code": "del",
+                          "desc": "Delete Payset",
+                          "icon": "DeleteFilled",
+                          "eventInfo": {
+                            "eventId": "paysetInfoScreen",
+                            "queryKey": "paySetDelete_mutation",
+                            "confirmation": {
+                              "confirmationType": "deleteConfirmation",
+                              "message": "Are you sure that you want to Delete this Payset?",
+                              "id": "deletePaysetConfirmation"
+                            },
+                            "data_bind": ["paysetCode"],
+                            "path": "cgsgql/Hrpsaas",
+                            "handler": "GQL",
+                            "method": "QUERY",
+                            "refreshQueryKey": "paysetInfoScreen",
+                            "query": {
+                              "path": "paySetDelete_mutation",
+                              "callBack": "paySetDelete_mutation"
+                            },
+                            "response": {
+                              "responseAction": "Alert",
+                              "statusField": "paysetAttributesStatusOut",
+                              "bind": {
+                                "path": "data.paysetAttribute.paysetAttributesStatusOut",
+                                "queryName": "paysetAttribute",
+                                "operationId": "",
+                                "customPath1": "",
+                                "customPath2": ""
+                              },
+                              "success": {
+                                "message": "Payset deleted successfully"
+                              },
+                              "error": {
+                                "message": "Error deleting payset"
+                              }
+                            }
+                          }
+                        }
+                      ],
+                      "className": ""
+                    }
+                  },
+                  "body": {
+                    "className": "wd-100",
+                    "children": [
+                      {
+                        "controlType": "label",
+                        "id": "payrollPurpose",
+                        "className": "font-s grey2 mb-one-s"
+                      },
+                      {
+                        "controlType": "label",
+                        "id": "paysetFreq",
+                        "className": "font-s grey2"
+                      }
+                    ]
+                  },
+                  "footer": {
+                    "children": [
+                      {
+                        "controlType": "button",
+                        "color": "primary",
+                        "variant": "outlined",
+                        "caption": "Map Elements",
+                        "size": "small",
+                        "className": ""
+                      }
+                    ]
+                  }
+                }
+              ],
+              "bindInfo": {
+                "path": "data.paysetInfo.paysetInfo_GetPaysetInfoMultipleOut",
+                "queryName": "paysetInfo",
+                "operationId": "paysetInfo_GetPaysetInfoMultipleOut",
+                "customPath1": "",
+                "customPath2": ""
+              },
+              "eventInfo": {
+                "eventId": "paysetInfoScreen",
+                "queryKey": "paysetInfoScreen",
+                "data_bind": ["no-bind"],
+                "path": "cgsgql/Hrpsaas",
+                "handler": "GQL",
+                "method": "QUERY",
+                "query": {
+                  "path": "./getAllGQL.ts",
+                  "callBack": "getAllGQLEvent"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "popupWindow": [
+    {
+      "controlType": "popup",
+      "mode": "sidedraw",
+      "collapsible": false,
+      "isCollapsed": false,
+      "id": "paysetInformationModal",
+      "title": "Payset Information ",
+      "hideCaption": true,
+      "hideHeader": true,
+      "className": "white no-bg",
+      "effect": "SlideFromRight",
+      "defaultVisibility": "hide",
+      "size": "small",
+      "footerClass": "no-footer",
+      "style": {
+        "content": {
+          "width": "60vw"
+        }
+      },
+      "header": {
+        "title": {
+          "controlType": "label",
+          "caption": "Payset Information",
+          "className": "subTitle3 bold white"
+        },
+        "close": {
+          "controlType": "icon",
+          "iconKey": "CloseCircle",
+          "className": "nb-icon nb-closeCircle white closeCircle"
+        }
+      },
+      "children": [
+        {
+          "controlType": "textfield",
+          "caption": "How Would you like to call this Payset?",
+          "id": "paysetDesc",
+          "variant": "standard",
+          "size": "medium",
+          "placeholder": "Payset Description",
+          "layout": {
+            "colLayout": {
+              "xl": 12,
+              "lg": 12,
+              "md": 12,
+              "sm": 12,
+              "xs": 12
+            },
+            "spacing": {
+              "mb": 3
+            }
+          }
+        },
+        {
+          "controlType": "combofield",
+          "caption": "Frequency of Payroll processing and Payment",
+          "id": "getPayFreqCode",
+          "variant": "standard",
+          "size": "small",
+          "displayField": "valueDesc",
+          "valueField": "valueCode",
+          "placeholder": "Frequency",
+          "totalLength": 30,
+          "layout": {
+            "colLayout": {
+              "xl": 12,
+              "lg": 12,
+              "md": 12,
+              "sm": 12,
+              "xs": 12
+            },
+            "spacing": {
+              "mb": 3
+            }
+          },
+          "bindInfo": {
+            "path": "data.comboInit",
+            "queryName": "comboInit",
+            "operationId": "",
+            "customPath1": "",
+            "customPath2": ""
+          },
+          "eventInfo": {
+            "eventId": "FrequencyComboValues",
+            "queryKey": "FrequencyComboValues",
+            "data_bind": ["no-bind"],
+            "path": "cgsgql/Hrpsaas",
+            "handler": "GQL",
+            "method": "QUERY",
+            "queryInfo": {
+              "type": "query",
+              "name": "comboInit",
+              "inputsfields": [
+                {
+                  "name": "Region",
+                  "defaultValue": "india"
+                },
+                {
+                  "name": "MasterType",
+                  "defaultValue": "Payroll"
+                },
+                {
+                  "name": "BPCode",
+                  "defaultValue": "GIF"
+                },
+                {
+                  "name": "PVCode",
+                  "defaultValue": "FREQ"
+                }
+              ],
+              "outputfields": [
+                {
+                  "name": "valueCode",
+                  "id": "valueCode"
+                },
+                {
+                  "name": "valueDesc",
+                  "id": "valueDesc"
+                }
+              ],
+              "onsuccess": [],
+              "onfailure": {}
+            },
+            "query": {
+              "path": "./getAllGQL.ts",
+              "callBack": "frequency_query"
+            },
+            "onSelect": {
+              "action": "updateRedux",
+              "bind": {
+                "key": "getPayFreqCode",
+                "value": "getPayFreqDesc"
+              }
+            }
+          }
+        },
+        {
+          "controlType": "combofield",
+          "caption": "Purpose of Payroll",
+          "id": "cmb_purpose",
+          "variant": "standard",
+          "size": "small",
+          "displayField": "valueDesc",
+          "valueField": "valueCode",
+          "placeholder": "Purpose",
+          "totalLength": 30,
+          "layout": {
+            "colLayout": {
+              "xl": 12,
+              "lg": 12,
+              "md": 12,
+              "sm": 12,
+              "xs": 12
+            },
+            "spacing": {
+              "mb": 3
+            }
+          },
+          "bindInfo": {
+            "path": "data.comboInit",
+            "queryName": "comboInit",
+            "operationId": "",
+            "customPath1": "",
+            "customPath2": ""
+          },
+          "eventInfo": {
+            "eventId": "PurposeComboValues",
+            "queryKey": "PurposeComboValues",
+            "data_bind": ["no-bind"],
+            "path": "cgsgql/Hrpsaas",
+            "handler": "GQL",
+            "method": "QUERY",
+            "queryInfo": {
+              "type": "query",
+              "name": "comboInit",
+              "inputsfields": [
+                {
+                  "name": "Region",
+                  "defaultValue": "india"
+                },
+                {
+                  "name": "MasterType",
+                  "defaultValue": "Payroll"
+                },
+                {
+                  "name": "BPCode",
+                  "defaultValue": "PDEF"
+                },
+                {
+                  "name": "PVCode",
+                  "defaultValue": "PTYP"
+                }
+              ],
+              "outputfields": [
+                {
+                  "name": "valueCode",
+                  "id": "valueCode"
+                },
+                {
+                  "name": "valueDesc",
+                  "id": "valueDesc"
+                }
+              ],
+              "onsuccess": [],
+              "onfailure": {}
+            },
+            "onSelect": {
+              "action": "updateRedux",
+              "bind": {
+                "key": "getPayrollTypeCode",
+                "value": "getPayrollTypeDesc"
+              }
+            },
+            "query": {
+              "path": "./getAllGQL.ts",
+              "callBack": "purpose_query"
+            }
+          }
+        },
+        {
+          "controlType": "container",
+          "collapsible": false,
+          "isCollapsed": false,
+          "id": "getPayDateCodeContainer",
+          "title": "Payset date Container",
+          "hideCaption": true,
+          "hideHeader": true,
+          "className": "white no-bg",
+          "layout": {
+            "colLayout": {
+              "xl": 12,
+              "lg": 12,
+              "md": 12,
+              "sm": 12,
+              "xs": 12
+            }
+          },
+          "children": [
+            {
+              "controlType": "combofield",
+              "caption": "Pay Date(Specific day of process period)",
+              "id": "getPayDateCode",
+              "variant": "standard",
+              "size": "small",
+              "displayField": "valueDesc",
+              "valueField": "valueCode",
+              "placeholder": "Pay Date",
+              "totalLength": 30,
+              "layout": {
+                "colLayout": {
+                  "xl": 12,
+                  "lg": 12,
+                  "md": 12,
+                  "sm": 12,
+                  "xs": 12
+                },
+                "spacing": {
+                  "mb": 3
+                }
+              },
+              "bindInfo": {
+                "path": "data.comboInit",
+                "queryName": "comboInit",
+                "operationId": "",
+                "customPath1": "",
+                "customPath2": ""
+              },
+              "eventInfo": {
+                "eventId": "payDateComboValues",
+                "queryKey": "payDateComboValues",
+                "data_bind": ["no-bind"],
+                "path": "cgsgql/Hrpsaas",
+                "handler": "GQL",
+                "method": "QUERY",
+                "queryInfo": {
+                  "type": "query",
+                  "name": "comboInit",
+                  "inputsfields": [
+                    {
+                      "name": "Region",
+                      "defaultValue": "india"
+                    },
+                    {
+                      "name": "MasterType",
+                      "defaultValue": "Payroll"
+                    },
+                    {
+                      "name": "BPCode",
+                      "defaultValue": "PDEF"
+                    },
+                    {
+                      "name": "PVCode",
+                      "defaultValue": "PCKD"
+                    }
+                  ],
+                  "outputfields": [
+                    {
+                      "name": "valueCode",
+                      "id": "valueCode"
+                    },
+                    {
+                      "name": "valueDesc",
+                      "id": "valueDesc"
+                    }
+                  ],
+                  "onsuccess": [],
+                  "onfailure": {}
+                },
+                "query": {
+                  "path": "./getAllGQL.ts",
+                  "callBack": "paydate_query"
+                },
+                "onSelect": {
+                  "action": "updateRedux",
+                  "bind": {
+                    "key": "getPayDateCode",
+                    "value": "getPayDateDesc"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "controlType": "container",
+          "collapsible": false,
+          "isCollapsed": false,
+          "id": "getCutoffDtCodeContainer",
+          "title": "Cutoff date Container",
+          "hideCaption": true,
+          "hideHeader": true,
+          "className": "white no-bg",
+          "layout": {
+            "colLayout": {
+              "xl": 12,
+              "lg": 12,
+              "md": 12,
+              "sm": 12,
+              "xs": 12
+            }
+          },
+          "children": [
+            {
+              "controlType": "combofield",
+              "caption": "Cut-off Date(Specific day of process period)",
+              "id": "getPayDateCode",
+              "variant": "standard",
+              "size": "small",
+              "displayField": "valueDesc",
+              "valueField": "valueCode",
+              "placeholder": "Cut off date",
+              "totalLength": 30,
+              "layout": {
+                "colLayout": {
+                  "xl": 12,
+                  "lg": 12,
+                  "md": 12,
+                  "sm": 12,
+                  "xs": 12
+                },
+                "spacing": {
+                  "mb": 3
+                }
+              },
+              "bindInfo": {
+                "path": "data.comboInit",
+                "queryName": "comboInit",
+                "operationId": "",
+                "customPath1": "",
+                "customPath2": ""
+              },
+              "eventInfo": {
+                "eventId": "payDateComboValues",
+                "queryKey": "payDateComboValues",
+                "data_bind": ["no-bind"],
+                "path": "cgsgql/Hrpsaas",
+                "handler": "GQL",
+                "method": "QUERY",
+                "queryInfo": {
+                  "type": "query",
+                  "name": "comboInit",
+                  "inputsfields": [
+                    {
+                      "name": "Region",
+                      "defaultValue": "india"
+                    },
+                    {
+                      "name": "MasterType",
+                      "defaultValue": "Payroll"
+                    },
+                    {
+                      "name": "BPCode",
+                      "defaultValue": "PDEF"
+                    },
+                    {
+                      "name": "PVCode",
+                      "defaultValue": "PCKD"
+                    }
+                  ],
+                  "outputfields": [
+                    {
+                      "name": "valueCode",
+                      "id": "valueCode"
+                    },
+                    {
+                      "name": "valueDesc",
+                      "id": "valueDesc"
+                    }
+                  ],
+                  "onsuccess": [],
+                  "onfailure": {}
+                },
+                "onSelect": {
+                  "action": "updateRedux",
+                  "bind": {
+                    "key": "getCutoffDtCode",
+                    "value": "getCutoffDtDesc"
+                  }
+                },
+                "query": {
+                  "path": "./getAllGQL.ts",
+                  "callBack": "paydate_query"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "controlType": "container",
+          "collapsible": false,
+          "isCollapsed": false,
+          "id": "getCutoffDtCodeContainer",
+          "title": "Cutoff date Container",
+          "hideCaption": true,
+          "hideHeader": true,
+          "className": "white no-bg",
+          "layout": {
+            "colLayout": {
+              "xl": 12,
+              "lg": 12,
+              "md": 12,
+              "sm": 12,
+              "xs": 12
+            },
+            "justifyContent": "end"
+          },
+          "children": [
+            {
+              "controlType": "line",
+              "orientation": "horizontal",
+              "className": "hr-custom",
+              "layout": {
+                "colLayout": {
+                  "xl": 12,
+                  "lg": 12,
+                  "md": 12,
+                  "sm": 12,
+                  "xs": 12
+                }
+              }
+            },
+            {
+              "controlType": "button",
+              "variant": "contained",
+              "color": "primary",
+              "caption": "Save",
+              "id": "btnSavePayset",
+              "className": "",
+              "layout": {
+                "colLayout": {
+                  "xl": 1,
+                  "lg": 1,
+                  "md": 1,
+                  "sm": 1,
+                  "xs": 1
+                }
+              },
+              "eventInfo": {
+                "eventId": "submitPaysetAttribute",
+                "data_bind": ["no-bind"],
+                "onClick": {
+                  "action": "gqlMutate",
+                  "queryInfo": {
+                    "queryKey": "paysetMutation",
+                    "path": "cgsgql/Hrpsaas",
+                    "handler": "GQL",
+                    "method": "MUTATION",
+                    "type": "mutation",
+                    "name": "paysetAttribute",
+                    "inputScheme": "paysetattribute_paysetattributesseg_in_in",
+                    "refreshQueryKey": "paysetInfoScreen",
+                    "inputsfields": [
+                      {
+                        "name": "cutoffDtValue",
+                        "type": "number",
+
+                        "defaultValue": 1
+                      },
+                      {
+                        "name": "getCutoffDtCode",
+                        "storeType": "redux",
+
+                        "type": "string"
+                      },
+                      {
+                        "name": "getCutoffDtDesc",
+                        "storeType": "redux",
+
+                        "type": "string"
+                      },
+                      {
+                        "name": "getPayDateCode",
+                        "storeType": "redux",
+
+                        "type": "string"
+                      },
+                      {
+                        "name": "getPayDateDesc",
+                        "storeType": "redux",
+
+                        "type": "string"
+                      },
+                      {
+                        "name": "getPayFreqCode",
+                        "storeType": "redux",
+
+                        "type": "string"
+                      },
+                      {
+                        "name": "getPayFreqDesc",
+                        "storeType": "redux",
+
+                        "type": "string"
+                      },
+                      {
+                        "name": "getPayrollTypeCode",
+                        "storeType": "redux",
+
+                        "type": "string"
+                      },
+                      {
+                        "name": "getPayrollTypeDesc",
+                        "storeType": "redux",
+
+                        "type": "string"
+                      },
+                      {
+                        "name": "modeFlag",
+                        "type": "string",
+                        "defaultValue": "Edit"
+                      },
+                      {
+                        "name": "payDateValue",
+                        "type": "number",
+                        "defaultValue": 1
+                      },
+                      {
+                        "name": "paysetCodee",
+                        "type": "string",
+                        "defaultValue": ""
+                      },
+                      {
+                        "name": "paysetDesc",
+                        "type": "string",
+                        "storeType": "redux"
+                      },
+                      {
+                        "name": "region",
+                        "type": "string",
+                        "defaultValue": "India"
+                      }
+                    ],
+                    "outputfields": [
+                      {
+                        "name": "paysetAttributesStatusOut",
+                        "id": "paysetAttributesStatusOut"
+                      }
+                    ],
+                    "response": {
+                      "responseAction": "Alert",
+                      "statusField": "paysetAttributesStatusOut",
+                      "bind": {
+                        "path": "data.paysetAttribute.paysetAttributesStatusOut",
+                        "queryName": "paysetAttribute",
+                        "operationId": "",
+                        "customPath1": "",
+                        "customPath2": ""
+                      },
+                      "success": {
+                        "message": "Payset saved successfully"
+                      },
+                      "error": {
+                        "message": "Error Adding payset"
+                      }
+                    },
+                    "onsuccess": [{}],
+                    "onfailure": {}
+                  }
+                },
+                "query": {
+                  "path": "./getAllGQL.ts",
+                  "callBack": "paydate_query"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

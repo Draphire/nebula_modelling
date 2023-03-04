@@ -4,7 +4,7 @@ final ColorScheme _appColorScheme = ColorScheme(
   primary: Colors.blue,
   primaryContainer: Colors.green,
   secondary: Colors.amber,
-  secondaryContainer: Colors.lightBlue,
+  secondaryContainer: Colors.grey,
   surface: Colors.purpleAccent,
   background: Colors.white10,
   error: Colors.redAccent,
@@ -23,6 +23,7 @@ final TextTheme _textTheme = TextTheme(
 
 final ButtonThemeData _buttonTheme = ButtonThemeData(
   textTheme: ButtonTextTheme.primary,
+  buttonColor: _appColorScheme.primary,
   minWidth: 88.0,
   height: 36.0,
 );
