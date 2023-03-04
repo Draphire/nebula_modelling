@@ -5,9 +5,10 @@ import '../renderer/control/control.dart';
 import '../utils/layoutUtils.dart';
 
 class ContainerWidget extends StatefulWidget {
-  const ContainerWidget({super.key, this.controlInfo});
+  const ContainerWidget({super.key, this.controlInfo, this.apiClient});
 
   final controlInfo;
+  final apiClient;
 
   @override
   State<ContainerWidget> createState() => _ContainerWidgetState();
@@ -18,19 +19,18 @@ class _ContainerWidgetState extends State<ContainerWidget> {
 
   dynamic renderPage(containerChildren) {
     for (var control in widget.controlInfo['children']!) {
-      print('Page:${control}');
+      // print('Page:${control}');
       containerChildren.add(BootstrapCol(
           sizes: buildLayoutColumn(control),
           child: ControlRenderer(
-            controlInfo: control,
-          )));
+              controlInfo: control, apiClient: widget.apiClient)));
     }
     return containerChildren;
   }
 
   @override
   Widget build(BuildContext context) {
-    print('container:${widget.controlInfo["controlType"]}');
+    // print('container:${widget.controlInfo["controlType"]}');
 
     return BootstrapContainer(
         fluid: true,

@@ -12,8 +12,8 @@ String buildLayoutColumn(controlInfo) {
   } else {
     return ' ';
   }
-  print(controlInfo);
-  print(layout);
+  // print(controlInfo);
+  // print(layout);
   dynamic colLayout = layout['colLayout'];
 
   if (colLayout['xl'] != null) {
@@ -34,7 +34,7 @@ String buildLayoutColumn(controlInfo) {
   if (colLayout['col'] != null) {
     columnLayout += 'col-${colLayout['col']} ';
   }
-  print(columnLayout);
+  // print(columnLayout);
   return columnLayout;
 }
 

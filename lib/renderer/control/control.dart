@@ -9,13 +9,15 @@ import 'package:nebula_modelling/widgets/label.dart';
 import 'package:nebula_modelling/widgets/textfield.dart';
 
 class ControlRenderer extends StatelessWidget {
-  const ControlRenderer({super.key, required this.controlInfo});
+  const ControlRenderer(
+      {super.key, required this.controlInfo, required this.apiClient});
   final controlInfo;
+  final apiClient;
 
   @override
   Widget build(BuildContext context) {
-    print('control:${controlInfo}');
-    print('control:${controlInfo["controlType"]}');
+    // print('control:${controlInfo}');
+    // print('control:${controlInfo["controlType"]}');
     switch (controlInfo['controlType']) {
       case 'avatar':
         return AvatarWidget(
@@ -27,12 +29,9 @@ class ControlRenderer extends StatelessWidget {
         );
       case 'cardcontainer':
         return CardContainerWidget(
-          controlInfo: controlInfo,
-        );
+            controlInfo: controlInfo, apiClient: apiClient);
       case 'container':
-        return ContainerWidget(
-          controlInfo: controlInfo,
-        );
+        return ContainerWidget(controlInfo: controlInfo, apiClient: apiClient);
       case 'icon':
         return IconWidget(
           controlInfo: controlInfo,

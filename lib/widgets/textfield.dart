@@ -37,7 +37,7 @@ class TextFieldWidget extends StatefulWidget {
 class _TextFieldWidgetState extends State<TextFieldWidget> {
   @override
   Widget build(BuildContext context) {
-    print('textfield:${widget.controlInfo["controlType"]}');
+    // print('textfield:${widget.controlInfo["controlType"]}');
 
     return
         // Expanded(child:

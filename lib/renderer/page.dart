@@ -6,7 +6,8 @@ import '../utils/layoutUtils.dart';
 import 'control/control.dart';
 
 class PageRenderer extends StatefulWidget {
-  PageRenderer({super.key});
+  PageRenderer({super.key, this.apiClient});
+  final apiClient;
   var metaData = {
     "children": [
       {
@@ -252,10 +253,22 @@ class PageRenderer extends StatefulWidget {
               "eventId": "userManagementScreen",
               "queryKey": "userManagementScreen",
               "data_bind": ["no-bind"],
-              "path": "cgsgql/Hrpsaas",
-              "handler": "REST",
-              "method": "GET",
-              "query": {"path": "./getAllGQL.ts", "callBack": "getAllGQLEvent"}
+              "onLoad": {
+                "path": "coreapiops/v1/users",
+                "headers": {},
+                "params": {},
+                "handler": "REST",
+                "method": "GET",
+                "response": {
+                  "bindInfo": {
+                    "path": "data.data",
+                    "queryName": "data",
+                    "operationId": "",
+                    "customPath1": "",
+                    "customPath2": ""
+                  },
+                }
+              },
             }
           }
         ]
@@ -271,11 +284,12 @@ class _PageRendererState extends State<PageRenderer> {
 
   dynamic renderPage() {
     for (var control in widget.metaData['children']!) {
-      print('Page:${control}');
+      // print('Page:${control}');
       pageChildren.add(BootstrapCol(
           sizes: buildLayoutColumn(control),
           child: ControlRenderer(
             controlInfo: control,
+            apiClient: widget.apiClient,
           )));
     }
     return pageChildren;

@@ -12,7 +12,7 @@ class ButtonWidget extends StatefulWidget {
 class _ButtonWidgetState extends State<ButtonWidget> {
   @override
   Widget build(BuildContext context) {
-    print('button:${widget.controlInfo["controlType"]}');
+    // print('button:${widget.controlInfo["controlType"]}');
 
     return TextButton(
         onPressed: () {}, child: Text(widget.controlInfo["caption"]));
