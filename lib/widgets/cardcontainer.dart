@@ -146,6 +146,80 @@ class _CardContainerWidgetState extends State<CardContainerWidget> {
     // return json.decode(response.body);
   }
 
+  Future<dynamic> _showMyDialog(BuildContext context) async {
+    print("in _show");
+    return await showDialog<void>(
+      context: context,
+      barrierDismissible: false, // user must tap button!
+      builder: (BuildContext context) {
+        print("in _alert diw");
+
+        return AlertDialog(
+          title: Text('AlertDialog Title'),
+          content: SingleChildScrollView(
+            child: Column(
+              children: <Widget>[
+                Text('This is a demo alert dialog.'),
+                Text('Would you like to approve of this message?'),
+              ],
+            ),
+          ),
+          actions: <Widget>[
+            TextButton(
+              child: Text('Confirm'),
+              onPressed: () {
+                print('Confirmed');
+                Navigator.of(context).pop();
+              },
+            ),
+            TextButton(
+              child: Text('Cancel'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  // Future<void> showConfirmationDialog(BuildContext context) async {
+  //   print("inside dialog");
+  //   Widget cancelButton = TextButton(
+  //     child: Text("Cancel"),
+  //     onPressed: () {
+  //       print("COnfirmation cancel");
+  //     },
+  //   );
+  //   Widget launchButton = TextButton(
+  //     child: Text("Delete"),
+  //     onPressed: () {
+  //       print("COnfirmation Delete");
+  //     },
+  //   );
+
+  //   // set up the AlertDialog
+  //   AlertDialog alert = AlertDialog(
+  //     title: Text("Confirmation Alert"),
+  //     content: Text(
+  //         "Launching this missile will destroy the entire universe. Is this what you intended to do?"),
+  //     actions: [
+  //       cancelButton,
+  //       launchButton,
+  //     ],
+  //   );
+
+  //   // show the dialog
+  //   return showDialog(
+  //     context: context,
+  //     builder: (BuildContext context) {
+  //       print("in alert");
+  //       return alert;
+  //     },
+  //   );
+  // }
+
   @override
   Widget build(BuildContext context) {
     final users = [
@@ -195,6 +269,16 @@ class _CardContainerWidgetState extends State<CardContainerWidget> {
         "Email": "harish@gmail.com"
       },
     ];
+    dynamic onCardMenuClick(selectedMenuInfo) {
+      print(selectedMenuInfo);
+
+      if (selectedMenuInfo['eventInfo'] != null) {
+        if (selectedMenuInfo['eventInfo']['confirmation'] != null) {
+          print(selectedMenuInfo['eventInfo']['confirmation']);
+          // showConfirmationDialog(context);
+        }
+      }
+    }
 
     // print("codeval ${codeVal}");
     if (data == null) {
@@ -240,6 +324,7 @@ class _CardContainerWidgetState extends State<CardContainerWidget> {
             trailing: PopupMenuButton<dynamic>(
               onSelected: (dynamic value) {
                 // if (value == 'block') {
+                // _showMyDialog(context);
                 //   // print("onSelected-block");
                 //   // TODO: Implement block user functionality
                 // } else if (value == 'unblock') {
@@ -257,6 +342,8 @@ class _CardContainerWidgetState extends State<CardContainerWidget> {
                     child: Text(option['desc']),
                     onTap: () {
                       // print(option);
+                      // onCardMenuClick(option);
+                      _showMyDialog(context);
                     },
                   );
                 }).toList();

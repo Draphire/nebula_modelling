@@ -11,6 +11,10 @@ IconData getIconFromIconKey(String iconKey) {
       return Icons.email;
     case 'PhonedeviceStroke':
       return Icons.phone;
+    case 'Search':
+      return Icons.search;
+    case 'UseraddStroke':
+      return Icons.add_box_outlined;
 
     default:
       return Icons.close;

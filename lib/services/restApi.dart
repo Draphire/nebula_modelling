@@ -36,3 +36,12 @@ dynamic doRestApiAction(eventInfo, widget) {
       throw ('Method Not implemented');
   }
 }
+
+String constructRestApiUrl(String givenPath, data, dataBind) {
+  for (var bindInfo in dataBind) {
+    if (bindInfo["destination"] == "url")
+      givenPath.replaceAll(":" + bindInfo["id"], data[bindInfo["id"]]);
+  }
+
+  return givenPath;
+}

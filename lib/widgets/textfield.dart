@@ -3,6 +3,8 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
+import '../utils/iconAdapter.dart';
+
 class TextFieldWidget extends StatefulWidget {
   const TextFieldWidget({super.key, this.controlInfo});
 
@@ -43,9 +45,17 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
         // Expanded(child:
         TextField(
       decoration: InputDecoration(
-          border: OutlineInputBorder(),
-          hintText: widget.controlInfo['placeholder'],
-          label: Text(widget.controlInfo['caption'])),
+        border: OutlineInputBorder(),
+        hintText: widget.controlInfo['placeholder'],
+        label: Text(widget.controlInfo['caption']),
+        prefixIcon: widget.controlInfo['startIcon'] != null
+            ? Icon(
+                getIconFromIconKey(widget.controlInfo['startIcon']['iconKey']))
+            : null,
+        suffixIcon: widget.controlInfo['endIcon'] != null
+            ? Icon(getIconFromIconKey(widget.controlInfo['endIcon']['iconKey']))
+            : null,
+      ),
     );
     // );
   }

@@ -105,7 +105,7 @@ class ApiClient {
     request.headers.addAll(this.headers);
     if (headers != null) {
       request.headers.addAll(headers as Map<String, String>);
-      request.headers.addAll({'Authorization': 'Bearer ${authToken}'!});
+      request.headers.addAll({'Authorization': 'Bearer ${authToken}'});
     }
     if (body != null) {
       request.body = body;
