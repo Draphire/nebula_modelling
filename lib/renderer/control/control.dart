@@ -10,9 +10,15 @@ import 'package:nebula_modelling/widgets/textfield.dart';
 
 class ControlRenderer extends StatelessWidget {
   const ControlRenderer(
-      {super.key, required this.controlInfo, required this.apiClient});
+      {super.key,
+      required this.controlInfo,
+      required this.apiClient,
+      required this.inputData,
+      required this.updateInputData});
   final controlInfo;
   final apiClient;
+  final inputData;
+  final updateInputData;
 
   @override
   Widget build(BuildContext context) {
@@ -22,16 +28,28 @@ class ControlRenderer extends StatelessWidget {
       case 'avatar':
         return AvatarWidget(
           controlInfo: controlInfo,
+          inputData: inputData,
+          updateInputData: updateInputData,
         );
       case 'button':
         return ButtonWidget(
           controlInfo: controlInfo,
+          inputData: inputData,
+          updateInputData: updateInputData,
         );
       case 'cardcontainer':
         return CardContainerWidget(
-            controlInfo: controlInfo, apiClient: apiClient);
+          controlInfo: controlInfo,
+          apiClient: apiClient,
+          inputData: inputData,
+          updateInputData: updateInputData,
+        );
       case 'container':
-        return ContainerWidget(controlInfo: controlInfo, apiClient: apiClient);
+        return ContainerWidget(
+            controlInfo: controlInfo,
+            apiClient: apiClient,
+            inputData: inputData,
+            updateInputData: updateInputData);
       case 'icon':
         return IconWidget(
           controlInfo: controlInfo,
@@ -43,6 +61,8 @@ class ControlRenderer extends StatelessWidget {
       case 'textfield':
         return TextFieldWidget(
           controlInfo: controlInfo,
+          inputData: inputData,
+          updateInputData: updateInputData,
         );
       default:
         return Text('${controlInfo["controlType"]} is not yet supported');

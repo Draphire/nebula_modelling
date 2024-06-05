@@ -4,10 +4,10 @@ import 'package:http/http.dart';
 
 const String _clientId = 'com.nebula.ramco.clients';
 const String _authorizeEndpoint =
-    'https://hrpsaasdemo.ramcouat.com:4602/coresecurityops/connect/authorize';
+    'https://hrpsaasdev.ramcouat.com/coresecurityops/connect/authorize';
 const String _tokenEndpoint =
-    'https://hrpsaasdemo.ramcouat.com:4602/coresecurityops/connect/token';
-const String _redirectUri = 'https://hrpsaasdemo.ramcouat.com:4602/app/saas';
+    'https://hrpsaasdev.ramcouat.com/coresecurityops/connect/token';
+const String _redirectUri = 'https://hrpsaasdev.ramcouat.com/app/saas';
 const identifier = '1kxkbzzxuddqgtwtvovbw';
 const _clientSecret =
     'KJkcK3DqZi6yNo8hdd1lUQsGtd0mbNN9zn0fBLI0wbVsSas6Yteif6Sp7yCoP13D';
@@ -21,7 +21,7 @@ class ApiClient {
 
   Future<String> authClientCredentials(
       {dynamic authorizationEndpoint =
-          ('https://hrpsaasdemo.ramcouat.com:4602/coresecurityops/connect/token'),
+          ('https://hrpsaasdev.ramcouat.com/coresecurityops/connect/token'),
       String identifier = identifier,
       String clientSecret = _clientSecret}) async {
     // print("came here too ${authorizationEndpoint}");
@@ -123,3 +123,25 @@ class ApiClient {
     }
   }
 }
+
+
+  // Future<String> _authClientCredentials(
+  //     Uri authorizationEndpoint, String identifier, String clientSecret) async {
+  //   // print("came here too ${authorizationEndpoint}");
+  //   final response = await http.post(authorizationEndpoint, headers: {
+  //     'Content-Type': 'application/x-www-form-urlencoded'
+  //   }, body: {
+  //     'grant_type': 'client_credentials',
+  //     'client_id': identifier,
+  //     'client_secret': clientSecret
+  //   });
+  //   // print("token");
+  //   // print(response.statusCode);
+  //   if (response.statusCode == 200) {
+  //     final token = jsonDecode(response.body)['access_token'];
+  //     // print('${token}');
+  //     return token;
+  //   } else {
+  //     throw Exception('failed to get token');
+  //   }
+  // }

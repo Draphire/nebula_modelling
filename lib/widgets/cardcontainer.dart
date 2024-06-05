@@ -10,9 +10,15 @@ import '../utils/layoutUtils.dart';
 
 class CardContainerWidget extends StatefulWidget {
   const CardContainerWidget(
-      {super.key, required this.controlInfo, this.apiClient});
+      {super.key,
+      required this.controlInfo,
+      this.apiClient,
+      required this.inputData,
+      required this.updateInputData});
   final controlInfo;
   final apiClient;
+  final inputData;
+  final updateInputData;
 
   @override
   State<CardContainerWidget> createState() => _CardContainerWidgetState();
@@ -118,7 +124,9 @@ class _CardContainerWidgetState extends State<CardContainerWidget> {
     //       'context-role': 'adminrole'
     //     });
     // print("here ${eventInfo['onLoad']}");
-    if (eventInfo['onLoad'] != null) {
+
+    // calls to retrieve some data? disabled for now
+    if (eventInfo['onLoad'] != null && false) {
       dynamic onPageLoadInfo = eventInfo['onLoad'];
       if (onPageLoadInfo['handler'].toString().toLowerCase() == 'rest') {
         // print("here ${eventInfo['onLoad']}");
@@ -133,10 +141,12 @@ class _CardContainerWidgetState extends State<CardContainerWidget> {
       }
     }
 
+    // end of disabled code
+
     // return response;
     // print("authro ${widget.apiClient.authToken}");
     // dynamic response = await http.get(
-    //     Uri.parse("https://hrpsaasdemo.ramcouat.com:4602/coreapiops/v1/users"),
+    //     Uri.parse("https://hrpsaasdemo.ramcouat.com/coreapiops/v1/users"),
     //     headers: {
     //       'context-ou-id': '1',
     //       'context-lang-id': '1',
@@ -147,12 +157,12 @@ class _CardContainerWidgetState extends State<CardContainerWidget> {
   }
 
   Future<dynamic> _showMyDialog(BuildContext context) async {
-    print("in _show");
+    // print("in _show");
     return await showDialog<void>(
       context: context,
       barrierDismissible: false, // user must tap button!
       builder: (BuildContext context) {
-        print("in _alert diw");
+        // print("in _alert diw");
 
         return AlertDialog(
           title: Text('AlertDialog Title'),
@@ -168,7 +178,7 @@ class _CardContainerWidgetState extends State<CardContainerWidget> {
             TextButton(
               child: Text('Confirm'),
               onPressed: () {
-                print('Confirmed');
+                // print('Confirmed');
                 Navigator.of(context).pop();
               },
             ),
@@ -270,12 +280,13 @@ class _CardContainerWidgetState extends State<CardContainerWidget> {
       },
     ];
     dynamic onCardMenuClick(selectedMenuInfo) {
-      print(selectedMenuInfo);
+      // print(selectedMenuInfo);
 
       if (selectedMenuInfo['eventInfo'] != null) {
         if (selectedMenuInfo['eventInfo']['confirmation'] != null) {
-          print(selectedMenuInfo['eventInfo']['confirmation']);
+          // print(selectedMenuInfo['eventInfo']['confirmation']);
           // showConfirmationDialog(context);
+          _showMyDialog(context);
         }
       }
     }
@@ -306,50 +317,66 @@ class _CardContainerWidgetState extends State<CardContainerWidget> {
         // print(cards);
         // print(index);
         return Card(
+          margin: EdgeInsets.only(bottom: 16.0),
           child: ListTile(
-            leading: cards[index]['leading'],
-            //     AvatarWidget(controlInfo: {
-            //   "controlType": "avatar",
-            //   "avatarUrl":
-            //       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8NaQfZLRZPcTPRzyWFAf9LbADkmt3dhyrzjLSy4I&s",
-            // }),
-            title: cards[index]['title'],
-            subtitle: cards[index]['subtitle'],
-            // [
-            //   Text(users[index]['Email']!),
-            //   Text(users[index]['Email']!),
-            //   Text(users[index]['Email']!),
-            //   Text(users[index]['Email']!)
-            // ]),
-            trailing: PopupMenuButton<dynamic>(
-              onSelected: (dynamic value) {
-                // if (value == 'block') {
-                // _showMyDialog(context);
-                //   // print("onSelected-block");
-                //   // TODO: Implement block user functionality
-                // } else if (value == 'unblock') {
-                //   // TODO: Implement unblock user functionality
-                // } else if (value == 'delete') {
-                //   // TODO: Implement delete user functionality
-                // }
-              },
-              itemBuilder: (BuildContext context) {
-                // print("popup ${cards[index]['popupMenu']}");
-                return cards[index]['popupMenu']
-                    .map<PopupMenuItem<dynamic>>((dynamic option) {
-                  return PopupMenuItem<dynamic>(
-                    value: option['code'],
-                    child: Text(option['desc']),
-                    onTap: () {
-                      // print(option);
-                      // onCardMenuClick(option);
-                      _showMyDialog(context);
-                    },
-                  );
-                }).toList();
-              },
-            ),
-          ),
+              horizontalTitleGap: 0,
+              minVerticalPadding: 0,
+              minLeadingWidth: 0,
+              contentPadding: EdgeInsets.all(8.0),
+              leading: cards[index]['leading'],
+              //     AvatarWidget(controlInfo: {
+              //   "controlType": "avatar",
+              //   "avatarUrl":
+              //       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8NaQfZLRZPcTPRzyWFAf9LbADkmt3dhyrzjLSy4I&s",
+              // }),
+              title: cards[index]['title'],
+              // Transform(
+              //   transform: Matrix4.translationValues(-16, 0.0, 0.0),
+              //   child: cards[index]['title'],
+              // ),
+              subtitle: cards[index]['subtitle'],
+              // Transform(
+              //   transform: Matrix4.translationValues(-16, 0.0, 0.0),
+              //   child: cards[index]['subtitle'],
+              // ),
+              // [
+              //   Text(users[index]['Email']!),
+              //   Text(users[index]['Email']!),
+              //   Text(users[index]['Email']!),
+              //   Text(users[index]['Email']!)
+              // ]),
+              trailing: Container(
+                margin: EdgeInsets.only(right: 0),
+                child: PopupMenuButton<dynamic>(
+                  padding: EdgeInsets.zero,
+                  onSelected: (dynamic value) {
+                    // if (value == 'block') {
+                    // _showMyDialog(context);
+                    //   // print("onSelected-block");
+                    //   // TODO: Implement block user functionality
+                    // } else if (value == 'unblock') {
+                    //   // TODO: Implement unblock user functionality
+                    // } else if (value == 'delete') {
+                    //   // TODO: Implement delete user functionality
+                    // }
+                  },
+                  itemBuilder: (BuildContext context) {
+                    // print("popup ${cards[index]['popupMenu']}");
+                    return cards[index]['popupMenu']
+                        .map<PopupMenuItem<dynamic>>((dynamic option) {
+                      return PopupMenuItem<dynamic>(
+                        value: option['code'],
+                        child: Text(option['desc']),
+                        onTap: () {
+                          // print(option);
+                          // onCardMenuClick(option);
+                          _showMyDialog(context);
+                        },
+                      );
+                    }).toList();
+                  },
+                ),
+              )),
         );
       },
     ));

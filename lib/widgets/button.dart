@@ -2,9 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:nebula_modelling/utils/iconAdapter.dart';
 
 class ButtonWidget extends StatefulWidget {
-  const ButtonWidget({super.key, this.controlInfo});
+  const ButtonWidget(
+      {super.key,
+      this.controlInfo,
+      required this.inputData,
+      required this.updateInputData});
 
   final controlInfo;
+  final inputData;
+  final updateInputData;
 
   @override
   State<ButtonWidget> createState() => _ButtonWidgetState();
@@ -17,24 +23,29 @@ class _ButtonWidgetState extends State<ButtonWidget> {
 
     List<Widget> buttonChildren = [];
     if (widget.controlInfo['startIcon'] != null) {
-      buttonChildren.add(
-          Icon(getIconFromIconKey(widget.controlInfo['startIcon']['iconKey'])));
+      buttonChildren.add(Icon(
+        getIconFromIconKey(widget.controlInfo['startIcon']['iconKey']),
+        color: Colors.black,
+      ));
     }
     if (widget.controlInfo['caption'] != null) {
       buttonChildren.add(Text(widget.controlInfo['caption']));
     }
     if (widget.controlInfo['endIcon'] != null) {
-      buttonChildren.add(
-          Icon(getIconFromIconKey(widget.controlInfo['endIcon']['iconKey'])));
+      buttonChildren.add(Icon(
+        getIconFromIconKey(widget.controlInfo['endIcon']['iconKey']),
+        // color: Color.fromARGB(255, 10, 10, 10),
+      ));
     }
 
     return TextButton(
       onPressed: () {
         // Action to perform when button is pressed
+        // print(widget.inputData);
       },
       style: TextButton.styleFrom(
         backgroundColor: Color.fromARGB(
-            255, 237, 244, 250), // Set the background color of the button
+            255, 194, 227, 255), // Set the background color of the button
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

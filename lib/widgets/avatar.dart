@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 
 class AvatarWidget extends StatelessWidget {
-  const AvatarWidget({super.key, required this.controlInfo});
+  const AvatarWidget(
+      {super.key,
+      required this.controlInfo,
+      required this.inputData,
+      required this.updateInputData});
   final controlInfo;
+  final inputData;
+  final updateInputData;
 
   @override
   Widget build(BuildContext context) {

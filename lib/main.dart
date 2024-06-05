@@ -7,19 +7,18 @@ import 'package:nebula_modelling/services/apiClient.dart';
 import 'package:nebula_modelling/styles/themes.dart';
 import 'package:http/http.dart' as http;
 
-void main() {
-  runApp(const MyApp());
-}
+import 'package:provider/provider.dart';
 
-const String _clientId = 'com.nebula.ramco.clients';
-const String _authorizeEndpoint =
-    'https://hrpsaasdemo.ramcouat.com:4602/coresecurityops/connect/authorize';
-const String _tokenEndpoint =
-    'https://hrpsaasdemo.ramcouat.com:4602/coresecurityops/connect/token';
-const String _redirectUri = 'https://hrpsaasdemo.ramcouat.com:4602/app/saas';
-const identifier = '1kxkbzzxuddqgtwtvovbw';
-const _clientSecret =
-    'KJkcK3DqZi6yNo8hdd1lUQsGtd0mbNN9zn0fBLI0wbVsSas6Yteif6Sp7yCoP13D';
+import 'provider/metadataProvider.dart';
+
+void main() {
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => MetadataProvider(),
+      child: const MyApp(),
+    ),
+  );
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -39,7 +38,7 @@ class NebulaBaseComponent extends StatefulWidget {
   NebulaBaseComponent({super.key, required this.appTitle});
   final String appTitle;
   final ApiClient apiClient =
-      new ApiClient(baseUrl: "https://hrpsaasdemo.ramcouat.com:4602", headers: {
+      new ApiClient(baseUrl: "https://hrpsaasdev.ramcouat.com", headers: {
     'Content-Type': 'application/json',
   });
 
@@ -49,38 +48,17 @@ class NebulaBaseComponent extends StatefulWidget {
 
 class _NebulaBaseComponentState extends State<NebulaBaseComponent> {
   dynamic authToken;
-  Future<String> _authClientCredentials(
-      Uri authorizationEndpoint, String identifier, String clientSecret) async {
-    // print("came here too ${authorizationEndpoint}");
-    final response = await http.post(authorizationEndpoint, headers: {
-      'Content-Type': 'application/x-www-form-urlencoded'
-    }, body: {
-      'grant_type': 'client_credentials',
-      'client_id': identifier,
-      'client_secret': clientSecret
-    });
-    // print("token");
-    // print(response.statusCode);
-    if (response.statusCode == 200) {
-      final token = jsonDecode(response.body)['access_token'];
-      // print('${token}');
-      return token;
-    } else {
-      throw Exception('failed to get token');
-    }
-  }
 
   void authenticate() {
     // print("came here");
-    _authClientCredentials(Uri.parse(_tokenEndpoint), identifier, _clientSecret)
-        .then((value) => {
-              setState(
-                () {
-                  // print('token ${value}');
-                  authToken = value;
-                },
-              )
-            });
+    // widget.apiClient.authClientCredentials().then((value) => {
+    //       setState(
+    //         () {
+    //           // print('token ${value}');
+    //           authToken = value;
+    //         },
+    //       )
+    //     });
 
     // print(authToken.toString());
   }
@@ -88,8 +66,132 @@ class _NebulaBaseComponentState extends State<NebulaBaseComponent> {
   @override
   void initState() {
     super.initState();
+    // final metadataProvider =
+    //     Provider.of<MetadataProvider>(context, listen: false);
+
+    // metadataProvider.setMetadata({
+    //   "children": [
+    //     {
+    //       "controlType": "container",
+    //       "layout": {
+    //         "colLayout": {
+    //           "xl": 12,
+    //           "lg": 12,
+    //           "md": 12,
+    //           "sm": 12,
+    //           "xs": 12,
+    //         }
+    //       },
+    //       "children": [
+    //         {
+    //           "controlType": "label",
+    //           "caption": "User Management",
+    //           "type": "h1",
+    //           "layout": {
+    //             "colLayout": {
+    //               "xl": 6,
+    //               "lg": 6,
+    //               "md": 6,
+    //               "sm": 8,
+    //               "xs": 8,
+    //             },
+    //             "spacing": {"mb": 2, "mt": 2}
+    //           }
+    //         },
+    //         {
+    //           "controlType": "button",
+    //           "caption": "Add",
+    //           "endIcon": {"controlType": "icon", "iconKey": "UseraddStroke"},
+    //           "layout": {
+    //             "colLayout": {
+    //               "xl": 12,
+    //               "lg": 12,
+    //               "md": 4,
+    //               "sm": 4,
+    //               "xs": 4,
+    //             }
+    //           }
+    //         },
+    //         {
+    //           "controlType": "textfield",
+    //           "caption": "Search",
+    //           "placeholder": "Search user",
+    //           "id": "search",
+    //           "layout": {
+    //             "colLayout": {
+    //               "xl": 12,
+    //               "lg": 12,
+    //               "md": 12,
+    //               "sm": 12,
+    //               "xs": 12,
+    //             }
+    //           }
+    //         },
+    //         {
+    //           "controlType": "textfield",
+    //           "caption": "Username",
+    //           "placeholder": "username",
+    //           "id": "Username",
+    //           "layout": {
+    //             "colLayout": {
+    //               "xl": 12,
+    //               "lg": 12,
+    //               "md": 12,
+    //               "sm": 12,
+    //               "xs": 12,
+    //             }
+    //           }
+    //         },
+    //         {
+    //           "controlType": "textfield",
+    //           "caption": "Userdescription",
+    //           "placeholder": "User description",
+    //           "id": "Userdescription",
+    //           "layout": {
+    //             "colLayout": {
+    //               "xl": 12,
+    //               "lg": 12,
+    //               "md": 12,
+    //               "sm": 12,
+    //               "xs": 12,
+    //             }
+    //           }
+    //         },
+    //         {
+    //           "controlType": "textfield",
+    //           "caption": "Email",
+    //           "placeholder": "Email",
+    //           "id": "Email",
+    //           "layout": {
+    //             "colLayout": {
+    //               "xl": 12,
+    //               "lg": 12,
+    //               "md": 12,
+    //               "sm": 12,
+    //               "xs": 12,
+    //             }
+    //           }
+    //         },
+    //         {
+    //           "controlType": "button",
+    //           "caption": "Add",
+    //           "endIcon": {"controlType": "icon", "iconKey": "UseraddStroke"},
+    //           "layout": {
+    //             "colLayout": {
+    //               "xl": 12,
+    //               "lg": 12,
+    //               "md": 4,
+    //               "sm": 6,
+    //               "xs": 2,
+    //             }
+    //           }
+    //         },
+    //       ]
+    //     },
+    //   ]
+    // });
     // widget.apiClient = new ApiClient(
-    //     baseUrl: "https://hrpsaasdemo.ramcouat.com:4602",
+    //     baseUrl: "https://hrpsaasdemo.ramcouat.com",
     //     headers: {
     //       'Content-Type': 'application/json',
     //     });
@@ -101,53 +203,178 @@ class _NebulaBaseComponentState extends State<NebulaBaseComponent> {
 
   @override
   Widget build(BuildContext context) {
-    if (authToken == null) {
-      dynamic token = widget.apiClient.authClientCredentials().then((value) {
-        setState(() {
-          authToken = value;
-        });
-      });
-      // print('2-${authToken} ${token}');
+    //  final metadataProvider = Provider.of<MetadataProvider>(context, listen: true);
+    // Example of setting metadata
+    // final metadataProvider =
+    //     Provider.of<MetadataProvider>(context, listen: true);
+    // metadataProvider.setMetadata({
+    //   "children": [
+    //     {
+    //       "controlType": "container",
+    //       "layout": {
+    //         "colLayout": {
+    //           "xl": 12,
+    //           "lg": 12,
+    //           "md": 12,
+    //           "sm": 12,
+    //           "xs": 12,
+    //         }
+    //       },
+    //       "children": [
+    //         {
+    //           "controlType": "label",
+    //           "caption": "User Management",
+    //           "type": "h1",
+    //           "layout": {
+    //             "colLayout": {
+    //               "xl": 6,
+    //               "lg": 6,
+    //               "md": 6,
+    //               "sm": 8,
+    //               "xs": 8,
+    //             },
+    //             "spacing": {"mb": 2, "mt": 2}
+    //           }
+    //         },
+    //         {
+    //           "controlType": "button",
+    //           "caption": "Add",
+    //           "endIcon": {"controlType": "icon", "iconKey": "UseraddStroke"},
+    //           "layout": {
+    //             "colLayout": {
+    //               "xl": 12,
+    //               "lg": 12,
+    //               "md": 4,
+    //               "sm": 4,
+    //               "xs": 4,
+    //             }
+    //           }
+    //         },
+    //         {
+    //           "controlType": "textfield",
+    //           "caption": "Search",
+    //           "placeholder": "Search user",
+    //           "id": "search",
+    //           "layout": {
+    //             "colLayout": {
+    //               "xl": 12,
+    //               "lg": 12,
+    //               "md": 12,
+    //               "sm": 12,
+    //               "xs": 12,
+    //             }
+    //           }
+    //         },
+    //         {
+    //           "controlType": "textfield",
+    //           "caption": "Username",
+    //           "placeholder": "username",
+    //           "id": "Username",
+    //           "layout": {
+    //             "colLayout": {
+    //               "xl": 12,
+    //               "lg": 12,
+    //               "md": 12,
+    //               "sm": 12,
+    //               "xs": 12,
+    //             }
+    //           }
+    //         },
+    //         {
+    //           "controlType": "textfield",
+    //           "caption": "Userdescription",
+    //           "placeholder": "User description",
+    //           "id": "Userdescription",
+    //           "layout": {
+    //             "colLayout": {
+    //               "xl": 12,
+    //               "lg": 12,
+    //               "md": 12,
+    //               "sm": 12,
+    //               "xs": 12,
+    //             }
+    //           }
+    //         },
+    //         {
+    //           "controlType": "textfield",
+    //           "caption": "Email",
+    //           "placeholder": "Email",
+    //           "id": "Email",
+    //           "layout": {
+    //             "colLayout": {
+    //               "xl": 12,
+    //               "lg": 12,
+    //               "md": 12,
+    //               "sm": 12,
+    //               "xs": 12,
+    //             }
+    //           }
+    //         },
+    //         {
+    //           "controlType": "button",
+    //           "caption": "Add",
+    //           "endIcon": {"controlType": "icon", "iconKey": "UseraddStroke"},
+    //           "layout": {
+    //             "colLayout": {
+    //               "xl": 12,
+    //               "lg": 12,
+    //               "md": 4,
+    //               "sm": 6,
+    //               "xs": 2,
+    //             }
+    //           }
+    //         },
+    //       ]
+    //     },
+    //   ]
+    // });
+    // // if (authToken == null) {
+    //   dynamic token = widget.apiClient.authClientCredentials().then((value) {
+    //     setState(() {
+    //       authToken = value;
+    //     });
+    //   });
+    //   // print('2-${authToken} ${token}');
 
-      return Center(
-          child: CircularProgressIndicator(
-        backgroundColor: Colors.white,
-        strokeWidth: 2.0,
-      ));
-    } else {
-      return Scaffold(
-        appBar: AppBar(
-          title: Text(widget.appTitle),
-        ),
-        body: SingleChildScrollView(
-          child: BootstrapContainer(
-            children: [
-              PageRenderer(
-                apiClient: widget.apiClient,
-              )
-            ]
+    //   return Center(
+    //       child: CircularProgressIndicator(
+    //     backgroundColor: Colors.white,
+    //     strokeWidth: 2.0,
+    //   ));
+    // } else {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.appTitle),
+      ),
+      body: SingleChildScrollView(
+        child: BootstrapContainer(
+          children: [
+            PageRenderer(
+              apiClient: widget.apiClient,
+            )
+          ]
 
-            //   BootstrapRow(
-            //     height: 60,
-            //     children: <BootstrapCol>[
-            //       BootstrapCol(
-            //         sizes: 'col-6',
-            //         child: Text(
-            //           'col 2 of 2',
-            //         ),
-            //       ),
-            //       BootstrapCol(
-            //         sizes: 'col-6',
-            //         child: Text(
-            //           'col 2 of 2',
-            //         ),
-            //       ),
-            //     ],
-            //   ),
-            ,
-          ),
+          //   BootstrapRow(
+          //     height: 60,
+          //     children: <BootstrapCol>[
+          //       BootstrapCol(
+          //         sizes: 'col-6',
+          //         child: Text(
+          //           'col 2 of 2',
+          //         ),
+          //       ),
+          //       BootstrapCol(
+          //         sizes: 'col-6',
+          //         child: Text(
+          //           'col 2 of 2',
+          //         ),
+          //       ),
+          //     ],
+          //   ),
+          ,
         ),
-      );
-    }
+      ),
+    );
   }
+  // }
 }
