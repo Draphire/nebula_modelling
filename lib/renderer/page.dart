@@ -3,277 +3,20 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_bootstrap/flutter_bootstrap.dart';
 import 'package:nebula_modelling/model/pageMetaData.dart';
 import 'package:nebula_modelling/provider/metadataProvider.dart';
-import 'package:provider/provider.dart';
+// import 'package:provider/provider.dart';
 
 import '../utils/layoutUtils.dart';
 import 'control/control.dart';
 
 class PageRenderer extends StatefulWidget {
-  PageRenderer({super.key, this.apiClient});
+  final dynamic metadata;
   final apiClient;
 
-  // var metaData = {
-  //   "children": [
-  //     {
-  //       "controlType": "container",
-  //       "layout": {
-  //         "colLayout": {
-  //           "xl": 12,
-  //           "lg": 12,
-  //           "md": 12,
-  //           "sm": 12,
-  //           "xs": 12,
-  //         }
-  //       },
-  //       "children": [
-  //         {
-  //           "controlType": "label",
-  //           "caption": "User Management",
-  //           "type": "h1",
-  //           "layout": {
-  //             "colLayout": {
-  //               "xl": 6,
-  //               "lg": 6,
-  //               "md": 6,
-  //               "sm": 8,
-  //               "xs": 8,
-  //             },
-  //             "spacing": {"mb": 2, "mt": 2}
-  //           }
-  //         },
-  //         {
-  //           "controlType": "button",
-  //           "caption": "Add",
-  //           "endIcon": {"controlType": "icon", "iconKey": "UseraddStroke"},
-  //           "layout": {
-  //             "colLayout": {
-  //               "xl": 12,
-  //               "lg": 12,
-  //               "md": 4,
-  //               "sm": 4,
-  //               "xs": 4,
-  //             }
-  //           }
-  //         },
-  //         {
-  //           "controlType": "textfield",
-  //           "caption": "Search",
-  //           "placeholder": "Search user",
-  //           "id": "search",
-  //           // "endIcon": {"controlType": "icon", "iconKey": "Search"},
-  //           "layout": {
-  //             "colLayout": {
-  //               "xl": 12,
-  //               "lg": 12,
-  //               "md": 12,
-  //               "sm": 12,
-  //               "xs": 12,
-  //             }
-  //           }
-  //         },
-  //         {
-  //           "controlType": "textfield",
-  //           "caption": "Username",
-  //           "placeholder": "username",
-  //           "id": "Username",
-  //           // "endIcon": {"controlType": "icon", "iconKey": "Search"},
-  //           "layout": {
-  //             "colLayout": {
-  //               "xl": 12,
-  //               "lg": 12,
-  //               "md": 12,
-  //               "sm": 12,
-  //               "xs": 12,
-  //             }
-  //           }
-  //         },
-  //         {
-  //           "controlType": "textfield",
-  //           "caption": "Userdescription",
-  //           "placeholder": "User description",
-  //           "id": "Userdescription",
-  //           // "endIcon": {"controlType": "icon", "iconKey": "Search"},
-  //           "layout": {
-  //             "colLayout": {
-  //               "xl": 12,
-  //               "lg": 12,
-  //               "md": 12,
-  //               "sm": 12,
-  //               "xs": 12,
-  //             }
-  //           }
-  //         },
-  //         {
-  //           "controlType": "textfield",
-  //           "caption": "Email",
-  //           "placeholder": "Email",
-  //           "id": "Email",
-  //           // "endIcon": {"controlType": "icon", "iconKey": "Search"},
-  //           "layout": {
-  //             "colLayout": {
-  //               "xl": 12,
-  //               "lg": 12,
-  //               "md": 12,
-  //               "sm": 12,
-  //               "xs": 12,
-  //             }
-  //           }
-  //         },
-  //         {
-  //           "controlType": "button",
-  //           "caption": "Add",
-  //           "endIcon": {"controlType": "icon", "iconKey": "UseraddStroke"},
-  //           "layout": {
-  //             "colLayout": {
-  //               "xl": 12,
-  //               "lg": 12,
-  //               "md": 4,
-  //               "sm": 6,
-  //               "xs": 2,
-  //             }
-  //           }
-  //         },
-  //         // {
-  //         //   "controlType": "cardcontainer",
-  //         //   "numberOfCardsInRow": 4,
-  //         //   "id": "userCardContainer",
-  //         //   "template": [
-  //         //     {
-  //         //       "containerType": "cardcontainer",
-  //         //       "templateId": "userCardBody",
-  //         //       "header": {
-  //         //         "title": [
-  //         //           {"controlType": "label", "id": "Userdescription"}
-  //         //         ],
-  //         //         "leading": [
-  //         //           {
-  //         //             "controlType": "avatar",
-  //         //             "layout": {
-  //         //               "colLayout": {"sm": 5, "col": 5}
-  //         //             },
-  //         //             "avatarUrl":
-  //         //                 "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8NaQfZLRZPcTPRzyWFAf9LbADkmt3dhyrzjLSy4I&s"
-  //         //           }
-  //         //         ],
-  //         //         "optionsIconKey": "KebabmenuStroke",
-  //         //         "className": "",
-  //         //         "menu": {
-  //         //           "children": [
-  //         //             {
-  //         //               "code": "manageAccess",
-  //         //               "desc": "ManageAccess",
-  //         //               "icon": "EditFilled",
-  //         //               "eventInfo": {
-  //         //                 "eventId": "userManagementManageScreen",
-  //         //                 "queryKey": "userManagementManageScreen",
-  //         //                 "data_bind": ["paysetEditCode"],
-  //         //                 "path": "cgsgql/Hrpsaas",
-  //         //                 "handler": "REST",
-  //         //                 "method": "QUERY",
-  //         //                 "action": "click",
-  //         //                 "query": {
-  //         //                   "path": "./getAllGQL.ts",
-  //         //                   "callBack": "getAllGQLEvent"
-  //         //                 }
-  //         //               }
-  //         //             },
-  //         //             {
-  //         //               "code": "del",
-  //         //               "desc": "Delete User",
-  //         //               "icon": "DeleteFilled",
-  //         //               "eventInfo": {
-  //         //                 "eventId": "userManagementDeleteScreen",
-  //         //                 "queryKey": "userDelete_mutation",
-  //         //                 "confirmation": {
-  //         //                   "confirmationType": "deleteConfirmation",
-  //         //                   "message":
-  //         //                       "Are you sure that you want to Delete this User?",
-  //         //                   "id": "deleteUserConfirmation"
-  //         //                 },
-  //         //                 "data_bind": [
-  //         //                   {
-  //         //                     "id": "Username",
-  //         //                     "source": "cardData",
-  //         //                     "destination": "url",
-  //         //                   }
-  //         //                 ],
-  //         //                 "path": "/Users/:Username",
-  //         //                 "handler": "REST",
-  //         //                 "method": "DELETE",
-  //         //                 "refreshQueryKey": "userManagementScreen",
-  //         //                 "response": {
-  //         //                   "responseAction": "Alert",
-  //         //                   "statusField": "paysetAttributesStatusOut",
-  //         //                   "bind": {
-  //         //                     "path":
-  //         //                         "data.paysetAttribute.paysetAttributesStatusOut",
-  //         //                     "queryName": "paysetAttribute",
-  //         //                     "operationId": "",
-  //         //                     "customPath1": "",
-  //         //                     "customPath2": ""
-  //         //                   },
-  //         //                   "success": {"message": "User deleted successfully"},
-  //         //                   "error": {"message": "Error deleting user"}
-  //         //                 }
-  //         //               }
-  //         //             }
-  //         //           ],
-  //         //           "className": ""
-  //         //         }
-  //         //       },
-  //         //       "body": {
-  //         //         "className": "wd-100",
-  //         //         "children": [
-  //         //           {
-  //         //             "controlType": "label",
-  //         //             "id": "Username",
-  //         //             "type": "para",
-  //         //             "className": "font-s grey2 mb-one-s"
-  //         //           },
-  //         //           {
-  //         //             "controlType": "label",
-  //         //             "id": "Email",
-  //         //             "type": "para",
-  //         //             "className": "font-s grey2"
-  //         //           }
-  //         //         ]
-  //         //       },
-  //         //       "footer": {"children": []}
-  //         //     }
-  //         //   ],
-  //         //   "bindInfo": {
-  //         //     "path": "data.data",
-  //         //     "queryName": "data",
-  //         //     "operationId": "",
-  //         //     "customPath1": "",
-  //         //     "customPath2": ""
-  //         //   },
-  //         //   "eventInfo": {
-  //         //     "eventId": "userManagementScreen",
-  //         //     "queryKey": "userManagementScreen",
-  //         //     "data_bind": ["no-bind"],
-  //         //     "onLoad": {
-  //         //       "path": "coreapiops/v1/users",
-  //         //       "headers": {},
-  //         //       "params": {},
-  //         //       "handler": "REST",
-  //         //       "method": "GET",
-  //         //       "response": {
-  //         //         "bindInfo": {
-  //         //           "path": "data.data",
-  //         //           "queryName": "data",
-  //         //           "operationId": "",
-  //         //           "customPath1": "",
-  //         //           "customPath2": ""
-  //         //         },
-  //         //       }
-  //         //     },
-  //         //   }
-  //         // }
-  //       ]
-  //     },
-  //   ]
-  // };
+  PageRenderer({
+    required this.metadata,
+    required this.apiClient,
+  });
+
   @override
   State<PageRenderer> createState() => _PageRendererState();
 }
@@ -283,41 +26,41 @@ class _PageRendererState extends State<PageRenderer> {
   dynamic inputData = {};
 
   void updateInputData(dynamic newData) {
-    // update method needs to be changed to avoid rerendering UIDL
-    print(
-      "in updater ${newData}",
-    );
-    // if (newData != null) {
-    //   setState(() {
-    //     inputData.addAll(newData);
-    //   });
-    // }
+    print("in updater $newData");
+    setState(() {
+      inputData.addAll(newData);
+    });
   }
 
   dynamic renderPage(dynamic metaData) {
-    // for (var control in metaData.children!) {
-    // print('Page:${control}');
-    // pageChildren.add(
+    if (metaData == null || metaData['children'] == null) {
+      return BootstrapCol(
+        sizes: 'col-12',
+        child: Text('No metadata available'),
+      );
+    }
+
+    // List<BootstrapCol> children = [];
+    // for (var control in metaData['children']) {
+    // children.add(
     return BootstrapCol(
-        sizes: buildLayoutColumn(metaData),
-        child: ControlRenderer(
-            controlInfo: metaData,
-            apiClient: widget.apiClient,
-            inputData: inputData,
-            updateInputData: updateInputData));
-    // );
+      sizes: buildLayoutColumn(metaData),
+      child: ControlRenderer(
+        controlInfo: metaData,
+        apiClient: widget.apiClient,
+        inputData: inputData,
+        updateInputData: updateInputData,
+      ),
+      // ),
+    );
     // }
-    // return pageChildren;
+    // return children;
   }
 
   @override
   Widget build(BuildContext context) {
-    final metaData = context.watch<MetadataProvider>().pageMetadata.metaData;
-
     return BootstrapRow(
-      // mainAxisAlignment: MainAxisAlignment.start,
-      // children: [Text('hellp')],
-      children: [renderPage(metaData)],
+      children: [renderPage(widget.metadata)],
     );
   }
 }
