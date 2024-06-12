@@ -63,39 +63,51 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
         widget.controller?.text =
             currentValue.isNotEmpty ? currentValue : defaultValue;
 
-        return SizedBox(
-          // height: height, // Set the height here
-          // width: width,
-          // constraints: BoxConstraints(maxWidth: double.infinity),
-          child: TextField(
-            // maxLines: null,
-            // minLines: null,
-            // expands: true,
-            controller: widget.controller,
-            onChanged: (value) {
-              if (_debounce?.isActive ?? false) _debounce?.cancel();
-              _debounce =
-                  Timer(Duration(milliseconds: widget.debounceTime), () {
-                dynamic newData = {
-                  widget.controlInfo['id']: value,
-                };
-                viewModel.updateComponent(
-                    widget.controlInfo['id'], {'value': value});
-              });
-            },
-            decoration: InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: widget.controlInfo['placeholder'],
-              label: Text(parsedCaption),
-              prefixIcon: widget.controlInfo['startIcon'] != null
-                  ? Icon(getIconFromIconKey(
-                      widget.controlInfo['startIcon']['iconKey']))
-                  : null,
-              suffixIcon: widget.controlInfo['endIcon'] != null
-                  ? Icon(getIconFromIconKey(
-                      widget.controlInfo['endIcon']['iconKey']))
-                  : null,
-            ),
+        return Padding(
+          padding: const EdgeInsets.symmetric(
+              vertical: 8.0), // Add minimum padding on top and bottom
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              if (parsedCaption.isNotEmpty)
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 8.0),
+                  child: Text(
+                    parsedCaption,
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  ),
+                ),
+              SizedBox(
+                // width: width,
+                child: TextField(
+                  controller: widget.controller,
+                  onChanged: (value) {
+                    if (_debounce?.isActive ?? false) _debounce?.cancel();
+                    _debounce =
+                        Timer(Duration(milliseconds: widget.debounceTime), () {
+                      dynamic newData = {
+                        widget.controlInfo['id']: value,
+                      };
+                      viewModel.updateComponent(
+                          widget.controlInfo['id'], {'value': value});
+                    });
+                  },
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: widget.controlInfo['placeholder'],
+                    label: Text(parsedCaption),
+                    prefixIcon: widget.controlInfo['startIcon'] != null
+                        ? Icon(getIconFromIconKey(
+                            widget.controlInfo['startIcon']['iconKey']))
+                        : null,
+                    suffixIcon: widget.controlInfo['endIcon'] != null
+                        ? Icon(getIconFromIconKey(
+                            widget.controlInfo['endIcon']['iconKey']))
+                        : null,
+                  ),
+                ),
+              ),
+            ],
           ),
         );
       },

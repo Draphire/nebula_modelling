@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:nebula_modelling/widgets/datePickerWidget.dart';
+import 'package:nebula_modelling/widgets/numericInput.dart';
+import 'package:nebula_modelling/widgets/timePickerWidget.dart';
 import 'package:nebula_modelling/widgets/avatar.dart';
 import 'package:nebula_modelling/widgets/button.dart';
 import 'package:nebula_modelling/widgets/cardcontainer.dart';
@@ -90,6 +93,24 @@ class ControlRenderer extends StatelessWidget {
         return ColumnWidget(
           controlInfo: controlInfo,
           apiClient: apiClient,
+          inputData: inputData,
+          updateInputData: updateInputData,
+        );
+      case 'datePicker':
+        return DatePickerWidget(
+          controlInfo: controlInfo,
+          inputData: inputData,
+          updateInputData: updateInputData,
+        );
+      case 'timePicker':
+        return TimePickerWidget(
+          controlInfo: controlInfo,
+          inputData: inputData,
+          updateInputData: updateInputData,
+        );
+      case 'numeric':
+        return NumericInputWidget(
+          controlInfo: controlInfo,
           inputData: inputData,
           updateInputData: updateInputData,
         );
