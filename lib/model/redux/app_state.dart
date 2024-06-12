@@ -87,137 +87,668 @@ class PageDetails {
   });
 
   PageDetails.initialState()
-      : metaData = {
-          "controlType": "container",
-          "containerType": "fluid",
-          "styles": {"backgroundColor": ""},
-          "id": "ID1713440892954",
-          "layout": {
-            "colLayout": {
-              "lg": {"col": "12", "height": "200"}
-            }
-          },
-          "children": [
-            {
-              "controlType": "container",
-              "styles": {"backgroundColor": ""},
-              "layout": {
-                "colLayout": {
-                  "lg": {"col": "12", "height": "200"}
-                }
-              },
-              "children": [
-                {
-                  "caption":
-                      "{{testadithi.data.data.fetchBackupEmp.0.backupEmployeeName}}",
-                  "controlType": "textfield",
-                  "hideCaption": false,
-                  "layout": {
-                    "colLayout": {
-                      "lg": {"col": 2, "height": "200"}
-                    }
-                  },
-                  "size": "small",
-                  "mandatory": false,
-                  "variant": "Standard",
-                  "value": "Hello",
-                  "disabled": false,
-                  "visibility": true,
-                  "isReadonly": false,
-                  "uiTask": false,
-                  "enableInheritWidth": false,
-                  "isRVW": false,
-                  "error": false,
-                  "success": false,
-                  "id": "ID1713519951416271",
-                  "isDragging": false,
-                  "selectedComponentId": "",
-                  "componentDropped": [],
-                  "index": 0,
-                  "events": [
-                    {
-                      "event": {
-                        "eventId": "onChange",
-                        "actionId": "show-alert",
-                        "message": "Hello",
-                        "alertType": "warning"
-                      },
-                      "target": "component",
-                      "sourceId": "ID1713519951416271",
-                      "index": 0,
-                      "pageId": "2bf8a371-9207-4b9c-bac2-d30a05fbd6ad",
-                      "appId": "3180d666-cf1c-4f54-9410-13a820917fe4",
-                      "name": "onChange"
-                    }
-                  ]
+      : metaData = [
+          {
+            "controlType": "container",
+            "containerType": "fluid",
+            "styles": {"backgroundColor": ""},
+            "id": "ID1715841290250",
+            "layout": {
+              "colLayout": {
+                "lg": {"col": "12", "height": "200"}
+              }
+            },
+            "children": [
+              {
+                "controlType": "row",
+                "styles": {"backgroundColor": ""},
+                "layout": {
+                  "colLayout": {
+                    "lg": {"col": "12", "height": "200"}
+                  }
                 },
-                {
-                  "caption": "Submit",
-                  "controlType": "button",
-                  "hideCaption": false,
-                  "layout": {
-                    "colLayout": {
-                      "lg": {"col": 2, "height": "200"}
-                    }
-                  },
-                  "disabled": false,
-                  "visibility": true,
-                  "variant": "contained",
-                  "size": "xsmall",
-                  "color": "primary",
-                  "tooltip": "Tooltip",
-                  "id": "ID171351995652011",
-                  "isDragging": false,
-                  "selectedComponentId": "",
-                  "componentDropped": [],
-                  "index": 1,
-                  "events": [
-                    {
-                      "event": {
-                        "eventId": "onClick",
-                        "actionId": "switch-page",
-                        "pageId": "5fbbbaad-a04b-47bb-9d41-16b06fa99a46"
-                      },
-                      "target": "component",
-                      "sourceId": "ID171351995652011",
-                      "index": 0,
-                      "pageId": "2bf8a371-9207-4b9c-bac2-d30a05fbd6ad",
-                      "appId": "3180d666-cf1c-4f54-9410-13a820917fe4",
-                      "name": "onClick"
+                "children": [
+                  {
+                    "controlType": "column",
+                    "styles": {"backgroundColor": ""},
+                    "layout": {
+                      "colLayout": {
+                        "lg": {"col": "12", "height": "200"}
+                      }
                     },
-                    {
-                      "event": {
-                        "eventId": "onClick",
-                        "actionId": "show-alert",
-                        "message": "Hello",
-                        "alertType": "warning"
+                    "children": [
+                      {
+                        "caption": "Static Caption",
+                        "controlType": "textarea",
+                        "hideCaption": false,
+                        "size": "small",
+                        "visibility": true,
+                        "mandatory": false,
+                        "value": "Static Contentsdsdsd",
+                        "layout": {
+                          "colLayout": {
+                            "lg": {"col": 2, "height": "200"}
+                          }
+                        },
+                        "rows": 12,
+                        "cols": 12,
+                        "uiTask": false,
+                        "className": "",
+                        "disabled": false,
+                        "hintText": "",
+                        "placeholder": "",
+                        "error": false,
+                        "success": false,
+                        "isReadonly": false,
+                        "enableResize": false,
+                        "width": "100%",
+                        "id": "ID1715842061879598",
+                        "isDragging": false,
+                        "selectedComponentId": "",
+                        "componentDropped": [],
+                        "index": 0,
+                        "accept": "Component",
+                        "resetControlData": true
                       },
-                      "target": "component",
-                      "sourceId": "ID171351995652011",
-                      "index": 1,
-                      "pageId": "2bf8a371-9207-4b9c-bac2-d30a05fbd6ad",
-                      "appId": "3180d666-cf1c-4f54-9410-13a820917fe4",
-                      "name": "onClick"
-                    }
-                  ]
-                }
-              ],
-              "id": "ID1713440893227",
-              "currentLayout": "DESKTOP",
-              "isDragging": false,
-              "selectedComponentId": "",
-              "componentDropped": [],
-              "dropPosition": {"x": 94, "y": 96},
-              "index": 0
-            }
-          ],
-          "currentLayout": "DESKTOP",
-          "isDragging": false,
-          "selectedComponentId": "",
-          "componentDropped": [],
-          "dropPosition": {"x": 84, "y": 78},
-          "index": 0
-        },
+                      {
+                        "caption":
+                            "{{testadithi.data.data.fetchBackupEmp.0.backupEmployeeName}}",
+                        "controlType": "textarea",
+                        "hideCaption": false,
+                        "size": "small",
+                        "visibility": true,
+                        "mandatory": false,
+                        "value":
+                            "{{testadithi.data.data.fetchBackupEmp.0.backupEmployeeName}}",
+                        "layout": {
+                          "colLayout": {
+                            "lg": {"col": 2, "height": "200"}
+                          }
+                        },
+                        "rows": 12,
+                        "cols": 12,
+                        "uiTask": false,
+                        "className": "",
+                        "disabled": false,
+                        "hintText": "",
+                        "placeholder": "",
+                        "error": false,
+                        "success": false,
+                        "isReadonly": false,
+                        "enableResize": false,
+                        "width": "100%",
+                        "id": "ID1715842063858246",
+                        "isDragging": false,
+                        "selectedComponentId": "",
+                        "componentDropped": [],
+                        "index": 1,
+                        "accept": "Component",
+                        "resetControlData": true
+                      }
+                    ],
+                    "id": "ID1715841290765",
+                    "currentLayout": "DESKTOP",
+                    "isDragging": false,
+                    "selectedComponentId": "",
+                    "componentDropped": [],
+                    "index": 0,
+                    "accept": "Component",
+                    "dropPosition": {"x": 382, "y": 89},
+                    "resetControlData": true
+                  }
+                ],
+                "id": "ID1715841290361",
+                "currentLayout": "DESKTOP",
+                "isDragging": false,
+                "selectedComponentId": "",
+                "componentDropped": [],
+                "index": 0,
+                "accept": "Component",
+                "dropPosition": {"x": 381, "y": 80},
+                "resetControlData": true
+              }
+            ],
+            "currentLayout": "DESKTOP",
+            "isDragging": false,
+            "selectedComponentId": "",
+            "componentDropped": [],
+            "index": 0,
+            "accept": "Component",
+            "dropPosition": {"x": 372, "y": 71},
+            "resetControlData": true
+          },
+          {
+            "id": "ID1715857015830105",
+            "controlType": "container",
+            "containerType": "fluid",
+            "styles": {"backgroundColor": ""},
+            "layout": {
+              "colLayout": {
+                "lg": {"col": "12", "height": "200"}
+              }
+            },
+            "children": [
+              {
+                "id": "ID1715857015830907",
+                "controlType": "row",
+                "styles": {"backgroundColor": ""},
+                "layout": {
+                  "colLayout": {
+                    "lg": {"col": "12", "height": "200"}
+                  }
+                },
+                "children": [
+                  {
+                    "id": "ID1715857015830126",
+                    "controlType": "column",
+                    "styles": {"backgroundColor": ""},
+                    "layout": {
+                      "colLayout": {
+                        "lg": {"col": "12", "height": "200"}
+                      }
+                    },
+                    "children": [
+                      {
+                        "caption":
+                            "{{testadithi.data.data.fetchBackupEmp.0.backupEmployeeName}}",
+                        "controlType": "textbox",
+                        "hideCaption": false,
+                        "layout": {
+                          "colLayout": {
+                            "lg": {"col": 2, "height": "200"}
+                          }
+                        },
+                        "size": "small",
+                        "mandatory": false,
+                        "variant": "Standard",
+                        "value":
+                            "{{testadithi.data.data.fetchBackupEmp.0.backupEmployeeName}}",
+                        "disabled": false,
+                        "visibility": true,
+                        "isReadonly": false,
+                        "uiTask": false,
+                        "enableInheritWidth": false,
+                        "isRVW": false,
+                        "error": false,
+                        "success": false,
+                        "id": "ID1715857015830562",
+                        "isDragging": false,
+                        "selectedComponentId": "",
+                        "componentDropped": [],
+                        "index": 0,
+                        "accept": "Component",
+                        "resetControlData": true
+                      }
+                    ],
+                    "currentLayout": "DESKTOP",
+                    "isDragging": false,
+                    "selectedComponentId": "",
+                    "componentDropped": [],
+                    "index": 0,
+                    "accept": "Component",
+                    "dropPosition": {"x": 382, "y": 571},
+                    "resetControlData": true
+                  }
+                ],
+                "currentLayout": "DESKTOP",
+                "isDragging": false,
+                "selectedComponentId": "",
+                "componentDropped": [],
+                "index": 0,
+                "accept": "Component",
+                "dropPosition": {"x": 381, "y": 562},
+                "resetControlData": true
+              }
+            ],
+            "currentLayout": "DESKTOP",
+            "isDragging": false,
+            "selectedComponentId": "",
+            "componentDropped": [],
+            "index": 1,
+            "accept": "Component",
+            "dropPosition": {"x": 372, "y": 553},
+            "resetControlData": true
+          },
+          {
+            "id": "ID1715857025213293",
+            "controlType": "container",
+            "containerType": "fluid",
+            "styles": {"backgroundColor": ""},
+            "layout": {
+              "colLayout": {
+                "lg": {"col": "12", "height": "200"}
+              }
+            },
+            "children": [
+              {
+                "id": "ID1715857025213885",
+                "controlType": "row",
+                "styles": {"backgroundColor": ""},
+                "layout": {
+                  "colLayout": {
+                    "lg": {"col": "12", "height": "200"}
+                  }
+                },
+                "children": [
+                  {
+                    "id": "ID1715857025213435",
+                    "controlType": "column",
+                    "styles": {"backgroundColor": ""},
+                    "layout": {
+                      "colLayout": {
+                        "lg": {"col": "12", "height": "200"}
+                      }
+                    },
+                    "children": [
+                      {
+                        "caption": "Textbox",
+                        "controlType": "textbox",
+                        "hideCaption": false,
+                        "layout": {
+                          "colLayout": {
+                            "lg": {"col": 2, "height": "200"}
+                          }
+                        },
+                        "size": "small",
+                        "mandatory": false,
+                        "variant": "Standard",
+                        "value": "textdfdfdfdf",
+                        "disabled": false,
+                        "visibility": true,
+                        "isReadonly": false,
+                        "uiTask": false,
+                        "enableInheritWidth": false,
+                        "isRVW": false,
+                        "error": false,
+                        "success": false,
+                        "id": "ID171585702521397",
+                        "isDragging": false,
+                        "selectedComponentId": "",
+                        "componentDropped": [],
+                        "index": 0,
+                        "accept": "Component",
+                        "resetControlData": true
+                      }
+                    ],
+                    "currentLayout": "DESKTOP",
+                    "isDragging": false,
+                    "selectedComponentId": "",
+                    "componentDropped": [],
+                    "index": 0,
+                    "accept": "Component",
+                    "dropPosition": {"x": 382, "y": 669},
+                    "resetControlData": true
+                  }
+                ],
+                "currentLayout": "DESKTOP",
+                "isDragging": false,
+                "selectedComponentId": "",
+                "componentDropped": [],
+                "index": 0,
+                "accept": "Component",
+                "dropPosition": {"x": 381, "y": 660},
+                "resetControlData": true
+              },
+              {
+                "id": "ID1715858737902185",
+                "controlType": "row",
+                "styles": {"backgroundColor": ""},
+                "layout": {
+                  "colLayout": {
+                    "lg": {"col": "12", "height": "200"}
+                  }
+                },
+                "children": [
+                  {
+                    "id": "ID1715858737902920",
+                    "controlType": "column",
+                    "styles": {"backgroundColor": ""},
+                    "layout": {
+                      "colLayout": {
+                        "lg": {"col": "12", "height": "200"}
+                      }
+                    },
+                    "children": [
+                      {
+                        "controlType": "timePicker",
+                        "layout": {
+                          "colLayout": {
+                            "lg": {"col": 2, "height": "200"}
+                          }
+                        },
+                        "id": "ID1715858737902260",
+                        "className": "",
+                        "mandatory": false,
+                        "placeholder": "Enter the time",
+                        "caption":
+                            "{{testadithi.data.data.fetchBackupEmp.0.backupEmployeeName}}",
+                        "showCaption": false,
+                        "helpTask": "",
+                        "error": false,
+                        "success": false,
+                        "readOnly": false,
+                        "disabled": false,
+                        "visibility": true,
+                        "timeSeperator": ":",
+                        "value": "14:41:11",
+                        "timeFormat": "HH:mm:ss",
+                        "currentDateTimeButton": false,
+                        "size": "medium",
+                        "variant": "standard",
+                        "uiTask": true,
+                        "fixMainPosition": true,
+                        "calendarPosition": "bottom",
+                        "onOpenPickNewDate": true,
+                        "width": "235px",
+                        "isDragging": false,
+                        "selectedComponentId": "",
+                        "componentDropped": [],
+                        "index": 0,
+                        "accept": "Component",
+                        "resetControlData": true
+                      },
+                      {
+                        "controlType": "datePicker",
+                        "visibility": true,
+                        "hideYear": false,
+                        "variant": "Standard",
+                        "size": "small",
+                        "hideMonth": false,
+                        "numberOfMonths": 1,
+                        "disableMonthPicker": false,
+                        "disableYearPicker": false,
+                        "minDate": "",
+                        "maxDate": "",
+                        "onlyYearPicker": false,
+                        "onlyMonthPicker": false,
+                        "dateFormat": "MM/DD/YYYY",
+                        "value": "2024-05-31T12:16:25.223Z",
+                        "id": "ID1715937668527512",
+                        "enableIcon": true,
+                        "caption": "DatePicker",
+                        "showCaption": false,
+                        "enableButtons": false,
+                        "layout": {
+                          "colLayout": {
+                            "lg": {"col": 2, "height": "200"}
+                          }
+                        },
+                        "isDragging": false,
+                        "selectedComponentId": "",
+                        "componentDropped": [],
+                        "index": 1,
+                        "accept": "Component",
+                        "resetControlData": true
+                      }
+                    ],
+                    "currentLayout": "DESKTOP",
+                    "isDragging": false,
+                    "selectedComponentId": "",
+                    "componentDropped": [],
+                    "index": 0,
+                    "accept": "Component",
+                    "dropPosition": {"x": 382, "y": 749},
+                    "resetControlData": true
+                  },
+                  {
+                    "id": "ID1715924677661532",
+                    "controlType": "column",
+                    "styles": {"backgroundColor": ""},
+                    "layout": {
+                      "colLayout": {
+                        "lg": {"col": "12", "height": "200"}
+                      }
+                    },
+                    "children": [
+                      {
+                        "controlType": "numeric",
+                        "layout": {
+                          "colLayout": {
+                            "lg": {"col": 2, "height": "200"}
+                          }
+                        },
+                        "id": "ID1715924677661424",
+                        "value":
+                            "{{assignmentOptions.data.data.fetchAssignment.0.assignmentNumber}}",
+                        "size": "medium",
+                        "visibility": true,
+                        "disabled": false,
+                        "variant": "contained",
+                        "caption": "Test",
+                        "showCaption": true,
+                        "helpText": "Please enter a numeric value",
+                        "showHelpText": false,
+                        "mandatory": true,
+                        "prefix": "",
+                        "suffix": "",
+                        "minValue": -999999,
+                        "maxValue": 999999,
+                        "precision": 0,
+                        "thousandSeperator": ",",
+                        "groupStyle": "thousand",
+                        "error": false,
+                        "success": false,
+                        "incrementDecrementValue": 2,
+                        "blurTaskName": "blur",
+                        "focusTaskName": "focus",
+                        "isReadonly": false,
+                        "showCounterIcon": true,
+                        "placeholder": "Enter value",
+                        "enableInheritWidth": false,
+                        "isDragging": false,
+                        "selectedComponentId": "",
+                        "componentDropped": [],
+                        "index": 0,
+                        "accept": "Component",
+                        "resetControlData": true
+                      }
+                    ],
+                    "currentLayout": "DESKTOP",
+                    "isDragging": false,
+                    "selectedComponentId": "",
+                    "componentDropped": [],
+                    "index": 1,
+                    "accept": "Component",
+                    "resetControlData": true,
+                    "dropPosition": {"x": 382, "y": 829}
+                  }
+                ],
+                "currentLayout": "DESKTOP",
+                "isDragging": false,
+                "selectedComponentId": "",
+                "componentDropped": [],
+                "index": 1,
+                "accept": "Component",
+                "dropPosition": {"x": 381, "y": 740},
+                "resetControlData": true
+              },
+              {
+                "id": "ID1715922035386907",
+                "controlType": "row",
+                "styles": {"backgroundColor": ""},
+                "layout": {
+                  "colLayout": {
+                    "lg": {"col": "12", "height": "200"}
+                  }
+                },
+                "children": [
+                  {
+                    "id": "ID1715922035386192",
+                    "controlType": "column",
+                    "styles": {"backgroundColor": ""},
+                    "layout": {
+                      "colLayout": {
+                        "lg": {"col": "12", "height": "200"}
+                      }
+                    },
+                    "children": [
+                      {
+                        "caption": "Button",
+                        "controlType": "button",
+                        "hideCaption": false,
+                        "layout": {
+                          "colLayout": {
+                            "lg": {"col": 2, "height": "200"}
+                          }
+                        },
+                        "disabled": false,
+                        "visibility": true,
+                        "variant": "outlined",
+                        "size": "small",
+                        "color": "primary",
+                        "tooltip": "Tooltip",
+                        "id": "ID1715922035386854",
+                        "isDragging": false,
+                        "selectedComponentId": "",
+                        "componentDropped": [],
+                        "index": 0,
+                        "accept": "Component",
+                        "resetControlData": true,
+                        "events": [
+                          {
+                            "event": {
+                              "eventId": "onClick",
+                              "actionId": "run-query",
+                              "queryId": "59734614-87f3-4732-a7f6-8206e0c05e88",
+                              "queryName": "applyLeave2",
+                              "inputParams": {
+                                "employeeCode": "00013303",
+                                "assignmentNo": 1,
+                                "leaveTypeCode":
+                                    "{{ID1714730525749652.comboValue}}",
+                                "leaveStartDate":
+                                    "{{ID1714730820026404.value}}",
+                                "leaveEndDate": "{{ID1714730864141998.value}}",
+                                "leaveFromSession":
+                                    "{{ID1715067537157422.comboValue}}",
+                                "leaveToSession":
+                                    "{{ID1714730864141790.comboValue}}",
+                                "leaveReasonCode":
+                                    "{{ID1714730929806978.comboValue}}",
+                                "additionalReason":
+                                    "{{ID171585702521397.value}}",
+                                "backupEmployeeCode":
+                                    "{{ID1714730909658264.comboValue}}"
+                              }
+                            },
+                            "target": "component",
+                            "sourceId": "ID1715922035386854",
+                            "index": 0,
+                            "pageId": "533ab427-21b6-4304-b7a2-010c7e75b0fc",
+                            "appId": "544006e1-0afc-4d37-b8d8-821001a552db",
+                            "name": "onClick"
+                          }
+                        ]
+                      }
+                    ],
+                    "currentLayout": "DESKTOP",
+                    "isDragging": false,
+                    "selectedComponentId": "",
+                    "componentDropped": [],
+                    "index": 0,
+                    "accept": "Component",
+                    "resetControlData": true,
+                    "dropPosition": {"x": 382, "y": 919}
+                  }
+                ],
+                "currentLayout": "DESKTOP",
+                "isDragging": false,
+                "selectedComponentId": "",
+                "componentDropped": [],
+                "index": 2,
+                "accept": "Component",
+                "resetControlData": true,
+                "dropPosition": {"x": 381, "y": 910}
+              },
+              {
+                "id": "ID1716294979170597",
+                "controlType": "row",
+                "styles": {"backgroundColor": ""},
+                "layout": {
+                  "colLayout": {
+                    "lg": {"col": "12", "height": "200"}
+                  }
+                },
+                "children": [
+                  {
+                    "id": "ID17162949791708",
+                    "controlType": "column",
+                    "styles": {"backgroundColor": ""},
+                    "layout": {
+                      "colLayout": {
+                        "lg": {"col": "12", "height": "200"}
+                      }
+                    },
+                    "children": [
+                      {
+                        "controlType": "numeric",
+                        "layout": {
+                          "colLayout": {
+                            "lg": {"col": 2, "height": "200"}
+                          }
+                        },
+                        "id": "ID1716294979170599",
+                        "value": "4566",
+                        "size": "medium",
+                        "visibility": true,
+                        "disabled": false,
+                        "variant": "contained",
+                        "caption": "Enter the value",
+                        "showCaption": true,
+                        "helpText": "Please enter a numeric value",
+                        "showHelpText": false,
+                        "mandatory": true,
+                        "prefix": "",
+                        "suffix": "",
+                        "minValue": -999999,
+                        "maxValue": 999999,
+                        "precision": 0,
+                        "thousandSeperator": ",",
+                        "groupStyle": "thousand",
+                        "error": false,
+                        "success": false,
+                        "incrementDecrementValue": 2,
+                        "blurTaskName": "blur",
+                        "focusTaskName": "focus",
+                        "isReadonly": false,
+                        "showCounterIcon": true,
+                        "placeholder": "Enter value",
+                        "enableInheritWidth": false,
+                        "isDragging": false,
+                        "selectedComponentId": "",
+                        "componentDropped": [],
+                        "index": 0,
+                        "accept": "Component"
+                      }
+                    ],
+                    "currentLayout": "DESKTOP",
+                    "isDragging": false,
+                    "selectedComponentId": "",
+                    "componentDropped": [],
+                    "index": 0,
+                    "accept": "Component",
+                    "dropPosition": {"x": 382, "y": 991}
+                  }
+                ],
+                "currentLayout": "DESKTOP",
+                "isDragging": false,
+                "selectedComponentId": "",
+                "componentDropped": [],
+                "index": 3,
+                "accept": "Component",
+                "dropPosition": {"x": 381, "y": 982}
+              }
+            ],
+            "currentLayout": "DESKTOP",
+            "isDragging": false,
+            "selectedComponentId": "",
+            "componentDropped": [],
+            "index": 2,
+            "accept": "Component",
+            "dropPosition": {"x": 372, "y": 651},
+            "resetControlData": true
+          }
+        ],
         pageId = '',
         layoutDetails = null,
         modalPageId = null,

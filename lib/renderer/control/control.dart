@@ -3,9 +3,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:nebula_modelling/widgets/avatar.dart';
 import 'package:nebula_modelling/widgets/button.dart';
 import 'package:nebula_modelling/widgets/cardcontainer.dart';
+import 'package:nebula_modelling/widgets/column.dart';
 import 'package:nebula_modelling/widgets/container.dart';
 import 'package:nebula_modelling/widgets/icon.dart';
 import 'package:nebula_modelling/widgets/label.dart';
+import 'package:nebula_modelling/widgets/row.dart';
+import 'package:nebula_modelling/widgets/textFormField.dart';
 import 'package:nebula_modelling/widgets/textfield.dart';
 
 class ControlRenderer extends StatelessWidget {
@@ -58,9 +61,35 @@ class ControlRenderer extends StatelessWidget {
         return LabelWidget(
           controlInfo: controlInfo,
         );
-      case 'textfield':
+      case 'textbox':
         return TextFieldWidget(
           controlInfo: controlInfo,
+          inputData: inputData,
+          updateInputData: updateInputData,
+        );
+      case 'textarea':
+        return Expanded(
+            child: TextFormFieldWidget(
+          controlInfo: controlInfo,
+          inputData: inputData,
+          updateInputData: updateInputData,
+        ));
+      // TextFormFieldWidget(
+      //   controlInfo: controlInfo,
+      //   inputData: inputData,
+      //   updateInputData: updateInputData,
+      // );
+      case 'row':
+        return RowWidget(
+          controlInfo: controlInfo,
+          apiClient: apiClient,
+          inputData: inputData,
+          updateInputData: updateInputData,
+        );
+      case 'column':
+        return ColumnWidget(
+          controlInfo: controlInfo,
+          apiClient: apiClient,
           inputData: inputData,
           updateInputData: updateInputData,
         );

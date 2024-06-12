@@ -1,16 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter_bootstrap/flutter_bootstrap.dart';
-import 'package:nebula_modelling/model/pageMetaData.dart';
-import 'package:nebula_modelling/provider/metadataProvider.dart';
-// import 'package:provider/provider.dart';
-
-import '../utils/layoutUtils.dart';
 import 'control/control.dart';
+import '../utils/layoutUtils.dart';
 
 class PageRenderer extends StatefulWidget {
-  final dynamic metadata;
-  final apiClient;
+  final List<dynamic>
+      metadata; // Changed to List<dynamic> to represent array of objects
+  final dynamic apiClient;
 
   PageRenderer({
     required this.metadata,
@@ -40,9 +36,6 @@ class _PageRendererState extends State<PageRenderer> {
       );
     }
 
-    // List<BootstrapCol> children = [];
-    // for (var control in metaData['children']) {
-    // children.add(
     return BootstrapCol(
       sizes: buildLayoutColumn(metaData),
       child: ControlRenderer(
@@ -51,16 +44,15 @@ class _PageRendererState extends State<PageRenderer> {
         inputData: inputData,
         updateInputData: updateInputData,
       ),
-      // ),
     );
-    // }
-    // return children;
   }
 
   @override
   Widget build(BuildContext context) {
     return BootstrapRow(
-      children: [renderPage(widget.metadata)],
+      children: widget.metadata
+          .map<BootstrapCol>((metaData) => renderPage(metaData))
+          .toList(),
     );
   }
 }
