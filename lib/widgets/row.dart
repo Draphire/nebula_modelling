@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:nebula_modelling/utils/utils.dart';
 import '../renderer/control/control.dart';
+import 'package:flutter_bootstrap/flutter_bootstrap.dart';
 
 class RowWidget extends StatelessWidget {
   final dynamic controlInfo;
@@ -16,22 +18,48 @@ class RowWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final children = controlInfo['children']?.map<Widget>((child) {
-          return Flexible(
-            child: ControlRenderer(
-              controlInfo: child,
-              apiClient: apiClient,
-              inputData: inputData,
-              updateInputData: updateInputData,
-            ),
-          );
-        }).toList() ??
-        [];
+    if (controlInfo['children'] == null) {
+      return Container();
+    }
+    final screenWidth = MediaQuery.of(context).size.width;
+    final layout = applyLayout(controlInfo, screenWidth);
 
-    return Row(
-      mainAxisAlignment: _getMainAxisAlignment(),
-      crossAxisAlignment: _getCrossAxisAlignment(),
-      children: children,
+    final width = layout['width'];
+    final height = layout['height'];
+
+    // final children = controlInfo['children']?.map<BootstrapCol>((child) {
+    //       return BootstrapCol(
+    //         // Flexible(
+    //         child: ControlRenderer(
+    //           controlInfo: child,
+    //           apiClient: apiClient,
+    //           inputData: inputData,
+    //           updateInputData: updateInputData,
+    //         ),
+    //       );
+    //     }).toList() ??
+    //     [];
+
+    List<BootstrapCol> rowChildren = [];
+    for (var child in controlInfo['children']) {
+      rowChildren.add(
+        BootstrapCol(
+          sizes: 'col',
+          child: ControlRenderer(
+            controlInfo: child,
+            apiClient: apiClient,
+            inputData: inputData,
+            updateInputData: updateInputData,
+          ),
+        ),
+      );
+    }
+
+    return BootstrapRow(
+      height: height, // Set the height here
+      // mainAxisAlignment: _getMainAxisAlignment(),
+      // crossAxisAlignment: _getCrossAxisAlignment(),
+      children: rowChildren,
     );
   }
 

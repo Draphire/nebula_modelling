@@ -99,7 +99,7 @@ class _ContainerWidgetState extends State<ContainerWidget> {
 
     return BootstrapContainer(
       fluid: true,
-      padding: const EdgeInsets.only(top: 16.0, bottom: 16.0),
+      // padding: const EdgeInsets.only(top: 16.0, bottom: 16.0),
       children: [BootstrapRow(children: containerChildren)],
     );
   }

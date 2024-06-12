@@ -71,12 +71,14 @@ class ControlRenderer extends StatelessWidget {
           updateInputData: updateInputData,
         );
       case 'textarea':
-        return Expanded(
-            child: TextFormFieldWidget(
+        // return Expanded(
+        // child:
+        return TextFormFieldWidget(
           controlInfo: controlInfo,
           inputData: inputData,
           updateInputData: updateInputData,
-        ));
+          // )
+        );
       // TextFormFieldWidget(
       //   controlInfo: controlInfo,
       //   inputData: inputData,

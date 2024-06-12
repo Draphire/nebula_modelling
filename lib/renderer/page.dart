@@ -36,23 +36,26 @@ class _PageRendererState extends State<PageRenderer> {
       );
     }
 
-    return BootstrapCol(
-      sizes: buildLayoutColumn(metaData),
-      child: ControlRenderer(
-        controlInfo: metaData,
-        apiClient: widget.apiClient,
-        inputData: inputData,
-        updateInputData: updateInputData,
-      ),
-    );
+    return BootstrapContainer(
+        // sizes: buildLayoutColumn(metaData),
+        children: [
+          ControlRenderer(
+            controlInfo: metaData,
+            apiClient: widget.apiClient,
+            inputData: inputData,
+            updateInputData: updateInputData,
+          )
+        ]);
   }
 
   @override
   Widget build(BuildContext context) {
-    return BootstrapRow(
-      children: widget.metadata
-          .map<BootstrapCol>((metaData) => renderPage(metaData))
-          .toList(),
+    return SingleChildScrollView(
+      child: BootstrapContainer(
+        children: widget.metadata
+            .map<BootstrapContainer>((metaData) => renderPage(metaData))
+            .toList(),
+      ),
     );
   }
 }

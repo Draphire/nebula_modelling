@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nebula_modelling/utils/utils.dart';
 import '../renderer/control/control.dart';
+import 'package:flutter_bootstrap/flutter_bootstrap.dart';
 
 class ColumnWidget extends StatelessWidget {
   final dynamic controlInfo;
@@ -17,41 +18,37 @@ class ColumnWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
-    final layout = applyLayout(controlInfo, screenWidth);
+    // final screenWidth = MediaQuery.of(context).size.width;
+    // final layout = applyLayout(controlInfo, screenWidth);
 
-    final width = layout['width'];
-    final height = layout['height'];
+    final layout = columnLayout(controlInfo['layout']);
 
-    final children = controlInfo['children']?.map<Widget>((child) {
-          return
-              // Expanded(
-              //   child:
-              ControlRenderer(
-            controlInfo: child,
-            apiClient: apiClient,
-            inputData: inputData,
-            updateInputData: updateInputData,
-            // ),
-          );
-        }).toList() ??
+    // final width = layout['width'];
+    // final height = layout['height'];
+
+    final children = controlInfo['children']
+            ?.map<Widget>((child) => ControlRenderer(
+                  controlInfo: child,
+                  apiClient: apiClient,
+                  inputData: inputData,
+                  updateInputData: updateInputData,
+                ))
+            .toList() ??
         [];
 
-    return SizedBox(
-      height: height, // Set the height here
-      width: width,
-      child: Column(
-        mainAxisAlignment: _getMainAxisAlignment(),
-        crossAxisAlignment: _getCrossAxisAlignment(),
+    return BootstrapCol(
+      sizes: layout ?? 'col-12',
+      child:
+          // SizedBox(
+          //   height: height, // Set the height here
+          //   child:
+          Column(
+        //   mainAxisAlignment: _getMainAxisAlignment(),
+        //   crossAxisAlignment: _getCrossAxisAlignment(),
         children: children,
       ),
+      // ),
     );
-    // return Column(
-    //   mainAxisSize: MainAxisSize.min,
-    //   mainAxisAlignment: _getMainAxisAlignment(),
-    //   crossAxisAlignment: _getCrossAxisAlignment(),
-    //   children: children,
-    // );
   }
 
   MainAxisAlignment _getMainAxisAlignment() {

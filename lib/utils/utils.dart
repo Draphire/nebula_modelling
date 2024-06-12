@@ -1,4 +1,5 @@
 import '../model/redux/viewModel/viewModel.dart';
+import 'package:flutter_bootstrap/flutter_bootstrap.dart';
 
 String parseTemplateString(String template, ViewModel viewModel) {
   final regex = RegExp(r'{{(.*?)}}');
@@ -57,4 +58,47 @@ double _parseToDouble(dynamic value, double? defaultValue) {
   } else {
     return defaultValue ?? 0.0;
   }
+}
+
+// String columnLayout(Map<String, dynamic> layout) {
+//   final colLayout = layout['colLayout'];
+//   final layoutSizes = ['lg', 'md', 'sm'];
+//   final lgColSize = colLayout['lg']['col'];
+
+//   final layoutStr = layoutSizes.fold<String>('', (acc, lytSize) {
+//     final colLayoutProps = colLayout[lytSize];
+//     final layoutCls = 'col-${colLayoutProps['col'] ?? lgColSize}';
+//     return '$acc $layoutCls';
+//   });
+
+//   return layoutStr.replaceFirst(RegExp(r'^\s+'), '');
+// }
+
+// String columnLayout(Map<String, dynamic>? layout) {
+//   if (layout == null || layout['colLayout'] == null) {
+//     return ''; // or some default value
+//   }
+
+//   final colLayout = layout['colLayout'];
+//   final layoutSizes = ['lg', 'md', 'sm'];
+//   final lgColSize =
+//       colLayout['lg']?['col'] ?? '12'; // Use '12' as default value
+
+//   final layoutStr = layoutSizes.fold<String>('', (acc, lytSize) {
+//     final colLayoutProps = colLayout[lytSize];
+//     final layoutCls = 'col-$lytSize-${colLayoutProps?['col'] ?? lgColSize}';
+//     return '$acc $layoutCls';
+//   });
+
+//   return layoutStr.replaceFirst(RegExp(r'^\s+'), '');
+// }
+
+String columnLayout(dynamic layout) {
+  final colLayout = layout['colLayout'];
+  if (colLayout == null || colLayout['lg'] == null) {
+    return '';
+  }
+
+  final colSize = colLayout['lg']['col'] ?? '12';
+  return 'col-$colSize';
 }
