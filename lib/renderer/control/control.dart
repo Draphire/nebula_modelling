@@ -15,12 +15,14 @@ import 'package:nebula_modelling/widgets/textFormField.dart';
 import 'package:nebula_modelling/widgets/textfield.dart';
 
 class ControlRenderer extends StatelessWidget {
-  const ControlRenderer(
-      {super.key,
-      required this.controlInfo,
-      required this.apiClient,
-      required this.inputData,
-      required this.updateInputData});
+  const ControlRenderer({
+    super.key,
+    required this.controlInfo,
+    required this.apiClient,
+    required this.inputData,
+    required this.updateInputData,
+  });
+
   final controlInfo;
   final apiClient;
   final inputData;
@@ -28,94 +30,116 @@ class ControlRenderer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // print('control:${controlInfo}');
-    // print('control:${controlInfo["controlType"]}');
+    Widget child;
+
     switch (controlInfo['controlType']) {
       case 'avatar':
-        return AvatarWidget(
+        child = AvatarWidget(
           controlInfo: controlInfo,
           inputData: inputData,
           updateInputData: updateInputData,
         );
+        break;
       case 'button':
-        return ButtonWidget(
+        child = ButtonWidget(
           controlInfo: controlInfo,
           inputData: inputData,
           updateInputData: updateInputData,
         );
+        break;
       case 'cardcontainer':
-        return CardContainerWidget(
+        child = CardContainerWidget(
           controlInfo: controlInfo,
           apiClient: apiClient,
           inputData: inputData,
           updateInputData: updateInputData,
         );
+        break;
       case 'container':
-        return ContainerWidget(
-            controlInfo: controlInfo,
-            apiClient: apiClient,
-            inputData: inputData,
-            updateInputData: updateInputData);
+        child = ContainerWidget(
+          controlInfo: controlInfo,
+          apiClient: apiClient,
+          inputData: inputData,
+          updateInputData: updateInputData,
+        );
+        break;
       case 'icon':
-        return IconWidget(
+        child = IconWidget(
           controlInfo: controlInfo,
         );
+        break;
       case 'label':
-        return LabelWidget(
+        child = LabelWidget(
           controlInfo: controlInfo,
         );
+        break;
       case 'textbox':
-        return TextFieldWidget(
+        child = TextFieldWidget(
           controlInfo: controlInfo,
           inputData: inputData,
           updateInputData: updateInputData,
         );
+        break;
       case 'textarea':
-        return Expanded(
-            child: TextFormFieldWidget(
-          controlInfo: controlInfo,
-          inputData: inputData,
-          updateInputData: updateInputData,
-        ));
-      // TextFormFieldWidget(
-      //   controlInfo: controlInfo,
-      //   inputData: inputData,
-      //   updateInputData: updateInputData,
-      // );
+        child = Expanded(
+          child: TextFormFieldWidget(
+            controlInfo: controlInfo,
+            inputData: inputData,
+            updateInputData: updateInputData,
+          ),
+        );
+        break;
       case 'row':
-        return RowWidget(
+        child = RowWidget(
           controlInfo: controlInfo,
           apiClient: apiClient,
           inputData: inputData,
           updateInputData: updateInputData,
         );
+        break;
       case 'column':
-        return ColumnWidget(
+        child = ColumnWidget(
           controlInfo: controlInfo,
           apiClient: apiClient,
           inputData: inputData,
           updateInputData: updateInputData,
         );
+        break;
       case 'datePicker':
-        return DatePickerWidget(
+        child = DatePickerWidget(
           controlInfo: controlInfo,
           inputData: inputData,
           updateInputData: updateInputData,
         );
+        break;
       case 'timePicker':
-        return TimePickerWidget(
+        child = TimePickerWidget(
           controlInfo: controlInfo,
           inputData: inputData,
           updateInputData: updateInputData,
         );
+        break;
       case 'numeric':
-        return NumericInputWidget(
+        child = NumericInputWidget(
           controlInfo: controlInfo,
           inputData: inputData,
           updateInputData: updateInputData,
         );
+        break;
       default:
-        return Text('${controlInfo["controlType"]} is not yet supported');
+        child = Text('${controlInfo["controlType"]} is not yet supported');
     }
+
+    // Wrap the child widget in a Padding widget
+    // return Padding(
+    //   padding: const EdgeInsets.all(8.0), // Adjust the padding value as needed
+    //   child: child,
+    // );
+    return child is Expanded
+        ? child
+        : Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: child,
+          );
   }
 }

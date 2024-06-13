@@ -38,11 +38,19 @@ class _PageRendererState extends State<PageRenderer> {
 
     return BootstrapCol(
       sizes: buildLayoutColumn(metaData),
-      child: ControlRenderer(
-        controlInfo: metaData,
-        apiClient: widget.apiClient,
-        inputData: inputData,
-        updateInputData: updateInputData,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(
+            vertical: 8.0,
+            horizontal: 8.0), // Add minimum padding on top and bottom
+
+        // height: height, // Set the height here
+        // width: width,
+        child: ControlRenderer(
+          controlInfo: metaData,
+          apiClient: widget.apiClient,
+          inputData: inputData,
+          updateInputData: updateInputData,
+        ),
       ),
     );
   }

@@ -113,7 +113,7 @@ class PageDetails {
                     "styles": {"backgroundColor": ""},
                     "layout": {
                       "colLayout": {
-                        "lg": {"col": "12", "height": "200"}
+                        "lg": {"col": "6", "height": "200"}
                       }
                     },
                     "children": [
@@ -195,7 +195,95 @@ class PageDetails {
                     "accept": "Component",
                     "dropPosition": {"x": 382, "y": 89},
                     "resetControlData": true
-                  }
+                  },
+                  {
+                    "controlType": "column",
+                    "styles": {"backgroundColor": ""},
+                    "layout": {
+                      "colLayout": {
+                        "lg": {"col": "6", "height": "200"}
+                      }
+                    },
+                    "children": [
+                      {
+                        "caption": "Static Caption",
+                        "controlType": "textarea",
+                        "hideCaption": false,
+                        "size": "small",
+                        "visibility": true,
+                        "mandatory": false,
+                        "value": "Static Contentsdsdsd",
+                        "layout": {
+                          "colLayout": {
+                            "lg": {"col": 2, "height": "200"}
+                          }
+                        },
+                        "rows": 12,
+                        "cols": 12,
+                        "uiTask": false,
+                        "className": "",
+                        "disabled": false,
+                        "hintText": "",
+                        "placeholder": "",
+                        "error": false,
+                        "success": false,
+                        "isReadonly": false,
+                        "enableResize": false,
+                        "width": "100%",
+                        "id": "ID1715842061879598",
+                        "isDragging": false,
+                        "selectedComponentId": "",
+                        "componentDropped": [],
+                        "index": 0,
+                        "accept": "Component",
+                        "resetControlData": true
+                      },
+                      {
+                        "caption":
+                            "{{testadithi.data.data.fetchBackupEmp.0.backupEmployeeName}}",
+                        "controlType": "textarea",
+                        "hideCaption": false,
+                        "size": "small",
+                        "visibility": true,
+                        "mandatory": false,
+                        "value":
+                            "{{testadithi.data.data.fetchBackupEmp.0.backupEmployeeName}}",
+                        "layout": {
+                          "colLayout": {
+                            "lg": {"col": 2, "height": "200"}
+                          }
+                        },
+                        "rows": 12,
+                        "cols": 12,
+                        "uiTask": false,
+                        "className": "",
+                        "disabled": false,
+                        "hintText": "",
+                        "placeholder": "",
+                        "error": false,
+                        "success": false,
+                        "isReadonly": false,
+                        "enableResize": false,
+                        "width": "100%",
+                        "id": "ID1715842063858246",
+                        "isDragging": false,
+                        "selectedComponentId": "",
+                        "componentDropped": [],
+                        "index": 1,
+                        "accept": "Component",
+                        "resetControlData": true
+                      }
+                    ],
+                    "id": "ID1715841290765",
+                    "currentLayout": "DESKTOP",
+                    "isDragging": false,
+                    "selectedComponentId": "",
+                    "componentDropped": [],
+                    "index": 0,
+                    "accept": "Component",
+                    "dropPosition": {"x": 382, "y": 89},
+                    "resetControlData": true
+                  },
                 ],
                 "id": "ID1715841290361",
                 "currentLayout": "DESKTOP",
@@ -206,7 +294,7 @@ class PageDetails {
                 "accept": "Component",
                 "dropPosition": {"x": 381, "y": 80},
                 "resetControlData": true
-              }
+              },
             ],
             "currentLayout": "DESKTOP",
             "isDragging": false,
