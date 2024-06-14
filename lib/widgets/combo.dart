@@ -47,7 +47,7 @@ class _ComboBoxWidgetState extends State<ComboBoxWidget> {
                 parsedCaption,
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               ),
-            DropdownButton<String>(
+            DropdownButtonFormField<String>(
               value: selectedValue,
               hint: Text(widget.controlInfo['placeholder'] ?? 'Select Value'),
               items: dropdownItems,
@@ -58,6 +58,9 @@ class _ComboBoxWidgetState extends State<ComboBoxWidget> {
                       widget.controlInfo['id'], {'value': newValue});
                 });
               },
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+              ),
               isExpanded: true,
             ),
           ],

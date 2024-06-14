@@ -25,18 +25,19 @@ List<dynamic> parseOptions(String template, ViewModel viewModel) {
 
   for (RegExpMatch match in matches) {
     String key = match.group(1) ?? '';
-    dynamic value = viewModel.currentState;
+    // dynamic value = viewModel.currentState;
 
-    for (String part in key.split('.')) {
-      if (value != null &&
-          value is Map<String, dynamic> &&
-          value.containsKey(part)) {
-        value = value[part];
-      } else {
-        value = [];
-        break;
-      }
-    }
+    dynamic value = viewModel.getValueFromPath(key);
+    // for (String part in key.split('.')) {
+    //   if (value != null &&
+    //       value is Map<String, dynamic> &&
+    //       value.containsKey(part)) {
+    //     value = value[part];
+    //   } else {
+    //     value = [];
+    //     break;
+    //   }
+    // }
 
     if (value is List) {
       options = value;

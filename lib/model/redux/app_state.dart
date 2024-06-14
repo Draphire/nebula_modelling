@@ -104,7 +104,7 @@ class PageDetails {
                 "styles": {"backgroundColor": ""},
                 "layout": {
                   "colLayout": {
-                    "lg": {"col": "12", "height": "200"}
+                    "lg": {"col": "12", "height": "400"}
                   }
                 },
                 "children": [
