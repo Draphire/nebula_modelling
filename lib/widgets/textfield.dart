@@ -38,10 +38,10 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
-    final layout = applyLayout(widget.controlInfo, screenWidth);
+    // final layout = applyLayout(widget.controlInfo, screenWidth);
 
-    final width = layout['width'];
-    final height = layout['height'];
+    // final width = layout['width'];
+    // final height = layout['height'];
 
     return StoreConnector<AppState, ViewModel>(
       converter: (Store<AppState> store) => ViewModel.create(store),
@@ -58,10 +58,11 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
         // Parse the template string
         String captionTemplate = widget.controlInfo['caption'];
         String parsedCaption = parseTemplateString(captionTemplate, viewModel);
+        String parsedValue = parseTemplateString(currentValue, viewModel);
 
         // Set the initial value of the TextEditingController
         widget.controller?.text =
-            currentValue.isNotEmpty ? currentValue : defaultValue;
+            currentValue.isNotEmpty ? parsedValue : defaultValue;
 
         return Padding(
           padding: const EdgeInsets.symmetric(

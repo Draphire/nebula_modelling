@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:nebula_modelling/widgets/combo.dart';
 import 'package:nebula_modelling/widgets/datePickerWidget.dart';
 import 'package:nebula_modelling/widgets/numericInput.dart';
 import 'package:nebula_modelling/widgets/timePickerWidget.dart';
@@ -13,6 +14,8 @@ import 'package:nebula_modelling/widgets/label.dart';
 import 'package:nebula_modelling/widgets/row.dart';
 import 'package:nebula_modelling/widgets/textFormField.dart';
 import 'package:nebula_modelling/widgets/textfield.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
 class ControlRenderer extends StatelessWidget {
   const ControlRenderer({
@@ -98,11 +101,13 @@ class ControlRenderer extends StatelessWidget {
         );
         break;
       case 'column':
-        child = ColumnWidget(
-          controlInfo: controlInfo,
-          apiClient: apiClient,
-          inputData: inputData,
-          updateInputData: updateInputData,
+        child = Expanded(
+          child: ColumnWidget(
+            controlInfo: controlInfo,
+            apiClient: apiClient,
+            inputData: inputData,
+            updateInputData: updateInputData,
+          ),
         );
         break;
       case 'datePicker':
@@ -126,19 +131,21 @@ class ControlRenderer extends StatelessWidget {
           updateInputData: updateInputData,
         );
         break;
+      case 'combo':
+        child = ComboBoxWidget(
+          controlInfo: controlInfo,
+        );
+        break;
       default:
         child = Text('${controlInfo["controlType"]} is not yet supported');
     }
 
-    // Wrap the child widget in a Padding widget
-    // return Padding(
-    //   padding: const EdgeInsets.all(8.0), // Adjust the padding value as needed
-    //   child: child,
-    // );
     return child is Expanded
         ? child
         : Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.symmetric(vertical: 2.0, horizontal: 4.0),
+            // padding: const EdgeInsets.all(2.0),
+
             child: child,
           );
   }

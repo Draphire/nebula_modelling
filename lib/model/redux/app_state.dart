@@ -113,7 +113,7 @@ class PageDetails {
                     "styles": {"backgroundColor": ""},
                     "layout": {
                       "colLayout": {
-                        "lg": {"col": "6", "height": "200"}
+                        "lg": {"col": "12", "height": "400"}
                       }
                     },
                     "children": [
@@ -195,95 +195,7 @@ class PageDetails {
                     "accept": "Component",
                     "dropPosition": {"x": 382, "y": 89},
                     "resetControlData": true
-                  },
-                  {
-                    "controlType": "column",
-                    "styles": {"backgroundColor": ""},
-                    "layout": {
-                      "colLayout": {
-                        "lg": {"col": "6", "height": "200"}
-                      }
-                    },
-                    "children": [
-                      {
-                        "caption": "Static Caption",
-                        "controlType": "textarea",
-                        "hideCaption": false,
-                        "size": "small",
-                        "visibility": true,
-                        "mandatory": false,
-                        "value": "Static Contentsdsdsd",
-                        "layout": {
-                          "colLayout": {
-                            "lg": {"col": 2, "height": "200"}
-                          }
-                        },
-                        "rows": 12,
-                        "cols": 12,
-                        "uiTask": false,
-                        "className": "",
-                        "disabled": false,
-                        "hintText": "",
-                        "placeholder": "",
-                        "error": false,
-                        "success": false,
-                        "isReadonly": false,
-                        "enableResize": false,
-                        "width": "100%",
-                        "id": "ID1715842061879598",
-                        "isDragging": false,
-                        "selectedComponentId": "",
-                        "componentDropped": [],
-                        "index": 0,
-                        "accept": "Component",
-                        "resetControlData": true
-                      },
-                      {
-                        "caption":
-                            "{{testadithi.data.data.fetchBackupEmp.0.backupEmployeeName}}",
-                        "controlType": "textarea",
-                        "hideCaption": false,
-                        "size": "small",
-                        "visibility": true,
-                        "mandatory": false,
-                        "value":
-                            "{{testadithi.data.data.fetchBackupEmp.0.backupEmployeeName}}",
-                        "layout": {
-                          "colLayout": {
-                            "lg": {"col": 2, "height": "200"}
-                          }
-                        },
-                        "rows": 12,
-                        "cols": 12,
-                        "uiTask": false,
-                        "className": "",
-                        "disabled": false,
-                        "hintText": "",
-                        "placeholder": "",
-                        "error": false,
-                        "success": false,
-                        "isReadonly": false,
-                        "enableResize": false,
-                        "width": "100%",
-                        "id": "ID1715842063858246",
-                        "isDragging": false,
-                        "selectedComponentId": "",
-                        "componentDropped": [],
-                        "index": 1,
-                        "accept": "Component",
-                        "resetControlData": true
-                      }
-                    ],
-                    "id": "ID1715841290765",
-                    "currentLayout": "DESKTOP",
-                    "isDragging": false,
-                    "selectedComponentId": "",
-                    "componentDropped": [],
-                    "index": 0,
-                    "accept": "Component",
-                    "dropPosition": {"x": 382, "y": 89},
-                    "resetControlData": true
-                  },
+                  }
                 ],
                 "id": "ID1715841290361",
                 "currentLayout": "DESKTOP",
@@ -294,7 +206,7 @@ class PageDetails {
                 "accept": "Component",
                 "dropPosition": {"x": 381, "y": 80},
                 "resetControlData": true
-              },
+              }
             ],
             "currentLayout": "DESKTOP",
             "isDragging": false,
@@ -322,7 +234,7 @@ class PageDetails {
                 "styles": {"backgroundColor": ""},
                 "layout": {
                   "colLayout": {
-                    "lg": {"col": "12", "height": "200"}
+                    "lg": {"col": "12", "height": "120"}
                   }
                 },
                 "children": [
@@ -332,7 +244,7 @@ class PageDetails {
                     "styles": {"backgroundColor": ""},
                     "layout": {
                       "colLayout": {
-                        "lg": {"col": "12", "height": "200"}
+                        "lg": {"col": "12", "height": "120"}
                       }
                     },
                     "children": [
@@ -343,7 +255,7 @@ class PageDetails {
                         "hideCaption": false,
                         "layout": {
                           "colLayout": {
-                            "lg": {"col": 2, "height": "200"}
+                            "lg": {"col": 2, "height": "120"}
                           }
                         },
                         "size": "small",
@@ -414,7 +326,7 @@ class PageDetails {
                 "styles": {"backgroundColor": ""},
                 "layout": {
                   "colLayout": {
-                    "lg": {"col": "12", "height": "200"}
+                    "lg": {"col": "12", "height": "120"}
                   }
                 },
                 "children": [
@@ -424,7 +336,7 @@ class PageDetails {
                     "styles": {"backgroundColor": ""},
                     "layout": {
                       "colLayout": {
-                        "lg": {"col": "12", "height": "200"}
+                        "lg": {"col": "12", "height": "120"}
                       }
                     },
                     "children": [
@@ -518,7 +430,7 @@ class PageDetails {
                         "disabled": false,
                         "visibility": true,
                         "timeSeperator": ":",
-                        "value": "14:41:11",
+                        "value": "11:11:11",
                         "timeFormat": "HH:mm:ss",
                         "currentDateTimeButton": false,
                         "size": "medium",
@@ -656,7 +568,7 @@ class PageDetails {
                 "styles": {"backgroundColor": ""},
                 "layout": {
                   "colLayout": {
-                    "lg": {"col": "12", "height": "200"}
+                    "lg": {"col": "12", "height": "100"}
                   }
                 },
                 "children": [
@@ -754,7 +666,7 @@ class PageDetails {
                 "styles": {"backgroundColor": ""},
                 "layout": {
                   "colLayout": {
-                    "lg": {"col": "12", "height": "200"}
+                    "lg": {"col": "12", "height": "120"}
                   }
                 },
                 "children": [
@@ -835,6 +747,192 @@ class PageDetails {
             "accept": "Component",
             "dropPosition": {"x": 372, "y": 651},
             "resetControlData": true
+          },
+          {
+            "id": "ID171828783753540",
+            "controlType": "container",
+            "containerType": "fluid",
+            "styles": {"backgroundColor": ""},
+            "layout": {
+              "colLayout": {
+                "lg": {"col": "12", "height": "200"}
+              }
+            },
+            "children": [
+              {
+                "id": "ID1718287837535116",
+                "controlType": "row",
+                "styles": {"backgroundColor": ""},
+                "layout": {
+                  "colLayout": {
+                    "lg": {"col": "12", "height": "120"}
+                  }
+                },
+                "children": [
+                  {
+                    "id": "ID1718287837535133",
+                    "controlType": "column",
+                    "styles": {"backgroundColor": ""},
+                    "layout": {
+                      "colLayout": {
+                        "lg": {"col": "12", "height": "200"}
+                      }
+                    },
+                    "children": [
+                      {
+                        "caption":
+                            "{{testadithi.data.data.fetchBackupEmp.0.backupEmployeeName}}",
+                        "controlType": "checkbox",
+                        "visibility": true,
+                        "hideCaption": false,
+                        "size": "Large",
+                        "variant": "default",
+                        "checked": false,
+                        "isCheckBoxButton": true,
+                        "buttonVariant": "solid",
+                        "indeterminate": false,
+                        "title":
+                            "{{testadithi.data.data.fetchBackupEmp.0.backupEmployeeName}}",
+                        "hideTitle": false,
+                        "isRVW": false,
+                        "enableHintText": false,
+                        "hintText":
+                            "{{testadithi.data.data.fetchBackupEmp.0.backupEmployeeName}}",
+                        "error": false,
+                        "layout": {
+                          "colLayout": {
+                            "lg": {"col": 2, "height": "200"}
+                          }
+                        },
+                        "id": "ID1718287837535991",
+                        "isDragging": false,
+                        "selectedComponentId": "",
+                        "componentDropped": [
+                          "ID171828783753540",
+                          "ID1718287837535116",
+                          "ID1718287837535133",
+                          "ID1718287837535991"
+                        ],
+                        "index": 0,
+                        "accept": "Component",
+                        "name":
+                            "{{testadithi.data.data.fetchBackupEmp.0.backupEmployeeName}}"
+                      }
+                    ],
+                    "currentLayout": "DESKTOP",
+                    "isDragging": false,
+                    "selectedComponentId": "",
+                    "componentDropped": [
+                      "ID171828783753540",
+                      "ID1718287837535116",
+                      "ID1718287837535133",
+                      "ID1718287837535991"
+                    ],
+                    "index": 0,
+                    "accept": "Component",
+                    "dropPosition": {"x": 382, "y": 1103}
+                  }
+                ],
+                "currentLayout": "DESKTOP",
+                "isDragging": false,
+                "selectedComponentId": "",
+                "componentDropped": [
+                  "ID171828783753540",
+                  "ID1718287837535116",
+                  "ID1718287837535133",
+                  "ID1718287837535991"
+                ],
+                "index": 0,
+                "accept": "Component",
+                "dropPosition": {"x": 381, "y": 1094}
+              },
+              {
+                "id": "ID1718287886017902",
+                "controlType": "row",
+                "styles": {"backgroundColor": ""},
+                "layout": {
+                  "colLayout": {
+                    "lg": {"col": "12", "height": "200"}
+                  }
+                },
+                "children": [
+                  {
+                    "id": "ID1718287886017369",
+                    "controlType": "column",
+                    "styles": {"backgroundColor": ""},
+                    "layout": {
+                      "colLayout": {
+                        "lg": {"col": "12", "height": "200"}
+                      }
+                    },
+                    "children": [
+                      {
+                        "controlType": "combo",
+                        "caption": "Select Value",
+                        "mandatory": false,
+                        "disabled": false,
+                        "color": "primary",
+                        "visibility": true,
+                        "options": "{{testadithi.data.data.fetchBackupEmp}}",
+                        "valueField": "backupEmployeeCode",
+                        "displayField": "backupEmployeeName",
+                        "layout": {
+                          "colLayout": {
+                            "lg": {"col": 2, "height": "200"}
+                          }
+                        },
+                        "id": "ID1718287886017966",
+                        "isDragging": false,
+                        "selectedComponentId": "ID1718287837535991",
+                        "componentDropped": [
+                          "ID1718287886017902",
+                          "ID1718287886017369",
+                          "ID1718287886017966"
+                        ],
+                        "index": 0,
+                        "accept": "Component",
+                        "comboValue": "",
+                        "placeholder": ""
+                      }
+                    ],
+                    "currentLayout": "DESKTOP",
+                    "isDragging": false,
+                    "selectedComponentId": "ID1718287837535991",
+                    "componentDropped": [
+                      "ID1718287886017902",
+                      "ID1718287886017369",
+                      "ID1718287886017966"
+                    ],
+                    "index": 0,
+                    "accept": "Component",
+                    "dropPosition": {"x": 382, "y": 1179}
+                  }
+                ],
+                "currentLayout": "DESKTOP",
+                "isDragging": false,
+                "selectedComponentId": "ID1718287837535991",
+                "componentDropped": [
+                  "ID1718287886017902",
+                  "ID1718287886017369",
+                  "ID1718287886017966"
+                ],
+                "index": 1,
+                "accept": "Component",
+                "dropPosition": {"x": 381, "y": 1170}
+              }
+            ],
+            "currentLayout": "DESKTOP",
+            "isDragging": false,
+            "selectedComponentId": "",
+            "componentDropped": [
+              "ID171828783753540",
+              "ID1718287837535116",
+              "ID1718287837535133",
+              "ID1718287837535991"
+            ],
+            "index": 3,
+            "accept": "Component",
+            "dropPosition": {"x": 372, "y": 1085}
           }
         ],
         pageId = '',

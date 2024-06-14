@@ -38,10 +38,6 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
-    final layout = applyLayout(widget.controlInfo, screenWidth);
-
-    final width = layout['width'];
-    final height = layout['height'];
 
     return StoreConnector<AppState, ViewModel>(
       converter: (Store<AppState> store) => ViewModel.create(store),
@@ -58,54 +54,65 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
         // Parse the template string
         String captionTemplate = widget.controlInfo['caption'];
         String parsedCaption = parseTemplateString(captionTemplate, viewModel);
+        String parsedValue = parseTemplateString(currentValue, viewModel);
 
         // Set the initial value of the TextEditingController
         widget.controller?.text =
-            currentValue.isNotEmpty ? currentValue : defaultValue;
+            currentValue.isNotEmpty ? parsedValue : defaultValue;
 
-        return
-            // Padding(
-            //   padding: const EdgeInsets.symmetric(
-            //       vertical: 8.0), // Add minimum padding on top and bottom
-
-            //   // height: height, // Set the height here
-            //   // width: width,
-            //   child:
-            TextFormField(
-          expands: true,
-          maxLines: null,
-          minLines: null,
-          controller: widget.controller,
-          onChanged: (value) {
-            if (_debounce?.isActive ?? false) _debounce?.cancel();
-            _debounce = Timer(Duration(milliseconds: widget.debounceTime), () {
-              dynamic newData = {
-                widget.controlInfo['id']: value,
-              };
-              viewModel
-                  .updateComponent(widget.controlInfo['id'], {'value': value});
-            });
-          },
-          decoration: InputDecoration(
-            border: OutlineInputBorder(),
-            hintText: widget.controlInfo['placeholder'],
-            labelText: parsedCaption,
-            prefixIcon: widget.controlInfo['startIcon'] != null
-                ? Icon(getIconFromIconKey(
-                    widget.controlInfo['startIcon']['iconKey']))
-                : null,
-            suffixIcon: widget.controlInfo['endIcon'] != null
-                ? Icon(getIconFromIconKey(
-                    widget.controlInfo['endIcon']['iconKey']))
-                : null,
+        return Padding(
+          padding: const EdgeInsets.all(3.0), // Add padding around the widget
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              if (parsedCaption.isNotEmpty)
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 8.0),
+                  child: Text(
+                    parsedCaption,
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  ),
+                ),
+              Expanded(
+                child: TextFormField(
+                  expands: true,
+                  maxLines: null,
+                  minLines: null,
+                  controller: widget.controller,
+                  onChanged: (value) {
+                    if (_debounce?.isActive ?? false) _debounce?.cancel();
+                    _debounce =
+                        Timer(Duration(milliseconds: widget.debounceTime), () {
+                      dynamic newData = {
+                        widget.controlInfo['id']: value,
+                      };
+                      viewModel.updateComponent(
+                          widget.controlInfo['id'], {'value': value});
+                    });
+                  },
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: widget.controlInfo['placeholder'],
+                    labelText: parsedCaption,
+                    prefixIcon: widget.controlInfo['startIcon'] != null
+                        ? Icon(getIconFromIconKey(
+                            widget.controlInfo['startIcon']['iconKey']))
+                        : null,
+                    suffixIcon: widget.controlInfo['endIcon'] != null
+                        ? Icon(getIconFromIconKey(
+                            widget.controlInfo['endIcon']['iconKey']))
+                        : null,
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter some text';
+                    }
+                    return null;
+                  },
+                ),
+              ),
+            ],
           ),
-          validator: (value) {
-            if (value == null || value.isEmpty) {
-              return 'Please enter some text';
-            }
-            return null;
-          },
-          // ),
         );
       },
     );

@@ -40,8 +40,8 @@ class _PageRendererState extends State<PageRenderer> {
       sizes: buildLayoutColumn(metaData),
       child: Padding(
         padding: const EdgeInsets.symmetric(
-            vertical: 8.0,
-            horizontal: 8.0), // Add minimum padding on top and bottom
+            vertical: 4.0,
+            horizontal: 4.0), // Add minimum padding on top and bottom
 
         // height: height, // Set the height here
         // width: width,

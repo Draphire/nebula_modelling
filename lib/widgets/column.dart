@@ -18,10 +18,11 @@ class ColumnWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
-    final layout = applyLayout(controlInfo, screenWidth);
+    final screenHeight = MediaQuery.of(context).size.height;
+    final layout = applyLayout(controlInfo, screenWidth, screenHeight);
 
     final width = layout['width'];
-    final height = layout['height'];
+    // final height = layout['height'];
 
     final children = controlInfo['children']?.map<Widget>((child) {
           return
@@ -38,7 +39,7 @@ class ColumnWidget extends StatelessWidget {
         [];
 
     return SizedBox(
-      height: height, // Set the height here
+      // height: height, // Set the height here
       width: width,
       child: Column(
         mainAxisAlignment: _getMainAxisAlignment(),

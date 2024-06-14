@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nebula_modelling/utils/utils.dart';
 import '../renderer/control/control.dart';
 
 class RowWidget extends StatelessWidget {
@@ -27,11 +28,20 @@ class RowWidget extends StatelessWidget {
           );
         }).toList() ??
         [];
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
 
-    return Row(
-      mainAxisAlignment: _getMainAxisAlignment(),
-      crossAxisAlignment: _getCrossAxisAlignment(),
-      children: children,
+    final layout = applyLayout(controlInfo, screenWidth, screenHeight);
+
+    final double height = layout['height'] ?? 200;
+
+    return Container(
+      height: height,
+      child: Row(
+        mainAxisAlignment: _getMainAxisAlignment(),
+        crossAxisAlignment: _getCrossAxisAlignment(),
+        children: children,
+      ),
     );
   }
 
