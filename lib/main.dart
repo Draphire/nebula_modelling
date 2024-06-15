@@ -1,11 +1,15 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_bootstrap/flutter_bootstrap.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:nebula_modelling/renderer/page.dart';
 import 'package:nebula_modelling/services/apiClient.dart';
 import 'package:nebula_modelling/styles/themes.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:nebula_modelling/widgets/reUsableDialog.dart';
+import 'package:nebula_modelling/widgets/reusableButton.dart';
+import 'package:nebula_modelling/widgets/reusableToast.dart';
 import 'package:redux/redux.dart';
 import 'package:redux_thunk/redux_thunk.dart';
 import './model/redux/actions/actions.dart';
@@ -64,6 +68,20 @@ class _NebulaBaseComponentState extends State<NebulaBaseComponent> {
     return StoreConnector<AppState, ViewModel>(
       converter: (Store<AppState> store) => ViewModel.create(store),
       builder: (BuildContext context, ViewModel viewModel) {
+        // Show toast if there's a toast message
+        if (viewModel.toastMessage != null) {
+          WidgetsBinding.instance!.addPostFrameCallback((_) {
+            Fluttertoast.showToast(
+              msg: viewModel.toastMessage!,
+              toastLength: Toast.LENGTH_SHORT,
+              gravity: ToastGravity.BOTTOM,
+              timeInSecForIosWeb: 1,
+              backgroundColor: Colors.black,
+              textColor: Colors.white,
+              fontSize: 16.0,
+            );
+          });
+        }
         return Scaffold(
           appBar: AppBar(
             title: Text(widget.appTitle),
@@ -71,6 +89,17 @@ class _NebulaBaseComponentState extends State<NebulaBaseComponent> {
           body: SingleChildScrollView(
             child: BootstrapContainer(
               children: [
+                Center(
+                  child: ReusableButton(
+                    label: 'Fetch Data and Show Messages',
+                    apiEndpoint: 'https://jsonplaceholder.typicode.com/posts/1',
+                    dialogMessage: 'Fetching data...',
+                    toastMessage: 'Data fetched successfully!',
+                  ),
+                ),
+                ReusableDialog(),
+
+                // ReusableToast(),
                 PageRenderer(
                   metadata: viewModel.metadata,
                   apiClient: viewModel.apiClient,

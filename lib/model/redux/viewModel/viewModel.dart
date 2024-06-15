@@ -12,6 +12,12 @@ class ViewModel {
   final Function(CurrentContext) updateCurrentContext;
   final Function(DataQueries) updateDataQueries;
   final Function(String, Map<String, dynamic>) updateComponent;
+  final Function(String) fetchData;
+  final Function(String) showDialog;
+  final Function() hideDialog;
+  final Function(String) showToast;
+  final String? toastMessage;
+  final Function() hideToast;
 
   ViewModel({
     required this.metadata,
@@ -22,9 +28,30 @@ class ViewModel {
     required this.updateCurrentContext,
     required this.updateDataQueries,
     required this.updateComponent,
+    required this.fetchData,
+    required this.showDialog,
+    required this.hideDialog,
+    required this.showToast,
+    required this.toastMessage,
+    required this.hideToast,
   });
 
   factory ViewModel.create(Store<AppState> store) {
+    // _showCustomDialog() {
+    //   store.dispatch(ShowDialogAction());
+    // }
+
+    // _hideCustomDialog() {
+    //   store.dispatch(HideDialogAction());
+    // }
+
+    _showToast(String message) {
+      store.dispatch(ShowToastAction(message));
+      Future.delayed(Duration(seconds: 3), () {
+        store.dispatch(HideToastAction());
+      });
+    }
+
     return ViewModel(
       metadata: store.state.pageDetails.metaData,
       currentState: store.state.currentState,
@@ -44,6 +71,17 @@ class ViewModel {
       updateComponent: (String componentId, Map<String, dynamic> value) {
         store.dispatch(UpdateComponentAction(componentId, value));
       },
+      fetchData: (String apiEndpoint) =>
+          store.dispatch(FetchDataAction(apiEndpoint)),
+      showDialog: (String message) {
+        store.dispatch(ShowDialogAction(message));
+      },
+      hideDialog: () {
+        store.dispatch(HideDialogAction());
+      },
+      showToast: _showToast,
+      hideToast: () => store.dispatch(HideToastAction()),
+      toastMessage: store.state.currentState.toastMessage,
     );
   }
 

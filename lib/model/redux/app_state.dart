@@ -1,3 +1,5 @@
+import 'package:nebula_modelling/model/redux/actions/actions.dart';
+
 import '../../services/apiClient.dart';
 import '../types/apiTypes.dart';
 
@@ -60,6 +62,7 @@ class AppState {
     DataQueries? dataQueries,
     CurrentContext? currentContext,
     ApiClient? apiClient,
+    required bool showDialog,
   }) {
     return AppState(
       pageDetails: pageDetails ?? this.pageDetails,
@@ -954,6 +957,12 @@ class CurrentState {
   final Map<String, dynamic> modal;
   final Map<String, dynamic> succeededQuery;
   final Map<String, dynamic> actions;
+  final bool showDialog; // Add showDialog state
+  final String
+      dialogMessage; // Add dialogMessage state for storing the dialog message
+  final bool showToast; // Add showDialog state
+  final String?
+      toastMessage; // Add dialogMessage state for storing the dialog message
 
   CurrentState({
     required this.queries,
@@ -968,6 +977,10 @@ class CurrentState {
     required this.modal,
     required this.succeededQuery,
     required this.actions,
+    required this.showDialog, // Initialize showDialog
+    required this.dialogMessage, // Initialize dialogMessage
+    required this.showToast, // Initialize showDialog
+    this.toastMessage, // Initialize dialogMessage
   });
 
   CurrentState copyWith({
@@ -983,6 +996,10 @@ class CurrentState {
     Map<String, dynamic>? modal,
     Map<String, dynamic>? succeededQuery,
     Map<String, dynamic>? actions,
+    bool? showDialog, // Add copyWith parameter for showDialog
+    String? dialogMessage, // Add copyWith parameter for dialogMessage
+    bool? showToast, // Add copyWith parameter for showDialog
+    String? toastMessage, // Add copyWith parameter for dialogMessage
   }) {
     return CurrentState(
       queries: queries ?? this.queries,
@@ -997,6 +1014,11 @@ class CurrentState {
       modal: modal ?? this.modal,
       succeededQuery: succeededQuery ?? this.succeededQuery,
       actions: actions ?? this.actions,
+      showDialog: showDialog ?? this.showDialog, // Update showDialog
+      dialogMessage:
+          dialogMessage ?? this.dialogMessage, // Update dialogMessage
+      showToast: showToast ?? this.showToast, // Update showDialog
+      toastMessage: toastMessage ?? this.toastMessage, // Update dialogMessage
     );
   }
 
@@ -3041,7 +3063,11 @@ class CurrentState {
         page = {'handle': '', 'variables': {}},
         modal = {'show': false, 'component': null},
         succeededQuery = {},
-        actions = {};
+        actions = {},
+        showDialog = false, // Initialize showDialog to false
+        dialogMessage = '', // Initialize dialogMessage to an empty string
+        showToast = false, // Initialize showDialog to false
+        toastMessage = null; // Initialize dialogMessage to an empty string
 }
 
 class DataQueries {

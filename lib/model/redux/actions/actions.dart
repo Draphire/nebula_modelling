@@ -30,3 +30,37 @@ class UpdateComponentAction {
 
   UpdateComponentAction(this.componentId, this.value);
 }
+
+class FetchDataAction {
+  final String apiEndpoint;
+
+  FetchDataAction(this.apiEndpoint);
+}
+
+class FetchDataSuccessAction {
+  final dynamic data;
+
+  FetchDataSuccessAction(this.data);
+}
+
+class FetchDataFailureAction {
+  final String error;
+
+  FetchDataFailureAction(this.error);
+}
+
+class ShowDialogAction {
+  final String message;
+
+  ShowDialogAction(this.message);
+}
+
+class HideDialogAction {}
+
+class ShowToastAction {
+  final String message;
+
+  ShowToastAction(this.message);
+}
+
+class HideToastAction {}
