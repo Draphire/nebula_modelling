@@ -50,7 +50,7 @@ class AppState {
       dataQueries: DataQueries.initialState(),
       currentContext: CurrentContext.initialState(),
       apiClient: HttpApiClient(
-        baseUrl: 'https://your.api.base.url',
+        baseUrl: 'https://hrpsaasdev.ramcouat.com',
         headers: {'Content-Type': 'application/json'},
       ),
     );
@@ -90,12 +90,890 @@ class PageDetails {
   });
 
   PageDetails.initialState()
-      : metaData = [
+      : metaData =
+            // [
+            //     {
+            //       "controlType": "container",
+            //       "containerType": "fluid",
+            //       "styles": {"backgroundColor": ""},
+            //       "id": "ID1715841290250",
+            //       "layout": {
+            //         "colLayout": {
+            //           "lg": {"col": "12", "height": "200"}
+            //         }
+            //       },
+            //       "children": [
+            //         {
+            //           "controlType": "row",
+            //           "styles": {"backgroundColor": ""},
+            //           "layout": {
+            //             "colLayout": {
+            //               "lg": {"col": "12", "height": "400"}
+            //             }
+            //           },
+            //           "children": [
+            //             {
+            //               "controlType": "column",
+            //               "styles": {"backgroundColor": ""},
+            //               "layout": {
+            //                 "colLayout": {
+            //                   "lg": {"col": "12", "height": "400"}
+            //                 }
+            //               },
+            //               "children": [
+            //                 {
+            //                   "caption": "Static Caption",
+            //                   "controlType": "textarea",
+            //                   "hideCaption": false,
+            //                   "size": "small",
+            //                   "visibility": true,
+            //                   "mandatory": false,
+            //                   "value": "Static Contentsdsdsd",
+            //                   "layout": {
+            //                     "colLayout": {
+            //                       "lg": {"col": 2, "height": "200"}
+            //                     }
+            //                   },
+            //                   "rows": 12,
+            //                   "cols": 12,
+            //                   "uiTask": false,
+            //                   "className": "",
+            //                   "disabled": false,
+            //                   "hintText": "",
+            //                   "placeholder": "",
+            //                   "error": false,
+            //                   "success": false,
+            //                   "isReadonly": false,
+            //                   "enableResize": false,
+            //                   "width": "100%",
+            //                   "id": "ID1715842061879598",
+            //                   "isDragging": false,
+            //                   "selectedComponentId": "",
+            //                   "componentDropped": [],
+            //                   "index": 0,
+            //                   "accept": "Component",
+            //                   "resetControlData": true
+            //                 },
+            //                 {
+            //                   "caption":
+            //                       "{{testadithi.data.data.fetchBackupEmp.0.backupEmployeeName}}",
+            //                   "controlType": "textarea",
+            //                   "hideCaption": false,
+            //                   "size": "small",
+            //                   "visibility": true,
+            //                   "mandatory": false,
+            //                   "value":
+            //                       "{{testadithi.data.data.fetchBackupEmp.0.backupEmployeeName}}",
+            //                   "layout": {
+            //                     "colLayout": {
+            //                       "lg": {"col": 2, "height": "200"}
+            //                     }
+            //                   },
+            //                   "rows": 12,
+            //                   "cols": 12,
+            //                   "uiTask": false,
+            //                   "className": "",
+            //                   "disabled": false,
+            //                   "hintText": "",
+            //                   "placeholder": "",
+            //                   "error": false,
+            //                   "success": false,
+            //                   "isReadonly": false,
+            //                   "enableResize": false,
+            //                   "width": "100%",
+            //                   "id": "ID1715842063858246",
+            //                   "isDragging": false,
+            //                   "selectedComponentId": "",
+            //                   "componentDropped": [],
+            //                   "index": 1,
+            //                   "accept": "Component",
+            //                   "resetControlData": true
+            //                 }
+            //               ],
+            //               "id": "ID1715841290765",
+            //               "currentLayout": "DESKTOP",
+            //               "isDragging": false,
+            //               "selectedComponentId": "",
+            //               "componentDropped": [],
+            //               "index": 0,
+            //               "accept": "Component",
+            //               "dropPosition": {"x": 382, "y": 89},
+            //               "resetControlData": true
+            //             }
+            //           ],
+            //           "id": "ID1715841290361",
+            //           "currentLayout": "DESKTOP",
+            //           "isDragging": false,
+            //           "selectedComponentId": "",
+            //           "componentDropped": [],
+            //           "index": 0,
+            //           "accept": "Component",
+            //           "dropPosition": {"x": 381, "y": 80},
+            //           "resetControlData": true
+            //         }
+            //       ],
+            //       "currentLayout": "DESKTOP",
+            //       "isDragging": false,
+            //       "selectedComponentId": "",
+            //       "componentDropped": [],
+            //       "index": 0,
+            //       "accept": "Component",
+            //       "dropPosition": {"x": 372, "y": 71},
+            //       "resetControlData": true
+            //     },
+            //     {
+            //       "id": "ID1715857015830105",
+            //       "controlType": "container",
+            //       "containerType": "fluid",
+            //       "styles": {"backgroundColor": ""},
+            //       "layout": {
+            //         "colLayout": {
+            //           "lg": {"col": "12", "height": "200"}
+            //         }
+            //       },
+            //       "children": [
+            //         {
+            //           "id": "ID1715857015830907",
+            //           "controlType": "row",
+            //           "styles": {"backgroundColor": ""},
+            //           "layout": {
+            //             "colLayout": {
+            //               "lg": {"col": "12", "height": "120"}
+            //             }
+            //           },
+            //           "children": [
+            //             {
+            //               "id": "ID1715857015830126",
+            //               "controlType": "column",
+            //               "styles": {"backgroundColor": ""},
+            //               "layout": {
+            //                 "colLayout": {
+            //                   "lg": {"col": "12", "height": "120"}
+            //                 }
+            //               },
+            //               "children": [
+            //                 {
+            //                   "caption":
+            //                       "{{testadithi.data.data.fetchBackupEmp.0.backupEmployeeName}}",
+            //                   "controlType": "textbox",
+            //                   "hideCaption": false,
+            //                   "layout": {
+            //                     "colLayout": {
+            //                       "lg": {"col": 2, "height": "120"}
+            //                     }
+            //                   },
+            //                   "size": "small",
+            //                   "mandatory": false,
+            //                   "variant": "Standard",
+            //                   "value":
+            //                       "{{testadithi.data.data.fetchBackupEmp.0.backupEmployeeName}}",
+            //                   "disabled": false,
+            //                   "visibility": true,
+            //                   "isReadonly": false,
+            //                   "uiTask": false,
+            //                   "enableInheritWidth": false,
+            //                   "isRVW": false,
+            //                   "error": false,
+            //                   "success": false,
+            //                   "id": "ID1715857015830562",
+            //                   "isDragging": false,
+            //                   "selectedComponentId": "",
+            //                   "componentDropped": [],
+            //                   "index": 0,
+            //                   "accept": "Component",
+            //                   "resetControlData": true
+            //                 }
+            //               ],
+            //               "currentLayout": "DESKTOP",
+            //               "isDragging": false,
+            //               "selectedComponentId": "",
+            //               "componentDropped": [],
+            //               "index": 0,
+            //               "accept": "Component",
+            //               "dropPosition": {"x": 382, "y": 571},
+            //               "resetControlData": true
+            //             }
+            //           ],
+            //           "currentLayout": "DESKTOP",
+            //           "isDragging": false,
+            //           "selectedComponentId": "",
+            //           "componentDropped": [],
+            //           "index": 0,
+            //           "accept": "Component",
+            //           "dropPosition": {"x": 381, "y": 562},
+            //           "resetControlData": true
+            //         }
+            //       ],
+            //       "currentLayout": "DESKTOP",
+            //       "isDragging": false,
+            //       "selectedComponentId": "",
+            //       "componentDropped": [],
+            //       "index": 1,
+            //       "accept": "Component",
+            //       "dropPosition": {"x": 372, "y": 553},
+            //       "resetControlData": true
+            //     },
+            //     {
+            //       "id": "ID1715857025213293",
+            //       "controlType": "container",
+            //       "containerType": "fluid",
+            //       "styles": {"backgroundColor": ""},
+            //       "layout": {
+            //         "colLayout": {
+            //           "lg": {"col": "12", "height": "200"}
+            //         }
+            //       },
+            //       "children": [
+            //         {
+            //           "id": "ID1715857025213885",
+            //           "controlType": "row",
+            //           "styles": {"backgroundColor": ""},
+            //           "layout": {
+            //             "colLayout": {
+            //               "lg": {"col": "12", "height": "120"}
+            //             }
+            //           },
+            //           "children": [
+            //             {
+            //               "id": "ID1715857025213435",
+            //               "controlType": "column",
+            //               "styles": {"backgroundColor": ""},
+            //               "layout": {
+            //                 "colLayout": {
+            //                   "lg": {"col": "12", "height": "120"}
+            //                 }
+            //               },
+            //               "children": [
+            //                 {
+            //                   "caption": "Textbox",
+            //                   "controlType": "textbox",
+            //                   "hideCaption": false,
+            //                   "layout": {
+            //                     "colLayout": {
+            //                       "lg": {"col": 2, "height": "200"}
+            //                     }
+            //                   },
+            //                   "size": "small",
+            //                   "mandatory": false,
+            //                   "variant": "Standard",
+            //                   "value": "textdfdfdfdf",
+            //                   "disabled": false,
+            //                   "visibility": true,
+            //                   "isReadonly": false,
+            //                   "uiTask": false,
+            //                   "enableInheritWidth": false,
+            //                   "isRVW": false,
+            //                   "error": false,
+            //                   "success": false,
+            //                   "id": "ID171585702521397",
+            //                   "isDragging": false,
+            //                   "selectedComponentId": "",
+            //                   "componentDropped": [],
+            //                   "index": 0,
+            //                   "accept": "Component",
+            //                   "resetControlData": true
+            //                 }
+            //               ],
+            //               "currentLayout": "DESKTOP",
+            //               "isDragging": false,
+            //               "selectedComponentId": "",
+            //               "componentDropped": [],
+            //               "index": 0,
+            //               "accept": "Component",
+            //               "dropPosition": {"x": 382, "y": 669},
+            //               "resetControlData": true
+            //             }
+            //           ],
+            //           "currentLayout": "DESKTOP",
+            //           "isDragging": false,
+            //           "selectedComponentId": "",
+            //           "componentDropped": [],
+            //           "index": 0,
+            //           "accept": "Component",
+            //           "dropPosition": {"x": 381, "y": 660},
+            //           "resetControlData": true
+            //         },
+            //         {
+            //           "id": "ID1715858737902185",
+            //           "controlType": "row",
+            //           "styles": {"backgroundColor": ""},
+            //           "layout": {
+            //             "colLayout": {
+            //               "lg": {"col": "12", "height": "200"}
+            //             }
+            //           },
+            //           "children": [
+            //             {
+            //               "id": "ID1715858737902920",
+            //               "controlType": "column",
+            //               "styles": {"backgroundColor": ""},
+            //               "layout": {
+            //                 "colLayout": {
+            //                   "lg": {"col": "12", "height": "200"}
+            //                 }
+            //               },
+            //               "children": [
+            //                 {
+            //                   "controlType": "timePicker",
+            //                   "layout": {
+            //                     "colLayout": {
+            //                       "lg": {"col": 2, "height": "200"}
+            //                     }
+            //                   },
+            //                   "id": "ID1715858737902260",
+            //                   "className": "",
+            //                   "mandatory": false,
+            //                   "placeholder": "Enter the time",
+            //                   "caption":
+            //                       "{{testadithi.data.data.fetchBackupEmp.0.backupEmployeeName}}",
+            //                   "showCaption": false,
+            //                   "helpTask": "",
+            //                   "error": false,
+            //                   "success": false,
+            //                   "readOnly": false,
+            //                   "disabled": false,
+            //                   "visibility": true,
+            //                   "timeSeperator": ":",
+            //                   "value": "11:11:11",
+            //                   "timeFormat": "HH:mm:ss",
+            //                   "currentDateTimeButton": false,
+            //                   "size": "medium",
+            //                   "variant": "standard",
+            //                   "uiTask": true,
+            //                   "fixMainPosition": true,
+            //                   "calendarPosition": "bottom",
+            //                   "onOpenPickNewDate": true,
+            //                   "width": "235px",
+            //                   "isDragging": false,
+            //                   "selectedComponentId": "",
+            //                   "componentDropped": [],
+            //                   "index": 0,
+            //                   "accept": "Component",
+            //                   "resetControlData": true
+            //                 },
+            //                 {
+            //                   "controlType": "datePicker",
+            //                   "visibility": true,
+            //                   "hideYear": false,
+            //                   "variant": "Standard",
+            //                   "size": "small",
+            //                   "hideMonth": false,
+            //                   "numberOfMonths": 1,
+            //                   "disableMonthPicker": false,
+            //                   "disableYearPicker": false,
+            //                   "minDate": "",
+            //                   "maxDate": "",
+            //                   "onlyYearPicker": false,
+            //                   "onlyMonthPicker": false,
+            //                   "dateFormat": "MM/DD/YYYY",
+            //                   "value": "2024-05-31T12:16:25.223Z",
+            //                   "id": "ID1715937668527512",
+            //                   "enableIcon": true,
+            //                   "caption": "DatePicker",
+            //                   "showCaption": false,
+            //                   "enableButtons": false,
+            //                   "layout": {
+            //                     "colLayout": {
+            //                       "lg": {"col": 2, "height": "200"}
+            //                     }
+            //                   },
+            //                   "isDragging": false,
+            //                   "selectedComponentId": "",
+            //                   "componentDropped": [],
+            //                   "index": 1,
+            //                   "accept": "Component",
+            //                   "resetControlData": true
+            //                 }
+            //               ],
+            //               "currentLayout": "DESKTOP",
+            //               "isDragging": false,
+            //               "selectedComponentId": "",
+            //               "componentDropped": [],
+            //               "index": 0,
+            //               "accept": "Component",
+            //               "dropPosition": {"x": 382, "y": 749},
+            //               "resetControlData": true
+            //             },
+            //             {
+            //               "id": "ID1715924677661532",
+            //               "controlType": "column",
+            //               "styles": {"backgroundColor": ""},
+            //               "layout": {
+            //                 "colLayout": {
+            //                   "lg": {"col": "12", "height": "200"}
+            //                 }
+            //               },
+            //               "children": [
+            //                 {
+            //                   "controlType": "numeric",
+            //                   "layout": {
+            //                     "colLayout": {
+            //                       "lg": {"col": 2, "height": "200"}
+            //                     }
+            //                   },
+            //                   "id": "ID1715924677661424",
+            //                   "value":
+            //                       "{{assignmentOptions.data.data.fetchAssignment.0.assignmentNumber}}",
+            //                   "size": "medium",
+            //                   "visibility": true,
+            //                   "disabled": false,
+            //                   "variant": "contained",
+            //                   "caption": "Test",
+            //                   "showCaption": true,
+            //                   "helpText": "Please enter a numeric value",
+            //                   "showHelpText": false,
+            //                   "mandatory": true,
+            //                   "prefix": "",
+            //                   "suffix": "",
+            //                   "minValue": -999999,
+            //                   "maxValue": 999999,
+            //                   "precision": 0,
+            //                   "thousandSeperator": ",",
+            //                   "groupStyle": "thousand",
+            //                   "error": false,
+            //                   "success": false,
+            //                   "incrementDecrementValue": 2,
+            //                   "blurTaskName": "blur",
+            //                   "focusTaskName": "focus",
+            //                   "isReadonly": false,
+            //                   "showCounterIcon": true,
+            //                   "placeholder": "Enter value",
+            //                   "enableInheritWidth": false,
+            //                   "isDragging": false,
+            //                   "selectedComponentId": "",
+            //                   "componentDropped": [],
+            //                   "index": 0,
+            //                   "accept": "Component",
+            //                   "resetControlData": true
+            //                 }
+            //               ],
+            //               "currentLayout": "DESKTOP",
+            //               "isDragging": false,
+            //               "selectedComponentId": "",
+            //               "componentDropped": [],
+            //               "index": 1,
+            //               "accept": "Component",
+            //               "resetControlData": true,
+            //               "dropPosition": {"x": 382, "y": 829}
+            //             }
+            //           ],
+            //           "currentLayout": "DESKTOP",
+            //           "isDragging": false,
+            //           "selectedComponentId": "",
+            //           "componentDropped": [],
+            //           "index": 1,
+            //           "accept": "Component",
+            //           "dropPosition": {"x": 381, "y": 740},
+            //           "resetControlData": true
+            //         },
+            //         {
+            //           "id": "ID1715922035386907",
+            //           "controlType": "row",
+            //           "styles": {"backgroundColor": ""},
+            //           "layout": {
+            //             "colLayout": {
+            //               "lg": {"col": "12", "height": "100"}
+            //             }
+            //           },
+            //           "children": [
+            //             {
+            //               "id": "ID1715922035386192",
+            //               "controlType": "column",
+            //               "styles": {"backgroundColor": ""},
+            //               "layout": {
+            //                 "colLayout": {
+            //                   "lg": {"col": "12", "height": "200"}
+            //                 }
+            //               },
+            //               "children": [
+            //                 {
+            //                   "caption": "Button",
+            //                   "controlType": "button",
+            //                   "hideCaption": false,
+            //                   "layout": {
+            //                     "colLayout": {
+            //                       "lg": {"col": 2, "height": "200"}
+            //                     }
+            //                   },
+            //                   "disabled": false,
+            //                   "visibility": true,
+            //                   "variant": "outlined",
+            //                   "size": "small",
+            //                   "color": "primary",
+            //                   "tooltip": "Tooltip",
+            //                   "id": "ID1715922035386854",
+            //                   "isDragging": false,
+            //                   "selectedComponentId": "",
+            //                   "componentDropped": [],
+            //                   "index": 0,
+            //                   "accept": "Component",
+            //                   "resetControlData": true,
+            //                   "events": [
+            //                     {
+            //                       "event": {
+            //                         "eventId": "onClick",
+            //                         "actionId": "show-alert",
+            //                         "message": "Hello",
+            //                         "alertType": "warning"
+            //                       },
+            //                       "target": "component",
+            //                       "sourceId": "ID1713519951416271",
+            //                       "index": 0,
+            //                       "pageId": "2bf8a371-9207-4b9c-bac2-d30a05fbd6ad",
+            //                       "appId": "3180d666-cf1c-4f54-9410-13a820917fe4",
+            //                       "name": "onChange"
+            //                     },
+            //                     {
+            //                       "event": {
+            //                         "eventId": "onClick",
+            //                         "actionId": "show-alert",
+            //                         "message": "Hello 2",
+            //                         "alertType": "warning"
+            //                       },
+            //                       "target": "component",
+            //                       "sourceId": "ID1713519951416271",
+            //                       "index": 1,
+            //                       "pageId": "2bf8a371-9207-4b9c-bac2-d30a05fbd6ad",
+            //                       "appId": "3180d666-cf1c-4f54-9410-13a820917fe4",
+            //                       "name": "onChange"
+            //                     },
+            //                     {
+            //                       "event": {
+            //                         "eventId": "onClick",
+            //                         "actionId": "run-query",
+            //                         "queryId": "59734614-87f3-4732-a7f6-8206e0c05e88",
+            //                         "queryName": "applyLeave2",
+            //                         "inputParams": {
+            //                           "employeeCode": "00013303",
+            //                           "assignmentNo": 1,
+            //                           "leaveTypeCode":
+            //                               "{{ID1714730525749652.comboValue}}",
+            //                           "leaveStartDate":
+            //                               "{{ID1714730820026404.value}}",
+            //                           "leaveEndDate": "{{ID1714730864141998.value}}",
+            //                           "leaveFromSession":
+            //                               "{{ID1715067537157422.comboValue}}",
+            //                           "leaveToSession":
+            //                               "{{ID1714730864141790.comboValue}}",
+            //                           "leaveReasonCode":
+            //                               "{{ID1714730929806978.comboValue}}",
+            //                           "additionalReason":
+            //                               "{{ID171585702521397.value}}",
+            //                           "backupEmployeeCode":
+            //                               "{{ID1714730909658264.comboValue}}"
+            //                         }
+            //                       },
+            //                       "target": "component",
+            //                       "sourceId": "ID1715922035386854",
+            //                       "index": 2,
+            //                       "pageId": "533ab427-21b6-4304-b7a2-010c7e75b0fc",
+            //                       "appId": "544006e1-0afc-4d37-b8d8-821001a552db",
+            //                       "name": "onClick"
+            //                     }
+            //                   ]
+            //                 }
+            //               ],
+            //               "currentLayout": "DESKTOP",
+            //               "isDragging": false,
+            //               "selectedComponentId": "",
+            //               "componentDropped": [],
+            //               "index": 0,
+            //               "accept": "Component",
+            //               "resetControlData": true,
+            //               "dropPosition": {"x": 382, "y": 919}
+            //             }
+            //           ],
+            //           "currentLayout": "DESKTOP",
+            //           "isDragging": false,
+            //           "selectedComponentId": "",
+            //           "componentDropped": [],
+            //           "index": 2,
+            //           "accept": "Component",
+            //           "resetControlData": true,
+            //           "dropPosition": {"x": 381, "y": 910}
+            //         },
+            //         {
+            //           "id": "ID1716294979170597",
+            //           "controlType": "row",
+            //           "styles": {"backgroundColor": ""},
+            //           "layout": {
+            //             "colLayout": {
+            //               "lg": {"col": "12", "height": "120"}
+            //             }
+            //           },
+            //           "children": [
+            //             {
+            //               "id": "ID17162949791708",
+            //               "controlType": "column",
+            //               "styles": {"backgroundColor": ""},
+            //               "layout": {
+            //                 "colLayout": {
+            //                   "lg": {"col": "12", "height": "200"}
+            //                 }
+            //               },
+            //               "children": [
+            //                 {
+            //                   "controlType": "numeric",
+            //                   "layout": {
+            //                     "colLayout": {
+            //                       "lg": {"col": 2, "height": "200"}
+            //                     }
+            //                   },
+            //                   "id": "ID1716294979170599",
+            //                   "value": "4566",
+            //                   "size": "medium",
+            //                   "visibility": true,
+            //                   "disabled": false,
+            //                   "variant": "contained",
+            //                   "caption": "Enter the value",
+            //                   "showCaption": true,
+            //                   "helpText": "Please enter a numeric value",
+            //                   "showHelpText": false,
+            //                   "mandatory": true,
+            //                   "prefix": "",
+            //                   "suffix": "",
+            //                   "minValue": -999999,
+            //                   "maxValue": 999999,
+            //                   "precision": 0,
+            //                   "thousandSeperator": ",",
+            //                   "groupStyle": "thousand",
+            //                   "error": false,
+            //                   "success": false,
+            //                   "incrementDecrementValue": 2,
+            //                   "blurTaskName": "blur",
+            //                   "focusTaskName": "focus",
+            //                   "isReadonly": false,
+            //                   "showCounterIcon": true,
+            //                   "placeholder": "Enter value",
+            //                   "enableInheritWidth": false,
+            //                   "isDragging": false,
+            //                   "selectedComponentId": "",
+            //                   "componentDropped": [],
+            //                   "index": 0,
+            //                   "accept": "Component"
+            //                 }
+            //               ],
+            //               "currentLayout": "DESKTOP",
+            //               "isDragging": false,
+            //               "selectedComponentId": "",
+            //               "componentDropped": [],
+            //               "index": 0,
+            //               "accept": "Component",
+            //               "dropPosition": {"x": 382, "y": 991}
+            //             }
+            //           ],
+            //           "currentLayout": "DESKTOP",
+            //           "isDragging": false,
+            //           "selectedComponentId": "",
+            //           "componentDropped": [],
+            //           "index": 3,
+            //           "accept": "Component",
+            //           "dropPosition": {"x": 381, "y": 982}
+            //         }
+            //       ],
+            //       "currentLayout": "DESKTOP",
+            //       "isDragging": false,
+            //       "selectedComponentId": "",
+            //       "componentDropped": [],
+            //       "index": 2,
+            //       "accept": "Component",
+            //       "dropPosition": {"x": 372, "y": 651},
+            //       "resetControlData": true
+            //     },
+            //     {
+            //       "id": "ID171828783753540",
+            //       "controlType": "container",
+            //       "containerType": "fluid",
+            //       "styles": {"backgroundColor": ""},
+            //       "layout": {
+            //         "colLayout": {
+            //           "lg": {"col": "12", "height": "200"}
+            //         }
+            //       },
+            //       "children": [
+            //         {
+            //           "id": "ID1718287837535116",
+            //           "controlType": "row",
+            //           "styles": {"backgroundColor": ""},
+            //           "layout": {
+            //             "colLayout": {
+            //               "lg": {"col": "12", "height": "120"}
+            //             }
+            //           },
+            //           "children": [
+            //             {
+            //               "id": "ID1718287837535133",
+            //               "controlType": "column",
+            //               "styles": {"backgroundColor": ""},
+            //               "layout": {
+            //                 "colLayout": {
+            //                   "lg": {"col": "12", "height": "200"}
+            //                 }
+            //               },
+            //               "children": [
+            //                 {
+            //                   "caption":
+            //                       "{{testadithi.data.data.fetchBackupEmp.0.backupEmployeeName}}",
+            //                   "controlType": "checkbox",
+            //                   "visibility": true,
+            //                   "hideCaption": false,
+            //                   "size": "Large",
+            //                   "variant": "default",
+            //                   "checked": false,
+            //                   "isCheckBoxButton": true,
+            //                   "buttonVariant": "solid",
+            //                   "indeterminate": false,
+            //                   "title":
+            //                       "{{testadithi.data.data.fetchBackupEmp.0.backupEmployeeName}}",
+            //                   "hideTitle": false,
+            //                   "isRVW": false,
+            //                   "enableHintText": false,
+            //                   "hintText":
+            //                       "{{testadithi.data.data.fetchBackupEmp.0.backupEmployeeName}}",
+            //                   "error": false,
+            //                   "layout": {
+            //                     "colLayout": {
+            //                       "lg": {"col": 2, "height": "200"}
+            //                     }
+            //                   },
+            //                   "id": "ID1718287837535991",
+            //                   "isDragging": false,
+            //                   "selectedComponentId": "",
+            //                   "componentDropped": [
+            //                     "ID171828783753540",
+            //                     "ID1718287837535116",
+            //                     "ID1718287837535133",
+            //                     "ID1718287837535991"
+            //                   ],
+            //                   "index": 0,
+            //                   "accept": "Component",
+            //                   "name":
+            //                       "{{testadithi.data.data.fetchBackupEmp.0.backupEmployeeName}}"
+            //                 }
+            //               ],
+            //               "currentLayout": "DESKTOP",
+            //               "isDragging": false,
+            //               "selectedComponentId": "",
+            //               "componentDropped": [
+            //                 "ID171828783753540",
+            //                 "ID1718287837535116",
+            //                 "ID1718287837535133",
+            //                 "ID1718287837535991"
+            //               ],
+            //               "index": 0,
+            //               "accept": "Component",
+            //               "dropPosition": {"x": 382, "y": 1103}
+            //             }
+            //           ],
+            //           "currentLayout": "DESKTOP",
+            //           "isDragging": false,
+            //           "selectedComponentId": "",
+            //           "componentDropped": [
+            //             "ID171828783753540",
+            //             "ID1718287837535116",
+            //             "ID1718287837535133",
+            //             "ID1718287837535991"
+            //           ],
+            //           "index": 0,
+            //           "accept": "Component",
+            //           "dropPosition": {"x": 381, "y": 1094}
+            //         },
+            //         {
+            //           "id": "ID1718287886017902",
+            //           "controlType": "row",
+            //           "styles": {"backgroundColor": ""},
+            //           "layout": {
+            //             "colLayout": {
+            //               "lg": {"col": "12", "height": "200"}
+            //             }
+            //           },
+            //           "children": [
+            //             {
+            //               "id": "ID1718287886017369",
+            //               "controlType": "column",
+            //               "styles": {"backgroundColor": ""},
+            //               "layout": {
+            //                 "colLayout": {
+            //                   "lg": {"col": "12", "height": "200"}
+            //                 }
+            //               },
+            //               "children": [
+            //                 {
+            //                   "controlType": "combo",
+            //                   "caption": "Select Value",
+            //                   "mandatory": false,
+            //                   "disabled": false,
+            //                   "color": "primary",
+            //                   "visibility": true,
+            //                   "options": "{{testadithi.data.data.fetchBackupEmp}}",
+            //                   "valueField": "backupEmployeeCode",
+            //                   "displayField": "backupEmployeeName",
+            //                   "layout": {
+            //                     "colLayout": {
+            //                       "lg": {"col": 2, "height": "200"}
+            //                     }
+            //                   },
+            //                   "id": "ID1718287886017966",
+            //                   "isDragging": false,
+            //                   "selectedComponentId": "ID1718287837535991",
+            //                   "componentDropped": [
+            //                     "ID1718287886017902",
+            //                     "ID1718287886017369",
+            //                     "ID1718287886017966"
+            //                   ],
+            //                   "index": 0,
+            //                   "accept": "Component",
+            //                   "comboValue": "",
+            //                   "placeholder": ""
+            //                 }
+            //               ],
+            //               "currentLayout": "DESKTOP",
+            //               "isDragging": false,
+            //               "selectedComponentId": "ID1718287837535991",
+            //               "componentDropped": [
+            //                 "ID1718287886017902",
+            //                 "ID1718287886017369",
+            //                 "ID1718287886017966"
+            //               ],
+            //               "index": 0,
+            //               "accept": "Component",
+            //               "dropPosition": {"x": 382, "y": 1179}
+            //             }
+            //           ],
+            //           "currentLayout": "DESKTOP",
+            //           "isDragging": false,
+            //           "selectedComponentId": "ID1718287837535991",
+            //           "componentDropped": [
+            //             "ID1718287886017902",
+            //             "ID1718287886017369",
+            //             "ID1718287886017966"
+            //           ],
+            //           "index": 1,
+            //           "accept": "Component",
+            //           "dropPosition": {"x": 381, "y": 1170}
+            //         }
+            //       ],
+            //       "currentLayout": "DESKTOP",
+            //       "isDragging": false,
+            //       "selectedComponentId": "",
+            //       "componentDropped": [
+            //         "ID171828783753540",
+            //         "ID1718287837535116",
+            //         "ID1718287837535133",
+            //         "ID1718287837535991"
+            //       ],
+            //       "index": 3,
+            //       "accept": "Component",
+            //       "dropPosition": {"x": 372, "y": 1085}
+            //     }
+            //   ]
+            //
+            [
           {
             "controlType": "container",
             "containerType": "fluid",
             "styles": {"backgroundColor": ""},
-            "id": "ID1715841290250",
+            "id": "ID1715521622033",
             "layout": {
               "colLayout": {
                 "lg": {"col": "12", "height": "200"}
@@ -103,297 +981,7 @@ class PageDetails {
             },
             "children": [
               {
-                "controlType": "row",
-                "styles": {"backgroundColor": ""},
-                "layout": {
-                  "colLayout": {
-                    "lg": {"col": "12", "height": "400"}
-                  }
-                },
-                "children": [
-                  {
-                    "controlType": "column",
-                    "styles": {"backgroundColor": ""},
-                    "layout": {
-                      "colLayout": {
-                        "lg": {"col": "12", "height": "400"}
-                      }
-                    },
-                    "children": [
-                      {
-                        "caption": "Static Caption",
-                        "controlType": "textarea",
-                        "hideCaption": false,
-                        "size": "small",
-                        "visibility": true,
-                        "mandatory": false,
-                        "value": "Static Contentsdsdsd",
-                        "layout": {
-                          "colLayout": {
-                            "lg": {"col": 2, "height": "200"}
-                          }
-                        },
-                        "rows": 12,
-                        "cols": 12,
-                        "uiTask": false,
-                        "className": "",
-                        "disabled": false,
-                        "hintText": "",
-                        "placeholder": "",
-                        "error": false,
-                        "success": false,
-                        "isReadonly": false,
-                        "enableResize": false,
-                        "width": "100%",
-                        "id": "ID1715842061879598",
-                        "isDragging": false,
-                        "selectedComponentId": "",
-                        "componentDropped": [],
-                        "index": 0,
-                        "accept": "Component",
-                        "resetControlData": true
-                      },
-                      {
-                        "caption":
-                            "{{testadithi.data.data.fetchBackupEmp.0.backupEmployeeName}}",
-                        "controlType": "textarea",
-                        "hideCaption": false,
-                        "size": "small",
-                        "visibility": true,
-                        "mandatory": false,
-                        "value":
-                            "{{testadithi.data.data.fetchBackupEmp.0.backupEmployeeName}}",
-                        "layout": {
-                          "colLayout": {
-                            "lg": {"col": 2, "height": "200"}
-                          }
-                        },
-                        "rows": 12,
-                        "cols": 12,
-                        "uiTask": false,
-                        "className": "",
-                        "disabled": false,
-                        "hintText": "",
-                        "placeholder": "",
-                        "error": false,
-                        "success": false,
-                        "isReadonly": false,
-                        "enableResize": false,
-                        "width": "100%",
-                        "id": "ID1715842063858246",
-                        "isDragging": false,
-                        "selectedComponentId": "",
-                        "componentDropped": [],
-                        "index": 1,
-                        "accept": "Component",
-                        "resetControlData": true
-                      }
-                    ],
-                    "id": "ID1715841290765",
-                    "currentLayout": "DESKTOP",
-                    "isDragging": false,
-                    "selectedComponentId": "",
-                    "componentDropped": [],
-                    "index": 0,
-                    "accept": "Component",
-                    "dropPosition": {"x": 382, "y": 89},
-                    "resetControlData": true
-                  }
-                ],
-                "id": "ID1715841290361",
-                "currentLayout": "DESKTOP",
-                "isDragging": false,
-                "selectedComponentId": "",
-                "componentDropped": [],
-                "index": 0,
-                "accept": "Component",
-                "dropPosition": {"x": 381, "y": 80},
-                "resetControlData": true
-              }
-            ],
-            "currentLayout": "DESKTOP",
-            "isDragging": false,
-            "selectedComponentId": "",
-            "componentDropped": [],
-            "index": 0,
-            "accept": "Component",
-            "dropPosition": {"x": 372, "y": 71},
-            "resetControlData": true
-          },
-          {
-            "id": "ID1715857015830105",
-            "controlType": "container",
-            "containerType": "fluid",
-            "styles": {"backgroundColor": ""},
-            "layout": {
-              "colLayout": {
-                "lg": {"col": "12", "height": "200"}
-              }
-            },
-            "children": [
-              {
-                "id": "ID1715857015830907",
-                "controlType": "row",
-                "styles": {"backgroundColor": ""},
-                "layout": {
-                  "colLayout": {
-                    "lg": {"col": "12", "height": "120"}
-                  }
-                },
-                "children": [
-                  {
-                    "id": "ID1715857015830126",
-                    "controlType": "column",
-                    "styles": {"backgroundColor": ""},
-                    "layout": {
-                      "colLayout": {
-                        "lg": {"col": "12", "height": "120"}
-                      }
-                    },
-                    "children": [
-                      {
-                        "caption":
-                            "{{testadithi.data.data.fetchBackupEmp.0.backupEmployeeName}}",
-                        "controlType": "textbox",
-                        "hideCaption": false,
-                        "layout": {
-                          "colLayout": {
-                            "lg": {"col": 2, "height": "120"}
-                          }
-                        },
-                        "size": "small",
-                        "mandatory": false,
-                        "variant": "Standard",
-                        "value":
-                            "{{testadithi.data.data.fetchBackupEmp.0.backupEmployeeName}}",
-                        "disabled": false,
-                        "visibility": true,
-                        "isReadonly": false,
-                        "uiTask": false,
-                        "enableInheritWidth": false,
-                        "isRVW": false,
-                        "error": false,
-                        "success": false,
-                        "id": "ID1715857015830562",
-                        "isDragging": false,
-                        "selectedComponentId": "",
-                        "componentDropped": [],
-                        "index": 0,
-                        "accept": "Component",
-                        "resetControlData": true
-                      }
-                    ],
-                    "currentLayout": "DESKTOP",
-                    "isDragging": false,
-                    "selectedComponentId": "",
-                    "componentDropped": [],
-                    "index": 0,
-                    "accept": "Component",
-                    "dropPosition": {"x": 382, "y": 571},
-                    "resetControlData": true
-                  }
-                ],
-                "currentLayout": "DESKTOP",
-                "isDragging": false,
-                "selectedComponentId": "",
-                "componentDropped": [],
-                "index": 0,
-                "accept": "Component",
-                "dropPosition": {"x": 381, "y": 562},
-                "resetControlData": true
-              }
-            ],
-            "currentLayout": "DESKTOP",
-            "isDragging": false,
-            "selectedComponentId": "",
-            "componentDropped": [],
-            "index": 1,
-            "accept": "Component",
-            "dropPosition": {"x": 372, "y": 553},
-            "resetControlData": true
-          },
-          {
-            "id": "ID1715857025213293",
-            "controlType": "container",
-            "containerType": "fluid",
-            "styles": {"backgroundColor": ""},
-            "layout": {
-              "colLayout": {
-                "lg": {"col": "12", "height": "200"}
-              }
-            },
-            "children": [
-              {
-                "id": "ID1715857025213885",
-                "controlType": "row",
-                "styles": {"backgroundColor": ""},
-                "layout": {
-                  "colLayout": {
-                    "lg": {"col": "12", "height": "120"}
-                  }
-                },
-                "children": [
-                  {
-                    "id": "ID1715857025213435",
-                    "controlType": "column",
-                    "styles": {"backgroundColor": ""},
-                    "layout": {
-                      "colLayout": {
-                        "lg": {"col": "12", "height": "120"}
-                      }
-                    },
-                    "children": [
-                      {
-                        "caption": "Textbox",
-                        "controlType": "textbox",
-                        "hideCaption": false,
-                        "layout": {
-                          "colLayout": {
-                            "lg": {"col": 2, "height": "200"}
-                          }
-                        },
-                        "size": "small",
-                        "mandatory": false,
-                        "variant": "Standard",
-                        "value": "textdfdfdfdf",
-                        "disabled": false,
-                        "visibility": true,
-                        "isReadonly": false,
-                        "uiTask": false,
-                        "enableInheritWidth": false,
-                        "isRVW": false,
-                        "error": false,
-                        "success": false,
-                        "id": "ID171585702521397",
-                        "isDragging": false,
-                        "selectedComponentId": "",
-                        "componentDropped": [],
-                        "index": 0,
-                        "accept": "Component",
-                        "resetControlData": true
-                      }
-                    ],
-                    "currentLayout": "DESKTOP",
-                    "isDragging": false,
-                    "selectedComponentId": "",
-                    "componentDropped": [],
-                    "index": 0,
-                    "accept": "Component",
-                    "dropPosition": {"x": 382, "y": 669},
-                    "resetControlData": true
-                  }
-                ],
-                "currentLayout": "DESKTOP",
-                "isDragging": false,
-                "selectedComponentId": "",
-                "componentDropped": [],
-                "index": 0,
-                "accept": "Component",
-                "dropPosition": {"x": 381, "y": 660},
-                "resetControlData": true
-              },
-              {
-                "id": "ID1715858737902185",
+                "id": "ID1715521985277146",
                 "controlType": "row",
                 "styles": {"backgroundColor": ""},
                 "layout": {
@@ -403,85 +991,40 @@ class PageDetails {
                 },
                 "children": [
                   {
-                    "id": "ID1715858737902920",
+                    "id": "ID1715521985277969",
                     "controlType": "column",
                     "styles": {"backgroundColor": ""},
                     "layout": {
                       "colLayout": {
-                        "lg": {"col": "12", "height": "200"}
+                        "lg": {"col": "8", "height": "200"}
                       }
                     },
                     "children": [
                       {
-                        "controlType": "timePicker",
+                        "controlType": "combo",
+                        "caption": "Assignment",
+                        "mandatory": true,
+                        "disabled": false,
+                        "color": "primary",
+                        "visibility": true,
+                        "options":
+                            "{{assignmentOptions.data.data.fetchAssignment}}",
+                        "valueField": "assignmentInformation",
+                        "displayField": "assignmentInformation",
                         "layout": {
                           "colLayout": {
                             "lg": {"col": 2, "height": "200"}
                           }
                         },
-                        "id": "ID1715858737902260",
-                        "className": "",
-                        "mandatory": false,
-                        "placeholder": "Enter the time",
-                        "caption":
-                            "{{testadithi.data.data.fetchBackupEmp.0.backupEmployeeName}}",
-                        "showCaption": false,
-                        "helpTask": "",
-                        "error": false,
-                        "success": false,
-                        "readOnly": false,
-                        "disabled": false,
-                        "visibility": true,
-                        "timeSeperator": ":",
-                        "value": "11:11:11",
-                        "timeFormat": "HH:mm:ss",
-                        "currentDateTimeButton": false,
-                        "size": "medium",
-                        "variant": "standard",
-                        "uiTask": true,
-                        "fixMainPosition": true,
-                        "calendarPosition": "bottom",
-                        "onOpenPickNewDate": true,
-                        "width": "235px",
+                        "id": "ID1715521985277738",
                         "isDragging": false,
                         "selectedComponentId": "",
                         "componentDropped": [],
                         "index": 0,
                         "accept": "Component",
-                        "resetControlData": true
-                      },
-                      {
-                        "controlType": "datePicker",
-                        "visibility": true,
-                        "hideYear": false,
-                        "variant": "Standard",
-                        "size": "small",
-                        "hideMonth": false,
-                        "numberOfMonths": 1,
-                        "disableMonthPicker": false,
-                        "disableYearPicker": false,
-                        "minDate": "",
-                        "maxDate": "",
-                        "onlyYearPicker": false,
-                        "onlyMonthPicker": false,
-                        "dateFormat": "MM/DD/YYYY",
-                        "value": "2024-05-31T12:16:25.223Z",
-                        "id": "ID1715937668527512",
-                        "enableIcon": true,
-                        "caption": "DatePicker",
-                        "showCaption": false,
-                        "enableButtons": false,
-                        "layout": {
-                          "colLayout": {
-                            "lg": {"col": 2, "height": "200"}
-                          }
-                        },
-                        "isDragging": false,
-                        "selectedComponentId": "",
-                        "componentDropped": [],
-                        "index": 1,
-                        "accept": "Component",
-                        "resetControlData": true
+                        "comboValue": "",
+                        "size": "medium",
+                        "events": []
                       }
                     ],
                     "currentLayout": "DESKTOP",
@@ -490,156 +1033,86 @@ class PageDetails {
                     "componentDropped": [],
                     "index": 0,
                     "accept": "Component",
-                    "dropPosition": {"x": 382, "y": 749},
-                    "resetControlData": true
-                  },
-                  {
-                    "id": "ID1715924677661532",
-                    "controlType": "column",
-                    "styles": {"backgroundColor": ""},
-                    "layout": {
-                      "colLayout": {
-                        "lg": {"col": "12", "height": "200"}
-                      }
-                    },
-                    "children": [
-                      {
-                        "controlType": "numeric",
-                        "layout": {
-                          "colLayout": {
-                            "lg": {"col": 2, "height": "200"}
-                          }
-                        },
-                        "id": "ID1715924677661424",
-                        "value":
-                            "{{assignmentOptions.data.data.fetchAssignment.0.assignmentNumber}}",
-                        "size": "medium",
-                        "visibility": true,
-                        "disabled": false,
-                        "variant": "contained",
-                        "caption": "Test",
-                        "showCaption": true,
-                        "helpText": "Please enter a numeric value",
-                        "showHelpText": false,
-                        "mandatory": true,
-                        "prefix": "",
-                        "suffix": "",
-                        "minValue": -999999,
-                        "maxValue": 999999,
-                        "precision": 0,
-                        "thousandSeperator": ",",
-                        "groupStyle": "thousand",
-                        "error": false,
-                        "success": false,
-                        "incrementDecrementValue": 2,
-                        "blurTaskName": "blur",
-                        "focusTaskName": "focus",
-                        "isReadonly": false,
-                        "showCounterIcon": true,
-                        "placeholder": "Enter value",
-                        "enableInheritWidth": false,
-                        "isDragging": false,
-                        "selectedComponentId": "",
-                        "componentDropped": [],
-                        "index": 0,
-                        "accept": "Component",
-                        "resetControlData": true
-                      }
-                    ],
-                    "currentLayout": "DESKTOP",
-                    "isDragging": false,
-                    "selectedComponentId": "",
-                    "componentDropped": [],
-                    "index": 1,
-                    "accept": "Component",
-                    "resetControlData": true,
-                    "dropPosition": {"x": 382, "y": 829}
+                    "dropPosition": {
+                      "x": 381.3333435058594,
+                      "y": 88.33333587646484
+                    }
                   }
                 ],
                 "currentLayout": "DESKTOP",
                 "isDragging": false,
                 "selectedComponentId": "",
                 "componentDropped": [],
-                "index": 1,
+                "index": 0,
                 "accept": "Component",
-                "dropPosition": {"x": 381, "y": 740},
-                "resetControlData": true
+                "dropPosition": {
+                  "x": 380.66668701171875,
+                  "y": 79.66667175292969
+                }
               },
               {
-                "id": "ID1715922035386907",
+                "id": "ID1715522021427864",
                 "controlType": "row",
                 "styles": {"backgroundColor": ""},
                 "layout": {
                   "colLayout": {
-                    "lg": {"col": "12", "height": "100"}
+                    "lg": {"col": "12", "height": "200"}
                   }
                 },
                 "children": [
                   {
-                    "id": "ID1715922035386192",
+                    "id": "ID1715522021427707",
                     "controlType": "column",
                     "styles": {"backgroundColor": ""},
                     "layout": {
                       "colLayout": {
-                        "lg": {"col": "12", "height": "200"}
+                        "lg": {"col": "8", "height": "200"}
                       }
                     },
                     "children": [
                       {
-                        "caption": "Button",
-                        "controlType": "button",
-                        "hideCaption": false,
+                        "controlType": "combo",
+                        "caption": "Leave Type",
+                        "mandatory": true,
+                        "disabled": false,
+                        "color": "primary",
+                        "visibility": true,
+                        "options":
+                            "{{leaveTypeDatas.data.data.fetchLeaveType}}",
+                        "valueField": "leavetypeCode",
+                        "displayField": "leavetypeDesc",
                         "layout": {
                           "colLayout": {
                             "lg": {"col": 2, "height": "200"}
                           }
                         },
-                        "disabled": false,
-                        "visibility": true,
-                        "variant": "outlined",
-                        "size": "small",
-                        "color": "primary",
-                        "tooltip": "Tooltip",
-                        "id": "ID1715922035386854",
+                        "id": "ID1715522021427336",
                         "isDragging": false,
                         "selectedComponentId": "",
                         "componentDropped": [],
                         "index": 0,
                         "accept": "Component",
-                        "resetControlData": true,
+                        "comboValue": "",
+                        "size": "medium",
                         "events": [
                           {
                             "event": {
-                              "eventId": "onClick",
+                              "eventId": "onSelect",
                               "actionId": "run-query",
-                              "queryId": "59734614-87f3-4732-a7f6-8206e0c05e88",
-                              "queryName": "applyLeave2",
+                              "queryId": "fec0550b-c9f8-4cf0-8dad-e1f99945f1ca",
+                              "queryName": "leaveReason",
                               "inputParams": {
-                                "employeeCode": "00013303",
-                                "assignmentNo": 1,
-                                "leaveTypeCode":
-                                    "{{ID1714730525749652.comboValue}}",
-                                "leaveStartDate":
-                                    "{{ID1714730820026404.value}}",
-                                "leaveEndDate": "{{ID1714730864141998.value}}",
-                                "leaveFromSession":
-                                    "{{ID1715067537157422.comboValue}}",
-                                "leaveToSession":
-                                    "{{ID1714730864141790.comboValue}}",
-                                "leaveReasonCode":
-                                    "{{ID1714730929806978.comboValue}}",
-                                "additionalReason":
-                                    "{{ID171585702521397.value}}",
-                                "backupEmployeeCode":
-                                    "{{ID1714730909658264.comboValue}}"
+                                "leavetypeCode":
+                                    "{{ID1715522021427336.comboValue}}",
+                                "includeInactive": true
                               }
                             },
                             "target": "component",
-                            "sourceId": "ID1715922035386854",
+                            "sourceId": "ID1715522021427336",
                             "index": 0,
-                            "pageId": "533ab427-21b6-4304-b7a2-010c7e75b0fc",
-                            "appId": "544006e1-0afc-4d37-b8d8-821001a552db",
-                            "name": "onClick"
+                            "pageId": "9bfdf627-5df1-452f-b447-596f58387a0a",
+                            "appId": "62f02cb3-4f8c-410a-b7a4-43de97479833",
+                            "name": "onSelect"
                           }
                         ]
                       }
@@ -650,8 +1123,135 @@ class PageDetails {
                     "componentDropped": [],
                     "index": 0,
                     "accept": "Component",
-                    "resetControlData": true,
-                    "dropPosition": {"x": 382, "y": 919}
+                    "dropPosition": {
+                      "x": 381.3333435058594,
+                      "y": 160.33334350585938
+                    }
+                  }
+                ],
+                "currentLayout": "DESKTOP",
+                "isDragging": false,
+                "selectedComponentId": "",
+                "componentDropped": [],
+                "index": 1,
+                "accept": "Component",
+                "dropPosition": {
+                  "x": 380.66668701171875,
+                  "y": 151.6666717529297
+                }
+              },
+              {
+                "id": "ID1715522069840134",
+                "controlType": "row",
+                "styles": {"backgroundColor": ""},
+                "layout": {
+                  "colLayout": {
+                    "lg": {"col": "12", "height": "200"}
+                  }
+                },
+                "children": [
+                  {
+                    "id": "ID1715522069840386",
+                    "controlType": "column",
+                    "styles": {"backgroundColor": ""},
+                    "layout": {
+                      "colLayout": {
+                        "lg": {"col": "4", "height": "200"}
+                      }
+                    },
+                    "children": [
+                      {
+                        "controlType": "datePicker",
+                        "visibility": true,
+                        "hideYear": false,
+                        "variant": "Standard",
+                        "size": "medium",
+                        "hideMonth": false,
+                        "numberOfMonths": 1,
+                        "disableMonthPicker": false,
+                        "disableYearPicker": false,
+                        "minDate": "",
+                        "maxDate": "",
+                        "onlyYearPicker": false,
+                        "onlyMonthPicker": false,
+                        "dateFormat": "YYYY-MM-DD",
+                        "value": "",
+                        "id": "ID1715767523432232",
+                        "enableIcon": true,
+                        "caption": "Start Date",
+                        "showCaption": true,
+                        "enableButtons": false,
+                        "onOpenPickNewDate": true,
+                        "layout": {
+                          "colLayout": {
+                            "lg": {"col": 2, "height": "200"}
+                          }
+                        },
+                        "isDragging": false,
+                        "selectedComponentId": "",
+                        "componentDropped": [],
+                        "index": 0,
+                        "accept": "Component",
+                        "mandatory": true,
+                        "iconSrc": "CalendarStroke"
+                      }
+                    ],
+                    "currentLayout": "DESKTOP",
+                    "isDragging": false,
+                    "selectedComponentId": "",
+                    "componentDropped": [],
+                    "index": 0,
+                    "accept": "Component",
+                    "dropPosition": {
+                      "x": 381.3333435058594,
+                      "y": 232.33334350585938
+                    }
+                  },
+                  {
+                    "id": "ID1715522198278596",
+                    "controlType": "column",
+                    "styles": {"backgroundColor": ""},
+                    "layout": {
+                      "colLayout": {
+                        "lg": {"col": "4", "height": "200"}
+                      }
+                    },
+                    "children": [
+                      {
+                        "controlType": "combo",
+                        "caption": "Session",
+                        "mandatory": true,
+                        "disabled": false,
+                        "color": "primary",
+                        "visibility": true,
+                        "options": "{{getSession.data.data.fetchQuickCodes}}",
+                        "valueField": "quickCode",
+                        "displayField": "quickCodeDescription",
+                        "layout": {
+                          "colLayout": {
+                            "lg": {"col": 2, "height": "200"}
+                          }
+                        },
+                        "id": "ID1715522198278427",
+                        "isDragging": false,
+                        "selectedComponentId": "",
+                        "componentDropped": [],
+                        "index": 0,
+                        "accept": "Component",
+                        "comboValue": "",
+                        "size": "medium"
+                      }
+                    ],
+                    "currentLayout": "DESKTOP",
+                    "isDragging": false,
+                    "selectedComponentId": "",
+                    "componentDropped": [],
+                    "index": 1,
+                    "accept": "Component",
+                    "dropPosition": {
+                      "x": 669.1041870117188,
+                      "y": 232.33334350585938
+                    }
                   }
                 ],
                 "currentLayout": "DESKTOP",
@@ -660,63 +1260,304 @@ class PageDetails {
                 "componentDropped": [],
                 "index": 2,
                 "accept": "Component",
-                "resetControlData": true,
-                "dropPosition": {"x": 381, "y": 910}
+                "dropPosition": {
+                  "x": 380.66668701171875,
+                  "y": 223.6666717529297
+                }
               },
               {
-                "id": "ID1716294979170597",
+                "id": "ID1715522257956825",
                 "controlType": "row",
                 "styles": {"backgroundColor": ""},
                 "layout": {
                   "colLayout": {
-                    "lg": {"col": "12", "height": "120"}
+                    "lg": {"col": "12", "height": "200"}
                   }
                 },
                 "children": [
                   {
-                    "id": "ID17162949791708",
+                    "id": "ID1715522257956455",
                     "controlType": "column",
                     "styles": {"backgroundColor": ""},
                     "layout": {
                       "colLayout": {
-                        "lg": {"col": "12", "height": "200"}
+                        "lg": {"col": "4", "height": "200"}
                       }
                     },
                     "children": [
                       {
-                        "controlType": "numeric",
+                        "controlType": "datePicker",
+                        "visibility": true,
+                        "hideYear": false,
+                        "variant": "Standard",
+                        "size": "medium",
+                        "hideMonth": false,
+                        "numberOfMonths": 1,
+                        "disableMonthPicker": false,
+                        "disableYearPicker": false,
+                        "minDate": "",
+                        "maxDate": "",
+                        "onlyYearPicker": false,
+                        "onlyMonthPicker": false,
+                        "dateFormat": "YYYY-MM-DD",
+                        "value": "",
+                        "id": "ID1715522257956236",
+                        "enableIcon": true,
+                        "caption": "End Date",
+                        "showCaption": true,
+                        "enableButtons": false,
                         "layout": {
                           "colLayout": {
                             "lg": {"col": 2, "height": "200"}
                           }
                         },
-                        "id": "ID1716294979170599",
-                        "value": "4566",
-                        "size": "medium",
-                        "visibility": true,
-                        "disabled": false,
-                        "variant": "contained",
-                        "caption": "Enter the value",
-                        "showCaption": true,
-                        "helpText": "Please enter a numeric value",
-                        "showHelpText": false,
+                        "isDragging": false,
+                        "selectedComponentId": "",
+                        "componentDropped": [],
+                        "index": 0,
+                        "accept": "Component",
+                        "iconSrc": "CalendarStroke",
+                        "mandatory": true
+                      }
+                    ],
+                    "currentLayout": "DESKTOP",
+                    "isDragging": false,
+                    "selectedComponentId": "",
+                    "componentDropped": [],
+                    "index": 0,
+                    "accept": "Component",
+                    "dropPosition": {"x": 381.3333435058594, "y": 321}
+                  },
+                  {
+                    "id": "ID1715522294575692",
+                    "controlType": "column",
+                    "styles": {"backgroundColor": ""},
+                    "layout": {
+                      "colLayout": {
+                        "lg": {"col": "4", "height": "200"}
+                      }
+                    },
+                    "children": [
+                      {
+                        "controlType": "combo",
+                        "caption": "Session",
                         "mandatory": true,
-                        "prefix": "",
-                        "suffix": "",
-                        "minValue": -999999,
-                        "maxValue": 999999,
-                        "precision": 0,
-                        "thousandSeperator": ",",
-                        "groupStyle": "thousand",
+                        "disabled": false,
+                        "color": "primary",
+                        "visibility": true,
+                        "options": "{{getSession.data.data.fetchQuickCodes}}",
+                        "valueField": "quickCode",
+                        "displayField": "quickCodeDescription",
+                        "layout": {
+                          "colLayout": {
+                            "lg": {"col": 2, "height": "200"}
+                          }
+                        },
+                        "id": "ID171552229457579",
+                        "isDragging": false,
+                        "selectedComponentId": "",
+                        "componentDropped": [],
+                        "index": 0,
+                        "accept": "Component",
+                        "size": "medium",
+                        "comboValue": ""
+                      }
+                    ],
+                    "currentLayout": "DESKTOP",
+                    "isDragging": false,
+                    "selectedComponentId": "",
+                    "componentDropped": [],
+                    "index": 1,
+                    "accept": "Component",
+                    "dropPosition": {"x": 669.1041870117188, "y": 321}
+                  }
+                ],
+                "currentLayout": "DESKTOP",
+                "isDragging": false,
+                "selectedComponentId": "",
+                "componentDropped": [],
+                "index": 3,
+                "accept": "Component",
+                "dropPosition": {
+                  "x": 380.66668701171875,
+                  "y": 312.3333435058594
+                }
+              },
+              {
+                "id": "ID1715522344515822",
+                "controlType": "row",
+                "styles": {"backgroundColor": ""},
+                "layout": {
+                  "colLayout": {
+                    "lg": {"col": "12", "height": "200"}
+                  }
+                },
+                "children": [
+                  {
+                    "id": "ID1715522344515229",
+                    "controlType": "column",
+                    "styles": {"backgroundColor": ""},
+                    "layout": {
+                      "colLayout": {
+                        "lg": {"col": "8", "height": "200"}
+                      }
+                    },
+                    "children": [
+                      {
+                        "controlType": "combo",
+                        "caption": "Backup Employee",
+                        "mandatory": true,
+                        "disabled": false,
+                        "color": "primary",
+                        "visibility": true,
+                        "options": "{{backupEmp.data.data.fetchBackupEmp}}",
+                        "valueField": "backupEmployeeCode",
+                        "displayField": "backupEmployeeName",
+                        "layout": {
+                          "colLayout": {
+                            "lg": {"col": 2, "height": "200"}
+                          }
+                        },
+                        "id": "ID1715522344515832",
+                        "isDragging": false,
+                        "selectedComponentId": "",
+                        "componentDropped": [],
+                        "index": 0,
+                        "accept": "Component",
+                        "comboValue": "",
+                        "size": "medium"
+                      }
+                    ],
+                    "currentLayout": "DESKTOP",
+                    "isDragging": false,
+                    "selectedComponentId": "",
+                    "componentDropped": [],
+                    "index": 0,
+                    "accept": "Component",
+                    "dropPosition": {
+                      "x": 381.3333435058594,
+                      "y": 409.66668701171875
+                    }
+                  }
+                ],
+                "currentLayout": "DESKTOP",
+                "isDragging": false,
+                "selectedComponentId": "",
+                "componentDropped": [],
+                "index": 4,
+                "accept": "Component",
+                "dropPosition": {"x": 380.66668701171875, "y": 401}
+              },
+              {
+                "id": "ID1715522377444543",
+                "controlType": "row",
+                "styles": {"backgroundColor": ""},
+                "layout": {
+                  "colLayout": {
+                    "lg": {"col": "12", "height": "200"}
+                  }
+                },
+                "children": [
+                  {
+                    "id": "ID1715522377444636",
+                    "controlType": "column",
+                    "styles": {"backgroundColor": ""},
+                    "layout": {
+                      "colLayout": {
+                        "lg": {"col": "8", "height": "200"}
+                      }
+                    },
+                    "children": [
+                      {
+                        "controlType": "combo",
+                        "caption": "Reason",
+                        "mandatory": true,
+                        "disabled": false,
+                        "color": "primary",
+                        "visibility": true,
+                        "options": "{{leaveReason.data.data.fetchLeaveReason}}",
+                        "valueField": "leavereasonCode",
+                        "displayField": "leavereasonDesc",
+                        "layout": {
+                          "colLayout": {
+                            "lg": {"col": 2, "height": "200"}
+                          }
+                        },
+                        "id": "ID1715522377444139",
+                        "isDragging": false,
+                        "selectedComponentId": "",
+                        "componentDropped": [],
+                        "index": 0,
+                        "accept": "Component",
+                        "comboValue": ""
+                      }
+                    ],
+                    "currentLayout": "DESKTOP",
+                    "isDragging": false,
+                    "selectedComponentId": "",
+                    "componentDropped": [],
+                    "index": 0,
+                    "accept": "Component",
+                    "dropPosition": {
+                      "x": 381.3333435058594,
+                      "y": 481.66668701171875
+                    }
+                  }
+                ],
+                "currentLayout": "DESKTOP",
+                "isDragging": false,
+                "selectedComponentId": "",
+                "componentDropped": [],
+                "index": 5,
+                "accept": "Component",
+                "dropPosition": {"x": 380.66668701171875, "y": 473}
+              },
+              {
+                "id": "ID171552242982426",
+                "controlType": "row",
+                "styles": {"backgroundColor": ""},
+                "layout": {
+                  "colLayout": {
+                    "lg": {"col": "12", "height": "200"}
+                  }
+                },
+                "children": [
+                  {
+                    "id": "ID1715522429824864",
+                    "controlType": "column",
+                    "styles": {"backgroundColor": ""},
+                    "layout": {
+                      "colLayout": {
+                        "lg": {"col": "8", "height": "200"}
+                      }
+                    },
+                    "children": [
+                      {
+                        "caption": "Addition Reason for Leave",
+                        "controlType": "textarea",
+                        "hideCaption": false,
+                        "size": "small",
+                        "visibility": true,
+                        "mandatory": false,
+                        "value": "Enter here",
+                        "layout": {
+                          "colLayout": {
+                            "lg": {"col": 2, "height": "200"}
+                          }
+                        },
+                        "rows": "13",
+                        "cols": "9",
+                        "uiTask": false,
+                        "className": "",
+                        "disabled": false,
+                        "hintText": "",
+                        "placeholder": "",
                         "error": false,
                         "success": false,
-                        "incrementDecrementValue": 2,
-                        "blurTaskName": "blur",
-                        "focusTaskName": "focus",
                         "isReadonly": false,
-                        "showCounterIcon": true,
-                        "placeholder": "Enter value",
-                        "enableInheritWidth": false,
+                        "enableResize": false,
+                        "width": "100%",
+                        "id": "ID1715522429824872",
                         "isDragging": false,
                         "selectedComponentId": "",
                         "componentDropped": [],
@@ -730,127 +1571,22 @@ class PageDetails {
                     "componentDropped": [],
                     "index": 0,
                     "accept": "Component",
-                    "dropPosition": {"x": 382, "y": 991}
+                    "dropPosition": {
+                      "x": 381.3333435058594,
+                      "y": 553.6666870117188
+                    }
                   }
                 ],
                 "currentLayout": "DESKTOP",
                 "isDragging": false,
                 "selectedComponentId": "",
                 "componentDropped": [],
-                "index": 3,
+                "index": 6,
                 "accept": "Component",
-                "dropPosition": {"x": 381, "y": 982}
-              }
-            ],
-            "currentLayout": "DESKTOP",
-            "isDragging": false,
-            "selectedComponentId": "",
-            "componentDropped": [],
-            "index": 2,
-            "accept": "Component",
-            "dropPosition": {"x": 372, "y": 651},
-            "resetControlData": true
-          },
-          {
-            "id": "ID171828783753540",
-            "controlType": "container",
-            "containerType": "fluid",
-            "styles": {"backgroundColor": ""},
-            "layout": {
-              "colLayout": {
-                "lg": {"col": "12", "height": "200"}
-              }
-            },
-            "children": [
-              {
-                "id": "ID1718287837535116",
-                "controlType": "row",
-                "styles": {"backgroundColor": ""},
-                "layout": {
-                  "colLayout": {
-                    "lg": {"col": "12", "height": "120"}
-                  }
-                },
-                "children": [
-                  {
-                    "id": "ID1718287837535133",
-                    "controlType": "column",
-                    "styles": {"backgroundColor": ""},
-                    "layout": {
-                      "colLayout": {
-                        "lg": {"col": "12", "height": "200"}
-                      }
-                    },
-                    "children": [
-                      {
-                        "caption":
-                            "{{testadithi.data.data.fetchBackupEmp.0.backupEmployeeName}}",
-                        "controlType": "checkbox",
-                        "visibility": true,
-                        "hideCaption": false,
-                        "size": "Large",
-                        "variant": "default",
-                        "checked": false,
-                        "isCheckBoxButton": true,
-                        "buttonVariant": "solid",
-                        "indeterminate": false,
-                        "title":
-                            "{{testadithi.data.data.fetchBackupEmp.0.backupEmployeeName}}",
-                        "hideTitle": false,
-                        "isRVW": false,
-                        "enableHintText": false,
-                        "hintText":
-                            "{{testadithi.data.data.fetchBackupEmp.0.backupEmployeeName}}",
-                        "error": false,
-                        "layout": {
-                          "colLayout": {
-                            "lg": {"col": 2, "height": "200"}
-                          }
-                        },
-                        "id": "ID1718287837535991",
-                        "isDragging": false,
-                        "selectedComponentId": "",
-                        "componentDropped": [
-                          "ID171828783753540",
-                          "ID1718287837535116",
-                          "ID1718287837535133",
-                          "ID1718287837535991"
-                        ],
-                        "index": 0,
-                        "accept": "Component",
-                        "name":
-                            "{{testadithi.data.data.fetchBackupEmp.0.backupEmployeeName}}"
-                      }
-                    ],
-                    "currentLayout": "DESKTOP",
-                    "isDragging": false,
-                    "selectedComponentId": "",
-                    "componentDropped": [
-                      "ID171828783753540",
-                      "ID1718287837535116",
-                      "ID1718287837535133",
-                      "ID1718287837535991"
-                    ],
-                    "index": 0,
-                    "accept": "Component",
-                    "dropPosition": {"x": 382, "y": 1103}
-                  }
-                ],
-                "currentLayout": "DESKTOP",
-                "isDragging": false,
-                "selectedComponentId": "",
-                "componentDropped": [
-                  "ID171828783753540",
-                  "ID1718287837535116",
-                  "ID1718287837535133",
-                  "ID1718287837535991"
-                ],
-                "index": 0,
-                "accept": "Component",
-                "dropPosition": {"x": 381, "y": 1094}
+                "dropPosition": {"x": 380.66668701171875, "y": 545}
               },
               {
-                "id": "ID1718287886017902",
+                "id": "ID1715522478667517",
                 "controlType": "row",
                 "styles": {"backgroundColor": ""},
                 "layout": {
@@ -860,82 +1596,111 @@ class PageDetails {
                 },
                 "children": [
                   {
-                    "id": "ID1718287886017369",
+                    "id": "ID1715522478667289",
                     "controlType": "column",
                     "styles": {"backgroundColor": ""},
                     "layout": {
                       "colLayout": {
-                        "lg": {"col": "12", "height": "200"}
+                        "lg": {
+                          "col": "12",
+                          "height": "200",
+                          "alignItems": "end",
+                          "justifyContent": "end"
+                        }
                       }
                     },
                     "children": [
                       {
-                        "controlType": "combo",
-                        "caption": "Select Value",
-                        "mandatory": false,
-                        "disabled": false,
-                        "color": "primary",
-                        "visibility": true,
-                        "options": "{{testadithi.data.data.fetchBackupEmp}}",
-                        "valueField": "backupEmployeeCode",
-                        "displayField": "backupEmployeeName",
+                        "caption": "Apply",
+                        "controlType": "button",
+                        "hideCaption": false,
                         "layout": {
                           "colLayout": {
-                            "lg": {"col": 2, "height": "200"}
+                            "lg": {
+                              "col": "12",
+                              "height": "200",
+                              "alignItems": "start",
+                              "justifyContent": "end"
+                            }
                           }
                         },
-                        "id": "ID1718287886017966",
+                        "disabled": false,
+                        "visibility": true,
+                        "variant": "contained",
+                        "size": "small",
+                        "color": "primary",
+                        "tooltip": "Tooltip",
+                        "id": "ID1715522478667202",
                         "isDragging": false,
-                        "selectedComponentId": "ID1718287837535991",
-                        "componentDropped": [
-                          "ID1718287886017902",
-                          "ID1718287886017369",
-                          "ID1718287886017966"
-                        ],
+                        "selectedComponentId": "",
+                        "componentDropped": [],
                         "index": 0,
                         "accept": "Component",
-                        "comboValue": "",
-                        "placeholder": ""
+                        "events": [
+                          {
+                            "event": {
+                              "eventId": "onClick",
+                              "actionId": "run-query",
+                              "queryId": "ac979f14-c5fb-4041-a78f-e7b9964d12b3",
+                              "queryName": "applyLeave",
+                              "inputParams": {
+                                "employeeCode": "00013303",
+                                "assignmentNo": 1,
+                                "leaveTypeCode":
+                                    "{{ID1715522021427336.comboValue}}",
+                                "leaveStartDate":
+                                    "{{ID1715767523432232.value}}",
+                                "leaveEndDate": "{{ID1715522257956236.value}}",
+                                "leaveFromSession":
+                                    "{{ID1715522198278427.comboValue}}",
+                                "leaveToSession":
+                                    "{{ID171552229457579.comboValue}}",
+                                "leaveReasonCode":
+                                    "{{ID1715522377444139.comboValue}}",
+                                "additionalReason":
+                                    "{{ID1715522429824872.value}}",
+                                "backupEmployeeCode":
+                                    "{{ID1715522344515832.comboValue}}"
+                              }
+                            },
+                            "target": "component",
+                            "sourceId": "ID1715522478667202",
+                            "index": 0,
+                            "pageId": "9bfdf627-5df1-452f-b447-596f58387a0a",
+                            "appId": "62f02cb3-4f8c-410a-b7a4-43de97479833",
+                            "name": "onClick"
+                          },
+                        ]
                       }
                     ],
                     "currentLayout": "DESKTOP",
                     "isDragging": false,
-                    "selectedComponentId": "ID1718287837535991",
-                    "componentDropped": [
-                      "ID1718287886017902",
-                      "ID1718287886017369",
-                      "ID1718287886017966"
-                    ],
+                    "selectedComponentId": "",
+                    "componentDropped": [],
                     "index": 0,
                     "accept": "Component",
-                    "dropPosition": {"x": 382, "y": 1179}
+                    "dropPosition": {
+                      "x": 381.3333435058594,
+                      "y": 817.6666870117188
+                    }
                   }
                 ],
                 "currentLayout": "DESKTOP",
                 "isDragging": false,
-                "selectedComponentId": "ID1718287837535991",
-                "componentDropped": [
-                  "ID1718287886017902",
-                  "ID1718287886017369",
-                  "ID1718287886017966"
-                ],
-                "index": 1,
+                "selectedComponentId": "",
+                "componentDropped": [],
+                "index": 7,
                 "accept": "Component",
-                "dropPosition": {"x": 381, "y": 1170}
+                "dropPosition": {"x": 380.66668701171875, "y": 809}
               }
             ],
             "currentLayout": "DESKTOP",
             "isDragging": false,
             "selectedComponentId": "",
-            "componentDropped": [
-              "ID171828783753540",
-              "ID1718287837535116",
-              "ID1718287837535133",
-              "ID1718287837535991"
-            ],
-            "index": 3,
+            "componentDropped": [],
+            "index": 0,
             "accept": "Component",
-            "dropPosition": {"x": 372, "y": 1085}
+            "dropPosition": {"x": 372, "y": 71}
           }
         ],
         pageId = '',
@@ -3048,7 +3813,3032 @@ class CurrentState {
             }
           },
           "applyLeave2": {},
-          "assignmentOptions": {"isLoading": true, "data": [], "rawData": []}
+          "assignmentOptions": {"isLoading": true, "data": [], "rawData": []},
+          "getSession": {
+            "isLoading": false,
+            "data": {
+              "data": {
+                "fetchQuickCodes": [
+                  {
+                    "quickCode": "MSES",
+                    "quickCodeDescription": "First Session"
+                  },
+                  {"quickCode": "FSESS", "quickCodeDescription": "I Session"},
+                  {"quickCode": "SSESS", "quickCodeDescription": "II Session"},
+                  {"quickCode": "TSESS", "quickCodeDescription": "III Session"},
+                  {
+                    "quickCode": "NIES",
+                    "quickCodeDescription": "Night Session"
+                  },
+                  {
+                    "quickCode": "NSES",
+                    "quickCodeDescription": "Second Session"
+                  },
+                  {"quickCode": "WDAY", "quickCodeDescription": "Whole Day"}
+                ]
+              }
+            },
+            "rawData": {
+              "data": {
+                "fetchQuickCodes": [
+                  {
+                    "quickCode": "MSES",
+                    "quickCodeDescription": "First Session"
+                  },
+                  {"quickCode": "FSESS", "quickCodeDescription": "I Session"},
+                  {"quickCode": "SSESS", "quickCodeDescription": "II Session"},
+                  {"quickCode": "TSESS", "quickCodeDescription": "III Session"},
+                  {
+                    "quickCode": "NIES",
+                    "quickCodeDescription": "Night Session"
+                  },
+                  {
+                    "quickCode": "NSES",
+                    "quickCodeDescription": "Second Session"
+                  },
+                  {"quickCode": "WDAY", "quickCodeDescription": "Whole Day"}
+                ]
+              }
+            }
+          },
+          "leaveTypeData": {
+            "isLoading": false,
+            "data": {
+              "errors": [
+                {
+                  "message":
+                      "The current user is not authorized to access this resource.",
+                  "locations": [
+                    {"line": 2, "column": 7}
+                  ],
+                  "path": ["fetchLeaveType"],
+                  "extensions": {
+                    "code": "AUTH_NOT_AUTHENTICATED",
+                    "errorContext": [
+                      {
+                        "id": -200,
+                        "source": "APP",
+                        "message":
+                            "The current user is not authorized to access this resource.",
+                        "correctiveAction": "",
+                        "severity": "Stop",
+                        "errorAt": "/fetchLeaveType"
+                      }
+                    ],
+                    "remote": {
+                      "message":
+                          "The current user is not authorized to access this resource.",
+                      "locations": [
+                        {"line": 1, "column": 23}
+                      ],
+                      "path": ["fetchLeaveType"],
+                      "extensions": {
+                        "code": "AUTH_NOT_AUTHENTICATED",
+                        "errorContext": [
+                          {
+                            "id": -200,
+                            "source": "APP",
+                            "message":
+                                "The current user is not authorized to access this resource.",
+                            "correctiveAction": "",
+                            "severity": "Stop",
+                            "errorAt": "/fetchLeaveType"
+                          }
+                        ]
+                      }
+                    },
+                    "schemaName": "HRPLVMSTR"
+                  }
+                }
+              ],
+              "data": {"fetchLeaveType": null}
+            },
+            "rawData": {
+              "errors": [
+                {
+                  "message":
+                      "The current user is not authorized to access this resource.",
+                  "locations": [
+                    {"line": 2, "column": 7}
+                  ],
+                  "path": ["fetchLeaveType"],
+                  "extensions": {
+                    "code": "AUTH_NOT_AUTHENTICATED",
+                    "errorContext": [
+                      {
+                        "id": -200,
+                        "source": "APP",
+                        "message":
+                            "The current user is not authorized to access this resource.",
+                        "correctiveAction": "",
+                        "severity": "Stop",
+                        "errorAt": "/fetchLeaveType"
+                      }
+                    ],
+                    "remote": {
+                      "message":
+                          "The current user is not authorized to access this resource.",
+                      "locations": [
+                        {"line": 1, "column": 23}
+                      ],
+                      "path": ["fetchLeaveType"],
+                      "extensions": {
+                        "code": "AUTH_NOT_AUTHENTICATED",
+                        "errorContext": [
+                          {
+                            "id": -200,
+                            "source": "APP",
+                            "message":
+                                "The current user is not authorized to access this resource.",
+                            "correctiveAction": "",
+                            "severity": "Stop",
+                            "errorAt": "/fetchLeaveType"
+                          }
+                        ]
+                      }
+                    },
+                    "schemaName": "HRPLVMSTR"
+                  }
+                }
+              ],
+              "data": {"fetchLeaveType": null}
+            }
+          },
+          "getLeaveInfoCombos": {
+            "isLoading": false,
+            "data": {
+              "data": {
+                "fetchQuickCodes": [
+                  {
+                    "quickCode": "MSES",
+                    "quickCodeDescription": "First Session"
+                  },
+                  {"quickCode": "FSESS", "quickCodeDescription": "I Session"},
+                  {"quickCode": "SSESS", "quickCodeDescription": "II Session"},
+                  {"quickCode": "TSESS", "quickCodeDescription": "III Session"},
+                  {
+                    "quickCode": "NIES",
+                    "quickCodeDescription": "Night Session"
+                  },
+                  {
+                    "quickCode": "NSES",
+                    "quickCodeDescription": "Second Session"
+                  },
+                  {"quickCode": "WDAY", "quickCodeDescription": "Whole Day"}
+                ]
+              }
+            },
+            "rawData": {
+              "data": {
+                "fetchQuickCodes": [
+                  {
+                    "quickCode": "MSES",
+                    "quickCodeDescription": "First Session"
+                  },
+                  {"quickCode": "FSESS", "quickCodeDescription": "I Session"},
+                  {"quickCode": "SSESS", "quickCodeDescription": "II Session"},
+                  {"quickCode": "TSESS", "quickCodeDescription": "III Session"},
+                  {
+                    "quickCode": "NIES",
+                    "quickCodeDescription": "Night Session"
+                  },
+                  {
+                    "quickCode": "NSES",
+                    "quickCodeDescription": "Second Session"
+                  },
+                  {"quickCode": "WDAY", "quickCodeDescription": "Whole Day"}
+                ]
+              }
+            }
+          },
+          "backupEmployee": {},
+          "backupEmp": {
+            "isLoading": false,
+            "data": {
+              "data": {
+                "fetchBackupEmp": [
+                  {
+                    "backupEmployeeCode": "00000114",
+                    "backupEmployeeName": "eva n. joshua "
+                  },
+                  {
+                    "backupEmployeeCode": "00000120",
+                    "backupEmployeeName": "john joseph "
+                  },
+                  {
+                    "backupEmployeeCode": "00013303",
+                    "backupEmployeeName": "Karthik K. Guru K S "
+                  },
+                  {
+                    "backupEmployeeCode": "00013950",
+                    "backupEmployeeName": "Dannie Ambrose "
+                  },
+                  {
+                    "backupEmployeeCode": "00014352",
+                    "backupEmployeeName": "Xavier Selvaraj "
+                  },
+                  {
+                    "backupEmployeeCode": "01011990",
+                    "backupEmployeeName": "Sushmi J "
+                  },
+                  {
+                    "backupEmployeeCode": "02011990",
+                    "backupEmployeeName": "Gomathy J "
+                  },
+                  {
+                    "backupEmployeeCode": "03011990",
+                    "backupEmployeeName": "Jeevan J "
+                  },
+                  {
+                    "backupEmployeeCode": "04011990",
+                    "backupEmployeeName": "Geetha J "
+                  },
+                  {
+                    "backupEmployeeCode": "05011990",
+                    "backupEmployeeName": "Surya J "
+                  },
+                  {
+                    "backupEmployeeCode": "05020001",
+                    "backupEmployeeName": "Sujinraj Selvaraj "
+                  },
+                  {
+                    "backupEmployeeCode": "06011990",
+                    "backupEmployeeName": "Ajay J "
+                  },
+                  {
+                    "backupEmployeeCode": "06032024",
+                    "backupEmployeeName": "Sujin S. Raj "
+                  },
+                  {
+                    "backupEmployeeCode": "07011990",
+                    "backupEmployeeName": "Yadav J "
+                  },
+                  {
+                    "backupEmployeeCode": "08000091",
+                    "backupEmployeeName": "David HOSKING "
+                  },
+                  {
+                    "backupEmployeeCode": "08001574",
+                    "backupEmployeeName": "Paul B. LUXTON "
+                  },
+                  {
+                    "backupEmployeeCode": "08002427",
+                    "backupEmployeeName": "Carinne C. MCRAE "
+                  },
+                  {
+                    "backupEmployeeCode": "08011990",
+                    "backupEmployeeName": "Riya J "
+                  },
+                  {
+                    "backupEmployeeCode": "10000042",
+                    "backupEmployeeName": "Megan D. Williams "
+                  },
+                  {
+                    "backupEmployeeCode": "10000192",
+                    "backupEmployeeName": "Jaelle B. Bajada "
+                  },
+                  {
+                    "backupEmployeeCode": "10000729",
+                    "backupEmployeeName": "DOMINIQUE ALZIRA C. PINTO-GREEN "
+                  },
+                  {
+                    "backupEmployeeCode": "10001684",
+                    "backupEmployeeName": "Lance BROWN "
+                  },
+                  {
+                    "backupEmployeeCode": "10002622",
+                    "backupEmployeeName": "Michael B. Innis "
+                  },
+                  {
+                    "backupEmployeeCode": "10003113",
+                    "backupEmployeeName": "Suji n. Selvaraj "
+                  },
+                  {
+                    "backupEmployeeCode": "10004068",
+                    "backupEmployeeName": "Haily D. Booth "
+                  },
+                  {
+                    "backupEmployeeCode": "10004442",
+                    "backupEmployeeName": "Alexr D o. Manoj "
+                  },
+                  {
+                    "backupEmployeeCode": "10004579",
+                    "backupEmployeeName": "Alexr D o. Kumar "
+                  },
+                  {
+                    "backupEmployeeCode": "10006097",
+                    "backupEmployeeName": "Katherine C. Amies "
+                  },
+                  {
+                    "backupEmployeeCode": "10006574",
+                    "backupEmployeeName": "Belinda D. Rawnsley "
+                  },
+                  {
+                    "backupEmployeeCode": "10007839",
+                    "backupEmployeeName": "Cara A. Allan "
+                  },
+                  {
+                    "backupEmployeeCode": "10007894",
+                    "backupEmployeeName": "Peter B. Wilson "
+                  },
+                  {
+                    "backupEmployeeCode": "10011990",
+                    "backupEmployeeName": "Joe J "
+                  },
+                  {
+                    "backupEmployeeCode": "10013008",
+                    "backupEmployeeName": "Adam D. Jalaludin "
+                  },
+                  {
+                    "backupEmployeeCode": "10013009",
+                    "backupEmployeeName": "YULU SHELL A. Xiao "
+                  },
+                  {
+                    "backupEmployeeCode": "10013011",
+                    "backupEmployeeName": "Peter William B. FREWIN "
+                  },
+                  {
+                    "backupEmployeeCode": "10013044",
+                    "backupEmployeeName": "Robert Anthony C. VITELLI "
+                  },
+                  {
+                    "backupEmployeeCode": "10013056",
+                    "backupEmployeeName": "Tal D. Cohen Sat "
+                  },
+                  {
+                    "backupEmployeeCode": "10014574",
+                    "backupEmployeeName": "Christopher A. DIAS "
+                  },
+                  {
+                    "backupEmployeeCode": "10014609",
+                    "backupEmployeeName": "Sonja B. Mitchell "
+                  },
+                  {
+                    "backupEmployeeCode": "10015768",
+                    "backupEmployeeName": "Anthony C. Mitchell "
+                  },
+                  {
+                    "backupEmployeeCode": "10016393",
+                    "backupEmployeeName": "Pauline D. Tough "
+                  },
+                  {
+                    "backupEmployeeCode": "10016547",
+                    "backupEmployeeName": "Honi A. Anderson "
+                  },
+                  {
+                    "backupEmployeeCode": "10016834",
+                    "backupEmployeeName": "Carole B. Cast "
+                  },
+                  {
+                    "backupEmployeeCode": "10016891",
+                    "backupEmployeeName": "Adil C. Ahmad "
+                  },
+                  {
+                    "backupEmployeeCode": "10017642",
+                    "backupEmployeeName": "Abdur D. Rahman "
+                  },
+                  {
+                    "backupEmployeeCode": "10017666",
+                    "backupEmployeeName": "Stacey A. Grundy "
+                  },
+                  {
+                    "backupEmployeeCode": "10017872",
+                    "backupEmployeeName": "Amanda B. Byrne "
+                  },
+                  {
+                    "backupEmployeeCode": "10018048",
+                    "backupEmployeeName": "Amy C. Clark "
+                  },
+                  {
+                    "backupEmployeeCode": "10018766",
+                    "backupEmployeeName": "Peter D. Jolly "
+                  },
+                  {
+                    "backupEmployeeCode": "10019785",
+                    "backupEmployeeName": "Joshua A. O'Shea "
+                  },
+                  {
+                    "backupEmployeeCode": "10020104",
+                    "backupEmployeeName": "Melissa Brown "
+                  },
+                  {
+                    "backupEmployeeCode": "10020109",
+                    "backupEmployeeName": "Brett B. Morris "
+                  },
+                  {
+                    "backupEmployeeCode": "10021709",
+                    "backupEmployeeName": "David C. Marrs "
+                  },
+                  {
+                    "backupEmployeeCode": "10021711",
+                    "backupEmployeeName": "Sargis Beetmirza "
+                  },
+                  {
+                    "backupEmployeeCode": "10022445",
+                    "backupEmployeeName": "Jonathan D. Holloway "
+                  },
+                  {
+                    "backupEmployeeCode": "10022697",
+                    "backupEmployeeName": "Fang A. SHENG "
+                  },
+                  {
+                    "backupEmployeeCode": "10023806",
+                    "backupEmployeeName": "Alison B. Fairbairn "
+                  },
+                  {
+                    "backupEmployeeCode": "10023807",
+                    "backupEmployeeName": "Cheryl C. Janmaat "
+                  },
+                  {
+                    "backupEmployeeCode": "10023808",
+                    "backupEmployeeName": "Grant D. Smith "
+                  },
+                  {
+                    "backupEmployeeCode": "10023809",
+                    "backupEmployeeName": "John A. Isidori "
+                  },
+                  {
+                    "backupEmployeeCode": "10023810",
+                    "backupEmployeeName": "Kevin B. Sternberg "
+                  },
+                  {
+                    "backupEmployeeCode": "10023812",
+                    "backupEmployeeName": "Timothy C. Burley "
+                  },
+                  {
+                    "backupEmployeeCode": "10023873",
+                    "backupEmployeeName": "Dom D. Bolton "
+                  },
+                  {
+                    "backupEmployeeCode": "10023982",
+                    "backupEmployeeName": "Jose William A. Cacho "
+                  },
+                  {
+                    "backupEmployeeCode": "10024546",
+                    "backupEmployeeName": "Larina B. Palomino "
+                  },
+                  {
+                    "backupEmployeeCode": "10024590",
+                    "backupEmployeeName": "Andrew C. Barker "
+                  },
+                  {
+                    "backupEmployeeCode": "10025639",
+                    "backupEmployeeName": "Chih-Wei D. Li "
+                  },
+                  {
+                    "backupEmployeeCode": "10025852",
+                    "backupEmployeeName": "Sarah A. Wilson "
+                  },
+                  {
+                    "backupEmployeeCode": "10026145",
+                    "backupEmployeeName": "Srikanth B. Gaikwad "
+                  },
+                  {
+                    "backupEmployeeCode": "10026419",
+                    "backupEmployeeName": "Luke C. Ashwood "
+                  },
+                  {
+                    "backupEmployeeCode": "10027604",
+                    "backupEmployeeName": "Neil D. Adams "
+                  },
+                  {
+                    "backupEmployeeCode": "10028063",
+                    "backupEmployeeName": "Roderick A. Dale "
+                  },
+                  {
+                    "backupEmployeeCode": "10028298",
+                    "backupEmployeeName": "Shushilkumar Rajendrakuma B. Patel "
+                  },
+                  {
+                    "backupEmployeeCode": "10028415",
+                    "backupEmployeeName": "Gabrielle C. Chaffey "
+                  },
+                  {
+                    "backupEmployeeCode": "10029664",
+                    "backupEmployeeName": "Katherine D. Worrad "
+                  },
+                  {
+                    "backupEmployeeCode": "10030045",
+                    "backupEmployeeName": "Andrew A. Peart "
+                  },
+                  {
+                    "backupEmployeeCode": "10030180",
+                    "backupEmployeeName": "Shannon B. Short "
+                  },
+                  {
+                    "backupEmployeeCode": "10030420",
+                    "backupEmployeeName": "Donald C. McMurrich "
+                  },
+                  {
+                    "backupEmployeeCode": "10030523",
+                    "backupEmployeeName": "Kavita Leo "
+                  },
+                  {
+                    "backupEmployeeCode": "10030706",
+                    "backupEmployeeName": "Nileshkumar Pandya "
+                  },
+                  {
+                    "backupEmployeeCode": "10031432",
+                    "backupEmployeeName": "Matt A. Kenny "
+                  },
+                  {
+                    "backupEmployeeCode": "10032139",
+                    "backupEmployeeName": "Bhargavi A. Desai "
+                  },
+                  {
+                    "backupEmployeeCode": "10032353",
+                    "backupEmployeeName": "Matilda B. Hughes "
+                  },
+                  {
+                    "backupEmployeeCode": "10032755",
+                    "backupEmployeeName": "Neil C. Cordingley "
+                  },
+                  {
+                    "backupEmployeeCode": "10033259",
+                    "backupEmployeeName": "Leonard D. Ibbotson "
+                  },
+                  {
+                    "backupEmployeeCode": "10033276",
+                    "backupEmployeeName": "Alicia A. Thompson "
+                  },
+                  {
+                    "backupEmployeeCode": "10033317",
+                    "backupEmployeeName": "Jacky B. Stoneman "
+                  },
+                  {
+                    "backupEmployeeCode": "10042014",
+                    "backupEmployeeName": "Sujinraj Selvaraj "
+                  },
+                  {
+                    "backupEmployeeCode": "10061234",
+                    "backupEmployeeName": "Sibinraj Selvaraj "
+                  },
+                  {
+                    "backupEmployeeCode": "10071234",
+                    "backupEmployeeName": "Sibinraj Selvaraj "
+                  },
+                  {
+                    "backupEmployeeCode": "10091234",
+                    "backupEmployeeName": "Alexr D o. Kumar "
+                  },
+                  {
+                    "backupEmployeeCode": "10101234",
+                    "backupEmployeeName": "Sivapriya B S "
+                  },
+                  {
+                    "backupEmployeeCode": "11011990",
+                    "backupEmployeeName": "Kirthi J "
+                  },
+                  {
+                    "backupEmployeeCode": "11111178",
+                    "backupEmployeeName": "aa ss "
+                  },
+                  {
+                    "backupEmployeeCode": "12011990",
+                    "backupEmployeeName": "Zion J "
+                  },
+                  {
+                    "backupEmployeeCode": "14101432",
+                    "backupEmployeeName": "Magesh K "
+                  },
+                  {
+                    "backupEmployeeCode": "15110001",
+                    "backupEmployeeName": "Eva B "
+                  },
+                  {
+                    "backupEmployeeCode": "15110002",
+                    "backupEmployeeName": "Vaishali K "
+                  },
+                  {
+                    "backupEmployeeCode": "15110003",
+                    "backupEmployeeName": "Suganya M "
+                  },
+                  {
+                    "backupEmployeeCode": "15120001",
+                    "backupEmployeeName": "Manoj P "
+                  },
+                  {
+                    "backupEmployeeCode": "16052024",
+                    "backupEmployeeName": "Loggaa Sri "
+                  },
+                  {
+                    "backupEmployeeCode": "19101910",
+                    "backupEmployeeName": "Sibinraj Selvaraj "
+                  },
+                  {
+                    "backupEmployeeCode": "20000123",
+                    "backupEmployeeName": "Priyadharshini V "
+                  },
+                  {
+                    "backupEmployeeCode": "20062023",
+                    "backupEmployeeName": "Keshav R. Ramkumar "
+                  },
+                  {
+                    "backupEmployeeCode": "20071234",
+                    "backupEmployeeName": "Sibin S "
+                  },
+                  {
+                    "backupEmployeeCode": "20102010",
+                    "backupEmployeeName": "Sibin Selvaraj "
+                  },
+                  {
+                    "backupEmployeeCode": "20110001",
+                    "backupEmployeeName": "Sujinraj Selvaraj "
+                  },
+                  {
+                    "backupEmployeeCode": "20110002",
+                    "backupEmployeeName": "Vijayalakshmi K "
+                  },
+                  {
+                    "backupEmployeeCode": "21102110",
+                    "backupEmployeeName": "Sibin Selvaraj "
+                  },
+                  {
+                    "backupEmployeeCode": "21110001",
+                    "backupEmployeeName": "Sibinraj Selvaraj "
+                  },
+                  {
+                    "backupEmployeeCode": "21110002",
+                    "backupEmployeeName": "Manoj P "
+                  },
+                  {
+                    "backupEmployeeCode": "21110003",
+                    "backupEmployeeName": "Bharathi K "
+                  },
+                  {
+                    "backupEmployeeCode": "22110001",
+                    "backupEmployeeName": "Sujinraj Selvaraj "
+                  },
+                  {
+                    "backupEmployeeCode": "22222222",
+                    "backupEmployeeName": "Jenson Chapman "
+                  },
+                  {
+                    "backupEmployeeCode": "23110001",
+                    "backupEmployeeName": "Ravi R "
+                  },
+                  {
+                    "backupEmployeeCode": "24000001",
+                    "backupEmployeeName": "Sibinraj Selvaraj "
+                  },
+                  {
+                    "backupEmployeeCode": "24000002",
+                    "backupEmployeeName": "Siva Priya "
+                  },
+                  {
+                    "backupEmployeeCode": "27110001",
+                    "backupEmployeeName": "Senthil Arasu "
+                  },
+                  {
+                    "backupEmployeeCode": "27110002",
+                    "backupEmployeeName": "Krishna ABC "
+                  },
+                  {
+                    "backupEmployeeCode": "30110001",
+                    "backupEmployeeName": "Sujinraj Selvaraj "
+                  },
+                  {
+                    "backupEmployeeCode": "33333333",
+                    "backupEmployeeName": "ravi k "
+                  },
+                  {
+                    "backupEmployeeCode": "50091234",
+                    "backupEmployeeName": "Sibinraj S "
+                  },
+                  {
+                    "backupEmployeeCode": "66666666",
+                    "backupEmployeeName": "Jose Ruby Stella J "
+                  },
+                  {
+                    "backupEmployeeCode": "80000091",
+                    "backupEmployeeName": "David HOSKING "
+                  },
+                  {
+                    "backupEmployeeCode": "86003559",
+                    "backupEmployeeName": "ROBERTO GIOUANNI C. BATTAGLIA "
+                  },
+                  {
+                    "backupEmployeeCode": "86003561",
+                    "backupEmployeeName": "Simon D. BONNY "
+                  },
+                  {
+                    "backupEmployeeCode": "86003565",
+                    "backupEmployeeName": "Paul A. BROWN "
+                  },
+                  {
+                    "backupEmployeeCode": "86003568",
+                    "backupEmployeeName": "Anthony B. CARR "
+                  },
+                  {
+                    "backupEmployeeCode": "86003571",
+                    "backupEmployeeName": "Benjamin C. CHEW "
+                  },
+                  {
+                    "backupEmployeeCode": "86003578",
+                    "backupEmployeeName": "Doreen D. DEBRINCAT "
+                  },
+                  {
+                    "backupEmployeeCode": "86003582",
+                    "backupEmployeeName": "Timothy A. FRASER "
+                  },
+                  {
+                    "backupEmployeeCode": "86003588",
+                    "backupEmployeeName": "Keryn B. GRIBBEN "
+                  },
+                  {
+                    "backupEmployeeCode": "86003594",
+                    "backupEmployeeName": "Michelle HICKMAN "
+                  },
+                  {
+                    "backupEmployeeCode": "86003595",
+                    "backupEmployeeName": "Sam C. HOLE "
+                  },
+                  {
+                    "backupEmployeeCode": "86003596",
+                    "backupEmployeeName": "Peter D. HOLMES "
+                  },
+                  {
+                    "backupEmployeeCode": "86003605",
+                    "backupEmployeeName": "Grayson A. KILLEN "
+                  },
+                  {
+                    "backupEmployeeCode": "86003614",
+                    "backupEmployeeName": "Neville B. MARRA "
+                  },
+                  {
+                    "backupEmployeeCode": "86003615",
+                    "backupEmployeeName": "Scott C. MATHEW "
+                  },
+                  {
+                    "backupEmployeeCode": "86003622",
+                    "backupEmployeeName": "Kenneth D. MCKEE "
+                  },
+                  {
+                    "backupEmployeeCode": "86003638",
+                    "backupEmployeeName": "Kevin A. PATTERSON "
+                  },
+                  {
+                    "backupEmployeeCode": "86003646",
+                    "backupEmployeeName": "Jason B. SABEENEY "
+                  },
+                  {
+                    "backupEmployeeCode": "86003656",
+                    "backupEmployeeName": "Dugald C. SPENCELEY "
+                  },
+                  {
+                    "backupEmployeeCode": "86003667",
+                    "backupEmployeeName": "David D. VAN-RYSWYK "
+                  },
+                  {
+                    "backupEmployeeCode": "86003670",
+                    "backupEmployeeName": "Garth A. WICKSON "
+                  },
+                  {
+                    "backupEmployeeCode": "86003674",
+                    "backupEmployeeName": "Wilhelmien B. GREENWOOD "
+                  },
+                  {
+                    "backupEmployeeCode": "86003710",
+                    "backupEmployeeName": "Russell C. SLOBODIUK "
+                  },
+                  {
+                    "backupEmployeeCode": "86004400",
+                    "backupEmployeeName": "Eric D. BROWN "
+                  },
+                  {
+                    "backupEmployeeCode": "86007314",
+                    "backupEmployeeName": "Rowley A. WINTEN "
+                  },
+                  {
+                    "backupEmployeeCode": "86007543",
+                    "backupEmployeeName": "Samantha B. SHORT "
+                  },
+                  {
+                    "backupEmployeeCode": "86007646",
+                    "backupEmployeeName": "Brett C. HOFMAN "
+                  },
+                  {
+                    "backupEmployeeCode": "86007665",
+                    "backupEmployeeName": "Belinda D. WATTS "
+                  },
+                  {
+                    "backupEmployeeCode": "86007667",
+                    "backupEmployeeName": "Nicole A. MOMIROVSKI "
+                  },
+                  {
+                    "backupEmployeeCode": "86007668",
+                    "backupEmployeeName": "Michael B. TREMAINE "
+                  },
+                  {
+                    "backupEmployeeCode": "86007672",
+                    "backupEmployeeName": "Leith C. PLEVEY "
+                  },
+                  {
+                    "backupEmployeeCode": "86007714",
+                    "backupEmployeeName": "Sean D. ROBERTS "
+                  },
+                  {
+                    "backupEmployeeCode": "86008489",
+                    "backupEmployeeName": "Patricia A. DE LA MATA "
+                  },
+                  {
+                    "backupEmployeeCode": "86008573",
+                    "backupEmployeeName": "Richard B. PACKARD "
+                  },
+                  {
+                    "backupEmployeeCode": "86008829",
+                    "backupEmployeeName": "Trevor C. STEAD "
+                  },
+                  {
+                    "backupEmployeeCode": "86008882",
+                    "backupEmployeeName": "Ziba D. KHALILI "
+                  },
+                  {
+                    "backupEmployeeCode": "86009541",
+                    "backupEmployeeName": "Lorraine A. CAMLEY "
+                  },
+                  {
+                    "backupEmployeeCode": "86010250",
+                    "backupEmployeeName": "Cornelia B. SMITH "
+                  },
+                  {
+                    "backupEmployeeCode": "86011451",
+                    "backupEmployeeName": "Pooja C. NAYYAR "
+                  },
+                  {
+                    "backupEmployeeCode": "86011902",
+                    "backupEmployeeName": "James D. CONSIDINE "
+                  },
+                  {
+                    "backupEmployeeCode": "86013066",
+                    "backupEmployeeName": "Ian A. MACDONALD "
+                  },
+                  {
+                    "backupEmployeeCode": "86013854",
+                    "backupEmployeeName": "Stanley B. NOONAN "
+                  },
+                  {
+                    "backupEmployeeCode": "86014471",
+                    "backupEmployeeName": "Gerard C. SIPPEL "
+                  },
+                  {
+                    "backupEmployeeCode": "86014607",
+                    "backupEmployeeName": "Gillian D. BROOKS "
+                  },
+                  {
+                    "backupEmployeeCode": "86014717",
+                    "backupEmployeeName": "MARGARITA A. SISON "
+                  },
+                  {
+                    "backupEmployeeCode": "86014847",
+                    "backupEmployeeName": "Karen B. ZAICZ "
+                  },
+                  {
+                    "backupEmployeeCode": "86015112",
+                    "backupEmployeeName": "Ross C. BLOORE "
+                  },
+                  {
+                    "backupEmployeeCode": "86019273",
+                    "backupEmployeeName": "Darren D. BROWNE "
+                  },
+                  {
+                    "backupEmployeeCode": "86020476",
+                    "backupEmployeeName": "Terry A. ALDERDICE "
+                  },
+                  {
+                    "backupEmployeeCode": "86020500",
+                    "backupEmployeeName": "Neil B. BAUER "
+                  },
+                  {
+                    "backupEmployeeCode": "86020739",
+                    "backupEmployeeName": "Maximo C. FRATANTONI "
+                  },
+                  {
+                    "backupEmployeeCode": "86020968",
+                    "backupEmployeeName": "MARTIN D. FRANCIS "
+                  },
+                  {
+                    "backupEmployeeCode": "86022566",
+                    "backupEmployeeName": "Vicki A. TONKIN "
+                  },
+                  {
+                    "backupEmployeeCode": "86022997",
+                    "backupEmployeeName": "Emma B. MCCLELLAND "
+                  },
+                  {
+                    "backupEmployeeCode": "86025600",
+                    "backupEmployeeName": "HUI C. LI "
+                  },
+                  {
+                    "backupEmployeeCode": "86027424",
+                    "backupEmployeeName": "Charbel D. FRANCIS "
+                  },
+                  {
+                    "backupEmployeeCode": "86027835",
+                    "backupEmployeeName": "Bryan A. BUCHANAN "
+                  },
+                  {
+                    "backupEmployeeCode": "86028695",
+                    "backupEmployeeName": "Angie B. BELCHER "
+                  },
+                  {
+                    "backupEmployeeCode": "86029048",
+                    "backupEmployeeName": "Rhonda C. HALL "
+                  },
+                  {
+                    "backupEmployeeCode": "86029716",
+                    "backupEmployeeName": "Alec D. Duffy "
+                  },
+                  {
+                    "backupEmployeeCode": "86029997",
+                    "backupEmployeeName": "Alan A. COLDWELL "
+                  },
+                  {
+                    "backupEmployeeCode": "86031710",
+                    "backupEmployeeName": "Wayne B. RICHARDSON "
+                  },
+                  {
+                    "backupEmployeeCode": "86032800",
+                    "backupEmployeeName": "Rachel D. WEBB "
+                  },
+                  {
+                    "backupEmployeeCode": "86032986",
+                    "backupEmployeeName": "Leanne A. FORSYTH "
+                  },
+                  {
+                    "backupEmployeeCode": "86033669",
+                    "backupEmployeeName": "Daniel B. DOCHERTY "
+                  },
+                  {
+                    "backupEmployeeCode": "86033809",
+                    "backupEmployeeName": "Kieran C. WAUCHOPE "
+                  },
+                  {
+                    "backupEmployeeCode": "86034020",
+                    "backupEmployeeName": "Malcolm D. JONES "
+                  },
+                  {
+                    "backupEmployeeCode": "86034629",
+                    "backupEmployeeName": "Andrew A. DAYAS "
+                  },
+                  {
+                    "backupEmployeeCode": "86036485",
+                    "backupEmployeeName": "Michael B. UTTLEY "
+                  },
+                  {
+                    "backupEmployeeCode": "86036517",
+                    "backupEmployeeName": "Angus C. RUTHERFORD "
+                  },
+                  {
+                    "backupEmployeeCode": "86036729",
+                    "backupEmployeeName": "Mitchell Peter D. AMBROSE-PEARCE "
+                  },
+                  {
+                    "backupEmployeeCode": "86036839",
+                    "backupEmployeeName": "Shaun A. HOOD "
+                  },
+                  {
+                    "backupEmployeeCode": "86037211",
+                    "backupEmployeeName": "Snehalkumar B. SOLANKI "
+                  },
+                  {
+                    "backupEmployeeCode": "86037585",
+                    "backupEmployeeName": "David C. LANDMETER "
+                  },
+                  {
+                    "backupEmployeeCode": "86037743",
+                    "backupEmployeeName": "Andrew D. CHANPHAKEO "
+                  },
+                  {
+                    "backupEmployeeCode": "86037788",
+                    "backupEmployeeName": "Samantha A. PAGE "
+                  },
+                  {
+                    "backupEmployeeCode": "86037799",
+                    "backupEmployeeName": "Mireille B. CHOUEIFATY "
+                  },
+                  {
+                    "backupEmployeeCode": "86037816",
+                    "backupEmployeeName": "Hyun Ji C. KIM "
+                  },
+                  {
+                    "backupEmployeeCode": "86037884",
+                    "backupEmployeeName": "Ben D. PARKIN "
+                  },
+                  {
+                    "backupEmployeeCode": "86038044",
+                    "backupEmployeeName": "Johanna A. GENTLE "
+                  },
+                  {
+                    "backupEmployeeCode": "86038123",
+                    "backupEmployeeName": "James B. HOTTEN "
+                  },
+                  {
+                    "backupEmployeeCode": "86038146",
+                    "backupEmployeeName": "Lisa C. DILLON "
+                  },
+                  {
+                    "backupEmployeeCode": "86038267",
+                    "backupEmployeeName": "Simon D. GREGORY "
+                  },
+                  {
+                    "backupEmployeeCode": "86038355",
+                    "backupEmployeeName": "Theodora A. Areli "
+                  },
+                  {
+                    "backupEmployeeCode": "86038373",
+                    "backupEmployeeName": "Owen B. LANGLEY "
+                  },
+                  {
+                    "backupEmployeeCode": "86038375",
+                    "backupEmployeeName": "Mashaba C. ALI "
+                  },
+                  {
+                    "backupEmployeeCode": "86038529",
+                    "backupEmployeeName": "Luke Llewellyn D. BARTLETT "
+                  },
+                  {
+                    "backupEmployeeCode": "86038649",
+                    "backupEmployeeName": "Anna Elizabeth A. SUTTON "
+                  },
+                  {
+                    "backupEmployeeCode": "86038983",
+                    "backupEmployeeName": "EAN SIEW B. LOO "
+                  },
+                  {
+                    "backupEmployeeCode": "86039208",
+                    "backupEmployeeName": "Jeong Min C. SON "
+                  },
+                  {
+                    "backupEmployeeCode": "86039269",
+                    "backupEmployeeName": "Katie D. SLADE "
+                  },
+                  {
+                    "backupEmployeeCode": "86039290",
+                    "backupEmployeeName": "Michelle A. SEVILLA "
+                  },
+                  {
+                    "backupEmployeeCode": "86039385",
+                    "backupEmployeeName": "Aarany B. KUNASINGHAM "
+                  },
+                  {
+                    "backupEmployeeCode": "86039398",
+                    "backupEmployeeName": "Nicholas C. HALL "
+                  },
+                  {
+                    "backupEmployeeCode": "86039402",
+                    "backupEmployeeName": "Graham D. LESLIE "
+                  },
+                  {
+                    "backupEmployeeCode": "86039462",
+                    "backupEmployeeName": "Michael A. DE LUCA "
+                  },
+                  {
+                    "backupEmployeeCode": "86039499",
+                    "backupEmployeeName": "Gereon B. Schnippenkoetter "
+                  },
+                  {
+                    "backupEmployeeCode": "86039500",
+                    "backupEmployeeName": "William C. CROFT "
+                  },
+                  {
+                    "backupEmployeeCode": "86039513",
+                    "backupEmployeeName": "Amelia D. GLEDHILL "
+                  },
+                  {
+                    "backupEmployeeCode": "86039579",
+                    "backupEmployeeName": "Justin A. MARTIN "
+                  },
+                  {
+                    "backupEmployeeCode": "86039927",
+                    "backupEmployeeName": "Craig B. HALL "
+                  },
+                  {
+                    "backupEmployeeCode": "86040094",
+                    "backupEmployeeName": "Stephen C. BITTER "
+                  },
+                  {
+                    "backupEmployeeCode": "86040244",
+                    "backupEmployeeName": "Daniel A. GASH "
+                  },
+                  {
+                    "backupEmployeeCode": "86040246",
+                    "backupEmployeeName": "Dean B. MOSCH "
+                  },
+                  {
+                    "backupEmployeeCode": "86040278",
+                    "backupEmployeeName": "SAMUEL C. NORRIS "
+                  },
+                  {
+                    "backupEmployeeCode": "89765432",
+                    "backupEmployeeName": "eva S "
+                  },
+                  {
+                    "backupEmployeeCode": "90000019",
+                    "backupEmployeeName": "timetest t. timetest "
+                  },
+                  {
+                    "backupEmployeeCode": "90000020",
+                    "backupEmployeeName": "Thanigai M. Vendhan "
+                  },
+                  {
+                    "backupEmployeeCode": "90000029",
+                    "backupEmployeeName": "timetest t. timetest "
+                  },
+                  {
+                    "backupEmployeeCode": "90000030",
+                    "backupEmployeeName": "mobtest T "
+                  },
+                  {
+                    "backupEmployeeCode": "IND00001",
+                    "backupEmployeeName": "Oppo R "
+                  },
+                  {
+                    "backupEmployeeCode": "ind00002",
+                    "backupEmployeeName": "Samsung S "
+                  },
+                  {
+                    "backupEmployeeCode": "ind00003",
+                    "backupEmployeeName": "Apple R "
+                  },
+                  {
+                    "backupEmployeeCode": "ind00004",
+                    "backupEmployeeName": "Samco S "
+                  },
+                  {
+                    "backupEmployeeCode": "ind00005",
+                    "backupEmployeeName": "HP R "
+                  },
+                  {
+                    "backupEmployeeCode": "KRIS0001",
+                    "backupEmployeeName": "Krishna S "
+                  },
+                  {
+                    "backupEmployeeCode": "OU419000001",
+                    "backupEmployeeName": "Abishek K "
+                  },
+                  {
+                    "backupEmployeeCode": "ou419000002",
+                    "backupEmployeeName": "Jack SP "
+                  },
+                  {
+                    "backupEmployeeCode": "ou419000003",
+                    "backupEmployeeName": "Mega M "
+                  },
+                  {
+                    "backupEmployeeCode": "ou419000005",
+                    "backupEmployeeName": "Kak R "
+                  },
+                  {
+                    "backupEmployeeCode": "ou419000006",
+                    "backupEmployeeName": "kavi K "
+                  },
+                  {
+                    "backupEmployeeCode": "t0000005",
+                    "backupEmployeeName": "jfhf dfsd "
+                  },
+                  {
+                    "backupEmployeeCode": "t0000006",
+                    "backupEmployeeName": "sgdf shdkjfd "
+                  },
+                  {
+                    "backupEmployeeCode": "t0100005",
+                    "backupEmployeeName": "vihj vjdh "
+                  },
+                  {
+                    "backupEmployeeCode": "tj000008",
+                    "backupEmployeeName": "cc cin "
+                  },
+                  {
+                    "backupEmployeeCode": "tj000053",
+                    "backupEmployeeName": "cin shorty "
+                  },
+                  {
+                    "backupEmployeeCode": "tjp00044",
+                    "backupEmployeeName": "fr sf "
+                  },
+                  {
+                    "backupEmployeeCode": "tpq00001",
+                    "backupEmployeeName": "ffff ggg "
+                  }
+                ]
+              }
+            },
+            "rawData": {
+              "data": {
+                "fetchBackupEmp": [
+                  {
+                    "backupEmployeeCode": "00000114",
+                    "backupEmployeeName": "eva n. joshua "
+                  },
+                  {
+                    "backupEmployeeCode": "00000120",
+                    "backupEmployeeName": "john joseph "
+                  },
+                  {
+                    "backupEmployeeCode": "00013303",
+                    "backupEmployeeName": "Karthik K. Guru K S "
+                  },
+                  {
+                    "backupEmployeeCode": "00013950",
+                    "backupEmployeeName": "Dannie Ambrose "
+                  },
+                  {
+                    "backupEmployeeCode": "00014352",
+                    "backupEmployeeName": "Xavier Selvaraj "
+                  },
+                  {
+                    "backupEmployeeCode": "01011990",
+                    "backupEmployeeName": "Sushmi J "
+                  },
+                  {
+                    "backupEmployeeCode": "02011990",
+                    "backupEmployeeName": "Gomathy J "
+                  },
+                  {
+                    "backupEmployeeCode": "03011990",
+                    "backupEmployeeName": "Jeevan J "
+                  },
+                  {
+                    "backupEmployeeCode": "04011990",
+                    "backupEmployeeName": "Geetha J "
+                  },
+                  {
+                    "backupEmployeeCode": "05011990",
+                    "backupEmployeeName": "Surya J "
+                  },
+                  {
+                    "backupEmployeeCode": "05020001",
+                    "backupEmployeeName": "Sujinraj Selvaraj "
+                  },
+                  {
+                    "backupEmployeeCode": "06011990",
+                    "backupEmployeeName": "Ajay J "
+                  },
+                  {
+                    "backupEmployeeCode": "06032024",
+                    "backupEmployeeName": "Sujin S. Raj "
+                  },
+                  {
+                    "backupEmployeeCode": "07011990",
+                    "backupEmployeeName": "Yadav J "
+                  },
+                  {
+                    "backupEmployeeCode": "08000091",
+                    "backupEmployeeName": "David HOSKING "
+                  },
+                  {
+                    "backupEmployeeCode": "08001574",
+                    "backupEmployeeName": "Paul B. LUXTON "
+                  },
+                  {
+                    "backupEmployeeCode": "08002427",
+                    "backupEmployeeName": "Carinne C. MCRAE "
+                  },
+                  {
+                    "backupEmployeeCode": "08011990",
+                    "backupEmployeeName": "Riya J "
+                  },
+                  {
+                    "backupEmployeeCode": "10000042",
+                    "backupEmployeeName": "Megan D. Williams "
+                  },
+                  {
+                    "backupEmployeeCode": "10000192",
+                    "backupEmployeeName": "Jaelle B. Bajada "
+                  },
+                  {
+                    "backupEmployeeCode": "10000729",
+                    "backupEmployeeName": "DOMINIQUE ALZIRA C. PINTO-GREEN "
+                  },
+                  {
+                    "backupEmployeeCode": "10001684",
+                    "backupEmployeeName": "Lance BROWN "
+                  },
+                  {
+                    "backupEmployeeCode": "10002622",
+                    "backupEmployeeName": "Michael B. Innis "
+                  },
+                  {
+                    "backupEmployeeCode": "10003113",
+                    "backupEmployeeName": "Suji n. Selvaraj "
+                  },
+                  {
+                    "backupEmployeeCode": "10004068",
+                    "backupEmployeeName": "Haily D. Booth "
+                  },
+                  {
+                    "backupEmployeeCode": "10004442",
+                    "backupEmployeeName": "Alexr D o. Manoj "
+                  },
+                  {
+                    "backupEmployeeCode": "10004579",
+                    "backupEmployeeName": "Alexr D o. Kumar "
+                  },
+                  {
+                    "backupEmployeeCode": "10006097",
+                    "backupEmployeeName": "Katherine C. Amies "
+                  },
+                  {
+                    "backupEmployeeCode": "10006574",
+                    "backupEmployeeName": "Belinda D. Rawnsley "
+                  },
+                  {
+                    "backupEmployeeCode": "10007839",
+                    "backupEmployeeName": "Cara A. Allan "
+                  },
+                  {
+                    "backupEmployeeCode": "10007894",
+                    "backupEmployeeName": "Peter B. Wilson "
+                  },
+                  {
+                    "backupEmployeeCode": "10011990",
+                    "backupEmployeeName": "Joe J "
+                  },
+                  {
+                    "backupEmployeeCode": "10013008",
+                    "backupEmployeeName": "Adam D. Jalaludin "
+                  },
+                  {
+                    "backupEmployeeCode": "10013009",
+                    "backupEmployeeName": "YULU SHELL A. Xiao "
+                  },
+                  {
+                    "backupEmployeeCode": "10013011",
+                    "backupEmployeeName": "Peter William B. FREWIN "
+                  },
+                  {
+                    "backupEmployeeCode": "10013044",
+                    "backupEmployeeName": "Robert Anthony C. VITELLI "
+                  },
+                  {
+                    "backupEmployeeCode": "10013056",
+                    "backupEmployeeName": "Tal D. Cohen Sat "
+                  },
+                  {
+                    "backupEmployeeCode": "10014574",
+                    "backupEmployeeName": "Christopher A. DIAS "
+                  },
+                  {
+                    "backupEmployeeCode": "10014609",
+                    "backupEmployeeName": "Sonja B. Mitchell "
+                  },
+                  {
+                    "backupEmployeeCode": "10015768",
+                    "backupEmployeeName": "Anthony C. Mitchell "
+                  },
+                  {
+                    "backupEmployeeCode": "10016393",
+                    "backupEmployeeName": "Pauline D. Tough "
+                  },
+                  {
+                    "backupEmployeeCode": "10016547",
+                    "backupEmployeeName": "Honi A. Anderson "
+                  },
+                  {
+                    "backupEmployeeCode": "10016834",
+                    "backupEmployeeName": "Carole B. Cast "
+                  },
+                  {
+                    "backupEmployeeCode": "10016891",
+                    "backupEmployeeName": "Adil C. Ahmad "
+                  },
+                  {
+                    "backupEmployeeCode": "10017642",
+                    "backupEmployeeName": "Abdur D. Rahman "
+                  },
+                  {
+                    "backupEmployeeCode": "10017666",
+                    "backupEmployeeName": "Stacey A. Grundy "
+                  },
+                  {
+                    "backupEmployeeCode": "10017872",
+                    "backupEmployeeName": "Amanda B. Byrne "
+                  },
+                  {
+                    "backupEmployeeCode": "10018048",
+                    "backupEmployeeName": "Amy C. Clark "
+                  },
+                  {
+                    "backupEmployeeCode": "10018766",
+                    "backupEmployeeName": "Peter D. Jolly "
+                  },
+                  {
+                    "backupEmployeeCode": "10019785",
+                    "backupEmployeeName": "Joshua A. O'Shea "
+                  },
+                  {
+                    "backupEmployeeCode": "10020104",
+                    "backupEmployeeName": "Melissa Brown "
+                  },
+                  {
+                    "backupEmployeeCode": "10020109",
+                    "backupEmployeeName": "Brett B. Morris "
+                  },
+                  {
+                    "backupEmployeeCode": "10021709",
+                    "backupEmployeeName": "David C. Marrs "
+                  },
+                  {
+                    "backupEmployeeCode": "10021711",
+                    "backupEmployeeName": "Sargis Beetmirza "
+                  },
+                  {
+                    "backupEmployeeCode": "10022445",
+                    "backupEmployeeName": "Jonathan D. Holloway "
+                  },
+                  {
+                    "backupEmployeeCode": "10022697",
+                    "backupEmployeeName": "Fang A. SHENG "
+                  },
+                  {
+                    "backupEmployeeCode": "10023806",
+                    "backupEmployeeName": "Alison B. Fairbairn "
+                  },
+                  {
+                    "backupEmployeeCode": "10023807",
+                    "backupEmployeeName": "Cheryl C. Janmaat "
+                  },
+                  {
+                    "backupEmployeeCode": "10023808",
+                    "backupEmployeeName": "Grant D. Smith "
+                  },
+                  {
+                    "backupEmployeeCode": "10023809",
+                    "backupEmployeeName": "John A. Isidori "
+                  },
+                  {
+                    "backupEmployeeCode": "10023810",
+                    "backupEmployeeName": "Kevin B. Sternberg "
+                  },
+                  {
+                    "backupEmployeeCode": "10023812",
+                    "backupEmployeeName": "Timothy C. Burley "
+                  },
+                  {
+                    "backupEmployeeCode": "10023873",
+                    "backupEmployeeName": "Dom D. Bolton "
+                  },
+                  {
+                    "backupEmployeeCode": "10023982",
+                    "backupEmployeeName": "Jose William A. Cacho "
+                  },
+                  {
+                    "backupEmployeeCode": "10024546",
+                    "backupEmployeeName": "Larina B. Palomino "
+                  },
+                  {
+                    "backupEmployeeCode": "10024590",
+                    "backupEmployeeName": "Andrew C. Barker "
+                  },
+                  {
+                    "backupEmployeeCode": "10025639",
+                    "backupEmployeeName": "Chih-Wei D. Li "
+                  },
+                  {
+                    "backupEmployeeCode": "10025852",
+                    "backupEmployeeName": "Sarah A. Wilson "
+                  },
+                  {
+                    "backupEmployeeCode": "10026145",
+                    "backupEmployeeName": "Srikanth B. Gaikwad "
+                  },
+                  {
+                    "backupEmployeeCode": "10026419",
+                    "backupEmployeeName": "Luke C. Ashwood "
+                  },
+                  {
+                    "backupEmployeeCode": "10027604",
+                    "backupEmployeeName": "Neil D. Adams "
+                  },
+                  {
+                    "backupEmployeeCode": "10028063",
+                    "backupEmployeeName": "Roderick A. Dale "
+                  },
+                  {
+                    "backupEmployeeCode": "10028298",
+                    "backupEmployeeName": "Shushilkumar Rajendrakuma B. Patel "
+                  },
+                  {
+                    "backupEmployeeCode": "10028415",
+                    "backupEmployeeName": "Gabrielle C. Chaffey "
+                  },
+                  {
+                    "backupEmployeeCode": "10029664",
+                    "backupEmployeeName": "Katherine D. Worrad "
+                  },
+                  {
+                    "backupEmployeeCode": "10030045",
+                    "backupEmployeeName": "Andrew A. Peart "
+                  },
+                  {
+                    "backupEmployeeCode": "10030180",
+                    "backupEmployeeName": "Shannon B. Short "
+                  },
+                  {
+                    "backupEmployeeCode": "10030420",
+                    "backupEmployeeName": "Donald C. McMurrich "
+                  },
+                  {
+                    "backupEmployeeCode": "10030523",
+                    "backupEmployeeName": "Kavita Leo "
+                  },
+                  {
+                    "backupEmployeeCode": "10030706",
+                    "backupEmployeeName": "Nileshkumar Pandya "
+                  },
+                  {
+                    "backupEmployeeCode": "10031432",
+                    "backupEmployeeName": "Matt A. Kenny "
+                  },
+                  {
+                    "backupEmployeeCode": "10032139",
+                    "backupEmployeeName": "Bhargavi A. Desai "
+                  },
+                  {
+                    "backupEmployeeCode": "10032353",
+                    "backupEmployeeName": "Matilda B. Hughes "
+                  },
+                  {
+                    "backupEmployeeCode": "10032755",
+                    "backupEmployeeName": "Neil C. Cordingley "
+                  },
+                  {
+                    "backupEmployeeCode": "10033259",
+                    "backupEmployeeName": "Leonard D. Ibbotson "
+                  },
+                  {
+                    "backupEmployeeCode": "10033276",
+                    "backupEmployeeName": "Alicia A. Thompson "
+                  },
+                  {
+                    "backupEmployeeCode": "10033317",
+                    "backupEmployeeName": "Jacky B. Stoneman "
+                  },
+                  {
+                    "backupEmployeeCode": "10042014",
+                    "backupEmployeeName": "Sujinraj Selvaraj "
+                  },
+                  {
+                    "backupEmployeeCode": "10061234",
+                    "backupEmployeeName": "Sibinraj Selvaraj "
+                  },
+                  {
+                    "backupEmployeeCode": "10071234",
+                    "backupEmployeeName": "Sibinraj Selvaraj "
+                  },
+                  {
+                    "backupEmployeeCode": "10091234",
+                    "backupEmployeeName": "Alexr D o. Kumar "
+                  },
+                  {
+                    "backupEmployeeCode": "10101234",
+                    "backupEmployeeName": "Sivapriya B S "
+                  },
+                  {
+                    "backupEmployeeCode": "11011990",
+                    "backupEmployeeName": "Kirthi J "
+                  },
+                  {
+                    "backupEmployeeCode": "11111178",
+                    "backupEmployeeName": "aa ss "
+                  },
+                  {
+                    "backupEmployeeCode": "12011990",
+                    "backupEmployeeName": "Zion J "
+                  },
+                  {
+                    "backupEmployeeCode": "14101432",
+                    "backupEmployeeName": "Magesh K "
+                  },
+                  {
+                    "backupEmployeeCode": "15110001",
+                    "backupEmployeeName": "Eva B "
+                  },
+                  {
+                    "backupEmployeeCode": "15110002",
+                    "backupEmployeeName": "Vaishali K "
+                  },
+                  {
+                    "backupEmployeeCode": "15110003",
+                    "backupEmployeeName": "Suganya M "
+                  },
+                  {
+                    "backupEmployeeCode": "15120001",
+                    "backupEmployeeName": "Manoj P "
+                  },
+                  {
+                    "backupEmployeeCode": "16052024",
+                    "backupEmployeeName": "Loggaa Sri "
+                  },
+                  {
+                    "backupEmployeeCode": "19101910",
+                    "backupEmployeeName": "Sibinraj Selvaraj "
+                  },
+                  {
+                    "backupEmployeeCode": "20000123",
+                    "backupEmployeeName": "Priyadharshini V "
+                  },
+                  {
+                    "backupEmployeeCode": "20062023",
+                    "backupEmployeeName": "Keshav R. Ramkumar "
+                  },
+                  {
+                    "backupEmployeeCode": "20071234",
+                    "backupEmployeeName": "Sibin S "
+                  },
+                  {
+                    "backupEmployeeCode": "20102010",
+                    "backupEmployeeName": "Sibin Selvaraj "
+                  },
+                  {
+                    "backupEmployeeCode": "20110001",
+                    "backupEmployeeName": "Sujinraj Selvaraj "
+                  },
+                  {
+                    "backupEmployeeCode": "20110002",
+                    "backupEmployeeName": "Vijayalakshmi K "
+                  },
+                  {
+                    "backupEmployeeCode": "21102110",
+                    "backupEmployeeName": "Sibin Selvaraj "
+                  },
+                  {
+                    "backupEmployeeCode": "21110001",
+                    "backupEmployeeName": "Sibinraj Selvaraj "
+                  },
+                  {
+                    "backupEmployeeCode": "21110002",
+                    "backupEmployeeName": "Manoj P "
+                  },
+                  {
+                    "backupEmployeeCode": "21110003",
+                    "backupEmployeeName": "Bharathi K "
+                  },
+                  {
+                    "backupEmployeeCode": "22110001",
+                    "backupEmployeeName": "Sujinraj Selvaraj "
+                  },
+                  {
+                    "backupEmployeeCode": "22222222",
+                    "backupEmployeeName": "Jenson Chapman "
+                  },
+                  {
+                    "backupEmployeeCode": "23110001",
+                    "backupEmployeeName": "Ravi R "
+                  },
+                  {
+                    "backupEmployeeCode": "24000001",
+                    "backupEmployeeName": "Sibinraj Selvaraj "
+                  },
+                  {
+                    "backupEmployeeCode": "24000002",
+                    "backupEmployeeName": "Siva Priya "
+                  },
+                  {
+                    "backupEmployeeCode": "27110001",
+                    "backupEmployeeName": "Senthil Arasu "
+                  },
+                  {
+                    "backupEmployeeCode": "27110002",
+                    "backupEmployeeName": "Krishna ABC "
+                  },
+                  {
+                    "backupEmployeeCode": "30110001",
+                    "backupEmployeeName": "Sujinraj Selvaraj "
+                  },
+                  {
+                    "backupEmployeeCode": "33333333",
+                    "backupEmployeeName": "ravi k "
+                  },
+                  {
+                    "backupEmployeeCode": "50091234",
+                    "backupEmployeeName": "Sibinraj S "
+                  },
+                  {
+                    "backupEmployeeCode": "66666666",
+                    "backupEmployeeName": "Jose Ruby Stella J "
+                  },
+                  {
+                    "backupEmployeeCode": "80000091",
+                    "backupEmployeeName": "David HOSKING "
+                  },
+                  {
+                    "backupEmployeeCode": "86003559",
+                    "backupEmployeeName": "ROBERTO GIOUANNI C. BATTAGLIA "
+                  },
+                  {
+                    "backupEmployeeCode": "86003561",
+                    "backupEmployeeName": "Simon D. BONNY "
+                  },
+                  {
+                    "backupEmployeeCode": "86003565",
+                    "backupEmployeeName": "Paul A. BROWN "
+                  },
+                  {
+                    "backupEmployeeCode": "86003568",
+                    "backupEmployeeName": "Anthony B. CARR "
+                  },
+                  {
+                    "backupEmployeeCode": "86003571",
+                    "backupEmployeeName": "Benjamin C. CHEW "
+                  },
+                  {
+                    "backupEmployeeCode": "86003578",
+                    "backupEmployeeName": "Doreen D. DEBRINCAT "
+                  },
+                  {
+                    "backupEmployeeCode": "86003582",
+                    "backupEmployeeName": "Timothy A. FRASER "
+                  },
+                  {
+                    "backupEmployeeCode": "86003588",
+                    "backupEmployeeName": "Keryn B. GRIBBEN "
+                  },
+                  {
+                    "backupEmployeeCode": "86003594",
+                    "backupEmployeeName": "Michelle HICKMAN "
+                  },
+                  {
+                    "backupEmployeeCode": "86003595",
+                    "backupEmployeeName": "Sam C. HOLE "
+                  },
+                  {
+                    "backupEmployeeCode": "86003596",
+                    "backupEmployeeName": "Peter D. HOLMES "
+                  },
+                  {
+                    "backupEmployeeCode": "86003605",
+                    "backupEmployeeName": "Grayson A. KILLEN "
+                  },
+                  {
+                    "backupEmployeeCode": "86003614",
+                    "backupEmployeeName": "Neville B. MARRA "
+                  },
+                  {
+                    "backupEmployeeCode": "86003615",
+                    "backupEmployeeName": "Scott C. MATHEW "
+                  },
+                  {
+                    "backupEmployeeCode": "86003622",
+                    "backupEmployeeName": "Kenneth D. MCKEE "
+                  },
+                  {
+                    "backupEmployeeCode": "86003638",
+                    "backupEmployeeName": "Kevin A. PATTERSON "
+                  },
+                  {
+                    "backupEmployeeCode": "86003646",
+                    "backupEmployeeName": "Jason B. SABEENEY "
+                  },
+                  {
+                    "backupEmployeeCode": "86003656",
+                    "backupEmployeeName": "Dugald C. SPENCELEY "
+                  },
+                  {
+                    "backupEmployeeCode": "86003667",
+                    "backupEmployeeName": "David D. VAN-RYSWYK "
+                  },
+                  {
+                    "backupEmployeeCode": "86003670",
+                    "backupEmployeeName": "Garth A. WICKSON "
+                  },
+                  {
+                    "backupEmployeeCode": "86003674",
+                    "backupEmployeeName": "Wilhelmien B. GREENWOOD "
+                  },
+                  {
+                    "backupEmployeeCode": "86003710",
+                    "backupEmployeeName": "Russell C. SLOBODIUK "
+                  },
+                  {
+                    "backupEmployeeCode": "86004400",
+                    "backupEmployeeName": "Eric D. BROWN "
+                  },
+                  {
+                    "backupEmployeeCode": "86007314",
+                    "backupEmployeeName": "Rowley A. WINTEN "
+                  },
+                  {
+                    "backupEmployeeCode": "86007543",
+                    "backupEmployeeName": "Samantha B. SHORT "
+                  },
+                  {
+                    "backupEmployeeCode": "86007646",
+                    "backupEmployeeName": "Brett C. HOFMAN "
+                  },
+                  {
+                    "backupEmployeeCode": "86007665",
+                    "backupEmployeeName": "Belinda D. WATTS "
+                  },
+                  {
+                    "backupEmployeeCode": "86007667",
+                    "backupEmployeeName": "Nicole A. MOMIROVSKI "
+                  },
+                  {
+                    "backupEmployeeCode": "86007668",
+                    "backupEmployeeName": "Michael B. TREMAINE "
+                  },
+                  {
+                    "backupEmployeeCode": "86007672",
+                    "backupEmployeeName": "Leith C. PLEVEY "
+                  },
+                  {
+                    "backupEmployeeCode": "86007714",
+                    "backupEmployeeName": "Sean D. ROBERTS "
+                  },
+                  {
+                    "backupEmployeeCode": "86008489",
+                    "backupEmployeeName": "Patricia A. DE LA MATA "
+                  },
+                  {
+                    "backupEmployeeCode": "86008573",
+                    "backupEmployeeName": "Richard B. PACKARD "
+                  },
+                  {
+                    "backupEmployeeCode": "86008829",
+                    "backupEmployeeName": "Trevor C. STEAD "
+                  },
+                  {
+                    "backupEmployeeCode": "86008882",
+                    "backupEmployeeName": "Ziba D. KHALILI "
+                  },
+                  {
+                    "backupEmployeeCode": "86009541",
+                    "backupEmployeeName": "Lorraine A. CAMLEY "
+                  },
+                  {
+                    "backupEmployeeCode": "86010250",
+                    "backupEmployeeName": "Cornelia B. SMITH "
+                  },
+                  {
+                    "backupEmployeeCode": "86011451",
+                    "backupEmployeeName": "Pooja C. NAYYAR "
+                  },
+                  {
+                    "backupEmployeeCode": "86011902",
+                    "backupEmployeeName": "James D. CONSIDINE "
+                  },
+                  {
+                    "backupEmployeeCode": "86013066",
+                    "backupEmployeeName": "Ian A. MACDONALD "
+                  },
+                  {
+                    "backupEmployeeCode": "86013854",
+                    "backupEmployeeName": "Stanley B. NOONAN "
+                  },
+                  {
+                    "backupEmployeeCode": "86014471",
+                    "backupEmployeeName": "Gerard C. SIPPEL "
+                  },
+                  {
+                    "backupEmployeeCode": "86014607",
+                    "backupEmployeeName": "Gillian D. BROOKS "
+                  },
+                  {
+                    "backupEmployeeCode": "86014717",
+                    "backupEmployeeName": "MARGARITA A. SISON "
+                  },
+                  {
+                    "backupEmployeeCode": "86014847",
+                    "backupEmployeeName": "Karen B. ZAICZ "
+                  },
+                  {
+                    "backupEmployeeCode": "86015112",
+                    "backupEmployeeName": "Ross C. BLOORE "
+                  },
+                  {
+                    "backupEmployeeCode": "86019273",
+                    "backupEmployeeName": "Darren D. BROWNE "
+                  },
+                  {
+                    "backupEmployeeCode": "86020476",
+                    "backupEmployeeName": "Terry A. ALDERDICE "
+                  },
+                  {
+                    "backupEmployeeCode": "86020500",
+                    "backupEmployeeName": "Neil B. BAUER "
+                  },
+                  {
+                    "backupEmployeeCode": "86020739",
+                    "backupEmployeeName": "Maximo C. FRATANTONI "
+                  },
+                  {
+                    "backupEmployeeCode": "86020968",
+                    "backupEmployeeName": "MARTIN D. FRANCIS "
+                  },
+                  {
+                    "backupEmployeeCode": "86022566",
+                    "backupEmployeeName": "Vicki A. TONKIN "
+                  },
+                  {
+                    "backupEmployeeCode": "86022997",
+                    "backupEmployeeName": "Emma B. MCCLELLAND "
+                  },
+                  {
+                    "backupEmployeeCode": "86025600",
+                    "backupEmployeeName": "HUI C. LI "
+                  },
+                  {
+                    "backupEmployeeCode": "86027424",
+                    "backupEmployeeName": "Charbel D. FRANCIS "
+                  },
+                  {
+                    "backupEmployeeCode": "86027835",
+                    "backupEmployeeName": "Bryan A. BUCHANAN "
+                  },
+                  {
+                    "backupEmployeeCode": "86028695",
+                    "backupEmployeeName": "Angie B. BELCHER "
+                  },
+                  {
+                    "backupEmployeeCode": "86029048",
+                    "backupEmployeeName": "Rhonda C. HALL "
+                  },
+                  {
+                    "backupEmployeeCode": "86029716",
+                    "backupEmployeeName": "Alec D. Duffy "
+                  },
+                  {
+                    "backupEmployeeCode": "86029997",
+                    "backupEmployeeName": "Alan A. COLDWELL "
+                  },
+                  {
+                    "backupEmployeeCode": "86031710",
+                    "backupEmployeeName": "Wayne B. RICHARDSON "
+                  },
+                  {
+                    "backupEmployeeCode": "86032800",
+                    "backupEmployeeName": "Rachel D. WEBB "
+                  },
+                  {
+                    "backupEmployeeCode": "86032986",
+                    "backupEmployeeName": "Leanne A. FORSYTH "
+                  },
+                  {
+                    "backupEmployeeCode": "86033669",
+                    "backupEmployeeName": "Daniel B. DOCHERTY "
+                  },
+                  {
+                    "backupEmployeeCode": "86033809",
+                    "backupEmployeeName": "Kieran C. WAUCHOPE "
+                  },
+                  {
+                    "backupEmployeeCode": "86034020",
+                    "backupEmployeeName": "Malcolm D. JONES "
+                  },
+                  {
+                    "backupEmployeeCode": "86034629",
+                    "backupEmployeeName": "Andrew A. DAYAS "
+                  },
+                  {
+                    "backupEmployeeCode": "86036485",
+                    "backupEmployeeName": "Michael B. UTTLEY "
+                  },
+                  {
+                    "backupEmployeeCode": "86036517",
+                    "backupEmployeeName": "Angus C. RUTHERFORD "
+                  },
+                  {
+                    "backupEmployeeCode": "86036729",
+                    "backupEmployeeName": "Mitchell Peter D. AMBROSE-PEARCE "
+                  },
+                  {
+                    "backupEmployeeCode": "86036839",
+                    "backupEmployeeName": "Shaun A. HOOD "
+                  },
+                  {
+                    "backupEmployeeCode": "86037211",
+                    "backupEmployeeName": "Snehalkumar B. SOLANKI "
+                  },
+                  {
+                    "backupEmployeeCode": "86037585",
+                    "backupEmployeeName": "David C. LANDMETER "
+                  },
+                  {
+                    "backupEmployeeCode": "86037743",
+                    "backupEmployeeName": "Andrew D. CHANPHAKEO "
+                  },
+                  {
+                    "backupEmployeeCode": "86037788",
+                    "backupEmployeeName": "Samantha A. PAGE "
+                  },
+                  {
+                    "backupEmployeeCode": "86037799",
+                    "backupEmployeeName": "Mireille B. CHOUEIFATY "
+                  },
+                  {
+                    "backupEmployeeCode": "86037816",
+                    "backupEmployeeName": "Hyun Ji C. KIM "
+                  },
+                  {
+                    "backupEmployeeCode": "86037884",
+                    "backupEmployeeName": "Ben D. PARKIN "
+                  },
+                  {
+                    "backupEmployeeCode": "86038044",
+                    "backupEmployeeName": "Johanna A. GENTLE "
+                  },
+                  {
+                    "backupEmployeeCode": "86038123",
+                    "backupEmployeeName": "James B. HOTTEN "
+                  },
+                  {
+                    "backupEmployeeCode": "86038146",
+                    "backupEmployeeName": "Lisa C. DILLON "
+                  },
+                  {
+                    "backupEmployeeCode": "86038267",
+                    "backupEmployeeName": "Simon D. GREGORY "
+                  },
+                  {
+                    "backupEmployeeCode": "86038355",
+                    "backupEmployeeName": "Theodora A. Areli "
+                  },
+                  {
+                    "backupEmployeeCode": "86038373",
+                    "backupEmployeeName": "Owen B. LANGLEY "
+                  },
+                  {
+                    "backupEmployeeCode": "86038375",
+                    "backupEmployeeName": "Mashaba C. ALI "
+                  },
+                  {
+                    "backupEmployeeCode": "86038529",
+                    "backupEmployeeName": "Luke Llewellyn D. BARTLETT "
+                  },
+                  {
+                    "backupEmployeeCode": "86038649",
+                    "backupEmployeeName": "Anna Elizabeth A. SUTTON "
+                  },
+                  {
+                    "backupEmployeeCode": "86038983",
+                    "backupEmployeeName": "EAN SIEW B. LOO "
+                  },
+                  {
+                    "backupEmployeeCode": "86039208",
+                    "backupEmployeeName": "Jeong Min C. SON "
+                  },
+                  {
+                    "backupEmployeeCode": "86039269",
+                    "backupEmployeeName": "Katie D. SLADE "
+                  },
+                  {
+                    "backupEmployeeCode": "86039290",
+                    "backupEmployeeName": "Michelle A. SEVILLA "
+                  },
+                  {
+                    "backupEmployeeCode": "86039385",
+                    "backupEmployeeName": "Aarany B. KUNASINGHAM "
+                  },
+                  {
+                    "backupEmployeeCode": "86039398",
+                    "backupEmployeeName": "Nicholas C. HALL "
+                  },
+                  {
+                    "backupEmployeeCode": "86039402",
+                    "backupEmployeeName": "Graham D. LESLIE "
+                  },
+                  {
+                    "backupEmployeeCode": "86039462",
+                    "backupEmployeeName": "Michael A. DE LUCA "
+                  },
+                  {
+                    "backupEmployeeCode": "86039499",
+                    "backupEmployeeName": "Gereon B. Schnippenkoetter "
+                  },
+                  {
+                    "backupEmployeeCode": "86039500",
+                    "backupEmployeeName": "William C. CROFT "
+                  },
+                  {
+                    "backupEmployeeCode": "86039513",
+                    "backupEmployeeName": "Amelia D. GLEDHILL "
+                  },
+                  {
+                    "backupEmployeeCode": "86039579",
+                    "backupEmployeeName": "Justin A. MARTIN "
+                  },
+                  {
+                    "backupEmployeeCode": "86039927",
+                    "backupEmployeeName": "Craig B. HALL "
+                  },
+                  {
+                    "backupEmployeeCode": "86040094",
+                    "backupEmployeeName": "Stephen C. BITTER "
+                  },
+                  {
+                    "backupEmployeeCode": "86040244",
+                    "backupEmployeeName": "Daniel A. GASH "
+                  },
+                  {
+                    "backupEmployeeCode": "86040246",
+                    "backupEmployeeName": "Dean B. MOSCH "
+                  },
+                  {
+                    "backupEmployeeCode": "86040278",
+                    "backupEmployeeName": "SAMUEL C. NORRIS "
+                  },
+                  {
+                    "backupEmployeeCode": "89765432",
+                    "backupEmployeeName": "eva S "
+                  },
+                  {
+                    "backupEmployeeCode": "90000019",
+                    "backupEmployeeName": "timetest t. timetest "
+                  },
+                  {
+                    "backupEmployeeCode": "90000020",
+                    "backupEmployeeName": "Thanigai M. Vendhan "
+                  },
+                  {
+                    "backupEmployeeCode": "90000029",
+                    "backupEmployeeName": "timetest t. timetest "
+                  },
+                  {
+                    "backupEmployeeCode": "90000030",
+                    "backupEmployeeName": "mobtest T "
+                  },
+                  {
+                    "backupEmployeeCode": "IND00001",
+                    "backupEmployeeName": "Oppo R "
+                  },
+                  {
+                    "backupEmployeeCode": "ind00002",
+                    "backupEmployeeName": "Samsung S "
+                  },
+                  {
+                    "backupEmployeeCode": "ind00003",
+                    "backupEmployeeName": "Apple R "
+                  },
+                  {
+                    "backupEmployeeCode": "ind00004",
+                    "backupEmployeeName": "Samco S "
+                  },
+                  {
+                    "backupEmployeeCode": "ind00005",
+                    "backupEmployeeName": "HP R "
+                  },
+                  {
+                    "backupEmployeeCode": "KRIS0001",
+                    "backupEmployeeName": "Krishna S "
+                  },
+                  {
+                    "backupEmployeeCode": "OU419000001",
+                    "backupEmployeeName": "Abishek K "
+                  },
+                  {
+                    "backupEmployeeCode": "ou419000002",
+                    "backupEmployeeName": "Jack SP "
+                  },
+                  {
+                    "backupEmployeeCode": "ou419000003",
+                    "backupEmployeeName": "Mega M "
+                  },
+                  {
+                    "backupEmployeeCode": "ou419000005",
+                    "backupEmployeeName": "Kak R "
+                  },
+                  {
+                    "backupEmployeeCode": "ou419000006",
+                    "backupEmployeeName": "kavi K "
+                  },
+                  {
+                    "backupEmployeeCode": "t0000005",
+                    "backupEmployeeName": "jfhf dfsd "
+                  },
+                  {
+                    "backupEmployeeCode": "t0000006",
+                    "backupEmployeeName": "sgdf shdkjfd "
+                  },
+                  {
+                    "backupEmployeeCode": "t0100005",
+                    "backupEmployeeName": "vihj vjdh "
+                  },
+                  {
+                    "backupEmployeeCode": "tj000008",
+                    "backupEmployeeName": "cc cin "
+                  },
+                  {
+                    "backupEmployeeCode": "tj000053",
+                    "backupEmployeeName": "cin shorty "
+                  },
+                  {
+                    "backupEmployeeCode": "tjp00044",
+                    "backupEmployeeName": "fr sf "
+                  },
+                  {
+                    "backupEmployeeCode": "tpq00001",
+                    "backupEmployeeName": "ffff ggg "
+                  }
+                ]
+              }
+            }
+          },
+          "leaveReason": {},
+          "backupEmployees": {},
+          "assignmentOptions": {
+            "isLoading": false,
+            "data": {
+              "data": {
+                "fetchAssignment": [
+                  {
+                    "assignmentInformation": "Primary-Assignment~1~01/01/2023",
+                    "assignmentNumber": 1,
+                    "jobDesc": "NSALES",
+                    "assignmentEffectiveToDate": null,
+                    "positionDesc": "NSALES"
+                  }
+                ]
+              }
+            },
+            "rawData": {
+              "data": {
+                "fetchAssignment": [
+                  {
+                    "assignmentInformation": "Primary-Assignment~1~01/01/2023",
+                    "assignmentNumber": 1,
+                    "jobDesc": "NSALES",
+                    "assignmentEffectiveToDate": null,
+                    "positionDesc": "NSALES"
+                  }
+                ]
+              }
+            }
+          },
+          "leaveTypeDatas": {
+            "isLoading": false,
+            "data": {
+              "data": {
+                "fetchLeaveType": [
+                  {
+                    "leavetypeCode": "EV_D1",
+                    "leavetypeDesc": "Eva day based",
+                    "showassignInfo": true,
+                    "showholidayWorkedon": false,
+                    "showfromandtoSession": true,
+                    "showcomputeDuration": true,
+                    "showleaveprojectedBalance": false,
+                    "shownotificationLink": false,
+                    "showpartialleaveCancellation": false,
+                    "showTotalHours": false,
+                    "showNotes": false,
+                    "showmultiCompoff": false,
+                    "showfromandTotime": false,
+                    "leaveColorCode": "#BDB4FE",
+                    "anniversaryOrCalendarBased": "Calendar based",
+                    "weeklyLeave": false
+                  },
+                  {
+                    "leavetypeCode": "EV_H1",
+                    "leavetypeDesc": "Hour based leave",
+                    "showassignInfo": true,
+                    "showholidayWorkedon": false,
+                    "showfromandtoSession": false,
+                    "showcomputeDuration": true,
+                    "showleaveprojectedBalance": false,
+                    "shownotificationLink": false,
+                    "showpartialleaveCancellation": false,
+                    "showTotalHours": false,
+                    "showNotes": false,
+                    "showmultiCompoff": false,
+                    "showfromandTotime": true,
+                    "leaveColorCode": "#0058AF",
+                    "anniversaryOrCalendarBased": "Calendar based",
+                    "weeklyLeave": false
+                  },
+                  {
+                    "leavetypeCode": "EV_W1",
+                    "leavetypeDesc": "Weekly leave",
+                    "showassignInfo": true,
+                    "showholidayWorkedon": false,
+                    "showfromandtoSession": false,
+                    "showcomputeDuration": true,
+                    "showleaveprojectedBalance": false,
+                    "shownotificationLink": false,
+                    "showpartialleaveCancellation": false,
+                    "showTotalHours": false,
+                    "showNotes": false,
+                    "showmultiCompoff": false,
+                    "showfromandTotime": true,
+                    "leaveColorCode": "#6938EF",
+                    "anniversaryOrCalendarBased": "Calendar based",
+                    "weeklyLeave": true
+                  },
+                  {
+                    "leavetypeCode": "JCL",
+                    "leavetypeDesc": "JCL",
+                    "showassignInfo": true,
+                    "showholidayWorkedon": true,
+                    "showfromandtoSession": true,
+                    "showcomputeDuration": true,
+                    "showleaveprojectedBalance": false,
+                    "shownotificationLink": false,
+                    "showpartialleaveCancellation": false,
+                    "showTotalHours": false,
+                    "showNotes": false,
+                    "showmultiCompoff": false,
+                    "showfromandTotime": false,
+                    "leaveColorCode": null,
+                    "anniversaryOrCalendarBased": null,
+                    "weeklyLeave": false
+                  },
+                  {
+                    "leavetypeCode": "JCOMP",
+                    "leavetypeDesc": "Jcomp",
+                    "showassignInfo": true,
+                    "showholidayWorkedon": false,
+                    "showfromandtoSession": true,
+                    "showcomputeDuration": true,
+                    "showleaveprojectedBalance": false,
+                    "shownotificationLink": false,
+                    "showpartialleaveCancellation": false,
+                    "showTotalHours": false,
+                    "showNotes": false,
+                    "showmultiCompoff": false,
+                    "showfromandTotime": false,
+                    "leaveColorCode": "#0068CF",
+                    "anniversaryOrCalendarBased": null,
+                    "weeklyLeave": false
+                  },
+                  {
+                    "leavetypeCode": "L0003",
+                    "leavetypeDesc": "Paid Parental Leave",
+                    "showassignInfo": true,
+                    "showholidayWorkedon": false,
+                    "showfromandtoSession": false,
+                    "showcomputeDuration": true,
+                    "showleaveprojectedBalance": false,
+                    "shownotificationLink": false,
+                    "showpartialleaveCancellation": false,
+                    "showTotalHours": true,
+                    "showNotes": false,
+                    "showmultiCompoff": false,
+                    "showfromandTotime": true,
+                    "leaveColorCode": "#00FF00",
+                    "anniversaryOrCalendarBased": null,
+                    "weeklyLeave": true
+                  },
+                  {
+                    "leavetypeCode": "L0004",
+                    "leavetypeDesc": "Half Paid Parental Leave",
+                    "showassignInfo": true,
+                    "showholidayWorkedon": false,
+                    "showfromandtoSession": false,
+                    "showcomputeDuration": true,
+                    "showleaveprojectedBalance": false,
+                    "shownotificationLink": false,
+                    "showpartialleaveCancellation": false,
+                    "showTotalHours": true,
+                    "showNotes": false,
+                    "showmultiCompoff": false,
+                    "showfromandTotime": true,
+                    "leaveColorCode": "#00FF00",
+                    "anniversaryOrCalendarBased": null,
+                    "weeklyLeave": false
+                  },
+                  {
+                    "leavetypeCode": "L0005",
+                    "leavetypeDesc": "Unpaid Parental Leave",
+                    "showassignInfo": true,
+                    "showholidayWorkedon": false,
+                    "showfromandtoSession": false,
+                    "showcomputeDuration": true,
+                    "showleaveprojectedBalance": false,
+                    "shownotificationLink": false,
+                    "showpartialleaveCancellation": false,
+                    "showTotalHours": true,
+                    "showNotes": false,
+                    "showmultiCompoff": false,
+                    "showfromandTotime": true,
+                    "leaveColorCode": "#00FF00",
+                    "anniversaryOrCalendarBased": "Calendar based",
+                    "weeklyLeave": false
+                  },
+                  {
+                    "leavetypeCode": "L0006",
+                    "leavetypeDesc": "Secondary Parental Leave",
+                    "showassignInfo": true,
+                    "showholidayWorkedon": false,
+                    "showfromandtoSession": false,
+                    "showcomputeDuration": true,
+                    "showleaveprojectedBalance": false,
+                    "shownotificationLink": false,
+                    "showpartialleaveCancellation": false,
+                    "showTotalHours": false,
+                    "showNotes": false,
+                    "showmultiCompoff": false,
+                    "showfromandTotime": true,
+                    "leaveColorCode": "#00FF00",
+                    "anniversaryOrCalendarBased": "Calendar based",
+                    "weeklyLeave": false
+                  },
+                  {
+                    "leavetypeCode": "L0020",
+                    "leavetypeDesc": "Bereavement Leave",
+                    "showassignInfo": true,
+                    "showholidayWorkedon": false,
+                    "showfromandtoSession": false,
+                    "showcomputeDuration": true,
+                    "showleaveprojectedBalance": false,
+                    "shownotificationLink": false,
+                    "showpartialleaveCancellation": false,
+                    "showTotalHours": false,
+                    "showNotes": false,
+                    "showmultiCompoff": false,
+                    "showfromandTotime": true,
+                    "leaveColorCode": "#00FF00",
+                    "anniversaryOrCalendarBased": "Calendar based",
+                    "weeklyLeave": false
+                  },
+                  {
+                    "leavetypeCode": "L0022",
+                    "leavetypeDesc": "Unpaid Leave",
+                    "showassignInfo": true,
+                    "showholidayWorkedon": false,
+                    "showfromandtoSession": false,
+                    "showcomputeDuration": true,
+                    "showleaveprojectedBalance": false,
+                    "shownotificationLink": false,
+                    "showpartialleaveCancellation": false,
+                    "showTotalHours": true,
+                    "showNotes": false,
+                    "showmultiCompoff": false,
+                    "showfromandTotime": true,
+                    "leaveColorCode": "#00FF00",
+                    "anniversaryOrCalendarBased": "Calendar based",
+                    "weeklyLeave": false
+                  },
+                  {
+                    "leavetypeCode": "L0025",
+                    "leavetypeDesc": "National Disaster",
+                    "showassignInfo": true,
+                    "showholidayWorkedon": false,
+                    "showfromandtoSession": false,
+                    "showcomputeDuration": true,
+                    "showleaveprojectedBalance": false,
+                    "shownotificationLink": false,
+                    "showpartialleaveCancellation": false,
+                    "showTotalHours": false,
+                    "showNotes": false,
+                    "showmultiCompoff": false,
+                    "showfromandTotime": true,
+                    "leaveColorCode": "#00FF00",
+                    "anniversaryOrCalendarBased": "Calendar based",
+                    "weeklyLeave": false
+                  },
+                  {
+                    "leavetypeCode": "L0029",
+                    "leavetypeDesc": "Study Leave",
+                    "showassignInfo": true,
+                    "showholidayWorkedon": false,
+                    "showfromandtoSession": false,
+                    "showcomputeDuration": false,
+                    "showleaveprojectedBalance": true,
+                    "shownotificationLink": false,
+                    "showpartialleaveCancellation": true,
+                    "showTotalHours": false,
+                    "showNotes": false,
+                    "showmultiCompoff": false,
+                    "showfromandTotime": true,
+                    "leaveColorCode": "#00FF00",
+                    "anniversaryOrCalendarBased": "Calendar based",
+                    "weeklyLeave": true
+                  },
+                  {
+                    "leavetypeCode": "L0038",
+                    "leavetypeDesc": "Gardening Leave",
+                    "showassignInfo": true,
+                    "showholidayWorkedon": false,
+                    "showfromandtoSession": false,
+                    "showcomputeDuration": false,
+                    "showleaveprojectedBalance": true,
+                    "shownotificationLink": false,
+                    "showpartialleaveCancellation": true,
+                    "showTotalHours": true,
+                    "showNotes": false,
+                    "showmultiCompoff": false,
+                    "showfromandTotime": true,
+                    "leaveColorCode": "#00FF00",
+                    "anniversaryOrCalendarBased": "Calendar based",
+                    "weeklyLeave": true
+                  },
+                  {
+                    "leavetypeCode": "L0050",
+                    "leavetypeDesc": "Community Service Leave",
+                    "showassignInfo": true,
+                    "showholidayWorkedon": false,
+                    "showfromandtoSession": false,
+                    "showcomputeDuration": true,
+                    "showleaveprojectedBalance": false,
+                    "shownotificationLink": false,
+                    "showpartialleaveCancellation": false,
+                    "showTotalHours": false,
+                    "showNotes": false,
+                    "showmultiCompoff": false,
+                    "showfromandTotime": true,
+                    "leaveColorCode": "#00FF00",
+                    "anniversaryOrCalendarBased": "Calendar based",
+                    "weeklyLeave": false
+                  },
+                  {
+                    "leavetypeCode": "L0051",
+                    "leavetypeDesc": "Jury Leave",
+                    "showassignInfo": true,
+                    "showholidayWorkedon": false,
+                    "showfromandtoSession": false,
+                    "showcomputeDuration": true,
+                    "showleaveprojectedBalance": false,
+                    "shownotificationLink": false,
+                    "showpartialleaveCancellation": false,
+                    "showTotalHours": false,
+                    "showNotes": false,
+                    "showmultiCompoff": false,
+                    "showfromandTotime": true,
+                    "leaveColorCode": "#00FF00",
+                    "anniversaryOrCalendarBased": "Calendar based",
+                    "weeklyLeave": false
+                  },
+                  {
+                    "leavetypeCode": "L0052",
+                    "leavetypeDesc": "Military Leave",
+                    "showassignInfo": true,
+                    "showholidayWorkedon": false,
+                    "showfromandtoSession": false,
+                    "showcomputeDuration": true,
+                    "showleaveprojectedBalance": false,
+                    "shownotificationLink": false,
+                    "showpartialleaveCancellation": false,
+                    "showTotalHours": false,
+                    "showNotes": false,
+                    "showmultiCompoff": false,
+                    "showfromandTotime": true,
+                    "leaveColorCode": "#00FF00",
+                    "anniversaryOrCalendarBased": "Calendar based",
+                    "weeklyLeave": false
+                  },
+                  {
+                    "leavetypeCode": "L0055",
+                    "leavetypeDesc": "Special Leave",
+                    "showassignInfo": true,
+                    "showholidayWorkedon": false,
+                    "showfromandtoSession": false,
+                    "showcomputeDuration": true,
+                    "showleaveprojectedBalance": false,
+                    "shownotificationLink": false,
+                    "showpartialleaveCancellation": false,
+                    "showTotalHours": false,
+                    "showNotes": false,
+                    "showmultiCompoff": false,
+                    "showfromandTotime": true,
+                    "leaveColorCode": "#00FF00",
+                    "anniversaryOrCalendarBased": "Calendar based",
+                    "weeklyLeave": false
+                  },
+                  {
+                    "leavetypeCode": "L0056",
+                    "leavetypeDesc": "Wellbeing Leave",
+                    "showassignInfo": true,
+                    "showholidayWorkedon": false,
+                    "showfromandtoSession": false,
+                    "showcomputeDuration": true,
+                    "showleaveprojectedBalance": false,
+                    "shownotificationLink": false,
+                    "showpartialleaveCancellation": false,
+                    "showTotalHours": false,
+                    "showNotes": false,
+                    "showmultiCompoff": false,
+                    "showfromandTotime": true,
+                    "leaveColorCode": "#00FF00",
+                    "anniversaryOrCalendarBased": "Calendar based",
+                    "weeklyLeave": true
+                  },
+                  {
+                    "leavetypeCode": "L0057",
+                    "leavetypeDesc": "Workers Compensation",
+                    "showassignInfo": true,
+                    "showholidayWorkedon": false,
+                    "showfromandtoSession": false,
+                    "showcomputeDuration": true,
+                    "showleaveprojectedBalance": false,
+                    "shownotificationLink": false,
+                    "showpartialleaveCancellation": false,
+                    "showTotalHours": false,
+                    "showNotes": false,
+                    "showmultiCompoff": false,
+                    "showfromandTotime": true,
+                    "leaveColorCode": "#00FF00",
+                    "anniversaryOrCalendarBased": "Calendar based",
+                    "weeklyLeave": false
+                  },
+                  {
+                    "leavetypeCode": "PTL",
+                    "leavetypeDesc": "Paternity Leave",
+                    "showassignInfo": true,
+                    "showholidayWorkedon": false,
+                    "showfromandtoSession": true,
+                    "showcomputeDuration": true,
+                    "showleaveprojectedBalance": false,
+                    "shownotificationLink": false,
+                    "showpartialleaveCancellation": false,
+                    "showTotalHours": false,
+                    "showNotes": false,
+                    "showmultiCompoff": false,
+                    "showfromandTotime": false,
+                    "leaveColorCode": "#00FF00",
+                    "anniversaryOrCalendarBased": null,
+                    "weeklyLeave": false
+                  }
+                ]
+              }
+            },
+            "rawData": {
+              "data": {
+                "fetchLeaveType": [
+                  {
+                    "leavetypeCode": "EV_D1",
+                    "leavetypeDesc": "Eva day based",
+                    "showassignInfo": true,
+                    "showholidayWorkedon": false,
+                    "showfromandtoSession": true,
+                    "showcomputeDuration": true,
+                    "showleaveprojectedBalance": false,
+                    "shownotificationLink": false,
+                    "showpartialleaveCancellation": false,
+                    "showTotalHours": false,
+                    "showNotes": false,
+                    "showmultiCompoff": false,
+                    "showfromandTotime": false,
+                    "leaveColorCode": "#BDB4FE",
+                    "anniversaryOrCalendarBased": "Calendar based",
+                    "weeklyLeave": false
+                  },
+                  {
+                    "leavetypeCode": "EV_H1",
+                    "leavetypeDesc": "Hour based leave",
+                    "showassignInfo": true,
+                    "showholidayWorkedon": false,
+                    "showfromandtoSession": false,
+                    "showcomputeDuration": true,
+                    "showleaveprojectedBalance": false,
+                    "shownotificationLink": false,
+                    "showpartialleaveCancellation": false,
+                    "showTotalHours": false,
+                    "showNotes": false,
+                    "showmultiCompoff": false,
+                    "showfromandTotime": true,
+                    "leaveColorCode": "#0058AF",
+                    "anniversaryOrCalendarBased": "Calendar based",
+                    "weeklyLeave": false
+                  },
+                  {
+                    "leavetypeCode": "EV_W1",
+                    "leavetypeDesc": "Weekly leave",
+                    "showassignInfo": true,
+                    "showholidayWorkedon": false,
+                    "showfromandtoSession": false,
+                    "showcomputeDuration": true,
+                    "showleaveprojectedBalance": false,
+                    "shownotificationLink": false,
+                    "showpartialleaveCancellation": false,
+                    "showTotalHours": false,
+                    "showNotes": false,
+                    "showmultiCompoff": false,
+                    "showfromandTotime": true,
+                    "leaveColorCode": "#6938EF",
+                    "anniversaryOrCalendarBased": "Calendar based",
+                    "weeklyLeave": true
+                  },
+                  {
+                    "leavetypeCode": "JCL",
+                    "leavetypeDesc": "JCL",
+                    "showassignInfo": true,
+                    "showholidayWorkedon": true,
+                    "showfromandtoSession": true,
+                    "showcomputeDuration": true,
+                    "showleaveprojectedBalance": false,
+                    "shownotificationLink": false,
+                    "showpartialleaveCancellation": false,
+                    "showTotalHours": false,
+                    "showNotes": false,
+                    "showmultiCompoff": false,
+                    "showfromandTotime": false,
+                    "leaveColorCode": null,
+                    "anniversaryOrCalendarBased": null,
+                    "weeklyLeave": false
+                  },
+                  {
+                    "leavetypeCode": "JCOMP",
+                    "leavetypeDesc": "Jcomp",
+                    "showassignInfo": true,
+                    "showholidayWorkedon": false,
+                    "showfromandtoSession": true,
+                    "showcomputeDuration": true,
+                    "showleaveprojectedBalance": false,
+                    "shownotificationLink": false,
+                    "showpartialleaveCancellation": false,
+                    "showTotalHours": false,
+                    "showNotes": false,
+                    "showmultiCompoff": false,
+                    "showfromandTotime": false,
+                    "leaveColorCode": "#0068CF",
+                    "anniversaryOrCalendarBased": null,
+                    "weeklyLeave": false
+                  },
+                  {
+                    "leavetypeCode": "L0003",
+                    "leavetypeDesc": "Paid Parental Leave",
+                    "showassignInfo": true,
+                    "showholidayWorkedon": false,
+                    "showfromandtoSession": false,
+                    "showcomputeDuration": true,
+                    "showleaveprojectedBalance": false,
+                    "shownotificationLink": false,
+                    "showpartialleaveCancellation": false,
+                    "showTotalHours": true,
+                    "showNotes": false,
+                    "showmultiCompoff": false,
+                    "showfromandTotime": true,
+                    "leaveColorCode": "#00FF00",
+                    "anniversaryOrCalendarBased": null,
+                    "weeklyLeave": true
+                  },
+                  {
+                    "leavetypeCode": "L0004",
+                    "leavetypeDesc": "Half Paid Parental Leave",
+                    "showassignInfo": true,
+                    "showholidayWorkedon": false,
+                    "showfromandtoSession": false,
+                    "showcomputeDuration": true,
+                    "showleaveprojectedBalance": false,
+                    "shownotificationLink": false,
+                    "showpartialleaveCancellation": false,
+                    "showTotalHours": true,
+                    "showNotes": false,
+                    "showmultiCompoff": false,
+                    "showfromandTotime": true,
+                    "leaveColorCode": "#00FF00",
+                    "anniversaryOrCalendarBased": null,
+                    "weeklyLeave": false
+                  },
+                  {
+                    "leavetypeCode": "L0005",
+                    "leavetypeDesc": "Unpaid Parental Leave",
+                    "showassignInfo": true,
+                    "showholidayWorkedon": false,
+                    "showfromandtoSession": false,
+                    "showcomputeDuration": true,
+                    "showleaveprojectedBalance": false,
+                    "shownotificationLink": false,
+                    "showpartialleaveCancellation": false,
+                    "showTotalHours": true,
+                    "showNotes": false,
+                    "showmultiCompoff": false,
+                    "showfromandTotime": true,
+                    "leaveColorCode": "#00FF00",
+                    "anniversaryOrCalendarBased": "Calendar based",
+                    "weeklyLeave": false
+                  },
+                  {
+                    "leavetypeCode": "L0006",
+                    "leavetypeDesc": "Secondary Parental Leave",
+                    "showassignInfo": true,
+                    "showholidayWorkedon": false,
+                    "showfromandtoSession": false,
+                    "showcomputeDuration": true,
+                    "showleaveprojectedBalance": false,
+                    "shownotificationLink": false,
+                    "showpartialleaveCancellation": false,
+                    "showTotalHours": false,
+                    "showNotes": false,
+                    "showmultiCompoff": false,
+                    "showfromandTotime": true,
+                    "leaveColorCode": "#00FF00",
+                    "anniversaryOrCalendarBased": "Calendar based",
+                    "weeklyLeave": false
+                  },
+                  {
+                    "leavetypeCode": "L0020",
+                    "leavetypeDesc": "Bereavement Leave",
+                    "showassignInfo": true,
+                    "showholidayWorkedon": false,
+                    "showfromandtoSession": false,
+                    "showcomputeDuration": true,
+                    "showleaveprojectedBalance": false,
+                    "shownotificationLink": false,
+                    "showpartialleaveCancellation": false,
+                    "showTotalHours": false,
+                    "showNotes": false,
+                    "showmultiCompoff": false,
+                    "showfromandTotime": true,
+                    "leaveColorCode": "#00FF00",
+                    "anniversaryOrCalendarBased": "Calendar based",
+                    "weeklyLeave": false
+                  },
+                  {
+                    "leavetypeCode": "L0022",
+                    "leavetypeDesc": "Unpaid Leave",
+                    "showassignInfo": true,
+                    "showholidayWorkedon": false,
+                    "showfromandtoSession": false,
+                    "showcomputeDuration": true,
+                    "showleaveprojectedBalance": false,
+                    "shownotificationLink": false,
+                    "showpartialleaveCancellation": false,
+                    "showTotalHours": true,
+                    "showNotes": false,
+                    "showmultiCompoff": false,
+                    "showfromandTotime": true,
+                    "leaveColorCode": "#00FF00",
+                    "anniversaryOrCalendarBased": "Calendar based",
+                    "weeklyLeave": false
+                  },
+                  {
+                    "leavetypeCode": "L0025",
+                    "leavetypeDesc": "National Disaster",
+                    "showassignInfo": true,
+                    "showholidayWorkedon": false,
+                    "showfromandtoSession": false,
+                    "showcomputeDuration": true,
+                    "showleaveprojectedBalance": false,
+                    "shownotificationLink": false,
+                    "showpartialleaveCancellation": false,
+                    "showTotalHours": false,
+                    "showNotes": false,
+                    "showmultiCompoff": false,
+                    "showfromandTotime": true,
+                    "leaveColorCode": "#00FF00",
+                    "anniversaryOrCalendarBased": "Calendar based",
+                    "weeklyLeave": false
+                  },
+                  {
+                    "leavetypeCode": "L0029",
+                    "leavetypeDesc": "Study Leave",
+                    "showassignInfo": true,
+                    "showholidayWorkedon": false,
+                    "showfromandtoSession": false,
+                    "showcomputeDuration": false,
+                    "showleaveprojectedBalance": true,
+                    "shownotificationLink": false,
+                    "showpartialleaveCancellation": true,
+                    "showTotalHours": false,
+                    "showNotes": false,
+                    "showmultiCompoff": false,
+                    "showfromandTotime": true,
+                    "leaveColorCode": "#00FF00",
+                    "anniversaryOrCalendarBased": "Calendar based",
+                    "weeklyLeave": true
+                  },
+                  {
+                    "leavetypeCode": "L0038",
+                    "leavetypeDesc": "Gardening Leave",
+                    "showassignInfo": true,
+                    "showholidayWorkedon": false,
+                    "showfromandtoSession": false,
+                    "showcomputeDuration": false,
+                    "showleaveprojectedBalance": true,
+                    "shownotificationLink": false,
+                    "showpartialleaveCancellation": true,
+                    "showTotalHours": true,
+                    "showNotes": false,
+                    "showmultiCompoff": false,
+                    "showfromandTotime": true,
+                    "leaveColorCode": "#00FF00",
+                    "anniversaryOrCalendarBased": "Calendar based",
+                    "weeklyLeave": true
+                  },
+                  {
+                    "leavetypeCode": "L0050",
+                    "leavetypeDesc": "Community Service Leave",
+                    "showassignInfo": true,
+                    "showholidayWorkedon": false,
+                    "showfromandtoSession": false,
+                    "showcomputeDuration": true,
+                    "showleaveprojectedBalance": false,
+                    "shownotificationLink": false,
+                    "showpartialleaveCancellation": false,
+                    "showTotalHours": false,
+                    "showNotes": false,
+                    "showmultiCompoff": false,
+                    "showfromandTotime": true,
+                    "leaveColorCode": "#00FF00",
+                    "anniversaryOrCalendarBased": "Calendar based",
+                    "weeklyLeave": false
+                  },
+                  {
+                    "leavetypeCode": "L0051",
+                    "leavetypeDesc": "Jury Leave",
+                    "showassignInfo": true,
+                    "showholidayWorkedon": false,
+                    "showfromandtoSession": false,
+                    "showcomputeDuration": true,
+                    "showleaveprojectedBalance": false,
+                    "shownotificationLink": false,
+                    "showpartialleaveCancellation": false,
+                    "showTotalHours": false,
+                    "showNotes": false,
+                    "showmultiCompoff": false,
+                    "showfromandTotime": true,
+                    "leaveColorCode": "#00FF00",
+                    "anniversaryOrCalendarBased": "Calendar based",
+                    "weeklyLeave": false
+                  },
+                  {
+                    "leavetypeCode": "L0052",
+                    "leavetypeDesc": "Military Leave",
+                    "showassignInfo": true,
+                    "showholidayWorkedon": false,
+                    "showfromandtoSession": false,
+                    "showcomputeDuration": true,
+                    "showleaveprojectedBalance": false,
+                    "shownotificationLink": false,
+                    "showpartialleaveCancellation": false,
+                    "showTotalHours": false,
+                    "showNotes": false,
+                    "showmultiCompoff": false,
+                    "showfromandTotime": true,
+                    "leaveColorCode": "#00FF00",
+                    "anniversaryOrCalendarBased": "Calendar based",
+                    "weeklyLeave": false
+                  },
+                  {
+                    "leavetypeCode": "L0055",
+                    "leavetypeDesc": "Special Leave",
+                    "showassignInfo": true,
+                    "showholidayWorkedon": false,
+                    "showfromandtoSession": false,
+                    "showcomputeDuration": true,
+                    "showleaveprojectedBalance": false,
+                    "shownotificationLink": false,
+                    "showpartialleaveCancellation": false,
+                    "showTotalHours": false,
+                    "showNotes": false,
+                    "showmultiCompoff": false,
+                    "showfromandTotime": true,
+                    "leaveColorCode": "#00FF00",
+                    "anniversaryOrCalendarBased": "Calendar based",
+                    "weeklyLeave": false
+                  },
+                  {
+                    "leavetypeCode": "L0056",
+                    "leavetypeDesc": "Wellbeing Leave",
+                    "showassignInfo": true,
+                    "showholidayWorkedon": false,
+                    "showfromandtoSession": false,
+                    "showcomputeDuration": true,
+                    "showleaveprojectedBalance": false,
+                    "shownotificationLink": false,
+                    "showpartialleaveCancellation": false,
+                    "showTotalHours": false,
+                    "showNotes": false,
+                    "showmultiCompoff": false,
+                    "showfromandTotime": true,
+                    "leaveColorCode": "#00FF00",
+                    "anniversaryOrCalendarBased": "Calendar based",
+                    "weeklyLeave": true
+                  },
+                  {
+                    "leavetypeCode": "L0057",
+                    "leavetypeDesc": "Workers Compensation",
+                    "showassignInfo": true,
+                    "showholidayWorkedon": false,
+                    "showfromandtoSession": false,
+                    "showcomputeDuration": true,
+                    "showleaveprojectedBalance": false,
+                    "shownotificationLink": false,
+                    "showpartialleaveCancellation": false,
+                    "showTotalHours": false,
+                    "showNotes": false,
+                    "showmultiCompoff": false,
+                    "showfromandTotime": true,
+                    "leaveColorCode": "#00FF00",
+                    "anniversaryOrCalendarBased": "Calendar based",
+                    "weeklyLeave": false
+                  },
+                  {
+                    "leavetypeCode": "PTL",
+                    "leavetypeDesc": "Paternity Leave",
+                    "showassignInfo": true,
+                    "showholidayWorkedon": false,
+                    "showfromandtoSession": true,
+                    "showcomputeDuration": true,
+                    "showleaveprojectedBalance": false,
+                    "shownotificationLink": false,
+                    "showpartialleaveCancellation": false,
+                    "showTotalHours": false,
+                    "showNotes": false,
+                    "showmultiCompoff": false,
+                    "showfromandTotime": false,
+                    "leaveColorCode": "#00FF00",
+                    "anniversaryOrCalendarBased": null,
+                    "weeklyLeave": false
+                  }
+                ]
+              }
+            }
+          },
+          "applyLeave": {},
+          "sessionOptions": {}
         },
         components = {},
         globals = {

@@ -1,4 +1,5 @@
 import 'package:nebula_modelling/model/redux/app_state.dart';
+import 'package:nebula_modelling/model/types/apiTypes.dart';
 
 class UpdatePageDetailsAction {
   final PageDetails pageDetails;
@@ -64,3 +65,35 @@ class ShowToastAction {
 }
 
 class HideToastAction {}
+
+class OnEventAction {
+  final String eventName;
+  final dynamic options;
+  // final String mode;
+  // final String? appId;
+  // final dynamic insertPageDetails;
+  // final dynamic currentState;
+  // final int? index;
+
+  OnEventAction(this.eventName, this.options);
+}
+
+class AuthorizeApiClientAction {}
+
+class AuthorizeApiClientSuccessAction {
+  final String token;
+  AuthorizeApiClientSuccessAction(this.token);
+}
+
+class AuthorizeApiClientFailureAction {
+  final Exception error;
+  AuthorizeApiClientFailureAction(this.error);
+}
+
+class UpdateApiClientAction {
+  final ApiClient apiClient;
+
+  UpdateApiClientAction(this.apiClient);
+}
+
+class AppStartAction {}

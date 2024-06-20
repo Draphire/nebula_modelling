@@ -47,6 +47,7 @@ class _ComboBoxWidgetState extends State<ComboBoxWidget> {
                 parsedCaption,
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               ),
+            SizedBox(height: 8), // Space between caption and TextField
             DropdownButtonFormField<String>(
               value: selectedValue,
               hint: Text(widget.controlInfo['placeholder'] ?? 'Select Value'),

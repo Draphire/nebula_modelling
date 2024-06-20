@@ -47,19 +47,25 @@ class _ButtonWidgetState extends State<ButtonWidget> {
           ));
         }
 
-        return TextButton(
+        return ElevatedButton(
           onPressed: () {
             // Action to perform when button is pressed
             // Update the component state if needed
             viewModel.updateComponent(
                 widget.controlInfo['id'], {'value': 'button_pressed'});
+
+            viewModel.onEvent('onClick', widget.controlInfo['events']);
           },
-          style: TextButton.styleFrom(
+          style: ElevatedButton.styleFrom(
+            minimumSize: Size(88,
+                36), // Set the minimum size to follow Material Design standards
+            padding: EdgeInsets.symmetric(horizontal: 16), // Horizontal padding
             backgroundColor: Color.fromARGB(
                 255, 194, 227, 255), // Set the background color of the button
           ),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: buttonChildren,
           ),
         );

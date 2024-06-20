@@ -24,7 +24,8 @@ void main() {
     initialState: AppState.initial(),
     middleware: [...appMiddleware(), thunkMiddleware],
   );
-
+  // Dispatch the AppStartAction to start the authorization process
+  store.dispatch(AuthorizeApiClientAction());
   runApp(MyApp(store: store));
 }
 

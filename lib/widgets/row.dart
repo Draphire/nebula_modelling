@@ -17,30 +17,36 @@ class RowWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final children = controlInfo['children']?.map<Widget>((child) {
-          return Flexible(
-            child: ControlRenderer(
-              controlInfo: child,
-              apiClient: apiClient,
-              inputData: inputData,
-              updateInputData: updateInputData,
-            ),
-          );
-        }).toList() ??
-        [];
+    final List<Widget> children =
+        (controlInfo['children']?.map<Widget>((child) {
+                  return Expanded(
+                    child: ControlRenderer(
+                      controlInfo: child,
+                      apiClient: apiClient,
+                      inputData: inputData,
+                      updateInputData: updateInputData,
+                    ),
+                  );
+                }).toList() ??
+                <Widget>[])
+            .cast<Widget>();
+
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
-
     final layout = applyLayout(controlInfo, screenWidth, screenHeight);
-
-    final double height = layout['height'] ?? 200;
+    final double maxHeight = layout['height']! / 2; // Your desired height
 
     return Container(
-      height: height,
-      child: Row(
-        mainAxisAlignment: _getMainAxisAlignment(),
-        crossAxisAlignment: _getCrossAxisAlignment(),
-        children: children,
+      width: screenWidth,
+      constraints: BoxConstraints(
+        minHeight: maxHeight,
+      ),
+      child: IntrinsicHeight(
+        child: Row(
+          mainAxisAlignment: _getMainAxisAlignment(),
+          crossAxisAlignment: _getCrossAxisAlignment(),
+          children: children,
+        ),
       ),
     );
   }

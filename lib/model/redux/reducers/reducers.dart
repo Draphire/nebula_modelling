@@ -2,6 +2,16 @@ import '../app_state.dart';
 import '../actions/actions.dart';
 
 AppState appReducer(AppState state, dynamic action) {
+  if (action is UpdateApiClientAction) {
+    return AppState(
+      pageDetails: pageDetailsReducer(state.pageDetails, action),
+      currentState: currentStateReducer(state.currentState, action),
+      dataQueries: dataQueriesReducer(state.dataQueries, action),
+      currentContext: currentContextReducer(state.currentContext, action),
+      apiClient: action.apiClient,
+    );
+  }
+
   return AppState(
     pageDetails: pageDetailsReducer(state.pageDetails, action),
     currentState: currentStateReducer(state.currentState, action),
@@ -59,6 +69,13 @@ CurrentState currentStateReducer(CurrentState state, dynamic action) {
   }
   if (action is HideToastAction) {
     return state.copyWith(toastMessage: null);
+  }
+
+  if (action is OnEventAction) {
+    // Handle event actions
+    return state.copyWith(
+        // Update state based on action
+        );
   }
   return state;
 }
