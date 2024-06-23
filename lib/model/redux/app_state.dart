@@ -6876,7 +6876,425 @@ class DataQueries {
   });
 
   DataQueries.initialState()
-      : dataQueries = [],
+      : dataQueries = [
+          {
+            "id": "bef08887-a505-4d9c-99d6-0b3d6cb87dc8",
+            "name": "getSession",
+            "dataType": 1,
+            "options": {
+              "dataType": 1,
+              "method": "POST",
+              "url": "https://designer.ramcouat.com/coregwopsPayce/ucgsgql/",
+              "url_params": [
+                ["", ""]
+              ],
+              "headers": [
+                ["", ""]
+              ],
+              "body": [
+                ["", ""]
+              ],
+              "runOnPageLoad": true,
+              "gqlHeaders": {
+                "Content-Type": "application/json",
+                "Authorization":
+                    "Bearer 5B5FACDEA2137262D31051434DCB7D54061FC894613D87B4CDB8D12424C813A2",
+                "Context-Ou-Id": "23",
+                "Context-Role-Name": "SUPER",
+                "Context-Lang-Id": "1"
+              },
+              "gqlQueries":
+                  "{\"query\":\"query getSession {\\n fetchQuickCodes(bpCode: \\\"HRTM\\\" \\n  pvCode: \\\"STSE\\\"\\n) {\\n    quickCode\\n    quickCodeDescription\\n  }\\n}\",\"variables\":{}}",
+              "authFromRuntime": true
+            },
+            "data_source_id": "bef08887-a505-4d9c-99d6-0b3d6cb87dc8",
+            "app_version_id": "62f02cb3-4f8c-410a-b7a4-43de97479833",
+            "created_at": "2024-05-15T05:50:10.220217",
+            "updated_at": "2024-05-15T05:50:10.220217",
+            "data_source": {"kind": "restApi"},
+            "kind": "restApi",
+            "orderOfExecution": null
+          },
+          {
+            "id": "97240009-c293-4f4c-8327-e1419e44bcab",
+            "name": "leaveTypeData",
+            "dataType": 1,
+            "options": {
+              "dataType": 1,
+              "method": "POST",
+              "url": "https://designer.ramcouat.com/coregwopsPayce/ucgsgql/",
+              "url_params": [
+                ["", ""]
+              ],
+              "headers": [
+                ["", ""]
+              ],
+              "body": [
+                ["", ""]
+              ],
+              "runOnPageLoad": true,
+              "gqlHeaders": {
+                "Authorization": "",
+                "Content-Type": "application/json",
+                "Context-Lang-Id": "1",
+                "Context-Ou-Id": "23",
+                "Context-Role-Name": "SUPVR"
+              },
+              "gqlQueries":
+                  "{\"query\":\"query leaveTypeData {\\n      fetchLeaveType(\\n        includeInactive: true\\n        employeeCode: \\\"00013303\\\" \\n        assignmentNo: 1\\n      ) {\\n        leavetypeCode\\n        leavetypeDesc\\n        showassignInfo\\n        showholidayWorkedon\\n        showfromandtoSession\\n        showcomputeDuration\\n        showleaveprojectedBalance\\n        shownotificationLink\\n        showpartialleaveCancellation\\n        showTotalHours\\n        showNotes\\n        showmultiCompoff\\n        showfromandTotime\\n        leaveColorCode\\n        anniversaryOrCalendarBased\\n        weeklyLeave\\n      } \\n    }\\n\",\"variables\":{}}",
+              "authFromRuntime": false
+            },
+            "data_source_id": "97240009-c293-4f4c-8327-e1419e44bcab",
+            "app_version_id": "62f02cb3-4f8c-410a-b7a4-43de97479833",
+            "created_at": "2024-06-03T09:19:06.467064",
+            "updated_at": "2024-06-03T09:19:06.467064",
+            "data_source": {"kind": "restApi"},
+            "kind": "restApi",
+            "orderOfExecution": null
+          },
+          {
+            "id": "85f8bf49-5b87-464d-988e-d33e21d4b4c4",
+            "name": "getLeaveInfoCombos",
+            "dataType": 1,
+            "options": {
+              "dataType": 1,
+              "method": "POST",
+              "url": "https://designer.ramcouat.com/coregwopsPayce/ucgsgql/",
+              "url_params": [
+                ["", ""]
+              ],
+              "headers": [
+                ["", ""]
+              ],
+              "body": [
+                ["", ""]
+              ],
+              "runOnPageLoad": true,
+              "gqlHeaders": {
+                "Content-Type": "application/json",
+                "Context-Lang-Id": "1",
+                "Context-Ou-Id": "23",
+                "Context-Role-Name": "EMP",
+                "Authorization":
+                    "Bearer 29595F1DB97DC9B96E8A38D40923436CABFC3FFDE1F6404A5C8817502EB28327"
+              },
+              "gqlQueries":
+                  "{\"query\":\"query getLeaveInfoCombos {\\n   fetchQuickCodes(\\n    bpCode: \\\"HRTM\\\" \\n    pvCode: \\\"STSE\\\"\\n  ) {\\n    quickCode\\n    quickCodeDescription\\n  }\\n}\",\"variables\":{}}",
+              "authFromRuntime": true
+            },
+            "data_source_id": "85f8bf49-5b87-464d-988e-d33e21d4b4c4",
+            "app_version_id": "62f02cb3-4f8c-410a-b7a4-43de97479833",
+            "created_at": "2024-05-12T16:11:03.094901",
+            "updated_at": "2024-05-12T16:11:03.094901",
+            "data_source": {"kind": "restApi"},
+            "kind": "restApi",
+            "orderOfExecution": null
+          },
+          {
+            "id": "45189624-c67b-4d60-898b-f3b66deaf649",
+            "name": "backupEmployee",
+            "dataType": 1,
+            "options": {
+              "dataType": 1,
+              "method": "POST",
+              "url": "https://designer.ramcouat.com/coregwopsPayce/ucgsgql/",
+              "url_params": [
+                ["", ""]
+              ],
+              "headers": [
+                ["", ""]
+              ],
+              "body": [
+                ["", ""]
+              ],
+              "runOnPageLoad": false,
+              "gqlHeaders": {
+                "Content-Type": "application/json",
+                "Authorization":
+                    " Bearer CD843EEA903A24D5AE446192D7162C58C5E3B964C25F999E8768DD33920F9309",
+                "Context-Role-Name": "EMP",
+                "Context-Ou-Id": "23",
+                "Context-Lang-Id": "1"
+              },
+              "gqlQueries":
+                  "{\"query\":\"query backupEmployee {\\n    fetchBackupEmp(\\n      employeeCode: \\\"00013303\\\"\\n      \\n      ) {\\n      backupEmployeeCode\\n      backupEmployeeName\\n    }\\n  }\\n\",\"variables\":{}}",
+              "authFromRuntime": false
+            },
+            "data_source_id": "45189624-c67b-4d60-898b-f3b66deaf649",
+            "app_version_id": "62f02cb3-4f8c-410a-b7a4-43de97479833",
+            "created_at": "2024-06-03T10:22:24.320996",
+            "updated_at": "2024-06-03T10:22:24.320996",
+            "data_source": {"kind": "restApi"},
+            "kind": "restApi",
+            "orderOfExecution": null
+          },
+          {
+            "id": "3cb7b42a-cca2-47aa-a3ab-06d206105e56",
+            "name": "backupEmp",
+            "dataType": 1,
+            "options": {
+              "dataType": 1,
+              "method": "POST",
+              "url": "https://designer.ramcouat.com/coregwopsPayce/ucgsgql/",
+              "url_params": [
+                ["", ""]
+              ],
+              "headers": [
+                ["", ""]
+              ],
+              "body": [
+                ["", ""]
+              ],
+              "runOnPageLoad": true,
+              "gqlHeaders": {
+                "Content-Type": "application/json",
+                "Context-Lang-Id": "1",
+                "Context-Ou-Id": "23",
+                "Context-Role-Name": "EMP",
+                "Authorization":
+                    "Bearer 29595F1DB97DC9B96E8A38D40923436CABFC3FFDE1F6404A5C8817502EB28327"
+              },
+              "gqlQueries":
+                  "{\"query\":\"query backupEmp {\\n    fetchBackupEmp(\\n      employeeCode: \\\"00013303\\\"\\n      \\n      ) {\\n      backupEmployeeCode\\n      backupEmployeeName\\n    }\\n  }\\n\",\"variables\":{}}",
+              "authFromRuntime": true
+            },
+            "data_source_id": "3cb7b42a-cca2-47aa-a3ab-06d206105e56",
+            "app_version_id": "62f02cb3-4f8c-410a-b7a4-43de97479833",
+            "created_at": "2024-05-12T16:09:33.845788",
+            "updated_at": "2024-05-12T16:09:33.845788",
+            "data_source": {"kind": "restApi"},
+            "kind": "restApi",
+            "orderOfExecution": null
+          },
+          {
+            "id": "fec0550b-c9f8-4cf0-8dad-e1f99945f1ca",
+            "name": "leaveReason",
+            "dataType": 1,
+            "options": {
+              "dataType": 1,
+              "method": "POST",
+              "url": "https://designer.ramcouat.com/coregwopsPayce/ucgsgql/",
+              "url_params": [
+                ["", ""]
+              ],
+              "headers": [
+                ["", ""]
+              ],
+              "body": [
+                ["", ""]
+              ],
+              "runOnPageLoad": false,
+              "gqlHeaders": {
+                "Content-Type": "application/json",
+                "Context-Lang-Id": "1",
+                "Context-Ou-Id": "23",
+                "Context-Role-Name": "EMP",
+                "Authorization":
+                    "Bearer 29595F1DB97DC9B96E8A38D40923436CABFC3FFDE1F6404A5C8817502EB28327"
+              },
+              "gqlQueries":
+                  "{\"query\":\"query leaveReason \\n  {\\n    fetchLeaveReason(\\n    leavetypeCode: \\\"{{ID1715522021427336.comboValue}}\\\"\\n    includeInactive: true\\n  ) {\\n      leavereasonCode\\n      leavereasonDesc\\n    }\\n  }\\n\",\"variables\":{}}",
+              "authFromRuntime": true
+            },
+            "data_source_id": "fec0550b-c9f8-4cf0-8dad-e1f99945f1ca",
+            "app_version_id": "62f02cb3-4f8c-410a-b7a4-43de97479833",
+            "created_at": "2024-05-12T16:10:03.564626",
+            "updated_at": "2024-05-12T16:10:03.564626",
+            "data_source": {"kind": "restApi"},
+            "kind": "restApi",
+            "orderOfExecution": null
+          },
+          {
+            "id": "418b0f2d-2f79-4af1-ae2b-0c7a188b9d70",
+            "name": "backupEmployees",
+            "dataType": 1,
+            "options": {
+              "dataType": 1,
+              "method": "POST",
+              "url": "https://designer.ramcouat.com/coregwopsPayce/ucgsgql/",
+              "url_params": [
+                ["", ""]
+              ],
+              "headers": [
+                ["", ""]
+              ],
+              "body": [
+                ["", ""]
+              ],
+              "runOnPageLoad": false,
+              "gqlHeaders": {
+                "Content-Type": "application/json",
+                "Authorization":
+                    " Bearer CD843EEA903A24D5AE446192D7162C58C5E3B964C25F999E8768DD33920F9309",
+                "Context-Ou-Id": "23",
+                "Context-Role-Name": "EMP",
+                "Context-Lang-Id": "1"
+              },
+              "gqlQueries":
+                  "{\"query\":\"query backupEmployees {\\n    fetchBackupEmp(\\n      employeeCode: \\\"00013303\\\"\\n      \\n      ) {\\n      backupEmployeeCode\\n      backupEmployeeName\\n    }\\n  }\\n\",\"variables\":{}}",
+              "authFromRuntime": false
+            },
+            "data_source_id": "418b0f2d-2f79-4af1-ae2b-0c7a188b9d70",
+            "app_version_id": "62f02cb3-4f8c-410a-b7a4-43de97479833",
+            "created_at": "2024-06-03T10:23:22.632894",
+            "updated_at": "2024-06-03T10:23:22.632894",
+            "data_source": {"kind": "restApi"},
+            "kind": "restApi",
+            "orderOfExecution": null
+          },
+          {
+            "id": "d3c7e316-28c6-4e71-9706-8e88c81c7f56",
+            "name": "assignmentOptions",
+            "dataType": 1,
+            "options": {
+              "dataType": 1,
+              "method": "POST",
+              "url": "https://designer.ramcouat.com/coregwopsPayce/ucgsgql/",
+              "url_params": [
+                ["", ""]
+              ],
+              "headers": [
+                ["", ""]
+              ],
+              "body": [
+                ["", ""]
+              ],
+              "runOnPageLoad": true,
+              "gqlHeaders": {
+                "Content-Type": "application/json",
+                "Authorization":
+                    "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkI0MUU2NzE0NDk3RjEyREM1RTc3MDhCQzdCMENCNjVGQjRBRERCMkJSUzI1NiIsInR5cCI6IkpXVCIsIng1dCI6InRCNW5GRWxfRXR4ZWR3aThld3kyWDdTdDJ5cyJ9.eyJuYmYiOjE2OTU3ODY2OTEsImV4cCI6MTY5NTc5MDI5MSwiaXNzIjoiaHR0cDovL2hjbXdhcmNudjc1LnJhbWNvL2NvcmVzZWN1cml0eW9wcyIsImF1ZCI6WyJjb20ucmFtY28udndhcGllLmFkay5hcGlzIiwiaHR0cDovL2hjbXdhcmNudjc1LnJhbWNvL2NvcmVzZWN1cml0eW9wcy9yZXNvdXJjZXMiXSwiY2xpZW50X2lkIjoiMWt4a2J6enh1ZGRxZ3R3dHZvdmJ3Iiwicl9jbGllbnRfc3BuIjoiU2VydmljZXVzZXIiLCJyX3RpZCI6InJhbWNvIiwianRpIjoiRDExQUZDNkE0RTNCMUFGMUMxMjhFNDRBNTcwMkM2MzYiLCJpYXQiOjE2OTU3ODY2OTEsInNjb3BlIjpbInJ2d19pbXBlcnNvbmF0ZSJdfQ.VfUMm75ZvxOtKIfm3_GjCsoLeoDpA0PmgdYEoIqLIW6Xeskkwx7rGD_QAOKAgHYmKdPNkgRWYfSlJYBZ5omUZjrBM3HFuCXKM1nMnt4Eu8tpKf2Cp83wmA90ZfUKQWN3EyldOMDXFOx3VubzaDQW2wpngDnosXP65Vg8riofGS13iv5JlqfwZVPQNbG2qlgDTBa4g5Lz8ULzzxkfZxtg1dhPrwt-bze_w85lSOveZ5NQc-Z2I60qs5HXg7pD66wARDaxyt6GLyKgtFA3f3LvhATAELeQCZqGjN5vwdSvXx_k4yQnR_xuTn4UWXLN-31BgCo4v0B8S-rU7g-JmB9Q6w",
+                "Context-Role-Name": "SUPER",
+                "Context-Ou-Id": "23",
+                "Context-Lang-Id": "1"
+              },
+              "gqlQueries":
+                  "{\"query\":\"query assignmentOptions {\\n    fetchAssignment(\\n      assignmentNumber: 0\\n      history: false\\n      employeeCode: \\\"00013303\\\"\\n    ) {\\n      assignmentInformation\\n      assignmentNumber\\n      jobDesc\\n      assignmentEffectiveToDate,\\n      positionDesc\\n    }\\n  }\\n\",\"variables\":{}}",
+              "authFromRuntime": true
+            },
+            "data_source_id": "d3c7e316-28c6-4e71-9706-8e88c81c7f56",
+            "app_version_id": "62f02cb3-4f8c-410a-b7a4-43de97479833",
+            "created_at": "2024-05-15T06:10:08.942081",
+            "updated_at": "2024-05-15T06:10:08.942081",
+            "data_source": {"kind": "restApi"},
+            "kind": "restApi",
+            "orderOfExecution": null
+          },
+          {
+            "id": "3f275d70-6610-4ec8-9b2e-5a2677e6e079",
+            "name": "leaveTypeDatas",
+            "dataType": 1,
+            "options": {
+              "dataType": 1,
+              "method": "POST",
+              "url": "https://designer.ramcouat.com/coregwopsPayce/ucgsgql/",
+              "url_params": [
+                ["", ""]
+              ],
+              "headers": [
+                ["", ""]
+              ],
+              "body": [
+                ["", ""]
+              ],
+              "runOnPageLoad": true,
+              "gqlHeaders": {
+                "Content-Type": "application/json",
+                "Context-Lang-Id": "1",
+                "Context-Ou-Id": "23",
+                "Context-Role-Name": "EMP",
+                "Authorization":
+                    "Bearer A5B9882A1E0C8D78BDF859691369290543A83BC97B3E3C8D8B7460882132AF44"
+              },
+              "gqlQueries":
+                  "{\"query\":\"query leaveTypeDatas {\\n  \\n    \\n      fetchLeaveType(\\n        includeInactive: true\\n        employeeCode: \\\"00013303\\\" \\n        assignmentNo: 1\\n        \\n        \\n      ) {\\n        leavetypeCode\\n        leavetypeDesc\\n        showassignInfo\\n        showholidayWorkedon\\n        showfromandtoSession\\n        showcomputeDuration\\n        showleaveprojectedBalance\\n        shownotificationLink\\n        showpartialleaveCancellation\\n        showTotalHours\\n        showNotes\\n        showmultiCompoff\\n        showfromandTotime\\n        leaveColorCode\\n        anniversaryOrCalendarBased\\n        weeklyLeave\\n      } \\n    }\\n\",\"variables\":{}}",
+              "authFromRuntime": true
+            },
+            "data_source_id": "3f275d70-6610-4ec8-9b2e-5a2677e6e079",
+            "app_version_id": "62f02cb3-4f8c-410a-b7a4-43de97479833",
+            "created_at": "2024-05-12T16:08:56.275997",
+            "updated_at": "2024-05-12T16:08:56.275997",
+            "data_source": {"kind": "restApi"},
+            "kind": "restApi",
+            "orderOfExecution": null
+          },
+          {
+            "id": "ac979f14-c5fb-4041-a78f-e7b9964d12b3",
+            "name": "applyLeave",
+            "dataType": 1,
+            "options": {
+              "dataType": 1,
+              "method": "POST",
+              "url": "https://designer.ramcouat.com/coregwopsPayce/ucgsgql/",
+              "url_params": [
+                ["", ""]
+              ],
+              "headers": [
+                ["", ""]
+              ],
+              "body": [
+                ["", ""]
+              ],
+              "runOnPageLoad": false,
+              "gqlHeaders": {
+                "Content-Type": "application/json",
+                "Context-Lang-Id": "1",
+                "Context-Ou-Id": "23",
+                "Context-Role-Name": "EMP",
+                "Authorization":
+                    "Bearer 29595F1DB97DC9B96E8A38D40923436CABFC3FFDE1F6404A5C8817502EB28327"
+              },
+              "gqlQueries":
+                  "{\"query\":\"mutation applyLeave {\\n  createLeave(\\n    leaveApplyReq: {\\n      \\n    \\n    \\n    \\n    employeeCode: \\\"00013303\\\"\\n    assignmentNo: 1\\n    leaveTypeCode: \\\"{{ID1715522021427336.comboValue}}\\\"\\n    leaveStartDate: \\\"{{ID1715767523432232.value}}\\\"\\n    leaveEndDate: \\\"{{ID1715522257956236.value}}\\\"\\n    leaveFromSession: \\\"{{ID1715522198278427.comboValue}}\\\"\\n    leaveToSession: \\\"{{ID171552229457579.comboValue}}\\\"\\n    leaveReasonCode: \\\"{{ID1715522377444139.comboValue}}\\\"\\n    additionalReason: \\\"{{ID1715522429824872.value}}\\\"\\n    backupEmployeeCode: \\\"{{ID1715522344515832.comboValue}}\\\"\\n  \\n  \\n  \\n  \\n    }\\n  ) {\\n    successMessage\\n    leaveApplicationNumber\\n  }\\n}\",\"variables\":{}}",
+              "authFromRuntime": true
+            },
+            "data_source_id": "ac979f14-c5fb-4041-a78f-e7b9964d12b3",
+            "app_version_id": "62f02cb3-4f8c-410a-b7a4-43de97479833",
+            "created_at": "2024-05-12T16:12:56.429951",
+            "updated_at": "2024-05-12T16:12:56.429951",
+            "data_source": {"kind": "restApi"},
+            "kind": "restApi",
+            "orderOfExecution": null
+          },
+          {
+            "id": "a22ee6f1-e677-4590-88d9-7be850e052ff",
+            "name": "sessionOptions",
+            "dataType": 1,
+            "options": {
+              "dataType": 1,
+              "method": "POST",
+              "url": "https://designer.ramcouat.com/coregwopsPayce/ucgsgql/",
+              "url_params": [
+                ["", ""]
+              ],
+              "headers": [
+                ["", ""]
+              ],
+              "body": [
+                ["", ""]
+              ],
+              "runOnPageLoad": false,
+              "gqlHeaders": {
+                "Authorization":
+                    " Bearer 0942ECB58F5AB43B62C529BA07162283071589F4B9E0FF85F719E9F7DD9FB3D8",
+                "Content-Type": "application/json",
+                "Context-Lang-Id": "1",
+                "Context-Ou-Id": "23",
+                "Context-Role-Name": "SUPVR"
+              },
+              "gqlQueries":
+                  "{\"query\":\"query sessionOptions {\\n fetchQuickCodes(bpCode: \\\"HRTM\\\" \\n  pvCode: \\\"STSE\\\"\\n) {\\n    quickCode\\n    quickCodeDescription\\n  }\\n}\",\"variables\":{}}",
+              "authFromRuntime": false
+            },
+            "data_source_id": "a22ee6f1-e677-4590-88d9-7be850e052ff",
+            "app_version_id": "62f02cb3-4f8c-410a-b7a4-43de97479833",
+            "created_at": "2024-06-03T09:51:35.126121",
+            "updated_at": "2024-06-03T09:51:35.126121",
+            "data_source": {"kind": "restApi"},
+            "kind": "restApi",
+            "orderOfExecution": null
+          }
+        ],
         loadingDataQueries = true,
         isCreatingQueryInProcess = false,
         isUpdatingQueryInProcess = false,

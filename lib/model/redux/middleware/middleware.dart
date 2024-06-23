@@ -8,6 +8,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'dart:async';
 import 'package:graphql/client.dart' as graphql;
+import 'package:nebula_modelling/utils/utils.dart';
 
 const String _clientId = 'com.nebula.ramco.clients';
 const String _authorizeEndpoint =
@@ -333,10 +334,109 @@ Future<void> executeActionWithDebounce(
   }
 }
 
+Future<QueryResult> executeQuery(Store<AppState> store, dynamic query) async {
+  if (query.kind == "graphql") {
+    return await executeGraphQLQuery(store, query);
+  } else if (query.kind == "restapi") {
+    return await executeRestAPIQuery(store, query);
+  } else {
+    throw Exception("Unknown query kind");
+  }
+}
+
+Future<QueryResult> executeGraphQLQuery(
+    Store<AppState> store, dynamic query) async {
+  final options = getQueryVariables(query.options, store.state);
+
+  final httpLink = graphql.HttpLink(
+    query.options['url'],
+    defaultHeaders: {
+      ...query.options['gqlHeaders'],
+      'Authorization': 'Bearer ${store.state.apiClient.authToken}',
+    },
+  );
+
+  final graphql.GraphQLClient client = graphql.GraphQLClient(
+    cache: graphql.GraphQLCache(),
+    link: httpLink,
+  );
+
+  final gqlQuery = graphql.gql(query.options['gqlQueries']);
+
+  final gqlOptions = graphql.QueryOptions(
+    document: gqlQuery,
+    variables: options,
+  );
+  try {
+    final result = await client.query(gqlOptions);
+
+    if (result.hasException) {
+      store.dispatch(FetchDataFailureAction(result.exception.toString()));
+    } else {
+      store.dispatch(FetchDataSuccessAction(result.data));
+      store.dispatch(ShowToastAction('Query executed successfully!'));
+      Future.delayed(Duration(seconds: 2), () {
+        store.dispatch(HideToastAction());
+      });
+    }
+  } catch (e) {
+    store.dispatch(FetchDataFailureAction(e.toString()));
+  }
+  throw Exception("Failed to execute query");
+}
+
+Future<QueryResult> executeRestAPIQuery(
+    dynamic query, Map<String, dynamic> parameters) async {
+  final uri = Uri.parse('https://yourapi.com/${query.endpoint}');
+  final response =
+      await http.post(uri, body: json.encode(parameters), headers: {
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer YOUR_ACCESS_TOKEN',
+  });
+
+  if (response.statusCode == 200) {
+    return QueryResult(status: "ok", data: json.decode(response.body));
+  } else {
+    return QueryResult(
+        status: "failed", message: response.reasonPhrase ?? "Unknown error");
+  }
+}
+
 Future<void> _runQuery(Store<AppState> store, dynamic event) async {
+  // Fetch query details from the state
+  final query = store.state.dataQueries.dataQueries
+      .firstWhere((q) => q.id == event['queryId'], orElse: () => null);
+
+  if (query != null) {
+    try {
+      // Update state to show loading
+      store.dispatch(UpdateQueryStateAction(query['name'], isLoading: true));
+
+      final result = await executeQuery(store, query);
+
+      //   if (result.status == "failed") {
+      //     store.dispatch(FetchDataFailureAction(result.message));
+      //     store.dispatch(UpdateQueryStateAction(query['name'], isLoading: false));
+      //   } else {
+      //     store.dispatch(FetchDataSuccessAction(result.data));
+      //     store.dispatch(UpdateQueryStateAction(query['name'], isLoading: false, data: result.data));
+      //     store.dispatch(ShowToastAction('Query executed successfully!'));
+      //     Future.delayed(Duration(seconds: 2), () {
+      //       store.dispatch(HideToastAction());
+      //     });
+      //   }
+    } catch (e) {
+      store.dispatch(FetchDataFailureAction(e.toString()));
+      store.dispatch(UpdateQueryStateAction(query['name'], isLoading: false));
+    }
+  } else {
+    store.dispatch(FetchDataFailureAction("Query not found"));
+    return;
+  }
+
   // final String query = event['queryName'];
-  const String query =
-      'query leaveReason { fetchLeaveReason( leavetypeCode: "{{ID1715522021427336.comboValue}}" includeInactive: true) { leavereasonCode  leavereasonDesc  }}';
+  // const String query =
+  //     'query leaveReason { fetchLeaveReason( leavetypeCode: "{{ID1715522021427336.comboValue}}" includeInactive: true) { leavereasonCode  leavereasonDesc  }}';
   final Map<String, dynamic> variables = event['inputParams'];
 
   final graphql.HttpLink httpLink = graphql.HttpLink(

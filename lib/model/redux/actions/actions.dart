@@ -97,3 +97,33 @@ class UpdateApiClientAction {
 }
 
 class AppStartAction {}
+
+class RunQueryAction {
+  final String queryId;
+  final String queryName;
+  final Map<String, dynamic> parameters;
+  final Map<String, dynamic> event;
+
+  RunQueryAction({
+    required this.queryId,
+    required this.queryName,
+    required this.parameters,
+    required this.event,
+  });
+}
+
+class QueryResult {
+  final String status;
+  final dynamic data;
+  final String? message;
+
+  QueryResult({required this.status, this.data, this.message});
+}
+
+class UpdateQueryStateAction {
+  final String queryName;
+  final bool isLoading;
+  final dynamic data;
+
+  UpdateQueryStateAction(this.queryName, {this.isLoading = false, this.data});
+}

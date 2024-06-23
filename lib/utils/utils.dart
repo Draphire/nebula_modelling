@@ -88,6 +88,29 @@ double _parseToDouble(dynamic value, double defaultValue) {
   return defaultValue;
 }
 
+dynamic getQueryVariables(Map<String, dynamic> options, dynamic state) {
+  final Map<String, dynamic> queryVariables = {};
+
+  options.forEach((key, value) {
+    if (value is String && value.contains("{{")) {
+      queryVariables[key] = _resolveReferences(value, state);
+    } else {
+      queryVariables[key] = value;
+    }
+  });
+
+  return queryVariables;
+}
+
+dynamic _resolveReferences(String value, dynamic state) {
+  // Implement the logic to resolve references from the state
+  // For example, replace {{variableName}} with actual value from the state
+  return value.replaceAllMapped(RegExp(r'{{(.*?)}}'), (match) {
+    final variableName = match.group(1);
+    return state.variables[variableName] ?? '';
+  });
+}
+
 dynamic resolveReferences(
   dynamic object,
   dynamic state, {
