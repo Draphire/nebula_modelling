@@ -1,3 +1,6 @@
+import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+
 import '../app_state.dart';
 import '../actions/actions.dart';
 
@@ -65,12 +68,19 @@ CurrentState currentStateReducer(CurrentState state, dynamic action) {
     );
   }
   if (action is ShowToastAction) {
-    return state.copyWith(toastMessage: action.message);
+    Fluttertoast.showToast(
+      msg: action.message,
+      toastLength: Toast.LENGTH_SHORT,
+      gravity: ToastGravity.BOTTOM,
+      timeInSecForIosWeb: 1,
+      backgroundColor: Colors.black,
+      textColor: Colors.white,
+      fontSize: 16.0,
+    );
   }
   if (action is HideToastAction) {
-    return state.copyWith(toastMessage: null);
+    Fluttertoast.cancel();
   }
-
   if (action is OnEventAction) {
     // Handle event actions
     return state.copyWith(
