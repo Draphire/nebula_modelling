@@ -70,7 +70,7 @@ CurrentState currentStateReducer(CurrentState state, dynamic action) {
   if (action is ShowToastAction) {
     Fluttertoast.showToast(
       msg: action.message,
-      toastLength: Toast.LENGTH_SHORT,
+      toastLength: Toast.LENGTH_LONG,
       gravity: ToastGravity.BOTTOM,
       timeInSecForIosWeb: 1,
       backgroundColor: Colors.black,

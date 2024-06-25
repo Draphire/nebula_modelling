@@ -92,11 +92,11 @@ dynamic getQueryVariables(Map<String, dynamic> options, dynamic state) {
   final Map<String, dynamic> queryVariables = {};
 
   options.forEach((key, value) {
-    if (value is String && value.contains("{{")) {
-      queryVariables[key] = _resolveReferences(value, state);
-    } else {
-      queryVariables[key] = value;
-    }
+    // if (value is String && value.contains("{{")) {
+    //   queryVariables[key] = _resolveReferences(value, state);
+    // } else {
+    queryVariables[key] = value;
+    // }
   });
 
   return queryVariables;

@@ -58,6 +58,8 @@ class _ComboBoxWidgetState extends State<ComboBoxWidget> {
                   viewModel.updateComponent(
                       widget.controlInfo['id'], {'value': newValue});
                 });
+
+                viewModel.onEvent('onClick', widget.controlInfo['events']);
               },
               decoration: InputDecoration(
                 border: OutlineInputBorder(),

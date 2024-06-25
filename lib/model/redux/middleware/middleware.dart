@@ -10,6 +10,8 @@ import 'dart:async';
 import 'package:graphql/client.dart' as graphql;
 import 'package:nebula_modelling/utils/utils.dart';
 
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+
 const String _clientId = 'com.nebula.ramco.clients';
 const String _authorizeEndpoint =
     'https://hrpsaasdev.ramcouat.com/coresecurityops/connect/authorize';
@@ -334,20 +336,255 @@ Future<void> executeActionWithDebounce(
   }
 }
 
+void _handleResponse(Store<AppState> store, http.Response response,
+    String queryName, Map<String, dynamic> options, String kind) {
+  final statusCode = response.statusCode;
+
+  if (statusCode >= 200 && statusCode < 300) {
+    final data = jsonDecode(response.body);
+    // store.dispatch(SetQueryAction(queryName, {
+    //   'isLoading': false,
+    //   'data': data,
+    //   'rawData': response.body,
+    //   'kind': kind,
+    // }));
+    // store.dispatch(SetSucceededQueryAction(queryName, {
+    //   'type': 'query',
+    //   'kind': kind,
+    // }));
+  } else {
+    // store.dispatch(SetErrorAction(queryName, {
+    //   'type': 'query',
+    //   'kind': kind,
+    //   'data': jsonDecode(response.body),
+    //   'options': options,
+    // }));
+    // store.dispatch(SetQueryAction(queryName, {
+    //   'isLoading': false,
+    // }));
+  }
+}
+
 Future<QueryResult> executeQuery(Store<AppState> store, dynamic query) async {
-  if (query.kind == "graphql") {
-    return await executeGraphQLQuery(store, query);
-  } else if (query.kind == "restapi") {
-    return await executeRestAPIQuery(store, query);
+  final options = getQueryVariables(query["options"], store.state);
+
+  try {
+    final response = await run(store, options, query["options"]);
+    final promiseStatus = 'ok'; // Simplified for example
+
+    _handleResponse(store, response, 'queryName', options, 'restapi');
+    return QueryResult(status: promiseStatus, data: jsonDecode(response.body));
+    //   if (promiseStatus == 'failed' || promiseStatus == 'Bad Request') {
+    //     Provider.of<AppState>(context, listen: false).setErrors('queryName', response);
+    //     Provider.of<AppState>(context, listen: false).setQueries('queryName', {
+    //       'isLoading': false,
+    //       // Additional response details if needed
+    //     });
+    //   } else {
+    //     Provider.of<AppState>(context, listen: false).setQueries('queryName', {
+    //       'isLoading': false,
+    //       'data': response.body,
+    //       'rawData': response.body,
+    //       // Additional response details if needed
+    //     });
+    //     Provider.of<AppState>(context, listen: false).setSuccededQuery('queryName', {
+    //       'type': 'query',
+    //       'kind': 'restapi', // or 'graphql' based on the API
+    //     });
+    //   }
+  } catch (e) {
+    throw Exception("Unknown query kind");
+    // Provider.of<AppState>(context, listen: false).setQueries('queryName', {
+    //   'isLoading': false,
+    // });
+    // Handle error
+  }
+
+  if (query["kind"] == "graphql") {
+    // return await executeGraphQLQuery(store, query);
+  } else if (query["kind"] == "restApi") {
+    // return await executeRestAPIQuery(store, query);
   } else {
     throw Exception("Unknown query kind");
   }
 }
 
-Future<QueryResult> executeGraphQLQuery(
-    Store<AppState> store, dynamic query) async {
-  final options = getQueryVariables(query.options, store.state);
+String extractOperationName(String query) {
+  final RegExp operationRegex = RegExp(r'\{([\s\S]*?)\(');
+  final match = operationRegex.firstMatch(query);
+  return match != null ? match.group(1)?.trim() ?? '' : '';
+}
 
+Future<http.Response> run(Store<AppState> store, Map<String, dynamic> options,
+    Map<String, dynamic> apiOptions) async {
+  final FlutterSecureStorage _storage = FlutterSecureStorage();
+
+  final body = jsonEncode({'options': options});
+  final headers = {
+    'Content-Type': 'application/json',
+    'Accept': 'application/json, text/plain, */*',
+  };
+
+  if (apiOptions['dataType'] == 1) {
+    // Handle GraphQL queries
+    final gqlQueries = apiOptions['gqlQueries'].toString();
+    // .replaceAll(
+    //   '00013303',
+    //   store.state.currentContext.userContext ?? '',
+    // );
+
+    // final queryQueries = gqlQueries;
+    // final queryData = jsonDecode(gqlQueries);
+
+    final Map<String, dynamic> queryDataJson = jsonDecode(gqlQueries);
+    final Map<String, dynamic> queryVariables =
+        queryDataJson['variables'] ?? {};
+    final String query = queryDataJson['query'] ?? '';
+    final String operationName = extractOperationName(query);
+
+    Map<String, dynamic> updatedParams = {};
+
+    queryVariables.forEach((key, value) {
+      //   if (operationName.isEmpty) {
+      //     throw Exception("Operation name not found in the query.");
+      //   }
+
+      //   final valueType = getType(schema, operationName, key, query.contains("mutation"));
+
+      //   if (value is! String) {
+      //     updatedParams[key] = validateValueType(value, valueType);
+      //     return;
+      //   }
+
+      //   dynamic parsedValue;
+      //   if (value.contains("{{{") && value.contains("}}}")) {
+      //     parsedValue = injectPrerequisiteVariables(value, currentState);
+      //   } else if (value.contains("{{") && value.contains("}}")) {
+      //     final extractedValue = extractTextFromStore(value);
+      //     parsedValue = currentState['components'][extractedValue];
+      //   } else {
+      //     parsedValue = value;
+      //   }
+
+      //   updatedParams[key] = validateValueType(parsedValue ?? value, valueType);
+    });
+
+    final updatedgqlQueries = {
+      ...queryDataJson,
+      'variables': queryVariables,
+    };
+
+    final requestOptionsFromRuntime = {
+      'method': 'POST',
+      'headers': {
+        'Authorization': 'Bearer ${store.state.apiClient.authToken}',
+        'Content-Type': 'application/json',
+        // 'Context-Lang-Id': currentState['userContext']?['langId'],
+        // 'Context-Ou-Id': currentState['userContext']?['ouId'],
+        // 'Context-Role-Name': currentState['userContext']?['roleName']?['roleId'],
+      },
+      'body': jsonEncode(updatedgqlQueries),
+    };
+
+    final response = await http.post(
+      Uri.parse(apiOptions['url']),
+      headers:
+          Map<String, String>.from(requestOptionsFromRuntime['headers'] as Map),
+      body: requestOptionsFromRuntime['body'],
+    );
+
+    if (response.statusCode == 200) {
+      return response;
+      // Handle successful response
+    } else {
+      // Handle error response
+      throw Exception('Failed to make the request: ${response.body}');
+    }
+    // final variables = queryData['variables'] ?? {};
+    // final operationName = queryData['operationName'];
+
+    // final authToken = await _storage.read(key: 'accessToken');
+    // final gqlHeaders = {
+    //   'Authorization': 'Bearer ${store.state.apiClient.authToken}',
+    //   'Content-Type': 'application/json',
+    //   'Context-Lang-Id': store.state.currentContext.userContext?['langId'],
+    //   'Context-Ou-Id': store.state.currentContext.userContext?['ouId'],
+    //   'Context-Role-Name': store.state.currentContext.userContext?['roleName']
+    //       ?['roleId'],
+    // };
+
+    // return executeGraphQLQuery(store, options, query, variables, gqlHeaders);
+  } else {
+    // Handle REST API calls
+    final requestOptions = {
+      'method': apiOptions['method'],
+      'headers': headers,
+      'body': body,
+    };
+
+    final url = apiOptions['url'];
+
+    switch (apiOptions['method']) {
+      case 'GET':
+        return http.get(Uri.parse(url), headers: headers);
+      case 'POST':
+        return http.post(Uri.parse(url), headers: headers, body: body);
+      default:
+        return http.post(Uri.parse(url), headers: headers, body: body);
+    }
+  }
+}
+
+//   Future<http.Response> _executeGraphQLQuery(String url, String query, Map<String, dynamic> variables, Map<String, String> headers) async {
+//   final Link link = HttpLink(url, defaultHeaders: headers);
+
+//   final GraphQLClient client = GraphQLClient(
+//     cache: GraphQLCache(store: InMemoryStore()),
+//     link: link,
+//   );
+
+//   final QueryOptions options = QueryOptions(
+//     document: gql(query),
+//     variables: variables,
+//   );
+
+//   final result = await client.query(options);
+
+//   if (result.hasException) {
+//     throw Exception(result.exception.toString());
+//   }
+
+//   return http.Response(jsonEncode(result.data), 200);
+// }
+
+// Future<http.Response> _executeGraphQLQuery(String url, String query, Map<String, dynamic> variables, Map<String, String> headers) async {
+//   final Link link = HttpLink(url, defaultHeaders: headers);
+
+//   final GraphQLClient client = GraphQLClient(
+//     cache: GraphQLCache(store: InMemoryStore()),
+//     link: link,
+//   );
+
+//   final QueryOptions options = QueryOptions(
+//     document: gql(query),
+//     variables: variables,
+//   );
+
+//   final result = await client.query(options);
+
+//   if (result.hasException) {
+//     throw Exception(result.exception.toString());
+//   }
+
+//   return http.Response(jsonEncode(result.data), 200);
+// }
+
+Future<http.Response> executeGraphQLQuery(
+    Store<AppState> store,
+    dynamic options,
+    dynamic query,
+    Map<String, dynamic> variables,
+    Map<String, dynamic> headers) async {
   final httpLink = graphql.HttpLink(
     query.options['url'],
     defaultHeaders: {
@@ -387,7 +624,7 @@ Future<QueryResult> executeGraphQLQuery(
 
 Future<QueryResult> executeRestAPIQuery(
     dynamic query, Map<String, dynamic> parameters) async {
-  final uri = Uri.parse('https://yourapi.com/${query.endpoint}');
+  final uri = Uri.parse('https://yourapi.com/${query["endpoint"]}');
   final response =
       await http.post(uri, body: json.encode(parameters), headers: {
     'Content-Type': 'application/json',
@@ -405,12 +642,14 @@ Future<QueryResult> executeRestAPIQuery(
 Future<void> _runQuery(Store<AppState> store, dynamic event) async {
   // Fetch query details from the state
   final query = store.state.dataQueries.dataQueries
-      .firstWhere((q) => q.id == event['queryId'], orElse: () => null);
+      .firstWhere((q) => q["id"] == event['queryId'], orElse: () => null);
 
   if (query != null) {
     try {
       // Update state to show loading
       store.dispatch(UpdateQueryStateAction(query['name'], isLoading: true));
+      store.dispatch(ShowToastAction(
+          'query name ' + query['name'] + ' is being executed...'));
 
       final result = await executeQuery(store, query);
 
@@ -437,50 +676,50 @@ Future<void> _runQuery(Store<AppState> store, dynamic event) async {
   // final String query = event['queryName'];
   // const String query =
   //     'query leaveReason { fetchLeaveReason( leavetypeCode: "{{ID1715522021427336.comboValue}}" includeInactive: true) { leavereasonCode  leavereasonDesc  }}';
-  final Map<String, dynamic> variables = event['inputParams'];
+  // final Map<String, dynamic> variables = event['inputParams'];
 
-  final graphql.HttpLink httpLink = graphql.HttpLink(
-    'https://designer.ramcouat.com/coregwopsPayce/ucgsgql/',
-    defaultHeaders: {
-      'Accept': '*/*',
-      'Accept-Encoding': 'gzip, deflate, br, zstd',
-      'Accept-Language': 'en-GB,en-US;q=0.9,en;q=0.8',
-      'Authorization':
-          'Bearer C6D527F5057D3933055719C68B58A460DF43B0D5421EBD17D96EDE81FF24F50F',
-      'Content-Type': 'application/json',
-      'Context-Lang-Id': '1',
-      'Context-Ou-Id': '23',
-      'Context-Role-Name': 'SUPVR',
-      'Origin': 'http://localhost:3001',
-      'Priority': 'u=1, i',
-    },
-  );
+  // final graphql.HttpLink httpLink = graphql.HttpLink(
+  //   'https://designer.ramcouat.com/coregwopsPayce/ucgsgql/',
+  //   defaultHeaders: {
+  //     'Accept': '*/*',
+  //     'Accept-Encoding': 'gzip, deflate, br, zstd',
+  //     'Accept-Language': 'en-GB,en-US;q=0.9,en;q=0.8',
+  //     'Authorization':
+  //         'Bearer C6D527F5057D3933055719C68B58A460DF43B0D5421EBD17D96EDE81FF24F50F',
+  //     'Content-Type': 'application/json',
+  //     'Context-Lang-Id': '1',
+  //     'Context-Ou-Id': '23',
+  //     'Context-Role-Name': 'SUPVR',
+  //     'Origin': 'http://localhost:3001',
+  //     'Priority': 'u=1, i',
+  //   },
+  // );
 
-  final graphql.GraphQLClient client = graphql.GraphQLClient(
-    cache: graphql.GraphQLCache(),
-    link: httpLink,
-  );
+  // final graphql.GraphQLClient client = graphql.GraphQLClient(
+  //   cache: graphql.GraphQLCache(),
+  //   link: httpLink,
+  // );
 
-  final graphql.MutationOptions options = graphql.MutationOptions(
-    document: graphql.gql(query),
-    variables: variables,
-  );
+  // final graphql.MutationOptions options = graphql.MutationOptions(
+  //   document: graphql.gql(query),
+  //   variables: variables,
+  // );
 
-  try {
-    final graphql.QueryResult result = await client.mutate(options);
+  // try {
+  //   final graphql.QueryResult result = await client.mutate(options);
 
-    if (result.hasException) {
-      store.dispatch(FetchDataFailureAction(result.exception.toString()));
-    } else {
-      store.dispatch(FetchDataSuccessAction(result.data));
-      store.dispatch(ShowToastAction('Query executed successfully!'));
-      Future.delayed(Duration(seconds: 2), () {
-        store.dispatch(HideToastAction());
-      });
-    }
-  } catch (e) {
-    store.dispatch(FetchDataFailureAction(e.toString()));
-  }
+  //   if (result.hasException) {
+  //     store.dispatch(FetchDataFailureAction(result.exception.toString()));
+  //   } else {
+  //     store.dispatch(FetchDataSuccessAction(result.data));
+  //     store.dispatch(ShowToastAction('Query executed successfully!'));
+  //     Future.delayed(Duration(seconds: 2), () {
+  //       store.dispatch(HideToastAction());
+  //     });
+  //   }
+  // } catch (e) {
+  //   store.dispatch(FetchDataFailureAction(e.toString()));
+  // }
 }
 
 void authorizeApiClientMiddleware(Store<AppState> store,
