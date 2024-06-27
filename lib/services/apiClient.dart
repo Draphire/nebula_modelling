@@ -5,6 +5,16 @@ import 'package:nebula_modelling/model/types/apiTypes.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
+const String _clientId = 'com.nebula.ramco.clients';
+const String _authorizeEndpoint =
+    'https://hrpsaasdev.ramcouat.com/coresecurityops/connect/authorize';
+const String _tokenEndpoint =
+    'https://hrpsaasdev.ramcouat.com/coresecurityops/connect/token';
+const String _redirectUri = 'https://hrpsaasdev.ramcouat.com/app/saas';
+const identifier = '1kxkbzzxuddqgtwtvovbw';
+const _clientSecret =
+    'KJkcK3DqZi6yNo8hdd1lUQsGtd0mbNN9zn0fBLI0wbVsSas6Yteif6Sp7yCoP13D';
+
 class HttpApiClient extends ApiClient {
   HttpApiClient({required String baseUrl, required Map<String, String> headers})
       : super(baseUrl: baseUrl, headers: headers);
