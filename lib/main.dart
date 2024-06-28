@@ -1,15 +1,33 @@
 import 'dart:html' as html;
 import 'package:flutter/material.dart';
+import 'package:flutter_bootstrap/flutter_bootstrap.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:nebula_modelling/renderer/page.dart';
 import 'package:nebula_modelling/utils/oidc_client.dart';
+import 'package:nebula_modelling/widgets/reusableButton.dart';
+import 'package:nebula_modelling/widgets/reusableDialog.dart';
+import 'package:redux/redux.dart';
+import 'package:redux_thunk/redux_thunk.dart';
+import 'package:flutter_redux/flutter_redux.dart';
+import 'model/redux/actions/actions.dart';
+import 'model/redux/middleware/middleware.dart';
+import 'model/redux/reducers/reducers.dart';
+import 'model/redux/app_state.dart';
+import 'model/redux/viewModel/viewModel.dart';
 
 void main() {
-  runApp(MyApp());
+  final store = Store<AppState>(
+    appReducer,
+    initialState: AppState.initial(),
+    middleware: [...appMiddleware(), thunkMiddleware],
+  );
+  runApp(MyApp(store: store));
 }
 
 class MyApp extends StatelessWidget {
-  final String baseUrl;
+  final Store<AppState> store;
 
-  MyApp() : baseUrl = _getBaseUrl();
+  MyApp({required this.store});
 
   static String _getBaseUrl() {
     final url = html.window.location.href;
@@ -25,27 +43,35 @@ class MyApp extends StatelessWidget {
     final currentUri = Uri.parse(html.window.location.href);
     print('Navigating to: ${currentUri.path}');
 
-    return MaterialApp(
-      title: 'OIDC Authentication',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      onGenerateRoute: (RouteSettings settings) {
-        final Uri uri = Uri.parse(settings.name ?? '/');
-        print('Navigating to: ${uri.path}');
+    return StoreProvider(
+      store: store,
+      child: MaterialApp(
+        title: 'OIDC Authentication',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        onGenerateRoute: (RouteSettings settings) {
+          final Uri uri = Uri.parse(settings.name ?? '/');
+          print('Navigating to: ${uri.path}');
 
-        if (uri.path == '/app/callback') {
+          if (uri.path == '/app/callback') {
+            return MaterialPageRoute(
+              builder: (context) => OAuthCallbackPage(baseUrl: _getBaseUrl()),
+              settings: settings,
+            );
+          } else if (uri.path == '/nebula') {
+            return MaterialPageRoute(
+              builder: (context) => NebulaBaseComponent(appTitle: 'Nebula'),
+              settings: settings,
+            );
+          }
           return MaterialPageRoute(
-            builder: (context) => OAuthCallbackPage(baseUrl: baseUrl),
+            builder: (context) => HomePage(baseUrl: _getBaseUrl()),
             settings: settings,
           );
-        }
-        return MaterialPageRoute(
-          builder: (context) => HomePage(baseUrl: baseUrl),
-          settings: settings,
-        );
-      },
-      initialRoute: currentUri.path,
+        },
+        initialRoute: currentUri.path,
+      ),
     );
   }
 }
@@ -82,6 +108,7 @@ class _HomePageState extends State<HomePage> {
         _authStatus = 'Authenticated';
         // Update _userInfo with the user's information
       });
+      Navigator.of(context).pushReplacementNamed('/nebula');
     } catch (e) {
       setState(() {
         _authStatus = 'Failed to authenticate: $e';
@@ -165,7 +192,7 @@ class _OAuthCallbackPageState extends State<OAuthCallbackPage> {
             await oidcClient.handleCallback(html.window.location.href);
         // Store the token and update the application state accordingly
         // For example, you can navigate to the home page or update the UI
-        Navigator.of(context).pushReplacementNamed('/');
+        Navigator.of(context).pushReplacementNamed('/nebula');
       } catch (e) {
         // Handle any errors that occur during the token exchange
         print('Failed to get token: $e');
@@ -185,6 +212,70 @@ class _OAuthCallbackPageState extends State<OAuthCallbackPage> {
       body: Center(
         child: CircularProgressIndicator(),
       ),
+    );
+  }
+}
+
+class NebulaBaseComponent extends StatefulWidget {
+  final String appTitle;
+
+  NebulaBaseComponent({required this.appTitle});
+
+  @override
+  State<NebulaBaseComponent> createState() => _NebulaBaseComponentState();
+}
+
+class _NebulaBaseComponentState extends State<NebulaBaseComponent> {
+  @override
+  void initState() {
+    super.initState();
+    bootstrapGridParameters(gutterSize: 30);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return StoreConnector<AppState, ViewModel>(
+      converter: (Store<AppState> store) => ViewModel.create(store),
+      builder: (BuildContext context, ViewModel viewModel) {
+        // Show toast if there's a toast message
+        if (viewModel.toastMessage != null) {
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            Fluttertoast.showToast(
+              msg: viewModel.toastMessage!,
+              toastLength: Toast.LENGTH_SHORT,
+              gravity: ToastGravity.BOTTOM,
+              timeInSecForIosWeb: 1,
+              backgroundColor: Colors.black,
+              textColor: Colors.white,
+              fontSize: 16.0,
+            );
+          });
+        }
+        return Scaffold(
+          appBar: AppBar(
+            title: Text(widget.appTitle),
+          ),
+          body: SingleChildScrollView(
+            child: BootstrapContainer(
+              children: [
+                // Center(
+                //   child: ReusableButton(
+                //     label: 'Fetch Data and Show Messages',
+                //     apiEndpoint: 'https://jsonplaceholder.typicode.com/posts/1',
+                //     dialogMessage: 'Fetching data...',
+                //     toastMessage: 'Data fetched successfully!',
+                //   ),
+                // ),
+                ReusableDialog(),
+                PageRenderer(
+                  metadata: viewModel.metadata,
+                  apiClient: viewModel.apiClient,
+                ),
+              ],
+            ),
+          ),
+        );
+      },
     );
   }
 }
