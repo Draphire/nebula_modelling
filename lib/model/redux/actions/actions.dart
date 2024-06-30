@@ -127,3 +127,10 @@ class UpdateQueryStateAction {
 
   UpdateQueryStateAction(this.queryName, {this.isLoading = false, this.data});
 }
+
+// actions.dart
+class UpdateTokenResponseAction {
+  final dynamic? tokenResponse;
+
+  UpdateTokenResponseAction(this.tokenResponse);
+}

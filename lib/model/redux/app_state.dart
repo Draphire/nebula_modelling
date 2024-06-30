@@ -3,31 +3,6 @@ import 'package:nebula_modelling/model/redux/actions/actions.dart';
 import '../../services/apiClient.dart';
 import '../types/apiTypes.dart';
 
-//  class AppState {
-//   final PageDetails pageDetails;
-//   final CurrentState currentState;
-//   final DataQueries dataQueries;
-//   final CurrentContext currentContext;
-//   final ApiClient apiClient;
-
-//   AppState({
-//     required this.pageDetails,
-//     required this.currentState,
-//     required this.dataQueries,
-//     required this.currentContext,
-//     required this.apiClient,
-//   });
-
-//   AppState.initialState()
-//       : pageDetails = PageDetails.initialState(),
-//         currentState = CurrentState.initialState(),
-//         dataQueries = DataQueries.initialState(),
-//         currentContext = CurrentContext.initialState(),
-//         apiClient: HttpApiClient(baseUrl = "https://hrpsaasdev.ramcouat.com", headers = {
-//         'Content-Type': 'application/json',
-//         });
-// }
-
 class AppState {
   final PageDetails pageDetails;
   final CurrentState currentState;
@@ -7301,13 +7276,54 @@ class DataQueries {
         actions = {};
 }
 
+// class CurrentContext {
+//   final Map<String, dynamic> setOuData;
+//   final Map<String, dynamic> menuContext;
+//   final Map<String, dynamic> pageContext;
+//   final Map<String, dynamic> userContext;
+//   final Map<String, dynamic> settings;
+//   final Map<String, dynamic> authContext;
+//   final Map<String, dynamic> preferenceContext;
+//   final Map<String, dynamic> navData;
+//   final Map<String, dynamic> dialogInfo;
+//   final Map<String, dynamic> drawerInfo;
+//   final Map<String, dynamic> precisionContext;
+
+//   CurrentContext({
+//     required this.setOuData,
+//     required this.menuContext,
+//     required this.pageContext,
+//     required this.userContext,
+//     required this.settings,
+//     required this.authContext,
+//     required this.preferenceContext,
+//     required this.navData,
+//     required this.dialogInfo,
+//     required this.drawerInfo,
+//     required this.precisionContext,
+//   });
+
+//   CurrentContext.initialState()
+//       : setOuData = {},
+//         menuContext = {},
+//         pageContext = {},
+//         userContext = {},
+//         settings = {},
+//         authContext = {},
+//         preferenceContext = {},
+//         navData = {},
+//         dialogInfo = {},
+//         drawerInfo = {},
+//         precisionContext = {};
+// }
+
 class CurrentContext {
   final Map<String, dynamic> setOuData;
   final Map<String, dynamic> menuContext;
   final Map<String, dynamic> pageContext;
   final Map<String, dynamic> userContext;
   final Map<String, dynamic> settings;
-  final Map<String, dynamic> authContext;
+  final dynamic authContext;
   final Map<String, dynamic> preferenceContext;
   final Map<String, dynamic> navData;
   final Map<String, dynamic> dialogInfo;
@@ -7340,4 +7356,24 @@ class CurrentContext {
         dialogInfo = {},
         drawerInfo = {},
         precisionContext = {};
+
+  // Method to update authContext with tokenResponse
+  CurrentContext copyWithTokenResponse(dynamic? tokenResponse) {
+    // final updatedAuthContext = Map<String, dynamic>.from(authContext)
+    //   ..['tokenResponse'] = tokenResponse;
+
+    return CurrentContext(
+      setOuData: setOuData,
+      menuContext: menuContext,
+      pageContext: pageContext,
+      userContext: userContext,
+      settings: settings,
+      authContext: tokenResponse,
+      preferenceContext: preferenceContext,
+      navData: navData,
+      dialogInfo: dialogInfo,
+      drawerInfo: drawerInfo,
+      precisionContext: precisionContext,
+    );
+  }
 }

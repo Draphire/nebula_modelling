@@ -393,7 +393,7 @@ Future<QueryResult> executeQuery(Store<AppState> store, dynamic query) async {
     //     });
     //   }
   } catch (e) {
-    throw Exception("Unknown query kind");
+    throw Exception("Execute query exception with error: $e");
     // Provider.of<AppState>(context, listen: false).setQueries('queryName', {
     //   'isLoading': false,
     // });
@@ -477,11 +477,14 @@ Future<http.Response> run(Store<AppState> store, Map<String, dynamic> options,
     final requestOptionsFromRuntime = {
       'method': 'POST',
       'headers': {
-        'Authorization': 'Bearer ${store.state.apiClient.authToken}',
+        'Authorization':
+            'Bearer ${store.state.currentContext.authContext["access_token"]}',
         'Content-Type': 'application/json',
-        // 'Context-Lang-Id': currentState['userContext']?['langId'],
-        // 'Context-Ou-Id': currentState['userContext']?['ouId'],
-        // 'Context-Role-Name': currentState['userContext']?['roleName']?['roleId'],
+        'Context-Lang-Id':
+            store.state.currentContext.userContext['langId'] ?? "1",
+        'Context-Ou-Id': store.state.currentContext.userContext['ouId'] ?? "23",
+        'Context-Role-Name':
+            store.state.currentContext.userContext['roleName'] ?? "SUPVR",
       },
       'body': jsonEncode(updatedgqlQueries),
     };

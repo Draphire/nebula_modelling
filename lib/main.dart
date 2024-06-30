@@ -56,7 +56,8 @@ class MyApp extends StatelessWidget {
 
           if (uri.path == '/app/callback') {
             return MaterialPageRoute(
-              builder: (context) => OAuthCallbackPage(baseUrl: _getBaseUrl()),
+              builder: (context) =>
+                  OAuthCallbackPage(baseUrl: _getBaseUrl(), store: store),
               settings: settings,
             );
           } else if (uri.path == '/nebula') {
@@ -166,8 +167,9 @@ class _HomePageState extends State<HomePage> {
 
 class OAuthCallbackPage extends StatefulWidget {
   final String baseUrl;
+  final Store<AppState> store;
 
-  OAuthCallbackPage({required this.baseUrl});
+  OAuthCallbackPage({required this.baseUrl, required this.store});
 
   @override
   _OAuthCallbackPageState createState() => _OAuthCallbackPageState();
@@ -190,8 +192,9 @@ class _OAuthCallbackPageState extends State<OAuthCallbackPage> {
       try {
         final token =
             await oidcClient.handleCallback(html.window.location.href);
-        // Store the token and update the application state accordingly
-        // For example, you can navigate to the home page or update the UI
+        // Dispatch the action to update the token in authContext
+        widget.store.dispatch(UpdateTokenResponseAction(token));
+        // Navigate to the home page or update the UI as needed
         Navigator.of(context).pushReplacementNamed('/nebula');
       } catch (e) {
         // Handle any errors that occur during the token exchange
@@ -258,14 +261,6 @@ class _NebulaBaseComponentState extends State<NebulaBaseComponent> {
           body: SingleChildScrollView(
             child: BootstrapContainer(
               children: [
-                // Center(
-                //   child: ReusableButton(
-                //     label: 'Fetch Data and Show Messages',
-                //     apiEndpoint: 'https://jsonplaceholder.typicode.com/posts/1',
-                //     dialogMessage: 'Fetching data...',
-                //     toastMessage: 'Data fetched successfully!',
-                //   ),
-                // ),
                 ReusableDialog(),
                 PageRenderer(
                   metadata: viewModel.metadata,

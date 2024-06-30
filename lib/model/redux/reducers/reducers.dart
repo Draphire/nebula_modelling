@@ -97,14 +97,23 @@ DataQueries dataQueriesReducer(DataQueries state, dynamic action) {
   return state;
 }
 
+// CurrentContext currentContextReducer(CurrentContext state, dynamic action) {
+//   if (action is UpdateCurrentContextAction) {
+//     return action.currentContext;
+//   }
+//   return state;
+// }
+
 CurrentContext currentContextReducer(CurrentContext state, dynamic action) {
-  if (action is UpdateCurrentContextAction) {
-    return action.currentContext;
+  if (action is UpdateTokenResponseAction) {
+    // final updatedAuthContext = Map<String, dynamic>.from(state.authContext)
+    //   ..['tokenResponse'] = action.tokenResponse;
+
+    return state.copyWithTokenResponse(action.tokenResponse);
   }
+
   return state;
 }
-
-
 
 // AppState _fetchDataSuccess(AppState state, FetchDataSuccessAction action) {
 //   return state.copyWith(data: action.data, error: null);
