@@ -28,7 +28,42 @@ List<Middleware<AppState>> appMiddleware() {
     TypedMiddleware<AppState, OnEventAction>(_onEvent),
     TypedMiddleware<AppState, AuthorizeApiClientAction>(
         authorizeApiClientMiddleware),
+    TypedMiddleware<AppState, FetchPageMetadataAction>(pageMetadataMiddleware),
   ];
+}
+
+void pageMetadataMiddleware(
+    Store<AppState> store, dynamic action, NextDispatcher next) async {
+  if (action is FetchPageMetadataAction) {
+    try {
+      final response = await http.post(
+        Uri.parse('https://designer.ramco.com/api/1/page/metadata'),
+        headers: {
+          'Authorization': 'Bearer ${action.token}',
+          'Content-Type': 'application/json',
+        },
+        body: json.encode({
+          "appId": "62f02cb3-4f8c-410a-b7a4-43de97479833",
+          "pageId": "9bfdf627-5df1-452f-b447-596f58387a0a",
+          "getDataQueries": true,
+        }),
+      );
+
+      if (response.statusCode == 200) {
+        // final data = json.decode(response.body)['value'];
+        final data = json.decode(response.body);
+        // final pageMetadata = PageMetadata.fromJson(data);
+        store.dispatch(FetchPageMetadataSuccessAction(data));
+      } else {
+        store.dispatch(
+            FetchPageMetadataFailureAction('Failed to fetch page metadata'));
+      }
+    } catch (error) {
+      store.dispatch(FetchPageMetadataFailureAction(error.toString()));
+    }
+  }
+
+  next(action);
 }
 
 // Fetch data middleware

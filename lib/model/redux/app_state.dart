@@ -64,6 +64,23 @@ class PageDetails {
     this.pagePrerequisiteVariables,
   });
 
+  PageDetails copyWith({
+    dynamic? metaData,
+    String? pageId,
+    dynamic? layoutDetails,
+    String? modalPageId,
+    dynamic? pagePrerequisiteVariables,
+  }) {
+    return PageDetails(
+      metaData: metaData ?? this.metaData,
+      pageId: pageId ?? this.pageId,
+      layoutDetails: layoutDetails ?? this.layoutDetails,
+      modalPageId: modalPageId ?? this.modalPageId,
+      pagePrerequisiteVariables:
+          pagePrerequisiteVariables ?? this.pagePrerequisiteVariables,
+    );
+  }
+
   PageDetails.initialState()
       : metaData =
             // [

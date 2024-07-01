@@ -14,6 +14,7 @@ class ViewModel {
   final Function(DataQueries) updateDataQueries;
   final Function(String, Map<String, dynamic>) updateComponent;
   final Function(String) fetchData;
+  final Function() fetchPageMetadata;
   final Function(String) showDialog;
   final Function() hideDialog;
   final Function(String) showToast;
@@ -31,6 +32,7 @@ class ViewModel {
     required this.updateDataQueries,
     required this.updateComponent,
     required this.fetchData,
+    required this.fetchPageMetadata,
     required this.showDialog,
     required this.hideDialog,
     required this.showToast,
@@ -65,6 +67,10 @@ class ViewModel {
       },
       updateComponent: (String componentId, Map<String, dynamic> value) {
         store.dispatch(UpdateComponentAction(componentId, value));
+      },
+      fetchPageMetadata: () {
+        String token = store.state.currentContext.authContext["access_token"];
+        store.dispatch(FetchPageMetadataAction(token));
       },
       fetchData: (String apiEndpoint) =>
           store.dispatch(FetchDataAction(apiEndpoint)),

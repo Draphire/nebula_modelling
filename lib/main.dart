@@ -61,10 +61,21 @@ class MyApp extends StatelessWidget {
               settings: settings,
             );
           } else if (uri.path == '/nebula') {
-            return MaterialPageRoute(
-              builder: (context) => NebulaBaseComponent(appTitle: 'Nebula'),
-              settings: settings,
-            );
+            // Check if the user is authenticated
+            final token =
+                store.state.currentContext.authContext["access_token"];
+            if (token != null) {
+              return MaterialPageRoute(
+                builder: (context) => NebulaBaseComponent(appTitle: 'Nebula'),
+                settings: settings,
+              );
+            } else {
+              // Redirect to sign-in page if not authenticated
+              return MaterialPageRoute(
+                builder: (context) => HomePage(baseUrl: _getBaseUrl()),
+                settings: settings,
+              );
+            }
           }
           return MaterialPageRoute(
             builder: (context) => HomePage(baseUrl: _getBaseUrl()),
@@ -240,6 +251,11 @@ class _NebulaBaseComponentState extends State<NebulaBaseComponent> {
     return StoreConnector<AppState, ViewModel>(
       converter: (Store<AppState> store) => ViewModel.create(store),
       builder: (BuildContext context, ViewModel viewModel) {
+        //    final store = StoreProvider.of<AppState>(context);
+        // final viewModel = PageMetadataViewModel(store);
+
+        // Call the fetchPageMetadata method with the token when the app starts
+        // viewModel.fetchPageMetadata();
         // Show toast if there's a toast message
         if (viewModel.toastMessage != null) {
           WidgetsBinding.instance.addPostFrameCallback((_) {

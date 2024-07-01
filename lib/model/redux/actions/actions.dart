@@ -134,3 +134,21 @@ class UpdateTokenResponseAction {
 
   UpdateTokenResponseAction(this.tokenResponse);
 }
+
+class FetchPageMetadataAction {
+  final String token;
+
+  FetchPageMetadataAction(this.token);
+}
+
+class FetchPageMetadataSuccessAction {
+  final dynamic pageMetadata;
+
+  FetchPageMetadataSuccessAction(this.pageMetadata);
+}
+
+class FetchPageMetadataFailureAction {
+  final String error;
+
+  FetchPageMetadataFailureAction(this.error);
+}

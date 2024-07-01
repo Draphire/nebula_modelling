@@ -27,7 +27,17 @@ AppState appReducer(AppState state, dynamic action) {
 PageDetails pageDetailsReducer(PageDetails state, dynamic action) {
   if (action is UpdatePageDetailsAction) {
     return action.pageDetails;
+  } else if (action is FetchPageMetadataSuccessAction) {
+    return state.copyWith(
+      metaData: action.pageMetadata,
+      // error: null,
+    );
   }
+  // else if (action is FetchPageMetadataFailureAction) {
+  //   return state.copyWith(
+  //     error: action.error,
+  //   );
+  // }
   return state;
 }
 
