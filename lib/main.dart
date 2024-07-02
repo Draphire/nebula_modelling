@@ -1,4 +1,4 @@
-import 'dart:html' as html;
+// import 'dart:html' as html;
 import 'package:flutter/material.dart';
 import 'package:flutter_bootstrap/flutter_bootstrap.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -14,6 +14,7 @@ import 'model/redux/middleware/middleware.dart';
 import 'model/redux/reducers/reducers.dart';
 import 'model/redux/app_state.dart';
 import 'model/redux/viewModel/viewModel.dart';
+import 'package:universal_html/html.dart' as html;
 
 void main() {
   final store = Store<AppState>(

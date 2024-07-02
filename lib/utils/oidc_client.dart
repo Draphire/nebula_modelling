@@ -1,4 +1,4 @@
-import 'dart:html' as html;
+import 'package:universal_html/html.dart' as html;
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'dart:math';
