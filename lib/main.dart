@@ -255,7 +255,8 @@ class _NebulaBaseComponentState extends State<NebulaBaseComponent> {
         // final viewModel = PageMetadataViewModel(store);
 
         // Call the fetchPageMetadata method with the token when the app starts
-        // viewModel.fetchPageMetadata();
+        if (viewModel.metadata == null || viewModel.metadata.length == 0)
+          viewModel.fetchPageMetadata();
         // Show toast if there's a toast message
         if (viewModel.toastMessage != null) {
           WidgetsBinding.instance.addPostFrameCallback((_) {

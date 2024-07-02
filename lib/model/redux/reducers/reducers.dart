@@ -104,6 +104,12 @@ DataQueries dataQueriesReducer(DataQueries state, dynamic action) {
   if (action is UpdateDataQueriesAction) {
     return action.dataQueries;
   }
+  if (action is FetchPageDataQueriesSuccessAction) {
+    return state.copyWith(
+      dataQueries: action.dataQueries,
+      // error: null,
+    );
+  }
   return state;
 }
 

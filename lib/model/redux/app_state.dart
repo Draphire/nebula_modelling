@@ -82,1619 +82,7 @@ class PageDetails {
   }
 
   PageDetails.initialState()
-      : metaData =
-            // [
-            //     {
-            //       "controlType": "container",
-            //       "containerType": "fluid",
-            //       "styles": {"backgroundColor": ""},
-            //       "id": "ID1715841290250",
-            //       "layout": {
-            //         "colLayout": {
-            //           "lg": {"col": "12", "height": "200"}
-            //         }
-            //       },
-            //       "children": [
-            //         {
-            //           "controlType": "row",
-            //           "styles": {"backgroundColor": ""},
-            //           "layout": {
-            //             "colLayout": {
-            //               "lg": {"col": "12", "height": "400"}
-            //             }
-            //           },
-            //           "children": [
-            //             {
-            //               "controlType": "column",
-            //               "styles": {"backgroundColor": ""},
-            //               "layout": {
-            //                 "colLayout": {
-            //                   "lg": {"col": "12", "height": "400"}
-            //                 }
-            //               },
-            //               "children": [
-            //                 {
-            //                   "caption": "Static Caption",
-            //                   "controlType": "textarea",
-            //                   "hideCaption": false,
-            //                   "size": "small",
-            //                   "visibility": true,
-            //                   "mandatory": false,
-            //                   "value": "Static Contentsdsdsd",
-            //                   "layout": {
-            //                     "colLayout": {
-            //                       "lg": {"col": 2, "height": "200"}
-            //                     }
-            //                   },
-            //                   "rows": 12,
-            //                   "cols": 12,
-            //                   "uiTask": false,
-            //                   "className": "",
-            //                   "disabled": false,
-            //                   "hintText": "",
-            //                   "placeholder": "",
-            //                   "error": false,
-            //                   "success": false,
-            //                   "isReadonly": false,
-            //                   "enableResize": false,
-            //                   "width": "100%",
-            //                   "id": "ID1715842061879598",
-            //                   "isDragging": false,
-            //                   "selectedComponentId": "",
-            //                   "componentDropped": [],
-            //                   "index": 0,
-            //                   "accept": "Component",
-            //                   "resetControlData": true
-            //                 },
-            //                 {
-            //                   "caption":
-            //                       "{{testadithi.data.data.fetchBackupEmp.0.backupEmployeeName}}",
-            //                   "controlType": "textarea",
-            //                   "hideCaption": false,
-            //                   "size": "small",
-            //                   "visibility": true,
-            //                   "mandatory": false,
-            //                   "value":
-            //                       "{{testadithi.data.data.fetchBackupEmp.0.backupEmployeeName}}",
-            //                   "layout": {
-            //                     "colLayout": {
-            //                       "lg": {"col": 2, "height": "200"}
-            //                     }
-            //                   },
-            //                   "rows": 12,
-            //                   "cols": 12,
-            //                   "uiTask": false,
-            //                   "className": "",
-            //                   "disabled": false,
-            //                   "hintText": "",
-            //                   "placeholder": "",
-            //                   "error": false,
-            //                   "success": false,
-            //                   "isReadonly": false,
-            //                   "enableResize": false,
-            //                   "width": "100%",
-            //                   "id": "ID1715842063858246",
-            //                   "isDragging": false,
-            //                   "selectedComponentId": "",
-            //                   "componentDropped": [],
-            //                   "index": 1,
-            //                   "accept": "Component",
-            //                   "resetControlData": true
-            //                 }
-            //               ],
-            //               "id": "ID1715841290765",
-            //               "currentLayout": "DESKTOP",
-            //               "isDragging": false,
-            //               "selectedComponentId": "",
-            //               "componentDropped": [],
-            //               "index": 0,
-            //               "accept": "Component",
-            //               "dropPosition": {"x": 382, "y": 89},
-            //               "resetControlData": true
-            //             }
-            //           ],
-            //           "id": "ID1715841290361",
-            //           "currentLayout": "DESKTOP",
-            //           "isDragging": false,
-            //           "selectedComponentId": "",
-            //           "componentDropped": [],
-            //           "index": 0,
-            //           "accept": "Component",
-            //           "dropPosition": {"x": 381, "y": 80},
-            //           "resetControlData": true
-            //         }
-            //       ],
-            //       "currentLayout": "DESKTOP",
-            //       "isDragging": false,
-            //       "selectedComponentId": "",
-            //       "componentDropped": [],
-            //       "index": 0,
-            //       "accept": "Component",
-            //       "dropPosition": {"x": 372, "y": 71},
-            //       "resetControlData": true
-            //     },
-            //     {
-            //       "id": "ID1715857015830105",
-            //       "controlType": "container",
-            //       "containerType": "fluid",
-            //       "styles": {"backgroundColor": ""},
-            //       "layout": {
-            //         "colLayout": {
-            //           "lg": {"col": "12", "height": "200"}
-            //         }
-            //       },
-            //       "children": [
-            //         {
-            //           "id": "ID1715857015830907",
-            //           "controlType": "row",
-            //           "styles": {"backgroundColor": ""},
-            //           "layout": {
-            //             "colLayout": {
-            //               "lg": {"col": "12", "height": "120"}
-            //             }
-            //           },
-            //           "children": [
-            //             {
-            //               "id": "ID1715857015830126",
-            //               "controlType": "column",
-            //               "styles": {"backgroundColor": ""},
-            //               "layout": {
-            //                 "colLayout": {
-            //                   "lg": {"col": "12", "height": "120"}
-            //                 }
-            //               },
-            //               "children": [
-            //                 {
-            //                   "caption":
-            //                       "{{testadithi.data.data.fetchBackupEmp.0.backupEmployeeName}}",
-            //                   "controlType": "textbox",
-            //                   "hideCaption": false,
-            //                   "layout": {
-            //                     "colLayout": {
-            //                       "lg": {"col": 2, "height": "120"}
-            //                     }
-            //                   },
-            //                   "size": "small",
-            //                   "mandatory": false,
-            //                   "variant": "Standard",
-            //                   "value":
-            //                       "{{testadithi.data.data.fetchBackupEmp.0.backupEmployeeName}}",
-            //                   "disabled": false,
-            //                   "visibility": true,
-            //                   "isReadonly": false,
-            //                   "uiTask": false,
-            //                   "enableInheritWidth": false,
-            //                   "isRVW": false,
-            //                   "error": false,
-            //                   "success": false,
-            //                   "id": "ID1715857015830562",
-            //                   "isDragging": false,
-            //                   "selectedComponentId": "",
-            //                   "componentDropped": [],
-            //                   "index": 0,
-            //                   "accept": "Component",
-            //                   "resetControlData": true
-            //                 }
-            //               ],
-            //               "currentLayout": "DESKTOP",
-            //               "isDragging": false,
-            //               "selectedComponentId": "",
-            //               "componentDropped": [],
-            //               "index": 0,
-            //               "accept": "Component",
-            //               "dropPosition": {"x": 382, "y": 571},
-            //               "resetControlData": true
-            //             }
-            //           ],
-            //           "currentLayout": "DESKTOP",
-            //           "isDragging": false,
-            //           "selectedComponentId": "",
-            //           "componentDropped": [],
-            //           "index": 0,
-            //           "accept": "Component",
-            //           "dropPosition": {"x": 381, "y": 562},
-            //           "resetControlData": true
-            //         }
-            //       ],
-            //       "currentLayout": "DESKTOP",
-            //       "isDragging": false,
-            //       "selectedComponentId": "",
-            //       "componentDropped": [],
-            //       "index": 1,
-            //       "accept": "Component",
-            //       "dropPosition": {"x": 372, "y": 553},
-            //       "resetControlData": true
-            //     },
-            //     {
-            //       "id": "ID1715857025213293",
-            //       "controlType": "container",
-            //       "containerType": "fluid",
-            //       "styles": {"backgroundColor": ""},
-            //       "layout": {
-            //         "colLayout": {
-            //           "lg": {"col": "12", "height": "200"}
-            //         }
-            //       },
-            //       "children": [
-            //         {
-            //           "id": "ID1715857025213885",
-            //           "controlType": "row",
-            //           "styles": {"backgroundColor": ""},
-            //           "layout": {
-            //             "colLayout": {
-            //               "lg": {"col": "12", "height": "120"}
-            //             }
-            //           },
-            //           "children": [
-            //             {
-            //               "id": "ID1715857025213435",
-            //               "controlType": "column",
-            //               "styles": {"backgroundColor": ""},
-            //               "layout": {
-            //                 "colLayout": {
-            //                   "lg": {"col": "12", "height": "120"}
-            //                 }
-            //               },
-            //               "children": [
-            //                 {
-            //                   "caption": "Textbox",
-            //                   "controlType": "textbox",
-            //                   "hideCaption": false,
-            //                   "layout": {
-            //                     "colLayout": {
-            //                       "lg": {"col": 2, "height": "200"}
-            //                     }
-            //                   },
-            //                   "size": "small",
-            //                   "mandatory": false,
-            //                   "variant": "Standard",
-            //                   "value": "textdfdfdfdf",
-            //                   "disabled": false,
-            //                   "visibility": true,
-            //                   "isReadonly": false,
-            //                   "uiTask": false,
-            //                   "enableInheritWidth": false,
-            //                   "isRVW": false,
-            //                   "error": false,
-            //                   "success": false,
-            //                   "id": "ID171585702521397",
-            //                   "isDragging": false,
-            //                   "selectedComponentId": "",
-            //                   "componentDropped": [],
-            //                   "index": 0,
-            //                   "accept": "Component",
-            //                   "resetControlData": true
-            //                 }
-            //               ],
-            //               "currentLayout": "DESKTOP",
-            //               "isDragging": false,
-            //               "selectedComponentId": "",
-            //               "componentDropped": [],
-            //               "index": 0,
-            //               "accept": "Component",
-            //               "dropPosition": {"x": 382, "y": 669},
-            //               "resetControlData": true
-            //             }
-            //           ],
-            //           "currentLayout": "DESKTOP",
-            //           "isDragging": false,
-            //           "selectedComponentId": "",
-            //           "componentDropped": [],
-            //           "index": 0,
-            //           "accept": "Component",
-            //           "dropPosition": {"x": 381, "y": 660},
-            //           "resetControlData": true
-            //         },
-            //         {
-            //           "id": "ID1715858737902185",
-            //           "controlType": "row",
-            //           "styles": {"backgroundColor": ""},
-            //           "layout": {
-            //             "colLayout": {
-            //               "lg": {"col": "12", "height": "200"}
-            //             }
-            //           },
-            //           "children": [
-            //             {
-            //               "id": "ID1715858737902920",
-            //               "controlType": "column",
-            //               "styles": {"backgroundColor": ""},
-            //               "layout": {
-            //                 "colLayout": {
-            //                   "lg": {"col": "12", "height": "200"}
-            //                 }
-            //               },
-            //               "children": [
-            //                 {
-            //                   "controlType": "timePicker",
-            //                   "layout": {
-            //                     "colLayout": {
-            //                       "lg": {"col": 2, "height": "200"}
-            //                     }
-            //                   },
-            //                   "id": "ID1715858737902260",
-            //                   "className": "",
-            //                   "mandatory": false,
-            //                   "placeholder": "Enter the time",
-            //                   "caption":
-            //                       "{{testadithi.data.data.fetchBackupEmp.0.backupEmployeeName}}",
-            //                   "showCaption": false,
-            //                   "helpTask": "",
-            //                   "error": false,
-            //                   "success": false,
-            //                   "readOnly": false,
-            //                   "disabled": false,
-            //                   "visibility": true,
-            //                   "timeSeperator": ":",
-            //                   "value": "11:11:11",
-            //                   "timeFormat": "HH:mm:ss",
-            //                   "currentDateTimeButton": false,
-            //                   "size": "medium",
-            //                   "variant": "standard",
-            //                   "uiTask": true,
-            //                   "fixMainPosition": true,
-            //                   "calendarPosition": "bottom",
-            //                   "onOpenPickNewDate": true,
-            //                   "width": "235px",
-            //                   "isDragging": false,
-            //                   "selectedComponentId": "",
-            //                   "componentDropped": [],
-            //                   "index": 0,
-            //                   "accept": "Component",
-            //                   "resetControlData": true
-            //                 },
-            //                 {
-            //                   "controlType": "datePicker",
-            //                   "visibility": true,
-            //                   "hideYear": false,
-            //                   "variant": "Standard",
-            //                   "size": "small",
-            //                   "hideMonth": false,
-            //                   "numberOfMonths": 1,
-            //                   "disableMonthPicker": false,
-            //                   "disableYearPicker": false,
-            //                   "minDate": "",
-            //                   "maxDate": "",
-            //                   "onlyYearPicker": false,
-            //                   "onlyMonthPicker": false,
-            //                   "dateFormat": "MM/DD/YYYY",
-            //                   "value": "2024-05-31T12:16:25.223Z",
-            //                   "id": "ID1715937668527512",
-            //                   "enableIcon": true,
-            //                   "caption": "DatePicker",
-            //                   "showCaption": false,
-            //                   "enableButtons": false,
-            //                   "layout": {
-            //                     "colLayout": {
-            //                       "lg": {"col": 2, "height": "200"}
-            //                     }
-            //                   },
-            //                   "isDragging": false,
-            //                   "selectedComponentId": "",
-            //                   "componentDropped": [],
-            //                   "index": 1,
-            //                   "accept": "Component",
-            //                   "resetControlData": true
-            //                 }
-            //               ],
-            //               "currentLayout": "DESKTOP",
-            //               "isDragging": false,
-            //               "selectedComponentId": "",
-            //               "componentDropped": [],
-            //               "index": 0,
-            //               "accept": "Component",
-            //               "dropPosition": {"x": 382, "y": 749},
-            //               "resetControlData": true
-            //             },
-            //             {
-            //               "id": "ID1715924677661532",
-            //               "controlType": "column",
-            //               "styles": {"backgroundColor": ""},
-            //               "layout": {
-            //                 "colLayout": {
-            //                   "lg": {"col": "12", "height": "200"}
-            //                 }
-            //               },
-            //               "children": [
-            //                 {
-            //                   "controlType": "numeric",
-            //                   "layout": {
-            //                     "colLayout": {
-            //                       "lg": {"col": 2, "height": "200"}
-            //                     }
-            //                   },
-            //                   "id": "ID1715924677661424",
-            //                   "value":
-            //                       "{{assignmentOptions.data.data.fetchAssignment.0.assignmentNumber}}",
-            //                   "size": "medium",
-            //                   "visibility": true,
-            //                   "disabled": false,
-            //                   "variant": "contained",
-            //                   "caption": "Test",
-            //                   "showCaption": true,
-            //                   "helpText": "Please enter a numeric value",
-            //                   "showHelpText": false,
-            //                   "mandatory": true,
-            //                   "prefix": "",
-            //                   "suffix": "",
-            //                   "minValue": -999999,
-            //                   "maxValue": 999999,
-            //                   "precision": 0,
-            //                   "thousandSeperator": ",",
-            //                   "groupStyle": "thousand",
-            //                   "error": false,
-            //                   "success": false,
-            //                   "incrementDecrementValue": 2,
-            //                   "blurTaskName": "blur",
-            //                   "focusTaskName": "focus",
-            //                   "isReadonly": false,
-            //                   "showCounterIcon": true,
-            //                   "placeholder": "Enter value",
-            //                   "enableInheritWidth": false,
-            //                   "isDragging": false,
-            //                   "selectedComponentId": "",
-            //                   "componentDropped": [],
-            //                   "index": 0,
-            //                   "accept": "Component",
-            //                   "resetControlData": true
-            //                 }
-            //               ],
-            //               "currentLayout": "DESKTOP",
-            //               "isDragging": false,
-            //               "selectedComponentId": "",
-            //               "componentDropped": [],
-            //               "index": 1,
-            //               "accept": "Component",
-            //               "resetControlData": true,
-            //               "dropPosition": {"x": 382, "y": 829}
-            //             }
-            //           ],
-            //           "currentLayout": "DESKTOP",
-            //           "isDragging": false,
-            //           "selectedComponentId": "",
-            //           "componentDropped": [],
-            //           "index": 1,
-            //           "accept": "Component",
-            //           "dropPosition": {"x": 381, "y": 740},
-            //           "resetControlData": true
-            //         },
-            //         {
-            //           "id": "ID1715922035386907",
-            //           "controlType": "row",
-            //           "styles": {"backgroundColor": ""},
-            //           "layout": {
-            //             "colLayout": {
-            //               "lg": {"col": "12", "height": "100"}
-            //             }
-            //           },
-            //           "children": [
-            //             {
-            //               "id": "ID1715922035386192",
-            //               "controlType": "column",
-            //               "styles": {"backgroundColor": ""},
-            //               "layout": {
-            //                 "colLayout": {
-            //                   "lg": {"col": "12", "height": "200"}
-            //                 }
-            //               },
-            //               "children": [
-            //                 {
-            //                   "caption": "Button",
-            //                   "controlType": "button",
-            //                   "hideCaption": false,
-            //                   "layout": {
-            //                     "colLayout": {
-            //                       "lg": {"col": 2, "height": "200"}
-            //                     }
-            //                   },
-            //                   "disabled": false,
-            //                   "visibility": true,
-            //                   "variant": "outlined",
-            //                   "size": "small",
-            //                   "color": "primary",
-            //                   "tooltip": "Tooltip",
-            //                   "id": "ID1715922035386854",
-            //                   "isDragging": false,
-            //                   "selectedComponentId": "",
-            //                   "componentDropped": [],
-            //                   "index": 0,
-            //                   "accept": "Component",
-            //                   "resetControlData": true,
-            //                   "events": [
-            //                     {
-            //                       "event": {
-            //                         "eventId": "onClick",
-            //                         "actionId": "show-alert",
-            //                         "message": "Hello",
-            //                         "alertType": "warning"
-            //                       },
-            //                       "target": "component",
-            //                       "sourceId": "ID1713519951416271",
-            //                       "index": 0,
-            //                       "pageId": "2bf8a371-9207-4b9c-bac2-d30a05fbd6ad",
-            //                       "appId": "3180d666-cf1c-4f54-9410-13a820917fe4",
-            //                       "name": "onChange"
-            //                     },
-            //                     {
-            //                       "event": {
-            //                         "eventId": "onClick",
-            //                         "actionId": "show-alert",
-            //                         "message": "Hello 2",
-            //                         "alertType": "warning"
-            //                       },
-            //                       "target": "component",
-            //                       "sourceId": "ID1713519951416271",
-            //                       "index": 1,
-            //                       "pageId": "2bf8a371-9207-4b9c-bac2-d30a05fbd6ad",
-            //                       "appId": "3180d666-cf1c-4f54-9410-13a820917fe4",
-            //                       "name": "onChange"
-            //                     },
-            //                     {
-            //                       "event": {
-            //                         "eventId": "onClick",
-            //                         "actionId": "run-query",
-            //                         "queryId": "59734614-87f3-4732-a7f6-8206e0c05e88",
-            //                         "queryName": "applyLeave2",
-            //                         "inputParams": {
-            //                           "employeeCode": "00013303",
-            //                           "assignmentNo": 1,
-            //                           "leaveTypeCode":
-            //                               "{{ID1714730525749652.comboValue}}",
-            //                           "leaveStartDate":
-            //                               "{{ID1714730820026404.value}}",
-            //                           "leaveEndDate": "{{ID1714730864141998.value}}",
-            //                           "leaveFromSession":
-            //                               "{{ID1715067537157422.comboValue}}",
-            //                           "leaveToSession":
-            //                               "{{ID1714730864141790.comboValue}}",
-            //                           "leaveReasonCode":
-            //                               "{{ID1714730929806978.comboValue}}",
-            //                           "additionalReason":
-            //                               "{{ID171585702521397.value}}",
-            //                           "backupEmployeeCode":
-            //                               "{{ID1714730909658264.comboValue}}"
-            //                         }
-            //                       },
-            //                       "target": "component",
-            //                       "sourceId": "ID1715922035386854",
-            //                       "index": 2,
-            //                       "pageId": "533ab427-21b6-4304-b7a2-010c7e75b0fc",
-            //                       "appId": "544006e1-0afc-4d37-b8d8-821001a552db",
-            //                       "name": "onClick"
-            //                     }
-            //                   ]
-            //                 }
-            //               ],
-            //               "currentLayout": "DESKTOP",
-            //               "isDragging": false,
-            //               "selectedComponentId": "",
-            //               "componentDropped": [],
-            //               "index": 0,
-            //               "accept": "Component",
-            //               "resetControlData": true,
-            //               "dropPosition": {"x": 382, "y": 919}
-            //             }
-            //           ],
-            //           "currentLayout": "DESKTOP",
-            //           "isDragging": false,
-            //           "selectedComponentId": "",
-            //           "componentDropped": [],
-            //           "index": 2,
-            //           "accept": "Component",
-            //           "resetControlData": true,
-            //           "dropPosition": {"x": 381, "y": 910}
-            //         },
-            //         {
-            //           "id": "ID1716294979170597",
-            //           "controlType": "row",
-            //           "styles": {"backgroundColor": ""},
-            //           "layout": {
-            //             "colLayout": {
-            //               "lg": {"col": "12", "height": "120"}
-            //             }
-            //           },
-            //           "children": [
-            //             {
-            //               "id": "ID17162949791708",
-            //               "controlType": "column",
-            //               "styles": {"backgroundColor": ""},
-            //               "layout": {
-            //                 "colLayout": {
-            //                   "lg": {"col": "12", "height": "200"}
-            //                 }
-            //               },
-            //               "children": [
-            //                 {
-            //                   "controlType": "numeric",
-            //                   "layout": {
-            //                     "colLayout": {
-            //                       "lg": {"col": 2, "height": "200"}
-            //                     }
-            //                   },
-            //                   "id": "ID1716294979170599",
-            //                   "value": "4566",
-            //                   "size": "medium",
-            //                   "visibility": true,
-            //                   "disabled": false,
-            //                   "variant": "contained",
-            //                   "caption": "Enter the value",
-            //                   "showCaption": true,
-            //                   "helpText": "Please enter a numeric value",
-            //                   "showHelpText": false,
-            //                   "mandatory": true,
-            //                   "prefix": "",
-            //                   "suffix": "",
-            //                   "minValue": -999999,
-            //                   "maxValue": 999999,
-            //                   "precision": 0,
-            //                   "thousandSeperator": ",",
-            //                   "groupStyle": "thousand",
-            //                   "error": false,
-            //                   "success": false,
-            //                   "incrementDecrementValue": 2,
-            //                   "blurTaskName": "blur",
-            //                   "focusTaskName": "focus",
-            //                   "isReadonly": false,
-            //                   "showCounterIcon": true,
-            //                   "placeholder": "Enter value",
-            //                   "enableInheritWidth": false,
-            //                   "isDragging": false,
-            //                   "selectedComponentId": "",
-            //                   "componentDropped": [],
-            //                   "index": 0,
-            //                   "accept": "Component"
-            //                 }
-            //               ],
-            //               "currentLayout": "DESKTOP",
-            //               "isDragging": false,
-            //               "selectedComponentId": "",
-            //               "componentDropped": [],
-            //               "index": 0,
-            //               "accept": "Component",
-            //               "dropPosition": {"x": 382, "y": 991}
-            //             }
-            //           ],
-            //           "currentLayout": "DESKTOP",
-            //           "isDragging": false,
-            //           "selectedComponentId": "",
-            //           "componentDropped": [],
-            //           "index": 3,
-            //           "accept": "Component",
-            //           "dropPosition": {"x": 381, "y": 982}
-            //         }
-            //       ],
-            //       "currentLayout": "DESKTOP",
-            //       "isDragging": false,
-            //       "selectedComponentId": "",
-            //       "componentDropped": [],
-            //       "index": 2,
-            //       "accept": "Component",
-            //       "dropPosition": {"x": 372, "y": 651},
-            //       "resetControlData": true
-            //     },
-            //     {
-            //       "id": "ID171828783753540",
-            //       "controlType": "container",
-            //       "containerType": "fluid",
-            //       "styles": {"backgroundColor": ""},
-            //       "layout": {
-            //         "colLayout": {
-            //           "lg": {"col": "12", "height": "200"}
-            //         }
-            //       },
-            //       "children": [
-            //         {
-            //           "id": "ID1718287837535116",
-            //           "controlType": "row",
-            //           "styles": {"backgroundColor": ""},
-            //           "layout": {
-            //             "colLayout": {
-            //               "lg": {"col": "12", "height": "120"}
-            //             }
-            //           },
-            //           "children": [
-            //             {
-            //               "id": "ID1718287837535133",
-            //               "controlType": "column",
-            //               "styles": {"backgroundColor": ""},
-            //               "layout": {
-            //                 "colLayout": {
-            //                   "lg": {"col": "12", "height": "200"}
-            //                 }
-            //               },
-            //               "children": [
-            //                 {
-            //                   "caption":
-            //                       "{{testadithi.data.data.fetchBackupEmp.0.backupEmployeeName}}",
-            //                   "controlType": "checkbox",
-            //                   "visibility": true,
-            //                   "hideCaption": false,
-            //                   "size": "Large",
-            //                   "variant": "default",
-            //                   "checked": false,
-            //                   "isCheckBoxButton": true,
-            //                   "buttonVariant": "solid",
-            //                   "indeterminate": false,
-            //                   "title":
-            //                       "{{testadithi.data.data.fetchBackupEmp.0.backupEmployeeName}}",
-            //                   "hideTitle": false,
-            //                   "isRVW": false,
-            //                   "enableHintText": false,
-            //                   "hintText":
-            //                       "{{testadithi.data.data.fetchBackupEmp.0.backupEmployeeName}}",
-            //                   "error": false,
-            //                   "layout": {
-            //                     "colLayout": {
-            //                       "lg": {"col": 2, "height": "200"}
-            //                     }
-            //                   },
-            //                   "id": "ID1718287837535991",
-            //                   "isDragging": false,
-            //                   "selectedComponentId": "",
-            //                   "componentDropped": [
-            //                     "ID171828783753540",
-            //                     "ID1718287837535116",
-            //                     "ID1718287837535133",
-            //                     "ID1718287837535991"
-            //                   ],
-            //                   "index": 0,
-            //                   "accept": "Component",
-            //                   "name":
-            //                       "{{testadithi.data.data.fetchBackupEmp.0.backupEmployeeName}}"
-            //                 }
-            //               ],
-            //               "currentLayout": "DESKTOP",
-            //               "isDragging": false,
-            //               "selectedComponentId": "",
-            //               "componentDropped": [
-            //                 "ID171828783753540",
-            //                 "ID1718287837535116",
-            //                 "ID1718287837535133",
-            //                 "ID1718287837535991"
-            //               ],
-            //               "index": 0,
-            //               "accept": "Component",
-            //               "dropPosition": {"x": 382, "y": 1103}
-            //             }
-            //           ],
-            //           "currentLayout": "DESKTOP",
-            //           "isDragging": false,
-            //           "selectedComponentId": "",
-            //           "componentDropped": [
-            //             "ID171828783753540",
-            //             "ID1718287837535116",
-            //             "ID1718287837535133",
-            //             "ID1718287837535991"
-            //           ],
-            //           "index": 0,
-            //           "accept": "Component",
-            //           "dropPosition": {"x": 381, "y": 1094}
-            //         },
-            //         {
-            //           "id": "ID1718287886017902",
-            //           "controlType": "row",
-            //           "styles": {"backgroundColor": ""},
-            //           "layout": {
-            //             "colLayout": {
-            //               "lg": {"col": "12", "height": "200"}
-            //             }
-            //           },
-            //           "children": [
-            //             {
-            //               "id": "ID1718287886017369",
-            //               "controlType": "column",
-            //               "styles": {"backgroundColor": ""},
-            //               "layout": {
-            //                 "colLayout": {
-            //                   "lg": {"col": "12", "height": "200"}
-            //                 }
-            //               },
-            //               "children": [
-            //                 {
-            //                   "controlType": "combo",
-            //                   "caption": "Select Value",
-            //                   "mandatory": false,
-            //                   "disabled": false,
-            //                   "color": "primary",
-            //                   "visibility": true,
-            //                   "options": "{{testadithi.data.data.fetchBackupEmp}}",
-            //                   "valueField": "backupEmployeeCode",
-            //                   "displayField": "backupEmployeeName",
-            //                   "layout": {
-            //                     "colLayout": {
-            //                       "lg": {"col": 2, "height": "200"}
-            //                     }
-            //                   },
-            //                   "id": "ID1718287886017966",
-            //                   "isDragging": false,
-            //                   "selectedComponentId": "ID1718287837535991",
-            //                   "componentDropped": [
-            //                     "ID1718287886017902",
-            //                     "ID1718287886017369",
-            //                     "ID1718287886017966"
-            //                   ],
-            //                   "index": 0,
-            //                   "accept": "Component",
-            //                   "comboValue": "",
-            //                   "placeholder": ""
-            //                 }
-            //               ],
-            //               "currentLayout": "DESKTOP",
-            //               "isDragging": false,
-            //               "selectedComponentId": "ID1718287837535991",
-            //               "componentDropped": [
-            //                 "ID1718287886017902",
-            //                 "ID1718287886017369",
-            //                 "ID1718287886017966"
-            //               ],
-            //               "index": 0,
-            //               "accept": "Component",
-            //               "dropPosition": {"x": 382, "y": 1179}
-            //             }
-            //           ],
-            //           "currentLayout": "DESKTOP",
-            //           "isDragging": false,
-            //           "selectedComponentId": "ID1718287837535991",
-            //           "componentDropped": [
-            //             "ID1718287886017902",
-            //             "ID1718287886017369",
-            //             "ID1718287886017966"
-            //           ],
-            //           "index": 1,
-            //           "accept": "Component",
-            //           "dropPosition": {"x": 381, "y": 1170}
-            //         }
-            //       ],
-            //       "currentLayout": "DESKTOP",
-            //       "isDragging": false,
-            //       "selectedComponentId": "",
-            //       "componentDropped": [
-            //         "ID171828783753540",
-            //         "ID1718287837535116",
-            //         "ID1718287837535133",
-            //         "ID1718287837535991"
-            //       ],
-            //       "index": 3,
-            //       "accept": "Component",
-            //       "dropPosition": {"x": 372, "y": 1085}
-            //     }
-            //   ]
-            //
-            [
-          {
-            "controlType": "container",
-            "containerType": "fluid",
-            "styles": {"backgroundColor": ""},
-            "id": "ID1715521622033",
-            "layout": {
-              "colLayout": {
-                "lg": {"col": "12", "height": "200"}
-              }
-            },
-            "children": [
-              {
-                "id": "ID1715521985277146",
-                "controlType": "row",
-                "styles": {"backgroundColor": ""},
-                "layout": {
-                  "colLayout": {
-                    "lg": {"col": "12", "height": "200"}
-                  }
-                },
-                "children": [
-                  {
-                    "id": "ID1715521985277969",
-                    "controlType": "column",
-                    "styles": {"backgroundColor": ""},
-                    "layout": {
-                      "colLayout": {
-                        "lg": {"col": "8", "height": "200"}
-                      }
-                    },
-                    "children": [
-                      {
-                        "controlType": "combo",
-                        "caption": "Assignment",
-                        "mandatory": true,
-                        "disabled": false,
-                        "color": "primary",
-                        "visibility": true,
-                        "options":
-                            "{{assignmentOptions.data.data.fetchAssignment}}",
-                        "valueField": "assignmentInformation",
-                        "displayField": "assignmentInformation",
-                        "layout": {
-                          "colLayout": {
-                            "lg": {"col": 2, "height": "200"}
-                          }
-                        },
-                        "id": "ID1715521985277738",
-                        "isDragging": false,
-                        "selectedComponentId": "",
-                        "componentDropped": [],
-                        "index": 0,
-                        "accept": "Component",
-                        "comboValue": "",
-                        "size": "medium",
-                        "events": []
-                      }
-                    ],
-                    "currentLayout": "DESKTOP",
-                    "isDragging": false,
-                    "selectedComponentId": "",
-                    "componentDropped": [],
-                    "index": 0,
-                    "accept": "Component",
-                    "dropPosition": {
-                      "x": 381.3333435058594,
-                      "y": 88.33333587646484
-                    }
-                  }
-                ],
-                "currentLayout": "DESKTOP",
-                "isDragging": false,
-                "selectedComponentId": "",
-                "componentDropped": [],
-                "index": 0,
-                "accept": "Component",
-                "dropPosition": {
-                  "x": 380.66668701171875,
-                  "y": 79.66667175292969
-                }
-              },
-              {
-                "id": "ID1715522021427864",
-                "controlType": "row",
-                "styles": {"backgroundColor": ""},
-                "layout": {
-                  "colLayout": {
-                    "lg": {"col": "12", "height": "200"}
-                  }
-                },
-                "children": [
-                  {
-                    "id": "ID1715522021427707",
-                    "controlType": "column",
-                    "styles": {"backgroundColor": ""},
-                    "layout": {
-                      "colLayout": {
-                        "lg": {"col": "8", "height": "200"}
-                      }
-                    },
-                    "children": [
-                      {
-                        "controlType": "combo",
-                        "caption": "Leave Type",
-                        "mandatory": true,
-                        "disabled": false,
-                        "color": "primary",
-                        "visibility": true,
-                        "options":
-                            "{{leaveTypeDatas.data.data.fetchLeaveType}}",
-                        "valueField": "leavetypeCode",
-                        "displayField": "leavetypeDesc",
-                        "layout": {
-                          "colLayout": {
-                            "lg": {"col": 2, "height": "200"}
-                          }
-                        },
-                        "id": "ID1715522021427336",
-                        "isDragging": false,
-                        "selectedComponentId": "",
-                        "componentDropped": [],
-                        "index": 0,
-                        "accept": "Component",
-                        "comboValue": "",
-                        "size": "medium",
-                        "events": [
-                          {
-                            "event": {
-                              "eventId": "onSelect",
-                              "actionId": "run-query",
-                              "queryId": "fec0550b-c9f8-4cf0-8dad-e1f99945f1ca",
-                              "queryName": "leaveReason",
-                              "inputParams": {
-                                "leavetypeCode":
-                                    "{{ID1715522021427336.comboValue}}",
-                                "includeInactive": true
-                              }
-                            },
-                            "target": "component",
-                            "sourceId": "ID1715522021427336",
-                            "index": 0,
-                            "pageId": "9bfdf627-5df1-452f-b447-596f58387a0a",
-                            "appId": "62f02cb3-4f8c-410a-b7a4-43de97479833",
-                            "name": "onSelect"
-                          }
-                        ]
-                      }
-                    ],
-                    "currentLayout": "DESKTOP",
-                    "isDragging": false,
-                    "selectedComponentId": "",
-                    "componentDropped": [],
-                    "index": 0,
-                    "accept": "Component",
-                    "dropPosition": {
-                      "x": 381.3333435058594,
-                      "y": 160.33334350585938
-                    }
-                  }
-                ],
-                "currentLayout": "DESKTOP",
-                "isDragging": false,
-                "selectedComponentId": "",
-                "componentDropped": [],
-                "index": 1,
-                "accept": "Component",
-                "dropPosition": {
-                  "x": 380.66668701171875,
-                  "y": 151.6666717529297
-                }
-              },
-              {
-                "id": "ID1715522069840134",
-                "controlType": "row",
-                "styles": {"backgroundColor": ""},
-                "layout": {
-                  "colLayout": {
-                    "lg": {"col": "12", "height": "200"}
-                  }
-                },
-                "children": [
-                  {
-                    "id": "ID1715522069840386",
-                    "controlType": "column",
-                    "styles": {"backgroundColor": ""},
-                    "layout": {
-                      "colLayout": {
-                        "lg": {"col": "4", "height": "200"}
-                      }
-                    },
-                    "children": [
-                      {
-                        "controlType": "datePicker",
-                        "visibility": true,
-                        "hideYear": false,
-                        "variant": "Standard",
-                        "size": "medium",
-                        "hideMonth": false,
-                        "numberOfMonths": 1,
-                        "disableMonthPicker": false,
-                        "disableYearPicker": false,
-                        "minDate": "",
-                        "maxDate": "",
-                        "onlyYearPicker": false,
-                        "onlyMonthPicker": false,
-                        "dateFormat": "YYYY-MM-DD",
-                        "value": "",
-                        "id": "ID1715767523432232",
-                        "enableIcon": true,
-                        "caption": "Start Date",
-                        "showCaption": true,
-                        "enableButtons": false,
-                        "onOpenPickNewDate": true,
-                        "layout": {
-                          "colLayout": {
-                            "lg": {"col": 2, "height": "200"}
-                          }
-                        },
-                        "isDragging": false,
-                        "selectedComponentId": "",
-                        "componentDropped": [],
-                        "index": 0,
-                        "accept": "Component",
-                        "mandatory": true,
-                        "iconSrc": "CalendarStroke"
-                      }
-                    ],
-                    "currentLayout": "DESKTOP",
-                    "isDragging": false,
-                    "selectedComponentId": "",
-                    "componentDropped": [],
-                    "index": 0,
-                    "accept": "Component",
-                    "dropPosition": {
-                      "x": 381.3333435058594,
-                      "y": 232.33334350585938
-                    }
-                  },
-                  {
-                    "id": "ID1715522198278596",
-                    "controlType": "column",
-                    "styles": {"backgroundColor": ""},
-                    "layout": {
-                      "colLayout": {
-                        "lg": {"col": "4", "height": "200"}
-                      }
-                    },
-                    "children": [
-                      {
-                        "controlType": "combo",
-                        "caption": "Session",
-                        "mandatory": true,
-                        "disabled": false,
-                        "color": "primary",
-                        "visibility": true,
-                        "options": "{{getSession.data.data.fetchQuickCodes}}",
-                        "valueField": "quickCode",
-                        "displayField": "quickCodeDescription",
-                        "layout": {
-                          "colLayout": {
-                            "lg": {"col": 2, "height": "200"}
-                          }
-                        },
-                        "id": "ID1715522198278427",
-                        "isDragging": false,
-                        "selectedComponentId": "",
-                        "componentDropped": [],
-                        "index": 0,
-                        "accept": "Component",
-                        "comboValue": "",
-                        "size": "medium"
-                      }
-                    ],
-                    "currentLayout": "DESKTOP",
-                    "isDragging": false,
-                    "selectedComponentId": "",
-                    "componentDropped": [],
-                    "index": 1,
-                    "accept": "Component",
-                    "dropPosition": {
-                      "x": 669.1041870117188,
-                      "y": 232.33334350585938
-                    }
-                  }
-                ],
-                "currentLayout": "DESKTOP",
-                "isDragging": false,
-                "selectedComponentId": "",
-                "componentDropped": [],
-                "index": 2,
-                "accept": "Component",
-                "dropPosition": {
-                  "x": 380.66668701171875,
-                  "y": 223.6666717529297
-                }
-              },
-              {
-                "id": "ID1715522257956825",
-                "controlType": "row",
-                "styles": {"backgroundColor": ""},
-                "layout": {
-                  "colLayout": {
-                    "lg": {"col": "12", "height": "200"}
-                  }
-                },
-                "children": [
-                  {
-                    "id": "ID1715522257956455",
-                    "controlType": "column",
-                    "styles": {"backgroundColor": ""},
-                    "layout": {
-                      "colLayout": {
-                        "lg": {"col": "4", "height": "200"}
-                      }
-                    },
-                    "children": [
-                      {
-                        "controlType": "datePicker",
-                        "visibility": true,
-                        "hideYear": false,
-                        "variant": "Standard",
-                        "size": "medium",
-                        "hideMonth": false,
-                        "numberOfMonths": 1,
-                        "disableMonthPicker": false,
-                        "disableYearPicker": false,
-                        "minDate": "",
-                        "maxDate": "",
-                        "onlyYearPicker": false,
-                        "onlyMonthPicker": false,
-                        "dateFormat": "YYYY-MM-DD",
-                        "value": "",
-                        "id": "ID1715522257956236",
-                        "enableIcon": true,
-                        "caption": "End Date",
-                        "showCaption": true,
-                        "enableButtons": false,
-                        "layout": {
-                          "colLayout": {
-                            "lg": {"col": 2, "height": "200"}
-                          }
-                        },
-                        "isDragging": false,
-                        "selectedComponentId": "",
-                        "componentDropped": [],
-                        "index": 0,
-                        "accept": "Component",
-                        "iconSrc": "CalendarStroke",
-                        "mandatory": true
-                      }
-                    ],
-                    "currentLayout": "DESKTOP",
-                    "isDragging": false,
-                    "selectedComponentId": "",
-                    "componentDropped": [],
-                    "index": 0,
-                    "accept": "Component",
-                    "dropPosition": {"x": 381.3333435058594, "y": 321}
-                  },
-                  {
-                    "id": "ID1715522294575692",
-                    "controlType": "column",
-                    "styles": {"backgroundColor": ""},
-                    "layout": {
-                      "colLayout": {
-                        "lg": {"col": "4", "height": "200"}
-                      }
-                    },
-                    "children": [
-                      {
-                        "controlType": "combo",
-                        "caption": "Session",
-                        "mandatory": true,
-                        "disabled": false,
-                        "color": "primary",
-                        "visibility": true,
-                        "options": "{{getSession.data.data.fetchQuickCodes}}",
-                        "valueField": "quickCode",
-                        "displayField": "quickCodeDescription",
-                        "layout": {
-                          "colLayout": {
-                            "lg": {"col": 2, "height": "200"}
-                          }
-                        },
-                        "id": "ID171552229457579",
-                        "isDragging": false,
-                        "selectedComponentId": "",
-                        "componentDropped": [],
-                        "index": 0,
-                        "accept": "Component",
-                        "size": "medium",
-                        "comboValue": ""
-                      }
-                    ],
-                    "currentLayout": "DESKTOP",
-                    "isDragging": false,
-                    "selectedComponentId": "",
-                    "componentDropped": [],
-                    "index": 1,
-                    "accept": "Component",
-                    "dropPosition": {"x": 669.1041870117188, "y": 321}
-                  }
-                ],
-                "currentLayout": "DESKTOP",
-                "isDragging": false,
-                "selectedComponentId": "",
-                "componentDropped": [],
-                "index": 3,
-                "accept": "Component",
-                "dropPosition": {
-                  "x": 380.66668701171875,
-                  "y": 312.3333435058594
-                }
-              },
-              {
-                "id": "ID1715522344515822",
-                "controlType": "row",
-                "styles": {"backgroundColor": ""},
-                "layout": {
-                  "colLayout": {
-                    "lg": {"col": "12", "height": "200"}
-                  }
-                },
-                "children": [
-                  {
-                    "id": "ID1715522344515229",
-                    "controlType": "column",
-                    "styles": {"backgroundColor": ""},
-                    "layout": {
-                      "colLayout": {
-                        "lg": {"col": "8", "height": "200"}
-                      }
-                    },
-                    "children": [
-                      {
-                        "controlType": "combo",
-                        "caption": "Backup Employee",
-                        "mandatory": true,
-                        "disabled": false,
-                        "color": "primary",
-                        "visibility": true,
-                        "options": "{{backupEmp.data.data.fetchBackupEmp}}",
-                        "valueField": "backupEmployeeCode",
-                        "displayField": "backupEmployeeName",
-                        "layout": {
-                          "colLayout": {
-                            "lg": {"col": 2, "height": "200"}
-                          }
-                        },
-                        "id": "ID1715522344515832",
-                        "isDragging": false,
-                        "selectedComponentId": "",
-                        "componentDropped": [],
-                        "index": 0,
-                        "accept": "Component",
-                        "comboValue": "",
-                        "size": "medium"
-                      }
-                    ],
-                    "currentLayout": "DESKTOP",
-                    "isDragging": false,
-                    "selectedComponentId": "",
-                    "componentDropped": [],
-                    "index": 0,
-                    "accept": "Component",
-                    "dropPosition": {
-                      "x": 381.3333435058594,
-                      "y": 409.66668701171875
-                    }
-                  }
-                ],
-                "currentLayout": "DESKTOP",
-                "isDragging": false,
-                "selectedComponentId": "",
-                "componentDropped": [],
-                "index": 4,
-                "accept": "Component",
-                "dropPosition": {"x": 380.66668701171875, "y": 401}
-              },
-              {
-                "id": "ID1715522377444543",
-                "controlType": "row",
-                "styles": {"backgroundColor": ""},
-                "layout": {
-                  "colLayout": {
-                    "lg": {"col": "12", "height": "200"}
-                  }
-                },
-                "children": [
-                  {
-                    "id": "ID1715522377444636",
-                    "controlType": "column",
-                    "styles": {"backgroundColor": ""},
-                    "layout": {
-                      "colLayout": {
-                        "lg": {"col": "8", "height": "200"}
-                      }
-                    },
-                    "children": [
-                      {
-                        "controlType": "combo",
-                        "caption": "Reason",
-                        "mandatory": true,
-                        "disabled": false,
-                        "color": "primary",
-                        "visibility": true,
-                        "options": "{{leaveReason.data.data.fetchLeaveReason}}",
-                        "valueField": "leavereasonCode",
-                        "displayField": "leavereasonDesc",
-                        "layout": {
-                          "colLayout": {
-                            "lg": {"col": 2, "height": "200"}
-                          }
-                        },
-                        "id": "ID1715522377444139",
-                        "isDragging": false,
-                        "selectedComponentId": "",
-                        "componentDropped": [],
-                        "index": 0,
-                        "accept": "Component",
-                        "comboValue": ""
-                      }
-                    ],
-                    "currentLayout": "DESKTOP",
-                    "isDragging": false,
-                    "selectedComponentId": "",
-                    "componentDropped": [],
-                    "index": 0,
-                    "accept": "Component",
-                    "dropPosition": {
-                      "x": 381.3333435058594,
-                      "y": 481.66668701171875
-                    }
-                  }
-                ],
-                "currentLayout": "DESKTOP",
-                "isDragging": false,
-                "selectedComponentId": "",
-                "componentDropped": [],
-                "index": 5,
-                "accept": "Component",
-                "dropPosition": {"x": 380.66668701171875, "y": 473}
-              },
-              {
-                "id": "ID171552242982426",
-                "controlType": "row",
-                "styles": {"backgroundColor": ""},
-                "layout": {
-                  "colLayout": {
-                    "lg": {"col": "12", "height": "200"}
-                  }
-                },
-                "children": [
-                  {
-                    "id": "ID1715522429824864",
-                    "controlType": "column",
-                    "styles": {"backgroundColor": ""},
-                    "layout": {
-                      "colLayout": {
-                        "lg": {"col": "8", "height": "200"}
-                      }
-                    },
-                    "children": [
-                      {
-                        "caption": "Addition Reason for Leave",
-                        "controlType": "textarea",
-                        "hideCaption": false,
-                        "size": "small",
-                        "visibility": true,
-                        "mandatory": false,
-                        "value": "Enter here",
-                        "layout": {
-                          "colLayout": {
-                            "lg": {"col": 2, "height": "200"}
-                          }
-                        },
-                        "rows": "13",
-                        "cols": "9",
-                        "uiTask": false,
-                        "className": "",
-                        "disabled": false,
-                        "hintText": "",
-                        "placeholder": "",
-                        "error": false,
-                        "success": false,
-                        "isReadonly": false,
-                        "enableResize": false,
-                        "width": "100%",
-                        "id": "ID1715522429824872",
-                        "isDragging": false,
-                        "selectedComponentId": "",
-                        "componentDropped": [],
-                        "index": 0,
-                        "accept": "Component"
-                      }
-                    ],
-                    "currentLayout": "DESKTOP",
-                    "isDragging": false,
-                    "selectedComponentId": "",
-                    "componentDropped": [],
-                    "index": 0,
-                    "accept": "Component",
-                    "dropPosition": {
-                      "x": 381.3333435058594,
-                      "y": 553.6666870117188
-                    }
-                  }
-                ],
-                "currentLayout": "DESKTOP",
-                "isDragging": false,
-                "selectedComponentId": "",
-                "componentDropped": [],
-                "index": 6,
-                "accept": "Component",
-                "dropPosition": {"x": 380.66668701171875, "y": 545}
-              },
-              {
-                "id": "ID1715522478667517",
-                "controlType": "row",
-                "styles": {"backgroundColor": ""},
-                "layout": {
-                  "colLayout": {
-                    "lg": {"col": "12", "height": "200"}
-                  }
-                },
-                "children": [
-                  {
-                    "id": "ID1715522478667289",
-                    "controlType": "column",
-                    "styles": {"backgroundColor": ""},
-                    "layout": {
-                      "colLayout": {
-                        "lg": {
-                          "col": "12",
-                          "height": "200",
-                          "alignItems": "end",
-                          "justifyContent": "end"
-                        }
-                      }
-                    },
-                    "children": [
-                      {
-                        "caption": "Apply",
-                        "controlType": "button",
-                        "hideCaption": false,
-                        "layout": {
-                          "colLayout": {
-                            "lg": {
-                              "col": "12",
-                              "height": "200",
-                              "alignItems": "start",
-                              "justifyContent": "end"
-                            }
-                          }
-                        },
-                        "disabled": false,
-                        "visibility": true,
-                        "variant": "contained",
-                        "size": "small",
-                        "color": "primary",
-                        "tooltip": "Tooltip",
-                        "id": "ID1715522478667202",
-                        "isDragging": false,
-                        "selectedComponentId": "",
-                        "componentDropped": [],
-                        "index": 0,
-                        "accept": "Component",
-                        "events": [
-                          {
-                            "event": {
-                              "eventId": "onClick",
-                              "actionId": "run-query",
-                              "queryId": "ac979f14-c5fb-4041-a78f-e7b9964d12b3",
-                              "queryName": "applyLeave",
-                              "inputParams": {
-                                "employeeCode": "00013303",
-                                "assignmentNo": 1,
-                                "leaveTypeCode":
-                                    "{{ID1715522021427336.comboValue}}",
-                                "leaveStartDate":
-                                    "{{ID1715767523432232.value}}",
-                                "leaveEndDate": "{{ID1715522257956236.value}}",
-                                "leaveFromSession":
-                                    "{{ID1715522198278427.comboValue}}",
-                                "leaveToSession":
-                                    "{{ID171552229457579.comboValue}}",
-                                "leaveReasonCode":
-                                    "{{ID1715522377444139.comboValue}}",
-                                "additionalReason":
-                                    "{{ID1715522429824872.value}}",
-                                "backupEmployeeCode":
-                                    "{{ID1715522344515832.comboValue}}"
-                              }
-                            },
-                            "target": "component",
-                            "sourceId": "ID1715522478667202",
-                            "index": 0,
-                            "pageId": "9bfdf627-5df1-452f-b447-596f58387a0a",
-                            "appId": "62f02cb3-4f8c-410a-b7a4-43de97479833",
-                            "name": "onClick"
-                          },
-                        ]
-                      }
-                    ],
-                    "currentLayout": "DESKTOP",
-                    "isDragging": false,
-                    "selectedComponentId": "",
-                    "componentDropped": [],
-                    "index": 0,
-                    "accept": "Component",
-                    "dropPosition": {
-                      "x": 381.3333435058594,
-                      "y": 817.6666870117188
-                    }
-                  }
-                ],
-                "currentLayout": "DESKTOP",
-                "isDragging": false,
-                "selectedComponentId": "",
-                "componentDropped": [],
-                "index": 7,
-                "accept": "Component",
-                "dropPosition": {"x": 380.66668701171875, "y": 809}
-              }
-            ],
-            "currentLayout": "DESKTOP",
-            "isDragging": false,
-            "selectedComponentId": "",
-            "componentDropped": [],
-            "index": 0,
-            "accept": "Component",
-            "dropPosition": {"x": 372, "y": 71}
-          }
-        ],
+      : metaData = [],
         pageId = '',
         layoutDetails = null,
         modalPageId = null,
@@ -6867,426 +5255,445 @@ class DataQueries {
     required this.actions,
   });
 
+  DataQueries copyWith({
+    List<dynamic>? dataQueries,
+    bool? loadingDataQueries,
+    bool? isCreatingQueryInProcess,
+    bool? isUpdatingQueryInProcess,
+    Map<String, dynamic>? actions,
+  }) {
+    return DataQueries(
+      dataQueries: dataQueries ?? this.dataQueries,
+      loadingDataQueries: loadingDataQueries ?? this.loadingDataQueries,
+      isCreatingQueryInProcess:
+          isCreatingQueryInProcess ?? this.isCreatingQueryInProcess,
+      isUpdatingQueryInProcess:
+          isUpdatingQueryInProcess ?? this.isUpdatingQueryInProcess,
+      actions: actions ?? this.actions,
+    );
+  }
+
   DataQueries.initialState()
-      : dataQueries = [
-          {
-            "id": "bef08887-a505-4d9c-99d6-0b3d6cb87dc8",
-            "name": "getSession",
-            "dataType": 1,
-            "options": {
-              "dataType": 1,
-              "method": "POST",
-              "url": "https://designer.ramcouat.com/coregwopsPayce/ucgsgql/",
-              "url_params": [
-                ["", ""]
-              ],
-              "headers": [
-                ["", ""]
-              ],
-              "body": [
-                ["", ""]
-              ],
-              "runOnPageLoad": true,
-              "gqlHeaders": {
-                "Content-Type": "application/json",
-                "Authorization":
-                    "Bearer 5B5FACDEA2137262D31051434DCB7D54061FC894613D87B4CDB8D12424C813A2",
-                "Context-Ou-Id": "23",
-                "Context-Role-Name": "SUPER",
-                "Context-Lang-Id": "1"
-              },
-              "gqlQueries":
-                  "{\"query\":\"query getSession {\\n fetchQuickCodes(bpCode: \\\"HRTM\\\" \\n  pvCode: \\\"STSE\\\"\\n) {\\n    quickCode\\n    quickCodeDescription\\n  }\\n}\",\"variables\":{}}",
-              "authFromRuntime": true
-            },
-            "data_source_id": "bef08887-a505-4d9c-99d6-0b3d6cb87dc8",
-            "app_version_id": "62f02cb3-4f8c-410a-b7a4-43de97479833",
-            "created_at": "2024-05-15T05:50:10.220217",
-            "updated_at": "2024-05-15T05:50:10.220217",
-            "data_source": {"kind": "restApi"},
-            "kind": "restApi",
-            "orderOfExecution": null
-          },
-          {
-            "id": "97240009-c293-4f4c-8327-e1419e44bcab",
-            "name": "leaveTypeData",
-            "dataType": 1,
-            "options": {
-              "dataType": 1,
-              "method": "POST",
-              "url": "https://designer.ramcouat.com/coregwopsPayce/ucgsgql/",
-              "url_params": [
-                ["", ""]
-              ],
-              "headers": [
-                ["", ""]
-              ],
-              "body": [
-                ["", ""]
-              ],
-              "runOnPageLoad": true,
-              "gqlHeaders": {
-                "Authorization": "",
-                "Content-Type": "application/json",
-                "Context-Lang-Id": "1",
-                "Context-Ou-Id": "23",
-                "Context-Role-Name": "SUPVR"
-              },
-              "gqlQueries":
-                  "{\"query\":\"query leaveTypeData {\\n      fetchLeaveType(\\n        includeInactive: true\\n        employeeCode: \\\"00013303\\\" \\n        assignmentNo: 1\\n      ) {\\n        leavetypeCode\\n        leavetypeDesc\\n        showassignInfo\\n        showholidayWorkedon\\n        showfromandtoSession\\n        showcomputeDuration\\n        showleaveprojectedBalance\\n        shownotificationLink\\n        showpartialleaveCancellation\\n        showTotalHours\\n        showNotes\\n        showmultiCompoff\\n        showfromandTotime\\n        leaveColorCode\\n        anniversaryOrCalendarBased\\n        weeklyLeave\\n      } \\n    }\\n\",\"variables\":{}}",
-              "authFromRuntime": false
-            },
-            "data_source_id": "97240009-c293-4f4c-8327-e1419e44bcab",
-            "app_version_id": "62f02cb3-4f8c-410a-b7a4-43de97479833",
-            "created_at": "2024-06-03T09:19:06.467064",
-            "updated_at": "2024-06-03T09:19:06.467064",
-            "data_source": {"kind": "restApi"},
-            "kind": "restApi",
-            "orderOfExecution": null
-          },
-          {
-            "id": "85f8bf49-5b87-464d-988e-d33e21d4b4c4",
-            "name": "getLeaveInfoCombos",
-            "dataType": 1,
-            "options": {
-              "dataType": 1,
-              "method": "POST",
-              "url": "https://designer.ramcouat.com/coregwopsPayce/ucgsgql/",
-              "url_params": [
-                ["", ""]
-              ],
-              "headers": [
-                ["", ""]
-              ],
-              "body": [
-                ["", ""]
-              ],
-              "runOnPageLoad": true,
-              "gqlHeaders": {
-                "Content-Type": "application/json",
-                "Context-Lang-Id": "1",
-                "Context-Ou-Id": "23",
-                "Context-Role-Name": "EMP",
-                "Authorization":
-                    "Bearer 29595F1DB97DC9B96E8A38D40923436CABFC3FFDE1F6404A5C8817502EB28327"
-              },
-              "gqlQueries":
-                  "{\"query\":\"query getLeaveInfoCombos {\\n   fetchQuickCodes(\\n    bpCode: \\\"HRTM\\\" \\n    pvCode: \\\"STSE\\\"\\n  ) {\\n    quickCode\\n    quickCodeDescription\\n  }\\n}\",\"variables\":{}}",
-              "authFromRuntime": true
-            },
-            "data_source_id": "85f8bf49-5b87-464d-988e-d33e21d4b4c4",
-            "app_version_id": "62f02cb3-4f8c-410a-b7a4-43de97479833",
-            "created_at": "2024-05-12T16:11:03.094901",
-            "updated_at": "2024-05-12T16:11:03.094901",
-            "data_source": {"kind": "restApi"},
-            "kind": "restApi",
-            "orderOfExecution": null
-          },
-          {
-            "id": "45189624-c67b-4d60-898b-f3b66deaf649",
-            "name": "backupEmployee",
-            "dataType": 1,
-            "options": {
-              "dataType": 1,
-              "method": "POST",
-              "url": "https://designer.ramcouat.com/coregwopsPayce/ucgsgql/",
-              "url_params": [
-                ["", ""]
-              ],
-              "headers": [
-                ["", ""]
-              ],
-              "body": [
-                ["", ""]
-              ],
-              "runOnPageLoad": false,
-              "gqlHeaders": {
-                "Content-Type": "application/json",
-                "Authorization":
-                    " Bearer CD843EEA903A24D5AE446192D7162C58C5E3B964C25F999E8768DD33920F9309",
-                "Context-Role-Name": "EMP",
-                "Context-Ou-Id": "23",
-                "Context-Lang-Id": "1"
-              },
-              "gqlQueries":
-                  "{\"query\":\"query backupEmployee {\\n    fetchBackupEmp(\\n      employeeCode: \\\"00013303\\\"\\n      \\n      ) {\\n      backupEmployeeCode\\n      backupEmployeeName\\n    }\\n  }\\n\",\"variables\":{}}",
-              "authFromRuntime": false
-            },
-            "data_source_id": "45189624-c67b-4d60-898b-f3b66deaf649",
-            "app_version_id": "62f02cb3-4f8c-410a-b7a4-43de97479833",
-            "created_at": "2024-06-03T10:22:24.320996",
-            "updated_at": "2024-06-03T10:22:24.320996",
-            "data_source": {"kind": "restApi"},
-            "kind": "restApi",
-            "orderOfExecution": null
-          },
-          {
-            "id": "3cb7b42a-cca2-47aa-a3ab-06d206105e56",
-            "name": "backupEmp",
-            "dataType": 1,
-            "options": {
-              "dataType": 1,
-              "method": "POST",
-              "url": "https://designer.ramcouat.com/coregwopsPayce/ucgsgql/",
-              "url_params": [
-                ["", ""]
-              ],
-              "headers": [
-                ["", ""]
-              ],
-              "body": [
-                ["", ""]
-              ],
-              "runOnPageLoad": true,
-              "gqlHeaders": {
-                "Content-Type": "application/json",
-                "Context-Lang-Id": "1",
-                "Context-Ou-Id": "23",
-                "Context-Role-Name": "EMP",
-                "Authorization":
-                    "Bearer 29595F1DB97DC9B96E8A38D40923436CABFC3FFDE1F6404A5C8817502EB28327"
-              },
-              "gqlQueries":
-                  "{\"query\":\"query backupEmp {\\n    fetchBackupEmp(\\n      employeeCode: \\\"00013303\\\"\\n      \\n      ) {\\n      backupEmployeeCode\\n      backupEmployeeName\\n    }\\n  }\\n\",\"variables\":{}}",
-              "authFromRuntime": true
-            },
-            "data_source_id": "3cb7b42a-cca2-47aa-a3ab-06d206105e56",
-            "app_version_id": "62f02cb3-4f8c-410a-b7a4-43de97479833",
-            "created_at": "2024-05-12T16:09:33.845788",
-            "updated_at": "2024-05-12T16:09:33.845788",
-            "data_source": {"kind": "restApi"},
-            "kind": "restApi",
-            "orderOfExecution": null
-          },
-          {
-            "id": "fec0550b-c9f8-4cf0-8dad-e1f99945f1ca",
-            "name": "leaveReason",
-            "dataType": 1,
-            "options": {
-              "dataType": 1,
-              "method": "POST",
-              "url": "https://designer.ramcouat.com/coregwopsPayce/ucgsgql/",
-              "url_params": [
-                ["", ""]
-              ],
-              "headers": [
-                ["", ""]
-              ],
-              "body": [
-                ["", ""]
-              ],
-              "runOnPageLoad": false,
-              "gqlHeaders": {
-                "Content-Type": "application/json",
-                "Context-Lang-Id": "1",
-                "Context-Ou-Id": "23",
-                "Context-Role-Name": "EMP",
-                "Authorization":
-                    "Bearer 29595F1DB97DC9B96E8A38D40923436CABFC3FFDE1F6404A5C8817502EB28327"
-              },
-              "gqlQueries":
-                  "{\"query\":\"query leaveReason \\n  {\\n    fetchLeaveReason(\\n    leavetypeCode: \\\"{{ID1715522021427336.comboValue}}\\\"\\n    includeInactive: true\\n  ) {\\n      leavereasonCode\\n      leavereasonDesc\\n    }\\n  }\\n\",\"variables\":{}}",
-              "authFromRuntime": true
-            },
-            "data_source_id": "fec0550b-c9f8-4cf0-8dad-e1f99945f1ca",
-            "app_version_id": "62f02cb3-4f8c-410a-b7a4-43de97479833",
-            "created_at": "2024-05-12T16:10:03.564626",
-            "updated_at": "2024-05-12T16:10:03.564626",
-            "data_source": {"kind": "restApi"},
-            "kind": "restApi",
-            "orderOfExecution": null
-          },
-          {
-            "id": "418b0f2d-2f79-4af1-ae2b-0c7a188b9d70",
-            "name": "backupEmployees",
-            "dataType": 1,
-            "options": {
-              "dataType": 1,
-              "method": "POST",
-              "url": "https://designer.ramcouat.com/coregwopsPayce/ucgsgql/",
-              "url_params": [
-                ["", ""]
-              ],
-              "headers": [
-                ["", ""]
-              ],
-              "body": [
-                ["", ""]
-              ],
-              "runOnPageLoad": false,
-              "gqlHeaders": {
-                "Content-Type": "application/json",
-                "Authorization":
-                    " Bearer CD843EEA903A24D5AE446192D7162C58C5E3B964C25F999E8768DD33920F9309",
-                "Context-Ou-Id": "23",
-                "Context-Role-Name": "EMP",
-                "Context-Lang-Id": "1"
-              },
-              "gqlQueries":
-                  "{\"query\":\"query backupEmployees {\\n    fetchBackupEmp(\\n      employeeCode: \\\"00013303\\\"\\n      \\n      ) {\\n      backupEmployeeCode\\n      backupEmployeeName\\n    }\\n  }\\n\",\"variables\":{}}",
-              "authFromRuntime": false
-            },
-            "data_source_id": "418b0f2d-2f79-4af1-ae2b-0c7a188b9d70",
-            "app_version_id": "62f02cb3-4f8c-410a-b7a4-43de97479833",
-            "created_at": "2024-06-03T10:23:22.632894",
-            "updated_at": "2024-06-03T10:23:22.632894",
-            "data_source": {"kind": "restApi"},
-            "kind": "restApi",
-            "orderOfExecution": null
-          },
-          {
-            "id": "d3c7e316-28c6-4e71-9706-8e88c81c7f56",
-            "name": "assignmentOptions",
-            "dataType": 1,
-            "options": {
-              "dataType": 1,
-              "method": "POST",
-              "url": "https://designer.ramcouat.com/coregwopsPayce/ucgsgql/",
-              "url_params": [
-                ["", ""]
-              ],
-              "headers": [
-                ["", ""]
-              ],
-              "body": [
-                ["", ""]
-              ],
-              "runOnPageLoad": true,
-              "gqlHeaders": {
-                "Content-Type": "application/json",
-                "Authorization":
-                    "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkI0MUU2NzE0NDk3RjEyREM1RTc3MDhCQzdCMENCNjVGQjRBRERCMkJSUzI1NiIsInR5cCI6IkpXVCIsIng1dCI6InRCNW5GRWxfRXR4ZWR3aThld3kyWDdTdDJ5cyJ9.eyJuYmYiOjE2OTU3ODY2OTEsImV4cCI6MTY5NTc5MDI5MSwiaXNzIjoiaHR0cDovL2hjbXdhcmNudjc1LnJhbWNvL2NvcmVzZWN1cml0eW9wcyIsImF1ZCI6WyJjb20ucmFtY28udndhcGllLmFkay5hcGlzIiwiaHR0cDovL2hjbXdhcmNudjc1LnJhbWNvL2NvcmVzZWN1cml0eW9wcy9yZXNvdXJjZXMiXSwiY2xpZW50X2lkIjoiMWt4a2J6enh1ZGRxZ3R3dHZvdmJ3Iiwicl9jbGllbnRfc3BuIjoiU2VydmljZXVzZXIiLCJyX3RpZCI6InJhbWNvIiwianRpIjoiRDExQUZDNkE0RTNCMUFGMUMxMjhFNDRBNTcwMkM2MzYiLCJpYXQiOjE2OTU3ODY2OTEsInNjb3BlIjpbInJ2d19pbXBlcnNvbmF0ZSJdfQ.VfUMm75ZvxOtKIfm3_GjCsoLeoDpA0PmgdYEoIqLIW6Xeskkwx7rGD_QAOKAgHYmKdPNkgRWYfSlJYBZ5omUZjrBM3HFuCXKM1nMnt4Eu8tpKf2Cp83wmA90ZfUKQWN3EyldOMDXFOx3VubzaDQW2wpngDnosXP65Vg8riofGS13iv5JlqfwZVPQNbG2qlgDTBa4g5Lz8ULzzxkfZxtg1dhPrwt-bze_w85lSOveZ5NQc-Z2I60qs5HXg7pD66wARDaxyt6GLyKgtFA3f3LvhATAELeQCZqGjN5vwdSvXx_k4yQnR_xuTn4UWXLN-31BgCo4v0B8S-rU7g-JmB9Q6w",
-                "Context-Role-Name": "SUPER",
-                "Context-Ou-Id": "23",
-                "Context-Lang-Id": "1"
-              },
-              "gqlQueries":
-                  "{\"query\":\"query assignmentOptions {\\n    fetchAssignment(\\n      assignmentNumber: 0\\n      history: false\\n      employeeCode: \\\"00013303\\\"\\n    ) {\\n      assignmentInformation\\n      assignmentNumber\\n      jobDesc\\n      assignmentEffectiveToDate,\\n      positionDesc\\n    }\\n  }\\n\",\"variables\":{}}",
-              "authFromRuntime": true
-            },
-            "data_source_id": "d3c7e316-28c6-4e71-9706-8e88c81c7f56",
-            "app_version_id": "62f02cb3-4f8c-410a-b7a4-43de97479833",
-            "created_at": "2024-05-15T06:10:08.942081",
-            "updated_at": "2024-05-15T06:10:08.942081",
-            "data_source": {"kind": "restApi"},
-            "kind": "restApi",
-            "orderOfExecution": null
-          },
-          {
-            "id": "3f275d70-6610-4ec8-9b2e-5a2677e6e079",
-            "name": "leaveTypeDatas",
-            "dataType": 1,
-            "options": {
-              "dataType": 1,
-              "method": "POST",
-              "url": "https://designer.ramcouat.com/coregwopsPayce/ucgsgql/",
-              "url_params": [
-                ["", ""]
-              ],
-              "headers": [
-                ["", ""]
-              ],
-              "body": [
-                ["", ""]
-              ],
-              "runOnPageLoad": true,
-              "gqlHeaders": {
-                "Content-Type": "application/json",
-                "Context-Lang-Id": "1",
-                "Context-Ou-Id": "23",
-                "Context-Role-Name": "EMP",
-                "Authorization":
-                    "Bearer A5B9882A1E0C8D78BDF859691369290543A83BC97B3E3C8D8B7460882132AF44"
-              },
-              "gqlQueries":
-                  "{\"query\":\"query leaveTypeDatas {\\n  \\n    \\n      fetchLeaveType(\\n        includeInactive: true\\n        employeeCode: \\\"00013303\\\" \\n        assignmentNo: 1\\n        \\n        \\n      ) {\\n        leavetypeCode\\n        leavetypeDesc\\n        showassignInfo\\n        showholidayWorkedon\\n        showfromandtoSession\\n        showcomputeDuration\\n        showleaveprojectedBalance\\n        shownotificationLink\\n        showpartialleaveCancellation\\n        showTotalHours\\n        showNotes\\n        showmultiCompoff\\n        showfromandTotime\\n        leaveColorCode\\n        anniversaryOrCalendarBased\\n        weeklyLeave\\n      } \\n    }\\n\",\"variables\":{}}",
-              "authFromRuntime": true
-            },
-            "data_source_id": "3f275d70-6610-4ec8-9b2e-5a2677e6e079",
-            "app_version_id": "62f02cb3-4f8c-410a-b7a4-43de97479833",
-            "created_at": "2024-05-12T16:08:56.275997",
-            "updated_at": "2024-05-12T16:08:56.275997",
-            "data_source": {"kind": "restApi"},
-            "kind": "restApi",
-            "orderOfExecution": null
-          },
-          {
-            "id": "ac979f14-c5fb-4041-a78f-e7b9964d12b3",
-            "name": "applyLeave",
-            "dataType": 1,
-            "options": {
-              "dataType": 1,
-              "method": "POST",
-              "url": "https://designer.ramcouat.com/coregwopsPayce/ucgsgql/",
-              "url_params": [
-                ["", ""]
-              ],
-              "headers": [
-                ["", ""]
-              ],
-              "body": [
-                ["", ""]
-              ],
-              "runOnPageLoad": false,
-              "gqlHeaders": {
-                "Content-Type": "application/json",
-                "Context-Lang-Id": "1",
-                "Context-Ou-Id": "23",
-                "Context-Role-Name": "EMP",
-                "Authorization":
-                    "Bearer 29595F1DB97DC9B96E8A38D40923436CABFC3FFDE1F6404A5C8817502EB28327"
-              },
-              "gqlQueries":
-                  "{\"query\":\"mutation applyLeave {\\n  createLeave(\\n    leaveApplyReq: {\\n      \\n    \\n    \\n    \\n    employeeCode: \\\"00013303\\\"\\n    assignmentNo: 1\\n    leaveTypeCode: \\\"{{ID1715522021427336.comboValue}}\\\"\\n    leaveStartDate: \\\"{{ID1715767523432232.value}}\\\"\\n    leaveEndDate: \\\"{{ID1715522257956236.value}}\\\"\\n    leaveFromSession: \\\"{{ID1715522198278427.comboValue}}\\\"\\n    leaveToSession: \\\"{{ID171552229457579.comboValue}}\\\"\\n    leaveReasonCode: \\\"{{ID1715522377444139.comboValue}}\\\"\\n    additionalReason: \\\"{{ID1715522429824872.value}}\\\"\\n    backupEmployeeCode: \\\"{{ID1715522344515832.comboValue}}\\\"\\n  \\n  \\n  \\n  \\n    }\\n  ) {\\n    successMessage\\n    leaveApplicationNumber\\n  }\\n}\",\"variables\":{}}",
-              "authFromRuntime": true
-            },
-            "data_source_id": "ac979f14-c5fb-4041-a78f-e7b9964d12b3",
-            "app_version_id": "62f02cb3-4f8c-410a-b7a4-43de97479833",
-            "created_at": "2024-05-12T16:12:56.429951",
-            "updated_at": "2024-05-12T16:12:56.429951",
-            "data_source": {"kind": "restApi"},
-            "kind": "restApi",
-            "orderOfExecution": null
-          },
-          {
-            "id": "a22ee6f1-e677-4590-88d9-7be850e052ff",
-            "name": "sessionOptions",
-            "dataType": 1,
-            "options": {
-              "dataType": 1,
-              "method": "POST",
-              "url": "https://designer.ramcouat.com/coregwopsPayce/ucgsgql/",
-              "url_params": [
-                ["", ""]
-              ],
-              "headers": [
-                ["", ""]
-              ],
-              "body": [
-                ["", ""]
-              ],
-              "runOnPageLoad": false,
-              "gqlHeaders": {
-                "Authorization":
-                    " Bearer 0942ECB58F5AB43B62C529BA07162283071589F4B9E0FF85F719E9F7DD9FB3D8",
-                "Content-Type": "application/json",
-                "Context-Lang-Id": "1",
-                "Context-Ou-Id": "23",
-                "Context-Role-Name": "SUPVR"
-              },
-              "gqlQueries":
-                  "{\"query\":\"query sessionOptions {\\n fetchQuickCodes(bpCode: \\\"HRTM\\\" \\n  pvCode: \\\"STSE\\\"\\n) {\\n    quickCode\\n    quickCodeDescription\\n  }\\n}\",\"variables\":{}}",
-              "authFromRuntime": false
-            },
-            "data_source_id": "a22ee6f1-e677-4590-88d9-7be850e052ff",
-            "app_version_id": "62f02cb3-4f8c-410a-b7a4-43de97479833",
-            "created_at": "2024-06-03T09:51:35.126121",
-            "updated_at": "2024-06-03T09:51:35.126121",
-            "data_source": {"kind": "restApi"},
-            "kind": "restApi",
-            "orderOfExecution": null
-          }
-        ],
+      : dataQueries = [],
+        //  [
+        //     {
+        //       "id": "bef08887-a505-4d9c-99d6-0b3d6cb87dc8",
+        //       "name": "getSession",
+        //       "dataType": 1,
+        //       "options": {
+        //         "dataType": 1,
+        //         "method": "POST",
+        //         "url": "https://designer.ramcouat.com/coregwopsPayce/ucgsgql/",
+        //         "url_params": [
+        //           ["", ""]
+        //         ],
+        //         "headers": [
+        //           ["", ""]
+        //         ],
+        //         "body": [
+        //           ["", ""]
+        //         ],
+        //         "runOnPageLoad": true,
+        //         "gqlHeaders": {
+        //           "Content-Type": "application/json",
+        //           "Authorization":
+        //               "Bearer 5B5FACDEA2137262D31051434DCB7D54061FC894613D87B4CDB8D12424C813A2",
+        //           "Context-Ou-Id": "23",
+        //           "Context-Role-Name": "SUPER",
+        //           "Context-Lang-Id": "1"
+        //         },
+        //         "gqlQueries":
+        //             "{\"query\":\"query getSession {\\n fetchQuickCodes(bpCode: \\\"HRTM\\\" \\n  pvCode: \\\"STSE\\\"\\n) {\\n    quickCode\\n    quickCodeDescription\\n  }\\n}\",\"variables\":{}}",
+        //         "authFromRuntime": true
+        //       },
+        //       "data_source_id": "bef08887-a505-4d9c-99d6-0b3d6cb87dc8",
+        //       "app_version_id": "62f02cb3-4f8c-410a-b7a4-43de97479833",
+        //       "created_at": "2024-05-15T05:50:10.220217",
+        //       "updated_at": "2024-05-15T05:50:10.220217",
+        //       "data_source": {"kind": "restApi"},
+        //       "kind": "restApi",
+        //       "orderOfExecution": null
+        //     },
+        //     {
+        //       "id": "97240009-c293-4f4c-8327-e1419e44bcab",
+        //       "name": "leaveTypeData",
+        //       "dataType": 1,
+        //       "options": {
+        //         "dataType": 1,
+        //         "method": "POST",
+        //         "url": "https://designer.ramcouat.com/coregwopsPayce/ucgsgql/",
+        //         "url_params": [
+        //           ["", ""]
+        //         ],
+        //         "headers": [
+        //           ["", ""]
+        //         ],
+        //         "body": [
+        //           ["", ""]
+        //         ],
+        //         "runOnPageLoad": true,
+        //         "gqlHeaders": {
+        //           "Authorization": "",
+        //           "Content-Type": "application/json",
+        //           "Context-Lang-Id": "1",
+        //           "Context-Ou-Id": "23",
+        //           "Context-Role-Name": "SUPVR"
+        //         },
+        //         "gqlQueries":
+        //             "{\"query\":\"query leaveTypeData {\\n      fetchLeaveType(\\n        includeInactive: true\\n        employeeCode: \\\"00013303\\\" \\n        assignmentNo: 1\\n      ) {\\n        leavetypeCode\\n        leavetypeDesc\\n        showassignInfo\\n        showholidayWorkedon\\n        showfromandtoSession\\n        showcomputeDuration\\n        showleaveprojectedBalance\\n        shownotificationLink\\n        showpartialleaveCancellation\\n        showTotalHours\\n        showNotes\\n        showmultiCompoff\\n        showfromandTotime\\n        leaveColorCode\\n        anniversaryOrCalendarBased\\n        weeklyLeave\\n      } \\n    }\\n\",\"variables\":{}}",
+        //         "authFromRuntime": false
+        //       },
+        //       "data_source_id": "97240009-c293-4f4c-8327-e1419e44bcab",
+        //       "app_version_id": "62f02cb3-4f8c-410a-b7a4-43de97479833",
+        //       "created_at": "2024-06-03T09:19:06.467064",
+        //       "updated_at": "2024-06-03T09:19:06.467064",
+        //       "data_source": {"kind": "restApi"},
+        //       "kind": "restApi",
+        //       "orderOfExecution": null
+        //     },
+        //     {
+        //       "id": "85f8bf49-5b87-464d-988e-d33e21d4b4c4",
+        //       "name": "getLeaveInfoCombos",
+        //       "dataType": 1,
+        //       "options": {
+        //         "dataType": 1,
+        //         "method": "POST",
+        //         "url": "https://designer.ramcouat.com/coregwopsPayce/ucgsgql/",
+        //         "url_params": [
+        //           ["", ""]
+        //         ],
+        //         "headers": [
+        //           ["", ""]
+        //         ],
+        //         "body": [
+        //           ["", ""]
+        //         ],
+        //         "runOnPageLoad": true,
+        //         "gqlHeaders": {
+        //           "Content-Type": "application/json",
+        //           "Context-Lang-Id": "1",
+        //           "Context-Ou-Id": "23",
+        //           "Context-Role-Name": "EMP",
+        //           "Authorization":
+        //               "Bearer 29595F1DB97DC9B96E8A38D40923436CABFC3FFDE1F6404A5C8817502EB28327"
+        //         },
+        //         "gqlQueries":
+        //             "{\"query\":\"query getLeaveInfoCombos {\\n   fetchQuickCodes(\\n    bpCode: \\\"HRTM\\\" \\n    pvCode: \\\"STSE\\\"\\n  ) {\\n    quickCode\\n    quickCodeDescription\\n  }\\n}\",\"variables\":{}}",
+        //         "authFromRuntime": true
+        //       },
+        //       "data_source_id": "85f8bf49-5b87-464d-988e-d33e21d4b4c4",
+        //       "app_version_id": "62f02cb3-4f8c-410a-b7a4-43de97479833",
+        //       "created_at": "2024-05-12T16:11:03.094901",
+        //       "updated_at": "2024-05-12T16:11:03.094901",
+        //       "data_source": {"kind": "restApi"},
+        //       "kind": "restApi",
+        //       "orderOfExecution": null
+        //     },
+        //     {
+        //       "id": "45189624-c67b-4d60-898b-f3b66deaf649",
+        //       "name": "backupEmployee",
+        //       "dataType": 1,
+        //       "options": {
+        //         "dataType": 1,
+        //         "method": "POST",
+        //         "url": "https://designer.ramcouat.com/coregwopsPayce/ucgsgql/",
+        //         "url_params": [
+        //           ["", ""]
+        //         ],
+        //         "headers": [
+        //           ["", ""]
+        //         ],
+        //         "body": [
+        //           ["", ""]
+        //         ],
+        //         "runOnPageLoad": false,
+        //         "gqlHeaders": {
+        //           "Content-Type": "application/json",
+        //           "Authorization":
+        //               " Bearer CD843EEA903A24D5AE446192D7162C58C5E3B964C25F999E8768DD33920F9309",
+        //           "Context-Role-Name": "EMP",
+        //           "Context-Ou-Id": "23",
+        //           "Context-Lang-Id": "1"
+        //         },
+        //         "gqlQueries":
+        //             "{\"query\":\"query backupEmployee {\\n    fetchBackupEmp(\\n      employeeCode: \\\"00013303\\\"\\n      \\n      ) {\\n      backupEmployeeCode\\n      backupEmployeeName\\n    }\\n  }\\n\",\"variables\":{}}",
+        //         "authFromRuntime": false
+        //       },
+        //       "data_source_id": "45189624-c67b-4d60-898b-f3b66deaf649",
+        //       "app_version_id": "62f02cb3-4f8c-410a-b7a4-43de97479833",
+        //       "created_at": "2024-06-03T10:22:24.320996",
+        //       "updated_at": "2024-06-03T10:22:24.320996",
+        //       "data_source": {"kind": "restApi"},
+        //       "kind": "restApi",
+        //       "orderOfExecution": null
+        //     },
+        //     {
+        //       "id": "3cb7b42a-cca2-47aa-a3ab-06d206105e56",
+        //       "name": "backupEmp",
+        //       "dataType": 1,
+        //       "options": {
+        //         "dataType": 1,
+        //         "method": "POST",
+        //         "url": "https://designer.ramcouat.com/coregwopsPayce/ucgsgql/",
+        //         "url_params": [
+        //           ["", ""]
+        //         ],
+        //         "headers": [
+        //           ["", ""]
+        //         ],
+        //         "body": [
+        //           ["", ""]
+        //         ],
+        //         "runOnPageLoad": true,
+        //         "gqlHeaders": {
+        //           "Content-Type": "application/json",
+        //           "Context-Lang-Id": "1",
+        //           "Context-Ou-Id": "23",
+        //           "Context-Role-Name": "EMP",
+        //           "Authorization":
+        //               "Bearer 29595F1DB97DC9B96E8A38D40923436CABFC3FFDE1F6404A5C8817502EB28327"
+        //         },
+        //         "gqlQueries":
+        //             "{\"query\":\"query backupEmp {\\n    fetchBackupEmp(\\n      employeeCode: \\\"00013303\\\"\\n      \\n      ) {\\n      backupEmployeeCode\\n      backupEmployeeName\\n    }\\n  }\\n\",\"variables\":{}}",
+        //         "authFromRuntime": true
+        //       },
+        //       "data_source_id": "3cb7b42a-cca2-47aa-a3ab-06d206105e56",
+        //       "app_version_id": "62f02cb3-4f8c-410a-b7a4-43de97479833",
+        //       "created_at": "2024-05-12T16:09:33.845788",
+        //       "updated_at": "2024-05-12T16:09:33.845788",
+        //       "data_source": {"kind": "restApi"},
+        //       "kind": "restApi",
+        //       "orderOfExecution": null
+        //     },
+        //     {
+        //       "id": "fec0550b-c9f8-4cf0-8dad-e1f99945f1ca",
+        //       "name": "leaveReason",
+        //       "dataType": 1,
+        //       "options": {
+        //         "dataType": 1,
+        //         "method": "POST",
+        //         "url": "https://designer.ramcouat.com/coregwopsPayce/ucgsgql/",
+        //         "url_params": [
+        //           ["", ""]
+        //         ],
+        //         "headers": [
+        //           ["", ""]
+        //         ],
+        //         "body": [
+        //           ["", ""]
+        //         ],
+        //         "runOnPageLoad": false,
+        //         "gqlHeaders": {
+        //           "Content-Type": "application/json",
+        //           "Context-Lang-Id": "1",
+        //           "Context-Ou-Id": "23",
+        //           "Context-Role-Name": "EMP",
+        //           "Authorization":
+        //               "Bearer 29595F1DB97DC9B96E8A38D40923436CABFC3FFDE1F6404A5C8817502EB28327"
+        //         },
+        //         "gqlQueries":
+        //             "{\"query\":\"query leaveReason \\n  {\\n    fetchLeaveReason(\\n    leavetypeCode: \\\"{{ID1715522021427336.comboValue}}\\\"\\n    includeInactive: true\\n  ) {\\n      leavereasonCode\\n      leavereasonDesc\\n    }\\n  }\\n\",\"variables\":{}}",
+        //         "authFromRuntime": true
+        //       },
+        //       "data_source_id": "fec0550b-c9f8-4cf0-8dad-e1f99945f1ca",
+        //       "app_version_id": "62f02cb3-4f8c-410a-b7a4-43de97479833",
+        //       "created_at": "2024-05-12T16:10:03.564626",
+        //       "updated_at": "2024-05-12T16:10:03.564626",
+        //       "data_source": {"kind": "restApi"},
+        //       "kind": "restApi",
+        //       "orderOfExecution": null
+        //     },
+        //     {
+        //       "id": "418b0f2d-2f79-4af1-ae2b-0c7a188b9d70",
+        //       "name": "backupEmployees",
+        //       "dataType": 1,
+        //       "options": {
+        //         "dataType": 1,
+        //         "method": "POST",
+        //         "url": "https://designer.ramcouat.com/coregwopsPayce/ucgsgql/",
+        //         "url_params": [
+        //           ["", ""]
+        //         ],
+        //         "headers": [
+        //           ["", ""]
+        //         ],
+        //         "body": [
+        //           ["", ""]
+        //         ],
+        //         "runOnPageLoad": false,
+        //         "gqlHeaders": {
+        //           "Content-Type": "application/json",
+        //           "Authorization":
+        //               " Bearer CD843EEA903A24D5AE446192D7162C58C5E3B964C25F999E8768DD33920F9309",
+        //           "Context-Ou-Id": "23",
+        //           "Context-Role-Name": "EMP",
+        //           "Context-Lang-Id": "1"
+        //         },
+        //         "gqlQueries":
+        //             "{\"query\":\"query backupEmployees {\\n    fetchBackupEmp(\\n      employeeCode: \\\"00013303\\\"\\n      \\n      ) {\\n      backupEmployeeCode\\n      backupEmployeeName\\n    }\\n  }\\n\",\"variables\":{}}",
+        //         "authFromRuntime": false
+        //       },
+        //       "data_source_id": "418b0f2d-2f79-4af1-ae2b-0c7a188b9d70",
+        //       "app_version_id": "62f02cb3-4f8c-410a-b7a4-43de97479833",
+        //       "created_at": "2024-06-03T10:23:22.632894",
+        //       "updated_at": "2024-06-03T10:23:22.632894",
+        //       "data_source": {"kind": "restApi"},
+        //       "kind": "restApi",
+        //       "orderOfExecution": null
+        //     },
+        //     {
+        //       "id": "d3c7e316-28c6-4e71-9706-8e88c81c7f56",
+        //       "name": "assignmentOptions",
+        //       "dataType": 1,
+        //       "options": {
+        //         "dataType": 1,
+        //         "method": "POST",
+        //         "url": "https://designer.ramcouat.com/coregwopsPayce/ucgsgql/",
+        //         "url_params": [
+        //           ["", ""]
+        //         ],
+        //         "headers": [
+        //           ["", ""]
+        //         ],
+        //         "body": [
+        //           ["", ""]
+        //         ],
+        //         "runOnPageLoad": true,
+        //         "gqlHeaders": {
+        //           "Content-Type": "application/json",
+        //           "Authorization":
+        //               "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkI0MUU2NzE0NDk3RjEyREM1RTc3MDhCQzdCMENCNjVGQjRBRERCMkJSUzI1NiIsInR5cCI6IkpXVCIsIng1dCI6InRCNW5GRWxfRXR4ZWR3aThld3kyWDdTdDJ5cyJ9.eyJuYmYiOjE2OTU3ODY2OTEsImV4cCI6MTY5NTc5MDI5MSwiaXNzIjoiaHR0cDovL2hjbXdhcmNudjc1LnJhbWNvL2NvcmVzZWN1cml0eW9wcyIsImF1ZCI6WyJjb20ucmFtY28udndhcGllLmFkay5hcGlzIiwiaHR0cDovL2hjbXdhcmNudjc1LnJhbWNvL2NvcmVzZWN1cml0eW9wcy9yZXNvdXJjZXMiXSwiY2xpZW50X2lkIjoiMWt4a2J6enh1ZGRxZ3R3dHZvdmJ3Iiwicl9jbGllbnRfc3BuIjoiU2VydmljZXVzZXIiLCJyX3RpZCI6InJhbWNvIiwianRpIjoiRDExQUZDNkE0RTNCMUFGMUMxMjhFNDRBNTcwMkM2MzYiLCJpYXQiOjE2OTU3ODY2OTEsInNjb3BlIjpbInJ2d19pbXBlcnNvbmF0ZSJdfQ.VfUMm75ZvxOtKIfm3_GjCsoLeoDpA0PmgdYEoIqLIW6Xeskkwx7rGD_QAOKAgHYmKdPNkgRWYfSlJYBZ5omUZjrBM3HFuCXKM1nMnt4Eu8tpKf2Cp83wmA90ZfUKQWN3EyldOMDXFOx3VubzaDQW2wpngDnosXP65Vg8riofGS13iv5JlqfwZVPQNbG2qlgDTBa4g5Lz8ULzzxkfZxtg1dhPrwt-bze_w85lSOveZ5NQc-Z2I60qs5HXg7pD66wARDaxyt6GLyKgtFA3f3LvhATAELeQCZqGjN5vwdSvXx_k4yQnR_xuTn4UWXLN-31BgCo4v0B8S-rU7g-JmB9Q6w",
+        //           "Context-Role-Name": "SUPER",
+        //           "Context-Ou-Id": "23",
+        //           "Context-Lang-Id": "1"
+        //         },
+        //         "gqlQueries":
+        //             "{\"query\":\"query assignmentOptions {\\n    fetchAssignment(\\n      assignmentNumber: 0\\n      history: false\\n      employeeCode: \\\"00013303\\\"\\n    ) {\\n      assignmentInformation\\n      assignmentNumber\\n      jobDesc\\n      assignmentEffectiveToDate,\\n      positionDesc\\n    }\\n  }\\n\",\"variables\":{}}",
+        //         "authFromRuntime": true
+        //       },
+        //       "data_source_id": "d3c7e316-28c6-4e71-9706-8e88c81c7f56",
+        //       "app_version_id": "62f02cb3-4f8c-410a-b7a4-43de97479833",
+        //       "created_at": "2024-05-15T06:10:08.942081",
+        //       "updated_at": "2024-05-15T06:10:08.942081",
+        //       "data_source": {"kind": "restApi"},
+        //       "kind": "restApi",
+        //       "orderOfExecution": null
+        //     },
+        //     {
+        //       "id": "3f275d70-6610-4ec8-9b2e-5a2677e6e079",
+        //       "name": "leaveTypeDatas",
+        //       "dataType": 1,
+        //       "options": {
+        //         "dataType": 1,
+        //         "method": "POST",
+        //         "url": "https://designer.ramcouat.com/coregwopsPayce/ucgsgql/",
+        //         "url_params": [
+        //           ["", ""]
+        //         ],
+        //         "headers": [
+        //           ["", ""]
+        //         ],
+        //         "body": [
+        //           ["", ""]
+        //         ],
+        //         "runOnPageLoad": true,
+        //         "gqlHeaders": {
+        //           "Content-Type": "application/json",
+        //           "Context-Lang-Id": "1",
+        //           "Context-Ou-Id": "23",
+        //           "Context-Role-Name": "EMP",
+        //           "Authorization":
+        //               "Bearer A5B9882A1E0C8D78BDF859691369290543A83BC97B3E3C8D8B7460882132AF44"
+        //         },
+        //         "gqlQueries":
+        //             "{\"query\":\"query leaveTypeDatas {\\n  \\n    \\n      fetchLeaveType(\\n        includeInactive: true\\n        employeeCode: \\\"00013303\\\" \\n        assignmentNo: 1\\n        \\n        \\n      ) {\\n        leavetypeCode\\n        leavetypeDesc\\n        showassignInfo\\n        showholidayWorkedon\\n        showfromandtoSession\\n        showcomputeDuration\\n        showleaveprojectedBalance\\n        shownotificationLink\\n        showpartialleaveCancellation\\n        showTotalHours\\n        showNotes\\n        showmultiCompoff\\n        showfromandTotime\\n        leaveColorCode\\n        anniversaryOrCalendarBased\\n        weeklyLeave\\n      } \\n    }\\n\",\"variables\":{}}",
+        //         "authFromRuntime": true
+        //       },
+        //       "data_source_id": "3f275d70-6610-4ec8-9b2e-5a2677e6e079",
+        //       "app_version_id": "62f02cb3-4f8c-410a-b7a4-43de97479833",
+        //       "created_at": "2024-05-12T16:08:56.275997",
+        //       "updated_at": "2024-05-12T16:08:56.275997",
+        //       "data_source": {"kind": "restApi"},
+        //       "kind": "restApi",
+        //       "orderOfExecution": null
+        //     },
+        //     {
+        //       "id": "ac979f14-c5fb-4041-a78f-e7b9964d12b3",
+        //       "name": "applyLeave",
+        //       "dataType": 1,
+        //       "options": {
+        //         "dataType": 1,
+        //         "method": "POST",
+        //         "url": "https://designer.ramcouat.com/coregwopsPayce/ucgsgql/",
+        //         "url_params": [
+        //           ["", ""]
+        //         ],
+        //         "headers": [
+        //           ["", ""]
+        //         ],
+        //         "body": [
+        //           ["", ""]
+        //         ],
+        //         "runOnPageLoad": false,
+        //         "gqlHeaders": {
+        //           "Content-Type": "application/json",
+        //           "Context-Lang-Id": "1",
+        //           "Context-Ou-Id": "23",
+        //           "Context-Role-Name": "EMP",
+        //           "Authorization":
+        //               "Bearer 29595F1DB97DC9B96E8A38D40923436CABFC3FFDE1F6404A5C8817502EB28327"
+        //         },
+        //         "gqlQueries":
+        //             "{\"query\":\"mutation applyLeave {\\n  createLeave(\\n    leaveApplyReq: {\\n      \\n    \\n    \\n    \\n    employeeCode: \\\"00013303\\\"\\n    assignmentNo: 1\\n    leaveTypeCode: \\\"{{ID1715522021427336.comboValue}}\\\"\\n    leaveStartDate: \\\"{{ID1715767523432232.value}}\\\"\\n    leaveEndDate: \\\"{{ID1715522257956236.value}}\\\"\\n    leaveFromSession: \\\"{{ID1715522198278427.comboValue}}\\\"\\n    leaveToSession: \\\"{{ID171552229457579.comboValue}}\\\"\\n    leaveReasonCode: \\\"{{ID1715522377444139.comboValue}}\\\"\\n    additionalReason: \\\"{{ID1715522429824872.value}}\\\"\\n    backupEmployeeCode: \\\"{{ID1715522344515832.comboValue}}\\\"\\n  \\n  \\n  \\n  \\n    }\\n  ) {\\n    successMessage\\n    leaveApplicationNumber\\n  }\\n}\",\"variables\":{}}",
+        //         "authFromRuntime": true
+        //       },
+        //       "data_source_id": "ac979f14-c5fb-4041-a78f-e7b9964d12b3",
+        //       "app_version_id": "62f02cb3-4f8c-410a-b7a4-43de97479833",
+        //       "created_at": "2024-05-12T16:12:56.429951",
+        //       "updated_at": "2024-05-12T16:12:56.429951",
+        //       "data_source": {"kind": "restApi"},
+        //       "kind": "restApi",
+        //       "orderOfExecution": null
+        //     },
+        //     {
+        //       "id": "a22ee6f1-e677-4590-88d9-7be850e052ff",
+        //       "name": "sessionOptions",
+        //       "dataType": 1,
+        //       "options": {
+        //         "dataType": 1,
+        //         "method": "POST",
+        //         "url": "https://designer.ramcouat.com/coregwopsPayce/ucgsgql/",
+        //         "url_params": [
+        //           ["", ""]
+        //         ],
+        //         "headers": [
+        //           ["", ""]
+        //         ],
+        //         "body": [
+        //           ["", ""]
+        //         ],
+        //         "runOnPageLoad": false,
+        //         "gqlHeaders": {
+        //           "Authorization":
+        //               " Bearer 0942ECB58F5AB43B62C529BA07162283071589F4B9E0FF85F719E9F7DD9FB3D8",
+        //           "Content-Type": "application/json",
+        //           "Context-Lang-Id": "1",
+        //           "Context-Ou-Id": "23",
+        //           "Context-Role-Name": "SUPVR"
+        //         },
+        //         "gqlQueries":
+        //             "{\"query\":\"query sessionOptions {\\n fetchQuickCodes(bpCode: \\\"HRTM\\\" \\n  pvCode: \\\"STSE\\\"\\n) {\\n    quickCode\\n    quickCodeDescription\\n  }\\n}\",\"variables\":{}}",
+        //         "authFromRuntime": false
+        //       },
+        //       "data_source_id": "a22ee6f1-e677-4590-88d9-7be850e052ff",
+        //       "app_version_id": "62f02cb3-4f8c-410a-b7a4-43de97479833",
+        //       "created_at": "2024-06-03T09:51:35.126121",
+        //       "updated_at": "2024-06-03T09:51:35.126121",
+        //       "data_source": {"kind": "restApi"},
+        //       "kind": "restApi",
+        //       "orderOfExecution": null
+        //     }
+        //   ],
         loadingDataQueries = true,
         isCreatingQueryInProcess = false,
         isUpdatingQueryInProcess = false,

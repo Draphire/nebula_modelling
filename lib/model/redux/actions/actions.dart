@@ -152,3 +152,9 @@ class FetchPageMetadataFailureAction {
 
   FetchPageMetadataFailureAction(this.error);
 }
+
+class FetchPageDataQueriesSuccessAction {
+  final dynamic dataQueries;
+
+  FetchPageDataQueriesSuccessAction(this.dataQueries);
+}

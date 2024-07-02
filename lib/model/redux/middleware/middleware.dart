@@ -53,7 +53,11 @@ void pageMetadataMiddleware(
         // final data = json.decode(response.body)['value'];
         final data = json.decode(response.body);
         // final pageMetadata = PageMetadata.fromJson(data);
-        store.dispatch(FetchPageMetadataSuccessAction(data));
+        final pageMetadata = json.decode(data["value"]["pageMetadata"]);
+        final dataQueries = data["value"]["dataQueries"]["dataQueries"];
+        store
+            .dispatch(FetchPageMetadataSuccessAction(pageMetadata["metadata"]));
+        store.dispatch(FetchPageDataQueriesSuccessAction(dataQueries));
       } else {
         store.dispatch(
             FetchPageMetadataFailureAction('Failed to fetch page metadata'));
@@ -401,7 +405,7 @@ void _handleResponse(Store<AppState> store, http.Response response,
 }
 
 Future<QueryResult> executeQuery(Store<AppState> store, dynamic query) async {
-  final options = getQueryVariables(query["options"], store.state);
+  final options = getQueryVariables(query?["options"], store.state);
 
   try {
     final response = await run(store, options, query["options"]);
